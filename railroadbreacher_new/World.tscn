@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyhvqqu7s0lwv"]
+[gd_scene load_steps=7 format=3 uid="uid://cyhvqqu7s0lwv"]
 
+[ext_resource type="Script" path="res://basic_interactable.gd" id="2_iu7q6"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="2_jf8y5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xcma5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iah7w"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ojjpi"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_gnf8p"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -20,3 +25,13 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 transform = Transform3D(2.883, 0, 0, 0, 0.328, 0, 0, 0, 1.971, 0.802, 0, 0)
 shape = SubResource("BoxShape3D_iah7w")
+
+[node name="Basic Interactable" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36632, 1.1669, 0)
+script = ExtResource("2_iu7q6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Basic Interactable"]
+shape = SubResource("SphereShape3D_ojjpi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Basic Interactable"]
+mesh = SubResource("SphereMesh_gnf8p")
