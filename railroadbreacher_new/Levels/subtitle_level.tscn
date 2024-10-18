@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cigkge2cbyg61"]
 
-[ext_resource type="Script" path="res://subtitle_level.gd" id="1_aqhoo"]
-[ext_resource type="Script" path="res://subtitle_area.gd" id="2_nokrs"]
+[ext_resource type="Script" path="res://Levels/subtitle_level.gd" id="1_aqhoo"]
+[ext_resource type="Script" path="res://Scripts/subtitle_area.gd" id="2_nokrs"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="3_a6vus"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xg6lt"]

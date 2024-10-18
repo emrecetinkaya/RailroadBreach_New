@@ -13,4 +13,5 @@ func _process(delta: float) -> void:
 
 func _on_subtitle_area_body_entered(body: CharacterBody3D) -> void:
 	print("area entered")
+	$Character/Control/SubtitleLabel.visible = true
 	$Character/Control/SubtitleLabel.set_text($SubtitleArea.subtitletext)

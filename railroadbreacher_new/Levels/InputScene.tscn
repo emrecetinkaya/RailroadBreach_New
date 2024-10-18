@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtmnxjqk4y52j"]
 
-[ext_resource type="Script" path="res://control.gd" id="1_ab0x0"]
+[ext_resource type="Script" path="res://Levels/control.gd" id="1_v273n"]
 
 [sub_resource type="Theme" id="Theme_5ey6a"]
 
-[node name="Control" type="Control"]
+[node name="InputScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ab0x0")
+script = ExtResource("1_v273n")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 1

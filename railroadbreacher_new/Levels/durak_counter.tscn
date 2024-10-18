@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bfurkv8c5uyh1"]
 
-[ext_resource type="Script" path="res://durak_counter.gd" id="1_awnxq"]
+[ext_resource type="Script" path="res://Levels/durak_counter.gd" id="1_awnxq"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="2_omdh5"]
-[ext_resource type="PackedScene" uid="uid://jnqsihyjt5di" path="res://basic_interactable.tscn" id="3_rruid"]
+[ext_resource type="PackedScene" uid="uid://jnqsihyjt5di" path="res://Levels/basic_interactable.tscn" id="3_rruid"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jj061"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
