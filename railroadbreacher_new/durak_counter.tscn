@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://cr7ibcgxg0a8x"]
+
+[ext_resource type="Script" path="res://durak_counter.gd" id="1_awnxq"]
+[ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="2_omdh5"]
+[ext_resource type="PackedScene" path="res://basic_interactable.tscn" id="3_rruid"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jj061"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ps3gh"]
+sky_material = SubResource("ProceduralSkyMaterial_jj061")
+
+[sub_resource type="Environment" id="Environment_bpcrp"]
+background_mode = 2
+sky = SubResource("Sky_ps3gh")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_mhrby"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1jnuv"]
+
+[node name="DurakCounter" type="Node3D"]
+script = ExtResource("1_awnxq")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 30.0
+autostart = true
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145026, 2.11399, -2.91877)
+text = "00:00"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bpcrp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(2.88275, 0, 0, 0, 0.328093, 0, 0, 0, 1.9712, 0.80243, 0, 0)
+mesh = SubResource("BoxMesh_mhrby")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(2.883, 0, 0, 0, 0.328, 0, 0, 0, 1.971, 0.802, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_1jnuv")
+
+[node name="Character" parent="." instance=ExtResource("2_omdh5")]
+
+[node name="Basic Interactable" parent="." instance=ExtResource("3_rruid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114016, 1.1669, -1.51942)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="interacted" from="Character" to="." method="_on_character_interacted"]

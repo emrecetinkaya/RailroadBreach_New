@@ -3,8 +3,10 @@
 [ext_resource type="Script" path="res://player/character.gd" id="1_jdgi3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bosp2"]
+height = 1.73
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7qlmc"]
+height = 1.73
 
 [node name="Character" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -17,10 +19,10 @@ shape = SubResource("CapsuleShape3D_bosp2")
 mesh = SubResource("CapsuleMesh_7qlmc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
 target_position = Vector3(0, 0, -2)
 collide_with_areas = true
 debug_shape_custom_color = Color(0.950103, 0.500824, 1, 1)
@@ -55,12 +57,11 @@ layout_mode = 0
 offset_right = 1150.0
 offset_bottom = 576.0
 theme_override_font_sizes/font_size = 65
-text = "MERHABALAR"
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
 
 [node name="Marker3D2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, -2)

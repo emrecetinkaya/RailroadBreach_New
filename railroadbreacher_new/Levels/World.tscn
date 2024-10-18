@@ -30,7 +30,7 @@ glow_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_i7oix"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dkkd0"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("SubViewportContainer/SubViewport")
 
 [node name="Node3D" type="Node3D"]
 
@@ -94,16 +94,6 @@ shape = SubResource("BoxShape3D_wcfau")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Basic Interactable3"]
 mesh = SubResource("BoxMesh_wc4ik")
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size_2d_override_stretch = true
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 5)
-
-[node name="Camera3D2" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.98023e-08, 0.866025, 0.5, 1, -6.88198e-09, -4.76847e-08, -4, 3, -4.76837e-07)
-
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 3, 6, 1.58369, 0)
 script = ExtResource("4_l0g8g")
@@ -120,3 +110,28 @@ transparent = false
 texture = SubResource("ViewportTexture_dkkd0")
 region_enabled = true
 region_rect = Rect2(0, 0, 515, 512)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1312.0
+offset_top = -797.0
+offset_right = -632.0
+offset_bottom = -377.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(680, 420)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 5)
+
+[node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.98023e-08, 0.866025, 0.5, 1, -6.88198e-09, -4.76847e-08, -4, 3, -4.76837e-07)
