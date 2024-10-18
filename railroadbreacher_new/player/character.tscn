@@ -50,6 +50,15 @@ text = "."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="SubtitleLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 65
+text = "MERHABALAR"
+horizontal_alignment = 1
+vertical_alignment = 2
+
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 

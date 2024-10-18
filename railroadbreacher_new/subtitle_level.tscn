@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://cigkge2cbyg61"]
+
+[ext_resource type="Script" path="res://subtitle_level.gd" id="1_aqhoo"]
+[ext_resource type="Script" path="res://subtitle_area.gd" id="2_nokrs"]
+[ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="3_a6vus"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xg6lt"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_nudfn"]
+sky_material = SubResource("ProceduralSkyMaterial_xg6lt")
+
+[sub_resource type="Environment" id="Environment_7lmdx"]
+background_mode = 2
+sky = SubResource("Sky_nudfn")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_us5sn"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_mnlnd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_edhjl"]
+
+[node name="SubtitleLevel" type="Node3D"]
+script = ExtResource("1_aqhoo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7lmdx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(2.88275, 0, 0, 0, 0.328093, 0, 0, 0, 1.9712, 0.80243, 0, 0)
+mesh = SubResource("BoxMesh_us5sn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(2.883, 0, 0, 0, 0.328, 0, 0, 0, 1.971, 0.802, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_mnlnd")
+
+[node name="SubtitleArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+script = ExtResource("2_nokrs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubtitleArea"]
+transform = Transform3D(5.37, 0, 0, 0, 5.37, 0, 0, 0, 5.37, 0, 0, 0)
+shape = SubResource("BoxShape3D_edhjl")
+
+[node name="Character" parent="." instance=ExtResource("3_a6vus")]
+
+[connection signal="body_entered" from="SubtitleArea" to="." method="_on_subtitle_area_body_entered"]
