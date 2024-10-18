@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyhvqqu7s0lwv"]
+[gd_scene load_steps=12 format=3 uid="uid://cyhvqqu7s0lwv"]
 
 [ext_resource type="Script" path="res://basic_interactable.gd" id="2_iu7q6"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="2_jf8y5"]
@@ -20,11 +20,14 @@ glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iah7w"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ojjpi"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_wcfau"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_gnf8p"]
+[sub_resource type="BoxMesh" id="BoxMesh_wc4ik"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_su3jm"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dkkd0"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Node3D" type="Node3D"]
 
@@ -53,10 +56,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36632, 1.1669, 0)
 script = ExtResource("2_iu7q6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Basic Interactable"]
-shape = SubResource("SphereShape3D_ojjpi")
+shape = SubResource("BoxShape3D_wcfau")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Basic Interactable"]
-mesh = SubResource("SphereMesh_gnf8p")
+mesh = SubResource("BoxMesh_wc4ik")
+
+[node name="Basic Interactable2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36632, 1.1669, -4)
+script = ExtResource("2_iu7q6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Basic Interactable2"]
+shape = SubResource("BoxShape3D_wcfau")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Basic Interactable2"]
+mesh = SubResource("BoxMesh_wc4ik")
+
+[node name="Basic Interactable3" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38442, 1.1669, 3.99765)
+script = ExtResource("2_iu7q6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Basic Interactable3"]
+shape = SubResource("BoxShape3D_wcfau")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Basic Interactable3"]
+mesh = SubResource("BoxMesh_wc4ik")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -64,3 +87,14 @@ mesh = SubResource("SphereMesh_gnf8p")
 shape = SubResource("WorldBoundaryShape3D_su3jm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 5)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.0015892, 0, -0.944218, 0, 0.566966, 0, 0.623662, 0, 0.00240604, 5.344, 1.45463, 0.103225)
+texture = SubResource("ViewportTexture_dkkd0")
