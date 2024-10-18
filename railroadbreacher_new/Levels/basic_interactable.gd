@@ -31,3 +31,8 @@ func secondary():
 		collision_layer = 1
 		collision_mask = 1
 		grabbed = false
+
+
+func _on_drop_area_body_entered(body: RigidBody3D) -> void:
+	if !grabbed:
+		print("success") 

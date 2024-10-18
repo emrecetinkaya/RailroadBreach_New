@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://bupdax2elo5o1"]
+
+[ext_resource type="PackedScene" uid="uid://jnqsihyjt5di" path="res://Levels/basic_interactable.tscn" id="1_b56ao"]
+[ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="2_g52me"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e1oe7"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_nudfn"]
+sky_material = SubResource("ProceduralSkyMaterial_e1oe7")
+
+[sub_resource type="Environment" id="Environment_vrbxa"]
+background_mode = 2
+sky = SubResource("Sky_nudfn")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_y5igl"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m1w3a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1f6i7"]
+
+[node name="ItemtoArea" type="Node3D"]
+
+[node name="Basic Interactable" parent="." instance=ExtResource("1_b56ao")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vrbxa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(2.88275, 0, 0, 0, 0.328093, 0, 0, 0, 1.9712, 0.80243, 0, 0)
+mesh = SubResource("BoxMesh_y5igl")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(2.883, 0, 0, 0, 0.328, 0, 0, 0, 1.971, 0.802, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_m1w3a")
+
+[node name="Character" parent="." instance=ExtResource("2_g52me")]
+
+[node name="DropArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DropArea"]
+transform = Transform3D(5.37, 0, 0, 0, 5.37, 0, 0, 0, 5.37, 0, 0, 0)
+shape = SubResource("BoxShape3D_1f6i7")
+
+[connection signal="body_entered" from="DropArea" to="Basic Interactable" method="_on_drop_area_body_entered"]
