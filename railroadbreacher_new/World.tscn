@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyhvqqu7s0lwv"]
+[gd_scene load_steps=11 format=3 uid="uid://cyhvqqu7s0lwv"]
 
 [ext_resource type="Script" path="res://basic_interactable.gd" id="2_iu7q6"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="2_jf8y5"]
@@ -23,6 +23,8 @@ glow_enabled = true
 [sub_resource type="SphereShape3D" id="SphereShape3D_ojjpi"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_gnf8p"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_su3jm"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -55,3 +57,10 @@ shape = SubResource("SphereShape3D_ojjpi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Basic Interactable"]
 mesh = SubResource("SphereMesh_gnf8p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_su3jm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
