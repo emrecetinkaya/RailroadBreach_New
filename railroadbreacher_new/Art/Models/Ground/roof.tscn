@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxopvrr0pljvj"]
+
+[ext_resource type="PackedScene" uid="uid://bbvfdkecymvr8" path="res://Art/Roof.fbx" id="1_prusn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q31vh"]
+albedo_color = Color(0.750663, 0.690304, 0.612164, 1)
+
+[node name="Roof" instance=ExtResource("1_prusn")]
+
+[node name="Roof_003" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_q31vh")

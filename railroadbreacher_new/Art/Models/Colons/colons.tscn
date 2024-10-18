@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmtkvrpdcnfhc"]
+
+[ext_resource type="PackedScene" uid="uid://q7lqn2wesslm" path="res://Art/Models/Colons.fbx" id="1_e23iv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4jna"]
+
+[node name="Colons" instance=ExtResource("1_e23iv")]
+
+[node name="Vigas" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a4jna")
