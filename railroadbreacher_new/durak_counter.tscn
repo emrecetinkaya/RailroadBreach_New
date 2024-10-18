@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cohmn1l6f25qx"]
+[gd_scene load_steps=9 format=3 uid="uid://bfurkv8c5uyh1"]
 
 [ext_resource type="Script" path="res://durak_counter.gd" id="1_awnxq"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="2_omdh5"]
@@ -26,6 +26,7 @@ script = ExtResource("1_awnxq")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
+wait_time = 30.0
 autostart = true
 
 [node name="Label3D" type="Label3D" parent="."]
