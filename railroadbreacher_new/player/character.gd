@@ -1,5 +1,4 @@
 extends CharacterBody3D
-
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var mouse_sensitivity = 0.002
@@ -59,4 +58,10 @@ func _physics_process(delta: float) -> void:
 				hands_full = true
 				print("interacted")
 				collider.grab()
+		if collider.has_method("change_cam"):
+			if Input.is_action_just_pressed("interact") and $RayCast3D.is_colliding:
+				print(collider)
+				collider.change_cam()
+				
 	move_and_slide()
+	

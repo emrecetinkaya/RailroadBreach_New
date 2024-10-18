@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyhvqqu7s0lwv"]
+[gd_scene load_steps=14 format=3 uid="uid://cyhvqqu7s0lwv"]
 
 [ext_resource type="Script" path="res://basic_interactable.gd" id="2_iu7q6"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="2_jf8y5"]
+[ext_resource type="Script" path="res://static_body_3d.gd" id="4_l0g8g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bbsjm"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,13 +19,15 @@ glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_xcma5"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_iah7w"]
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_wbkvc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wcfau"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wc4ik"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_su3jm"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_em43b"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i7oix"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dkkd0"]
 viewport_path = NodePath("SubViewport")
@@ -49,7 +52,7 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 transform = Transform3D(2.883, 0, 0, 0, 0.328, 0, 0, 0, 1.971, 0.802, 0, 0)
-shape = SubResource("BoxShape3D_iah7w")
+shape = SubResource("WorldBoundaryShape3D_wbkvc")
 
 [node name="Basic Interactable" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36632, 1.1669, 0)
@@ -81,13 +84,6 @@ shape = SubResource("BoxShape3D_wcfau")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Basic Interactable3"]
 mesh = SubResource("BoxMesh_wc4ik")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_su3jm")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-
 [node name="SubViewport" type="SubViewport" parent="."]
 size_2d_override_stretch = true
 render_target_update_mode = 4
@@ -95,6 +91,22 @@ render_target_update_mode = 4
 [node name="Camera3D" type="Camera3D" parent="SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 5)
 
+[node name="Camera3D2" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.98023e-08, 0.866025, 0.5, 1, -6.88198e-09, -4.76847e-08, -4, 3, -4.76837e-07)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 3, 6, 1.58369, 0)
+script = ExtResource("4_l0g8g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_em43b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_i7oix")
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.0015892, 0, -0.944218, 0, 0.566966, 0, 0.623662, 0, 0.00240604, 5.344, 1.45463, 0.103225)
+transparent = false
 texture = SubResource("ViewportTexture_dkkd0")
+region_enabled = true
+region_rect = Rect2(0, 0, 515, 512)
