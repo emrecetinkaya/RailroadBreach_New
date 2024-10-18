@@ -64,6 +64,16 @@ shape = SubResource("BoxShape3D_wcfau")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Basic Interactable"]
 mesh = SubResource("BoxMesh_wc4ik")
 
+[node name="Basic Interactable4" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37701, 1.18042, -0.013762)
+script = ExtResource("2_iu7q6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Basic Interactable4"]
+shape = SubResource("BoxShape3D_wcfau")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Basic Interactable4"]
+mesh = SubResource("BoxMesh_wc4ik")
+
 [node name="Basic Interactable2" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36632, 1.1669, -4)
 script = ExtResource("2_iu7q6")
