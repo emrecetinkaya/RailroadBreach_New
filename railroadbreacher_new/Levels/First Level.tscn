@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dro2pj8755op1"]
+[gd_scene load_steps=21 format=3 uid="uid://dro2pj8755op1"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_dffvm"]
 [ext_resource type="PackedScene" uid="uid://utcfm28gp3wd" path="res://Art/Models/final_scene_setup.tscn" id="2_j6eir"]
@@ -73,9 +73,25 @@ albedo_color = Color(0.986742, 1, 0.334218, 1)
 albedo_color = Color(0.367857, 0.353468, 0.227267, 1)
 metallic_specular = 0.0
 
+[sub_resource type="Animation" id="Animation_prjcd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Train3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-18.527, -13.315, 25)]
+}
+
 [sub_resource type="Animation" id="Animation_ge7xv"]
 resource_name = "train_arrive"
-length = 26.0
+length = 21.0
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -104,25 +120,43 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
-[sub_resource type="Animation" id="Animation_prjcd"]
-length = 0.001
-tracks/0/type = "value"
+[sub_resource type="Animation" id="Animation_8jxtc"]
+resource_name = "train_arrive"
+length = 26.0
+loop_mode = 2
+tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SubViewportContainer/SubViewport/Train3:position")
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Train3/AudioStreamPlayer3D")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_f2i8l")
+}],
+"times": PackedFloat32Array(6.43333)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Train:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 17.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-18.527, -13.315, 25)]
+"values": [Vector3(-43.211, -13.315, 500), Vector3(-43.211, -13.315, 25)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fh6wg"]
 _data = {
 "RESET": SubResource("Animation_prjcd"),
-"train_arrive": SubResource("Animation_ge7xv")
+"train_arrive": SubResource("Animation_ge7xv"),
+"train_arrive (2)": SubResource("Animation_8jxtc")
 }
 
 [node name="Node3D" type="Node3D"]
@@ -357,7 +391,7 @@ spot_angle = 57.42
 spot_angle_attenuation = 0.0346741
 
 [node name="Train" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_akb4y")]
-transform = Transform3D(0.916009, 0, 0, 0, 1.1982, 0, 0, 0, 1.51963, -42.9814, -13.3148, 32.5107)
+transform = Transform3D(0.916009, 0, 0, 0, 1.1982, 0, 0, 0, 1.51963, -43.211, -13.315, 500)
 
 [node name="Train2" parent="SubViewportContainer/SubViewport/Train" instance=ExtResource("3_akb4y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.7176)
@@ -374,7 +408,7 @@ visible = false
 doppler_tracking = 2
 
 [node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_0ooes")]
-transform = Transform3D(-0.242565, 0, -0.970135, 0, 1, 0, 0.970135, 0, -0.242565, -33.2156, -9.0414, 23.4246)
+transform = Transform3D(-0.242565, 0, -0.970135, 0, 1, 0, 0.970135, 0, -0.242565, -9.29027, -5.77351, 11.3573)
 
 [node name="AudioListener3D" parent="SubViewportContainer/SubViewport/Character" index="8"]
 current = true
@@ -498,13 +532,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6216, -11.6548, 25.5675)
 libraries = {
 "": SubResource("AnimationLibrary_fh6wg")
 }
-autoplay = "train_arrive"
+autoplay = "train_arrive (2)"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.477051, 0, 0.878875, 0, 1, 0, -0.878875, 0, 0.477051, -26.7801, -11.3872, 21.7409)
 visible = false
 autoplay = true
-
-[connection signal="grabed" from="SubViewportContainer/Basic Interactable" to="SubViewportContainer/SubViewport/Train3" method="_on_basic_interactable_grabed"]
 
 [editable path="SubViewportContainer/SubViewport/Character"]

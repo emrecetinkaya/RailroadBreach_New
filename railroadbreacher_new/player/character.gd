@@ -79,5 +79,8 @@ func _physics_process(delta: float) -> void:
 				$Camera3D.make_current()
 				on_camera = false
 				collider.exit_cam()
+			if collider.has_method("change_cam_better") and !on_camera:
+				if Input.is_action_just_pressed("secondary"):
+					collider.change_cam_better()
 	move_and_slide()
 	

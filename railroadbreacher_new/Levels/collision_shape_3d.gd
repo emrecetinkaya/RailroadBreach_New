@@ -31,3 +31,13 @@ func change_cam():
 func exit_cam():
 	viewport.position = Vector2(-1920,-1080)
 	print("evet")
+	
+func change_cam_better():
+	if camera_1.current:
+		camera_2.current = true
+	elif camera_2.current:
+		camera_3.current = true
+	elif camera_3.current:
+		camera_4.current = true
+	else:
+		camera_1.current = true

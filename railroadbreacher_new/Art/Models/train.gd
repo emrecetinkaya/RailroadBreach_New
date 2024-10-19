@@ -14,3 +14,5 @@ func _process(delta: float) -> void:
 func _on_basic_interactable_grabed() -> void:
 	$"../../../AnimationPlayer".play_backwards("train_arrive")
 	$"../../../AudioStreamPlayer3D".play()
+	
+	

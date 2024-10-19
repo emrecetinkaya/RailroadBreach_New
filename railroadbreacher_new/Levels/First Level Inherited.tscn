@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://kbsy2ygpc763"]
+[gd_scene load_steps=18 format=3 uid="uid://kbsy2ygpc763"]
 
 [ext_resource type="PackedScene" uid="uid://c7amcrofntg6r" path="res://Art/Models/Models.tscn" id="1_bd8kc"]
 [ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="2_5jk1y"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Levels/area_3d_2.gd" id="4_dikxr"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_325gm"]
 [ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="5_vy6jx"]
+[ext_resource type="AudioStream" uid="uid://yrqnmg6bc5mm" path="res://sounds/(train arrival)horror_effect2.wav" id="8_cqa8c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fek0r"]
 size = Vector3(21, 12, 8)
@@ -43,19 +44,108 @@ shader_parameter/vignette_opacity = 0.657
 
 [sub_resource type="World3D" id="World3D_57d5r"]
 
+[sub_resource type="Animation" id="Animation_prjcd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Train3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-18.527, -13.315, 25)]
+}
+
+[sub_resource type="Animation" id="Animation_ge7xv"]
+resource_name = "train_arrive"
+length = 21.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Train3:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 17.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-18.527, -13.315, 500), Vector3(-18.527, -13.315, 25)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Train3/AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_cqa8c")
+}],
+"times": PackedFloat32Array(6.43333)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_8jxtc"]
+resource_name = "train_arrive"
+length = 26.0
+loop_mode = 2
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Train3/AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_cqa8c")
+}],
+"times": PackedFloat32Array(6.43333)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Train:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 17.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-43.211, -13.315, 500), Vector3(-43.211, -13.315, 25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fh6wg"]
+_data = {
+"RESET": SubResource("Animation_prjcd"),
+"train_arrive": SubResource("Animation_ge7xv"),
+"train_arrive (2)": SubResource("Animation_8jxtc")
+}
+
 [node name="Models" instance=ExtResource("1_bd8kc")]
 script = ExtResource("2_mg4mm")
 
 [node name="SubViewport" parent="SubViewportContainer" index="0"]
 audio_listener_enable_3d = true
 
-[node name="Character" parent="SubViewportContainer/SubViewport" index="13"]
+[node name="Train" parent="SubViewportContainer/SubViewport" index="9"]
+transform = Transform3D(0.916009, 0, 0, 0, 1.1982, 0, 0, 0, 1.51963, -43.211, -13.315, 500)
+
+[node name="Train3" parent="SubViewportContainer/SubViewport" index="10"]
+transform = Transform3D(0.916009, 0, 0, 0, 1.1982, 0, 0, 0, 1.51963, -18.527, -13.315, 25)
+
+[node name="Character" parent="SubViewportContainer/SubViewport" index="11"]
 transform = Transform3D(-0.890856, 0, -0.454286, 0, 1, 0, 0.454286, 0, -0.890856, -9.65963, -5.93925, 11.0481)
 
 [node name="Camera3D" parent="SubViewportContainer/SubViewport/Character" index="2"]
-current = true
-
-[node name="AudioListener3D" parent="SubViewportContainer/SubViewport/Character" index="8"]
 current = true
 
 [node name="Area3D" type="Area3D" parent="." index="1"]
@@ -148,5 +238,17 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Control" parent="SubViewportContainer2/SubViewport" index="0" instance=ExtResource("2_5jk1y")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
+libraries = {
+"": SubResource("AnimationLibrary_fh6wg")
+}
+autoplay = "train_arrive (2)"
+blend_times = [&"train_arrive (2)", &"train_arrive", 1080.0, &"train_arrive (2)", &"train_arrive (2)", 1234.29]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="8"]
+transform = Transform3D(0.477051, 0, 0.878875, 0, 1, 0, -0.878875, 0, 0.477051, -26.7801, -11.3872, 21.7409)
+visible = false
+autoplay = true
 
 [editable path="SubViewportContainer/SubViewport/Character"]
