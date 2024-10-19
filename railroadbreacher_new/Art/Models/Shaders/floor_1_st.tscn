@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf0pjj17ecvkt"]
+
+[ext_resource type="PackedScene" uid="uid://ct0qi7eog304s" path="res://Floor 1st.fbx" id="1_o2tpi"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="2_i0paa"]
+[ext_resource type="Texture2D" uid="uid://bvuv7lrcimjsm" path="res://Art/Models/TilesPlain0276_2_seamless_S.jpg" id="3_ci1cf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kvlyy"]
+render_priority = 0
+shader = ExtResource("2_i0paa")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("3_ci1cf")
+
+[node name="Floor 1st" instance=ExtResource("1_o2tpi")]
+
+[node name="Floor (1st)" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_kvlyy")
