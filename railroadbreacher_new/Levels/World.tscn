@@ -133,5 +133,11 @@ render_target_update_mode = 4
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 5)
 
+[node name="Camera3D3" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 5)
+
+[node name="Camera3D4" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 5)
+
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.98023e-08, 0.866025, 0.5, 1, -6.88198e-09, -4.76847e-08, -4, 3, -4.76837e-07)

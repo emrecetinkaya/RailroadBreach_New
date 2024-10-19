@@ -1,5 +1,100 @@
-[gd_scene load_steps=2 format=3 uid="uid://kbsy2ygpc763"]
+[gd_scene load_steps=10 format=3 uid="uid://fxv3hqf8d1v2"]
 
-[ext_resource type="PackedScene" uid="uid://c7amcrofntg6r" path="res://Art/Models/Models.tscn" id="1_bd8kc"]
+[ext_resource type="PackedScene" uid="uid://b5fxfoh5iwes8" path="res://Art/Models/Models.tscn" id="1_bd8kc"]
+[ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="2_5jk1y"]
+[ext_resource type="Script" path="res://Levels/first_level_inherited.gd" id="2_mg4mm"]
+[ext_resource type="Script" path="res://Levels/collision_shape_3d.gd" id="4_alo21"]
+[ext_resource type="Script" path="res://Levels/area_3d_2.gd" id="4_dikxr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fek0r"]
+size = Vector3(21, 12, 8)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yg4q1"]
+viewport_path = NodePath("SubViewportContainer3/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m6e64"]
+viewport_path = NodePath("SubViewportContainer2/SubViewport")
+
+[sub_resource type="World3D" id="World3D_57d5r"]
 
 [node name="Models" instance=ExtResource("1_bd8kc")]
+script = ExtResource("2_mg4mm")
+
+[node name="SubViewport" parent="SubViewportContainer" index="0"]
+audio_listener_enable_3d = true
+
+[node name="Camera3D" parent="SubViewportContainer/SubViewport/Character" index="2"]
+current = true
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+transform = Transform3D(0.0253571, 0, 0.00543785, 0, 0.07, 0, -0.0543785, 0, 0.00253571, -6.80093, -6.21007, 12.6225)
+script = ExtResource("4_alo21")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 1.00583e-07, 0, 1.00003, 0, 0, 0, 1, 0.0594177, -0.163521, 0)
+shape = SubResource("BoxShape3D_fek0r")
+
+[node name="Area3D2" type="Area3D" parent="." index="2"]
+transform = Transform3D(0.0543785, 0, 0.00253571, 0, 0.07, 0, -0.0253571, 0, 0.00543785, -7.8, -6.1, 13)
+script = ExtResource("4_dikxr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" index="0"]
+transform = Transform3D(1, 0, 9.68575e-08, 0, 1.00003, 0, 9.53674e-07, 0, 1, -3.05847, -1.54307, 66.8639)
+shape = SubResource("BoxShape3D_fek0r")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." index="3"]
+transform = Transform3D(0.0253571, 0, 0.00543785, 0, 0.07, 0, -0.0543785, 0, 0.00253571, -6.80093, -6.21007, 12.6225)
+texture = SubResource("ViewportTexture_yg4q1")
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="4"]
+transform = Transform3D(0.0543785, 0, 0.0253571, 0, 0.07, 0, -0.0253571, 0, 0.0543785, -7.82736, -6.19615, 13.5079)
+flip_h = true
+transparent = false
+texture = SubResource("ViewportTexture_m6e64")
+
+[node name="SubViewportContainer3" type="SubViewportContainer" parent="." index="5"]
+offset_left = -1920.0
+offset_top = -1080.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer3" index="0"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(1920, 1080)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer3/SubViewport" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -4.78202, -8.60753, 46.131)
+
+[node name="Camera3D2" type="Camera3D" parent="SubViewportContainer3/SubViewport" index="1"]
+transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.98023e-08, 0.866025, 0.5, 1, -6.88194e-09, -4.76847e-08, -28.368, -8.81704, 47.3118)
+
+[node name="Camera3D3" type="Camera3D" parent="SubViewportContainer3/SubViewport" index="2"]
+transform = Transform3D(0.888505, 0, -0.458867, 0, 1, 0, 0.458867, 0, 0.888505, -44.7342, -8.09541, 70.696)
+
+[node name="Camera3D4" type="Camera3D" parent="SubViewportContainer3/SubViewport" index="3"]
+transform = Transform3D(-0.965926, -0.0669873, 0.25, 0, 0.965926, 0.258819, -0.258819, 0.25, -0.933013, -27.238, -1.84403, -5.39666)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="." index="6"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer2" index="0"]
+world_3d = SubResource("World3D_57d5r")
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(1920, 1080)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Control" parent="SubViewportContainer2/SubViewport" index="0" instance=ExtResource("2_5jk1y")]
+
+[editable path="SubViewportContainer/SubViewport/Character"]

@@ -58,7 +58,6 @@ func _on_button_12_pressed() -> void:
 func _physics_process(delta: float) -> void:
 	if !correct:
 		$ProgressBar.value -= 1
-		print($ProgressBar.value)
 	if submit != null:
 		if submit >=17 and $ProgressBar.value >= 61200:
 			print("correct")
