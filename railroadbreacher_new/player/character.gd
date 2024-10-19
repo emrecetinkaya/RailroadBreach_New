@@ -4,6 +4,7 @@ const JUMP_VELOCITY = 4.5
 var mouse_sensitivity = 0.002
 var hands_full = false
 var on_camera = false
+
 signal interacted
 
 func _ready() -> void:
@@ -31,7 +32,11 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+		
+	if Input.is_action_just_pressed("Toggle Flashlight"):
+			print("f pressed")
+			$SpotLight3D.visible = !$SpotLight3D.visible
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY

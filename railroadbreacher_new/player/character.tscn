@@ -65,3 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
 
 [node name="Marker3D2" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, -2)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+visible = false
+light_indirect_energy = 16.0
