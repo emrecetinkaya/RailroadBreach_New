@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ci88ce4x51ks8"]
+
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_76anh"]
+[ext_resource type="Texture2D" uid="uid://dwp023j38t3o3" path="res://Art/Models/Shaders/old-vintage-computer-illustration_184220-455.png" id="2_2d5vl"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_76anh")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_2d5vl")

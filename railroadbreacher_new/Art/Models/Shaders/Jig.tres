@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://vavkdrn0x1nd"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://4d06ft3pp7px"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_u62c7"]
 
