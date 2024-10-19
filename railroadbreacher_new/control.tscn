@@ -1,54 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://15k1ob6ownpc"]
+[gd_scene load_steps=3 format=3 uid="uid://15k1ob6ownpc"]
 
 [ext_resource type="Script" path="res://Levels/control.gd" id="1_ab0x0"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h8iq6"]
-width = 150
-height = 60
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tkvnk"]
-width = 150
-height = 60
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v2fjj"]
-width = 150
-height = 60
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1idta"]
-width = 150
-height = 60
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nsnp0"]
-width = 150
-height = 60
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rx767"]
-width = 150
-height = 60
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vmkq6"]
-width = 150
-height = 60
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v3yiw"]
-width = 150
-height = 60
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_10o2q"]
-width = 150
-height = 60
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8yh8q"]
-width = 150
-height = 60
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oe18f"]
-width = 150
-height = 60
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6nuqm"]
-width = 150
-height = 60
 
 [sub_resource type="Theme" id="Theme_5ey6a"]
 
@@ -59,21 +11,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 8
 script = ExtResource("1_ab0x0")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -30.62
-offset_right = 1920.0
-offset_bottom = 31.38
+anchor_top = 0.65
+anchor_right = 1.0
+anchor_bottom = 0.7
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 2
 grow_vertical = 2
-placeholder_text = "Enter Remaining Time..."
 alignment = 1
-max_length = 10
+max_length = 3
 context_menu_enabled = false
 virtual_keyboard_type = 2
 shortcut_keys_enabled = false
@@ -100,74 +51,50 @@ columns = 3
 [node name="Button" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "1"
-icon = SubResource("NoiseTexture2D_h8iq6")
-icon_alignment = 1
 
 [node name="Button2" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "2"
-icon = SubResource("NoiseTexture2D_tkvnk")
-icon_alignment = 1
 
 [node name="Button3" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "3"
-icon = SubResource("NoiseTexture2D_v2fjj")
-icon_alignment = 1
 
 [node name="Button4" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "4"
-icon = SubResource("NoiseTexture2D_1idta")
-icon_alignment = 1
 
 [node name="Button5" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "5"
-icon = SubResource("NoiseTexture2D_nsnp0")
-icon_alignment = 1
 
 [node name="Button6" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "6"
-icon = SubResource("NoiseTexture2D_rx767")
-icon_alignment = 1
 
 [node name="Button7" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "7"
-icon = SubResource("NoiseTexture2D_vmkq6")
-icon_alignment = 1
 
 [node name="Button8" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "8"
-icon = SubResource("NoiseTexture2D_v3yiw")
-icon_alignment = 1
 
 [node name="Button9" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "9"
-icon = SubResource("NoiseTexture2D_10o2q")
-icon_alignment = 1
 
 [node name="Button10" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "ARRIVED"
-icon = SubResource("NoiseTexture2D_8yh8q")
-icon_alignment = 1
 
 [node name="Button11" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "CLEAR"
-icon = SubResource("NoiseTexture2D_oe18f")
-icon_alignment = 1
 
 [node name="Button12" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "SUBMIT"
-icon = SubResource("NoiseTexture2D_6nuqm")
-icon_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
