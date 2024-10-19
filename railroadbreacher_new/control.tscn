@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://15k1ob6ownpc"]
 
-[ext_resource type="Script" path="res://control.gd" id="1_ab0x0"]
+[ext_resource type="Script" path="res://Levels/control.gd" id="1_ab0x0"]
 
 [sub_resource type="Theme" id="Theme_5ey6a"]
 
@@ -98,12 +98,16 @@ text = "SUBMIT"
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.4
 offset_left = 40.0
 offset_top = 150.0
 offset_right = -40.0
 offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_5ey6a")
 max_value = 64800.0
 show_percentage = false
