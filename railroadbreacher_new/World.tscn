@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cyhvqqu7s0lwv"]
 
-[ext_resource type="Script" path="res://basic_interactable.gd" id="2_iu7q6"]
+[ext_resource type="Script" path="res://Levels/basic_interactable.gd" id="2_iu7q6"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="2_jf8y5"]
 [ext_resource type="Script" path="res://static_body_3d.gd" id="4_l0g8g"]
 

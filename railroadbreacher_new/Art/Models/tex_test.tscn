@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dm8srp7m52ujr"]
+[gd_scene load_steps=9 format=4 uid="uid://cumfx78kwijhy"]
 
 [ext_resource type="PackedScene" uid="uid://bq7c1ghnm6mbb" path="res://Art/Models/Tex Test.fbx" id="1_hxwte"]
 [ext_resource type="Texture2D" uid="uid://bvuv7lrcimjsm" path="res://Art/Models/TilesPlain0276_2_seamless_S.jpg" id="2_6bdly"]
@@ -57,7 +57,7 @@ shader_parameter/albedo = ExtResource("2_6bdly")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3k2bv"]
 render_priority = 0
 shader = ExtResource("3_yd255")
-shader_parameter/affine_mapping = true
+shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
