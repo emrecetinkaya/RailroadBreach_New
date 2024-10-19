@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7whygwoto7ll"]
+[gd_scene load_steps=4 format=3 uid="uid://v8rqdhxcfpch"]
 
 [ext_resource type="PackedScene" uid="uid://ch4qowh3nnph6" path="res://Art/Models/Shaders/Watcher.fbx" id="1_bf6g7"]
-[ext_resource type="Material" uid="uid://ci88ce4x51ks8" path="res://Art/Models/Shaders/watcher.tres" id="2_2815y"]
+[ext_resource type="Material" path="res://Art/Models/Shaders/watcher.tres" id="2_2815y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co1w5"]
 transparency = 1

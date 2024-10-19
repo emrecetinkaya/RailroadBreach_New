@@ -7,7 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r8cts"]
 render_priority = 0
 shader = ExtResource("2_jwch7")
-shader_parameter/affine_mapping = true
+shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.56
 shader_parameter/jitter = 0.328
 shader_parameter/resolution = Vector2i(320, 240)

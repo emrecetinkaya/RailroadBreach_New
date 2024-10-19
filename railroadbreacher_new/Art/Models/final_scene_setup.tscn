@@ -1,12 +1,12 @@
-[gd_scene load_steps=21 format=4 uid="uid://cjy8c6b5yw3vk"]
+[gd_scene load_steps=21 format=4 uid="uid://utcfm28gp3wd"]
 
 [ext_resource type="PackedScene" uid="uid://bjutr33mqqfo5" path="res://Art/Final_SceneSetup.fbx" id="1_e048a"]
 [ext_resource type="PackedScene" uid="uid://dm8srp7m52ujr" path="res://Art/Models/tex_test.tscn" id="3_acy7d"]
 [ext_resource type="PackedScene" uid="uid://cr7glhtpc8h27" path="res://Art/Models/mid_tunnel_walls.tscn" id="4_btls4"]
-[ext_resource type="PackedScene" uid="uid://cf0pjj17ecvkt" path="res://Art/Models/Shaders/floor_1_st.tscn" id="6_pt67x"]
-[ext_resource type="PackedScene" uid="uid://dlqdywrhr4h41" path="res://Art/Models/Shaders/subway_roof.tscn" id="6_qes8h"]
+[ext_resource type="PackedScene" path="res://Art/Models/Shaders/floor_1_st.tscn" id="6_pt67x"]
+[ext_resource type="PackedScene" path="res://Art/Models/Shaders/subway_roof.tscn" id="6_qes8h"]
 [ext_resource type="PackedScene" path="res://roof_1_st.tscn" id="7_apqpj"]
-[ext_resource type="PackedScene" uid="uid://b7whygwoto7ll" path="res://Art/Models/Shaders/watcher.tscn" id="7_h3p2s"]
+[ext_resource type="PackedScene" uid="uid://v8rqdhxcfpch" path="res://Art/Models/Shaders/watcher.tscn" id="7_h3p2s"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1m850"]
 points = PackedVector3Array(-0.223856, -0.656205, -0.0451048, 0.252138, -0.3415, 0.0229395, 0.2797, -0.348674, 0.0232333, -0.259559, -0.6519, 0.0228407, -0.249745, -0.337652, -0.0451048, 0.24091, -0.656205, -0.0451048, 0.258169, -0.337652, -0.0451048, 0.276559, -0.6519, 0.0228407, -0.2627, -0.348674, 0.0232333, 0.284005, -0.656205, 0.0151552, -0.267005, -0.656205, 0.0151552, -0.2412, -0.342923, 0.0226319, 0.284005, -0.346321, 0.0151552, -0.267005, -0.346321, 0.0151552, -0.249745, -0.354927, -0.0451048, 0.258169, -0.354927, -0.0451048)
