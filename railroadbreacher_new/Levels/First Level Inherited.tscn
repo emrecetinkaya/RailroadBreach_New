@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://fxv3hqf8d1v2"]
+[gd_scene load_steps=13 format=3 uid="uid://kbsy2ygpc763"]
 
-[ext_resource type="PackedScene" uid="uid://b5fxfoh5iwes8" path="res://Art/Models/Models.tscn" id="1_bd8kc"]
+[ext_resource type="PackedScene" uid="uid://c7amcrofntg6r" path="res://Art/Models/Models.tscn" id="1_bd8kc"]
 [ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="2_5jk1y"]
 [ext_resource type="Script" path="res://Levels/first_level_inherited.gd" id="2_mg4mm"]
 [ext_resource type="Script" path="res://Levels/collision_shape_3d.gd" id="4_alo21"]
 [ext_resource type="Script" path="res://Levels/area_3d_2.gd" id="4_dikxr"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_325gm"]
+[ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="5_vy6jx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fek0r"]
 size = Vector3(21, 12, 8)
@@ -15,6 +17,30 @@ viewport_path = NodePath("SubViewportContainer3/SubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_m6e64"]
 viewport_path = NodePath("SubViewportContainer2/SubViewport")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_355y7"]
+shader = ExtResource("5_325gm")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(1920, 1080)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 3.0
+shader_parameter/distort_intensity = 0.02
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.00400005
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 5.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.16
+shader_parameter/vignette_opacity = 0.657
+
 [sub_resource type="World3D" id="World3D_57d5r"]
 
 [node name="Models" instance=ExtResource("1_bd8kc")]
@@ -23,7 +49,13 @@ script = ExtResource("2_mg4mm")
 [node name="SubViewport" parent="SubViewportContainer" index="0"]
 audio_listener_enable_3d = true
 
+[node name="Character" parent="SubViewportContainer/SubViewport" index="13"]
+transform = Transform3D(-0.890856, 0, -0.454286, 0, 1, 0, 0.454286, 0, -0.890856, -9.65963, -5.93925, 11.0481)
+
 [node name="Camera3D" parent="SubViewportContainer/SubViewport/Character" index="2"]
+current = true
+
+[node name="AudioListener3D" parent="SubViewportContainer/SubViewport/Character" index="8"]
 current = true
 
 [node name="Area3D" type="Area3D" parent="." index="1"]
@@ -63,17 +95,37 @@ size_2d_override = Vector2i(1920, 1080)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer3/SubViewport" index="0"]
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer3/SubViewport" index="0"]
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer3/SubViewport/CanvasLayer" index="0"]
+material = SubResource("ShaderMaterial_355y7")
+use_parent_material = true
+anchors_preset = -1
+anchor_top = -0.0157407
+anchor_right = 0.00885417
+anchor_bottom = 0.00740741
+offset_right = 1919.0
+offset_bottom = 1092.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -4.78202, -8.60753, 46.131)
+environment = ExtResource("5_vy6jx")
 
-[node name="Camera3D2" type="Camera3D" parent="SubViewportContainer3/SubViewport" index="1"]
+[node name="Camera3D2" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect" index="1"]
 transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.98023e-08, 0.866025, 0.5, 1, -6.88194e-09, -4.76847e-08, -28.368, -8.81704, 47.3118)
+environment = ExtResource("5_vy6jx")
 
-[node name="Camera3D3" type="Camera3D" parent="SubViewportContainer3/SubViewport" index="2"]
-transform = Transform3D(0.888505, 0, -0.458867, 0, 1, 0, 0.458867, 0, 0.888505, -44.7342, -8.09541, 70.696)
+[node name="Camera3D3" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect" index="2"]
+transform = Transform3D(0.998824, -1.86045e-09, -0.0484841, 0.00819991, 0.985594, 0.168927, 0.0477856, -0.169126, 0.984435, -43.04, -7.24645, 70.2563)
+environment = ExtResource("5_vy6jx")
+fov = 35.0
 
-[node name="Camera3D4" type="Camera3D" parent="SubViewportContainer3/SubViewport" index="3"]
-transform = Transform3D(-0.965926, -0.0669873, 0.25, 0, 0.965926, 0.258819, -0.258819, 0.25, -0.933013, -27.238, -1.84403, -5.39666)
+[node name="Camera3D4" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect" index="3"]
+transform = Transform3D(-0.999965, -0.00215919, 0.00805824, 0.00293198, 0.813348, 0.58177, -0.00781031, 0.581774, -0.813313, -27.238, -1.84403, 8.23779)
+environment = ExtResource("5_vy6jx")
+fov = 58.9
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="." index="6"]
 anchors_preset = 15

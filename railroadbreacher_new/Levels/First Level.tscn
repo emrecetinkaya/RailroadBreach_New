@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://dro2pj8755op1"]
+[gd_scene load_steps=20 format=3 uid="uid://dro2pj8755op1"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_dffvm"]
 [ext_resource type="PackedScene" uid="uid://utcfm28gp3wd" path="res://Art/Models/final_scene_setup.tscn" id="2_j6eir"]
 [ext_resource type="PackedScene" uid="uid://cewrupjijybpv" path="res://Art/Models/Train.fbx" id="3_akb4y"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_0ooes"]
+[ext_resource type="Script" path="res://Art/Models/train.gd" id="4_ygb8s"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_c5w7n"]
+[ext_resource type="PackedScene" uid="uid://jnqsihyjt5di" path="res://Levels/basic_interactable.tscn" id="6_ijesi"]
+[ext_resource type="AudioStream" uid="uid://yrqnmg6bc5mm" path="res://sounds/(train arrival)horror_effect2.wav" id="7_f2i8l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n0sag"]
 shader = ExtResource("1_dffvm")
@@ -70,6 +73,58 @@ albedo_color = Color(0.986742, 1, 0.334218, 1)
 albedo_color = Color(0.367857, 0.353468, 0.227267, 1)
 metallic_specular = 0.0
 
+[sub_resource type="Animation" id="Animation_ge7xv"]
+resource_name = "train_arrive"
+length = 26.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Train3:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 17.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-18.527, -13.315, 500), Vector3(-18.527, -13.315, 25)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Train3/AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_f2i8l")
+}],
+"times": PackedFloat32Array(6.43333)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_prjcd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Train3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-18.527, -13.315, 25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fh6wg"]
+_data = {
+"RESET": SubResource("Animation_prjcd"),
+"train_arrive": SubResource("Animation_ge7xv")
+}
+
 [node name="Node3D" type="Node3D"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -80,6 +135,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
+audio_listener_enable_3d = true
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
@@ -303,17 +359,25 @@ spot_angle_attenuation = 0.0346741
 [node name="Train" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_akb4y")]
 transform = Transform3D(0.916009, 0, 0, 0, 1.1982, 0, 0, 0, 1.51963, -42.9814, -13.3148, 32.5107)
 
-[node name="Train2" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_akb4y")]
-transform = Transform3D(0.916009, 0, 0, 0, 1.1982, 0, 0, 0, 1.51963, -42.9814, -13.3148, 57.9152)
+[node name="Train2" parent="SubViewportContainer/SubViewport/Train" instance=ExtResource("3_akb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.7176)
 
 [node name="Train3" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_akb4y")]
-transform = Transform3D(0.916009, 0, 0, 0, 1.1982, 0, 0, 0, 1.51963, -18.5265, -13.3148, 32.5107)
+transform = Transform3D(0.916009, 0, 0, 0, 1.1982, 0, 0, 0, 1.51963, -18.527, -13.315, 25)
+script = ExtResource("4_ygb8s")
 
-[node name="Train4" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_akb4y")]
-transform = Transform3D(0.916009, 0, 0, 0, 1.1982, 0, 0, 0, 1.51963, -18.5265, -13.3148, 57.9152)
+[node name="Train4" parent="SubViewportContainer/SubViewport/Train3" instance=ExtResource("3_akb4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.7176)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Train3"]
+visible = false
+doppler_tracking = 2
 
 [node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_0ooes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2156, -9.0414, 20.4022)
+transform = Transform3D(-0.242565, 0, -0.970135, 0, 1, 0, 0.970135, 0, -0.242565, -33.2156, -9.0414, 23.4246)
+
+[node name="AudioListener3D" parent="SubViewportContainer/SubViewport/Character" index="8"]
+current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer"]
 
@@ -329,98 +393,118 @@ offset_bottom = 1092.0
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="Kör Yolu" type="Node" parent="SubViewportContainer"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.543092, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -22.5723, -12.6141, 33.0827)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -22.3684, -12.5755, 33.0924)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -22.4897, -12.5757, 33.0921)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -22.6082, -12.5843, 33.079)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -22.639, -12.5843, 33.079)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -22.7361, -12.5843, 33.079)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -22.8291, -12.5843, 33.079)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.543092, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -39.333, -12.5441, 33.4458)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -39.1291, -12.5056, 33.4554)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -39.2504, -12.5058, 33.4551)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -39.3689, -12.5144, 33.442)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -39.3997, -12.5144, 33.442)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D14" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -39.4967, -12.5144, 33.442)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D15" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.0475833, 0, 0, 0, 0.155575, 0, 0, 0, 61.5999, -39.5898, -12.5144, 33.442)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wew31")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.543012, -0.00430459, 0, 0.00932663, 0.25062, 0, 0, 0, 61.5999, -21.3789, -12.6349, 33.0827)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_2t4xq")
 
-[node name="MeshInstance3D16" type="MeshInstance3D" parent="SubViewportContainer"]
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="SubViewportContainer/Kör Yolu"]
 transform = Transform3D(0.543092, 0, 0, 0, 0.250657, 0, 0, 0, 61.5999, -40.523, -12.6349, 33.0827)
 mesh = SubResource("BoxMesh_rhlg2")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_2t4xq")
+
+[node name="Basic Interactable" parent="SubViewportContainer" instance=ExtResource("6_ijesi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6216, -11.6548, 25.5675)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fh6wg")
+}
+autoplay = "train_arrive"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.477051, 0, 0.878875, 0, 1, 0, -0.878875, 0, 0.477051, -26.7801, -11.3872, 21.7409)
+visible = false
+autoplay = true
+
+[connection signal="grabed" from="SubViewportContainer/Basic Interactable" to="SubViewportContainer/SubViewport/Train3" method="_on_basic_interactable_grabed"]
+
+[editable path="SubViewportContainer/SubViewport/Character"]

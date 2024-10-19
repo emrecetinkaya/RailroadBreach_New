@@ -5,8 +5,6 @@ var mouse_sensitivity = 0.002
 var hands_full = false
 var on_camera = false
 
-signal interacted
-
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$Control/SubtitleLabel.visible = false
@@ -67,8 +65,6 @@ func _physics_process(delta: float) -> void:
 		if collider.has_method("grab"):
 			if Input.is_action_just_pressed("interact") and $RayCast3D.is_colliding and !hands_full:
 				hands_full = true
-				print("interacted")
-				emit_signal("interacted")
 				collider.grab()
 		if collider.has_method("change_cam"):
 			if Input.is_action_just_pressed("interact") and $RayCast3D.is_colliding and on_camera == false:

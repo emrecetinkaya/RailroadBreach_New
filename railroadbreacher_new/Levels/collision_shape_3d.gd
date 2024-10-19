@@ -1,10 +1,10 @@
 extends Area3D
 
 @onready var viewport = $"../SubViewportContainer3"
-@onready var camera_1 = $"../SubViewportContainer3/SubViewport/Camera3D"
-@onready var camera_2 = $"../SubViewportContainer3/SubViewport/Camera3D2"
-@onready var camera_3 = $"../SubViewportContainer3/SubViewport/Camera3D3"
-@onready var camera_4 = $"../SubViewportContainer3/SubViewport/Camera3D4"
+@onready var camera_1 = $"../SubViewportContainer3/SubViewport/CanvasLayer/ColorRect/Camera3D"
+@onready var camera_2 = $"../SubViewportContainer3/SubViewport/CanvasLayer/ColorRect/Camera3D2"
+@onready var camera_3 = $"../SubViewportContainer3/SubViewport/CanvasLayer/ColorRect/Camera3D3"
+@onready var camera_4 = $"../SubViewportContainer3/SubViewport/CanvasLayer/ColorRect/Camera3D4"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
