@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcwefggexpqy3"]
+[gd_scene load_steps=6 format=3 uid="uid://cr7glhtpc8h27"]
 
 [ext_resource type="PackedScene" uid="uid://c1feneeddhatx" path="res://Art/Models/MidTunnelWalls.fbx" id="1_yvoeh"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="2_jwch7"]

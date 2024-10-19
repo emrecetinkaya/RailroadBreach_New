@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://wykstavqgrge"
-path="res://.godot/imported/SubwayRoof.fbx-ecf719474361b8a0a934870e32e0b43d.scn"
+uid="uid://bkfpgynockc7y"
+path="res://.godot/imported/SubwayRoof.fbx-aa097456dce3874407e7ad6fd812ba09.scn"
 
 [deps]
 
-source_file="res://Art/Models/SubwayRoof.fbx"
-dest_files=["res://.godot/imported/SubwayRoof.fbx-ecf719474361b8a0a934870e32e0b43d.scn"]
+source_file="res://Art/SubwayRoof.fbx"
+dest_files=["res://.godot/imported/SubwayRoof.fbx-aa097456dce3874407e7ad6fd812ba09.scn"]
 
 [params]
 
