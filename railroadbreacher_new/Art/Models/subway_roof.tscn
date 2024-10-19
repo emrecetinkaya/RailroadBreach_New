@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://gty58uky1jl6"]
+
+[ext_resource type="PackedScene" uid="uid://wykstavqgrge" path="res://Art/Models/SubwayRoof.fbx" id="1_omw2v"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="2_s5ppt"]
+[ext_resource type="Texture2D" uid="uid://dkd3a4e8aqe0" path="res://Art/Models/Subway_Car_diffuse_1.jpeg" id="2_x3ipm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n5jpb"]
+render_priority = 0
+shader = ExtResource("2_s5ppt")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.737
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_x3ipm")
+
+[node name="SubwayRoof" instance=ExtResource("1_omw2v")]
+
+[node name="Roof + Floor (1st)_002" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_n5jpb")

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://botveyuntkiau"
-path="res://.godot/imported/tunnels.fbx-163cc88b8dc907e1414e2efacd6254be.scn"
+uid="uid://bq7c1ghnm6mbb"
+path="res://.godot/imported/Tex Test.fbx-6581ecd91b50e5ca5aba16dadacb80c1.scn"
 
 [deps]
 
-source_file="res://Art/tunnels.fbx"
-dest_files=["res://.godot/imported/tunnels.fbx-163cc88b8dc907e1414e2efacd6254be.scn"]
+source_file="res://Art/Models/Tex Test.fbx"
+dest_files=["res://.godot/imported/Tex Test.fbx-6581ecd91b50e5ca5aba16dadacb80c1.scn"]
 
 [params]
 

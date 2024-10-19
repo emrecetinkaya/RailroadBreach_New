@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=4 uid="uid://dm8srp7m52ujr"]
+
+[ext_resource type="PackedScene" uid="uid://bq7c1ghnm6mbb" path="res://Art/Models/Tex Test.fbx" id="1_hxwte"]
+[ext_resource type="Texture2D" uid="uid://bvuv7lrcimjsm" path="res://Art/Models/TilesPlain0276_2_seamless_S.jpg" id="2_6bdly"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="3_yd255"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcmf0"]
+resource_name = "Walls"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_6bdly")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_diw88"]
+_surfaces = [{
+"aabb": AABB(-0.241786, -0.350371, -0.0868708, 0.50041, 0.578213, 0.0504737),
+"format": 34359742465,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAEAAQAAAAQABgADAAIAAgAHAAYACAACAAEAAQAJAAgACgALAAwADAANAAoADQAOAA8ADwAKAA0AEAARAAwADAALABAAEgATAA0ADQAMABIA"),
+"name": "Walls",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("Jas9vWxPaT4WFRW9NgQ6vdJjs74WFRW935Z3vtJjs74WFRW9+oZ3vmxPaT4WFRW9NgQ6vUpwYz5S6bG9NgQ6vdJjs75S6bG935Z3vkpwYz5S6bG935Z3vtJjs75S6bG935Z3vtJjs76IbEK9NgQ6vdJjs76IbEK9CHGBPUpwYz4WFRW9WmqEPkpwYz4WFRW9WmqEPtFjs74WFRW9ivt+PdFjs74WFRW9ivt+PdFjs75R6bG9ivt+PUpwYz5R6bG9WmqEPkpwYz5R6bG9WmqEPtFjs75R6bG9WmqEPtFjs76IbEK9ivt+PdFjs76IbEK9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ybydp"]
+resource_name = "Plane"
+_surfaces = [{
+"aabb": AABB(-0.241786, -0.350371, -0.0868708, 0.50041, 0.578213, 0.0504737),
+"attribute_data": PackedByteArray("2oVuvz6v4MCVKme/pY4+QQ9s58Cljj5BDFznwD6v4MCZAvdA/hVSQGm0K8H+FVJAabQrwQel0D+C7PxAB6XQP5kC90D+FVJAguz8QAel0D9ptCvBB6XQP2m0K8H+FVJAD2znwDoJ/z8PbOfAB6XQP5UqZ78HpdA/lSpnvzoJ/z+dQCZAT63awNBVDkFPrdrA0FUOQaSOPkHASSRApI4+QWi0K8EHpdA/aLQrwfwVUkCZAvdA/BVSQJkC90AHpdA/mQL3QPwVUkBotCvB/BVSQGi0K8EHpdA/mQL3QAel0D/QVQ5BOgn/P8BJJEA6Cf8/wEkkQAel0D/QVQ5BB6XQPw=="),
+"format": 34359742487,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwA"),
+"material": SubResource("StandardMaterial3D_rcmf0"),
+"name": "Walls",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("Jas9vWxPaT4WFRW9NgQ6vdJjs74WFRW935Z3vtJjs74WFRW9+oZ3vmxPaT4WFRW9NgQ6vUpwYz5S6bG9NgQ6vdJjs75S6bG9NgQ6vdJjs74WFRW9Jas9vWxPaT4WFRW935Z3vkpwYz5S6bG9+oZ3vmxPaT4WFRW935Z3vtJjs74WFRW935Z3vtJjs75S6bG935Z3vtJjs76IbEK935Z3vtJjs74WFRW9NgQ6vdJjs74WFRW9NgQ6vdJjs76IbEK9CHGBPUpwYz4WFRW9WmqEPkpwYz4WFRW9WmqEPtFjs74WFRW9ivt+PdFjs74WFRW9ivt+PdFjs74WFRW9ivt+PdFjs75R6bG9ivt+PUpwYz5R6bG9CHGBPUpwYz4WFRW9WmqEPkpwYz5R6bG9WmqEPtFjs75R6bG9WmqEPtFjs74WFRW9WmqEPkpwYz4WFRW9WmqEPtFjs76IbEK9ivt+PdFjs76IbEK9ivt+PdFjs74WFRW9WmqEPtFjs74WFRW9/3//f////7//f/9/////v/9//3////+//3//f////7/I/hiA5n/y/8j+GIDlf/L/yP4YgOV/8v/I/hiA5n/y/xUAAYABgAAAFQABgAGAAAAVAAGAAYAAABUAAYABgAAA/38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f/9/////v/9//3////+//3//f////7//f/9/////v0wBGoAagA0ATAEagBqADQBMARqAGoANAEwBGoAagA0A////f/9///////9//3///////3//f///////f/9/////fwAA////v/9/AAD///+//38AAP///7//fwAA////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_diw88")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pott6"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_yd255")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.0
+shader_parameter/jitter = 0.0
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_6bdly")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3k2bv"]
+render_priority = 0
+shader = ExtResource("3_yd255")
+shader_parameter/affine_mapping = true
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_6bdly")
+
+[node name="Tex Test" instance=ExtResource("1_hxwte")]
+
+[node name="Grounds" parent="." index="0"]
+mesh = SubResource("ArrayMesh_ybydp")
+surface_material_override/0 = SubResource("ShaderMaterial_pott6")
+
+[node name="Wall" parent="." index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_3k2bv")

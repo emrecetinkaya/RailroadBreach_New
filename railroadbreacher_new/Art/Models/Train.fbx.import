@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7n0y2ndj2qvh"
-path="res://.godot/imported/Extras_1.fbx-1ca439e44a202ef8acd6e1fc820cb722.scn"
+uid="uid://cewrupjijybpv"
+path="res://.godot/imported/Train.fbx-944b997da981ac3e86aa4a17ab5bcd69.scn"
 
 [deps]
 
-source_file="res://Art/Extras_1.fbx"
-dest_files=["res://.godot/imported/Extras_1.fbx-1ca439e44a202ef8acd6e1fc820cb722.scn"]
+source_file="res://Art/Models/Train.fbx"
+dest_files=["res://.godot/imported/Train.fbx-944b997da981ac3e86aa4a17ab5bcd69.scn"]
 
 [params]
 

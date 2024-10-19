@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bxpi8jumw2nd2"
-path="res://.godot/imported/BigColons.fbx-1b8369aca5d48e481fbdbf2f3272e4c2.scn"
+uid="uid://c1feneeddhatx"
+path="res://.godot/imported/MidTunnelWalls.fbx-d2d4e167f34a39436b2cd6f7a5d17cf7.scn"
 
 [deps]
 
-source_file="res://Art/Models/BigColons.fbx"
-dest_files=["res://.godot/imported/BigColons.fbx-1b8369aca5d48e481fbdbf2f3272e4c2.scn"]
+source_file="res://Art/Models/MidTunnelWalls.fbx"
+dest_files=["res://.godot/imported/MidTunnelWalls.fbx-d2d4e167f34a39436b2cd6f7a5d17cf7.scn"]
 
 [params]
 

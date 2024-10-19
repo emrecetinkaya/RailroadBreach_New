@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr7glhtpc8h27"]
+
+[ext_resource type="PackedScene" uid="uid://c1feneeddhatx" path="res://Art/Models/MidTunnelWalls.fbx" id="1_yvoeh"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="2_jwch7"]
+[ext_resource type="Texture2D" uid="uid://bvuv7lrcimjsm" path="res://Art/Models/TilesPlain0276_2_seamless_S.jpg" id="3_k80ed"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r8cts"]
+render_priority = 0
+shader = ExtResource("2_jwch7")
+shader_parameter/affine_mapping = true
+shader_parameter/alpha_scissor = 0.56
+shader_parameter/jitter = 0.328
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("3_k80ed")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x5fu1"]
+render_priority = 0
+shader = ExtResource("2_jwch7")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.372
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("3_k80ed")
+
+[node name="MidTunnelWalls" instance=ExtResource("1_yvoeh")]
+
+[node name="Plane" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.311397, 0, 12.4812)
+surface_material_override/0 = SubResource("ShaderMaterial_r8cts")
+
+[node name="Cube" parent="." index="1"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 29.428)
+surface_material_override/0 = SubResource("ShaderMaterial_x5fu1")
