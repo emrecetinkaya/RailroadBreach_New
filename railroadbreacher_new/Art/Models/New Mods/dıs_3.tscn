@@ -1,0 +1,71 @@
+[gd_scene load_steps=16 format=3 uid="uid://c4fqoqkpygc0q"]
+
+[ext_resource type="PackedScene" uid="uid://dpl0wngxiw1sw" path="res://Art/Models/New Mods/Dıs3.fbx" id="1_ah6aj"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="2_fhg51"]
+[ext_resource type="Material" uid="uid://dsrwcbw023hkn" path="res://Art/Models/New Mods/Materials/Railroad.tres" id="3_dhx2d"]
+[ext_resource type="Texture2D" uid="uid://86m2d2getgbb" path="res://Art/Models/New Mods/Materials/TactilePaving.png" id="3_ueych"]
+[ext_resource type="Material" uid="uid://dcxagx5qqg4c" path="res://Art/Models/New Mods/Materials/Tile.tres" id="4_s2e1a"]
+[ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="6_vb0x2"]
+[ext_resource type="Texture2D" uid="uid://cusu4frx2qyf8" path="res://Art/Models/New Mods/Materials/Tiles.png" id="7_3volp"]
+[ext_resource type="Material" uid="uid://chmbhvbhjm780" path="res://Art/Models/New Mods/Materials/Concrete.tres" id="7_4cer4"]
+[ext_resource type="Material" uid="uid://c7nbvcuu8ciyx" path="res://Art/Models/New Mods/Materials/Door.tres" id="8_fp16p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21kku"]
+render_priority = 0
+shader = ExtResource("2_fhg51")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("3_ueych")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2shb4"]
+render_priority = 0
+shader = ExtResource("2_fhg51")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("7_3volp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_btg2t"]
+size = Vector3(0.333466, 0.112183, 0.0185605)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cftfr"]
+size = Vector3(0.362, 0.0552368, 0.00494385)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0emww"]
+size = Vector3(0.32666, 0.0010376, 0.098114)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_piemi"]
+size = Vector3(0.0158691, 0.280518, 0.125244)
+
+[node name="Dıs3" instance=ExtResource("1_ah6aj")]
+
+[node name="Dış 3" parent="." index="0"]
+transform = Transform3D(-9.01748e-06, 75.6441, -1.12719e-05, 2.25437e-06, 9.01748e-06, 75.6441, -75.6441, -4.50874e-06, 0, 0.0140199, -0.0990467, -0.0691977)
+surface_material_override/0 = SubResource("ShaderMaterial_21kku")
+surface_material_override/1 = ExtResource("3_dhx2d")
+surface_material_override/2 = ExtResource("4_s2e1a")
+surface_material_override/3 = ExtResource("6_vb0x2")
+surface_material_override/4 = ExtResource("7_4cer4")
+surface_material_override/5 = ExtResource("8_fp16p")
+surface_material_override/6 = SubResource("ShaderMaterial_2shb4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Dış 3" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dış 3/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, -1.69407e-21, 2.84217e-14, 1, 2.84217e-14, 0, -1.77636e-15, 1, 0.00782856, 0.0540209, -0.00593302)
+shape = SubResource("BoxShape3D_btg2t")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Dış 3/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, -1.69407e-21, 2.84217e-14, 1, 2.84217e-14, 0, -1.77636e-15, 1, -0.00501068, -0.0326894, -0.0134968)
+shape = SubResource("BoxShape3D_cftfr")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Dış 3/StaticBody3D" index="2"]
+transform = Transform3D(1, 0, -1.69407e-21, 2.84217e-14, 1, 2.84217e-14, 0, -1.77636e-15, 1, 0.00848707, -0.0620482, 0.0302361)
+shape = SubResource("BoxShape3D_0emww")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Dış 3/StaticBody3D" index="3"]
+transform = Transform3D(1, 0, -1.69407e-21, 2.84217e-14, 1, 2.84217e-14, 0, -1.77636e-15, 1, 0.00177364, -0.0224143, 0.0482372)
+shape = SubResource("BoxShape3D_piemi")
