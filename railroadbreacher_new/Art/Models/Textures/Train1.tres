@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cmg6e3rfwrbo"]
+
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_wdlud"]
+[ext_resource type="Texture2D" uid="uid://d268r3mu1tcy3" path="res://Art/Models/Textures/Trains.png" id="2_4lurp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wdlud")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_4lurp")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7mvw7ixv34np"]
+[gd_scene load_steps=10 format=3 uid="uid://7mvw7ixv34np"]
 
 [ext_resource type="PackedScene" uid="uid://dmg5exdyiie1j" path="res://Art/Final_final_Setup_Empty.fbx" id="1_wlyds"]
 [ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="2_6ex08"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://dsrwcbw023hkn" path="res://Art/Models/New Mods/Materials/Railroad.tres" id="4_4ql18"]
 [ext_resource type="Material" uid="uid://dcxagx5qqg4c" path="res://Art/Models/New Mods/Materials/Tile.tres" id="5_ewtm7"]
 [ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="6_hy787"]
+[ext_resource type="Material" uid="uid://chmbhvbhjm780" path="res://Art/Models/New Mods/Materials/Concrete.tres" id="7_3djvi"]
 [ext_resource type="PackedScene" uid="uid://v8rqdhxcfpch" path="res://Art/Models/Shaders/watcher.tscn" id="7_42kik"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jaev"]
@@ -20,6 +21,7 @@ surface_material_override/1 = ExtResource("3_nuhpp")
 surface_material_override/2 = ExtResource("4_4ql18")
 surface_material_override/3 = ExtResource("5_ewtm7")
 surface_material_override/4 = ExtResource("6_hy787")
+surface_material_override/5 = ExtResource("7_3djvi")
 surface_material_override/8 = SubResource("StandardMaterial3D_4jaev")
 
 [node name="Watcher" parent="." index="1" instance=ExtResource("7_42kik")]

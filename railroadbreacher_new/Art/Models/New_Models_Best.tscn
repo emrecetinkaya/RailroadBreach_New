@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlem4x25w3ll5"]
+[gd_scene load_steps=11 format=3 uid="uid://dlem4x25w3ll5"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_3hhqq"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_3y4a6"]
+[ext_resource type="PackedScene" uid="uid://twm2ure0v4gp" path="res://Art/Models/Textures/Train_updated.tscn" id="4_e3nos"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_nrwip"]
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="10_bqwk4"]
 
@@ -291,6 +292,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4611, 0.0175877, -9.56495)
 
 [node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_3y4a6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9727, -0.386924, -6.95304)
+
+[node name="Train" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_e3nos")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1895, -3.47134, -16.4781)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer"]
 
