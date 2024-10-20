@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dsrwcbw023hkn"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_avcmb"]
-[ext_resource type="Texture2D" uid="uid://drj5welo3hwld" path="res://Art/Models/New Mods/Materials/road_rails.jpg" id="2_c2g8c"]
+[ext_resource type="Texture2D" uid="uid://drj5welo3hwld" path="res://Art/Models/New Mods/Materials/Textures/road_rails.jpg" id="2_c2g8c"]
 
 [resource]
 render_priority = 0

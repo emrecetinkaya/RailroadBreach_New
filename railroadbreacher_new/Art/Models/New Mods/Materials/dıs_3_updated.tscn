@@ -1,0 +1,31 @@
+[gd_scene load_steps=11 format=3 uid="uid://po7q8rutpq5s"]
+
+[ext_resource type="PackedScene" uid="uid://bavg23pi62kef" path="res://Art/Models/New Mods/Dıs3.fbx" id="1_62k51"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="2_wxf32"]
+[ext_resource type="Texture2D" uid="uid://86m2d2getgbb" path="res://Art/Models/New Mods/Materials/Textures/TactilePaving.png" id="3_u2370"]
+[ext_resource type="Material" uid="uid://dsrwcbw023hkn" path="res://Art/Models/New Mods/Materials/Railroad.tres" id="4_sercy"]
+[ext_resource type="Material" uid="uid://dcxagx5qqg4c" path="res://Art/Models/New Mods/Materials/Tile.tres" id="5_nj4t5"]
+[ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="6_nfvlj"]
+[ext_resource type="Material" uid="uid://chmbhvbhjm780" path="res://Art/Models/New Mods/Materials/Concrete.tres" id="7_bsg0m"]
+[ext_resource type="Material" uid="uid://c7nbvcuu8ciyx" path="res://Art/Models/New Mods/Materials/Door.tres" id="8_drt4f"]
+[ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="9_8tlsw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_je7gf"]
+render_priority = 0
+shader = ExtResource("2_wxf32")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("3_u2370")
+
+[node name="Dıs3" instance=ExtResource("1_62k51")]
+
+[node name="Dış 3" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_je7gf")
+surface_material_override/1 = ExtResource("4_sercy")
+surface_material_override/2 = ExtResource("5_nj4t5")
+surface_material_override/3 = ExtResource("6_nfvlj")
+surface_material_override/4 = ExtResource("7_bsg0m")
+surface_material_override/5 = ExtResource("8_drt4f")
+surface_material_override/6 = ExtResource("9_8tlsw")

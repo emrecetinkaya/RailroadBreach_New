@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drj5welo3hwld"
-path.s3tc="res://.godot/imported/road_rails.jpg-dccc9f460864f60b20d9460a4bc7cc9a.s3tc.ctex"
+path.s3tc="res://.godot/imported/road_rails.jpg-7f03bddcef11607650a4f339022a01f5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/Models/New Mods/Materials/road_rails.jpg"
-dest_files=["res://.godot/imported/road_rails.jpg-dccc9f460864f60b20d9460a4bc7cc9a.s3tc.ctex"]
+source_file="res://Art/Models/New Mods/Materials/Textures/road_rails.jpg"
+dest_files=["res://.godot/imported/road_rails.jpg-7f03bddcef11607650a4f339022a01f5.s3tc.ctex"]
 
 [params]
 

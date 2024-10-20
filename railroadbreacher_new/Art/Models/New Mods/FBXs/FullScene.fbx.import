@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bavg23pi62kef"
-path="res://.godot/imported/Dıs3.fbx-f1784d46aa6f1351324288eee3b9437b.scn"
+uid="uid://dpbbs8aarf2"
+path="res://.godot/imported/FullScene.fbx-4a1df0f62526bccb5623df5db9e910de.scn"
 
 [deps]
 
-source_file="res://Art/Models/New Mods/Dıs3.fbx"
-dest_files=["res://.godot/imported/Dıs3.fbx-f1784d46aa6f1351324288eee3b9437b.scn"]
+source_file="res://Art/Models/New Mods/FBXs/FullScene.fbx"
+dest_files=["res://.godot/imported/FullScene.fbx-4a1df0f62526bccb5623df5db9e910de.scn"]
 
 [params]
 

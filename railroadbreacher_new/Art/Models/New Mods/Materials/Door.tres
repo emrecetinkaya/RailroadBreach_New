@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c7nbvcuu8ciyx"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_ah4ob"]
-[ext_resource type="Texture2D" uid="uid://cyttul85bnyto" path="res://Art/Models/New Mods/Materials/Door_01.jpg" id="2_v5g81"]
+[ext_resource type="Texture2D" uid="uid://cyttul85bnyto" path="res://Art/Models/New Mods/Materials/Textures/Door_01.jpg" id="2_v5g81"]
 
 [resource]
 render_priority = 0

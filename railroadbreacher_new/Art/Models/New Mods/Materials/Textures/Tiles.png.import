@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyttul85bnyto"
-path.s3tc="res://.godot/imported/Door_01.jpg-dd75b31abc482cccf0ff8424653fc48b.s3tc.ctex"
+uid="uid://cusu4frx2qyf8"
+path.s3tc="res://.godot/imported/Tiles.png-df4eb4ba3899aab4575e0e168d18ef4b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/Models/New Mods/Materials/Door_01.jpg"
-dest_files=["res://.godot/imported/Door_01.jpg-dd75b31abc482cccf0ff8424653fc48b.s3tc.ctex"]
+source_file="res://Art/Models/New Mods/Materials/Textures/Tiles.png"
+dest_files=["res://.godot/imported/Tiles.png-df4eb4ba3899aab4575e0e168d18ef4b.s3tc.ctex"]
 
 [params]
 
