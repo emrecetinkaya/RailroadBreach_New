@@ -44,14 +44,14 @@ func _input(event):
 			$Marker3D.position.y += 0.4
 			$Marker3D2.position.y += 0.4
 			
-	if Input.is_action_just_pressed("1"):
-		y = 0
-	if Input.is_action_just_pressed("2"):
-		y = 1
-	if Input.is_action_just_pressed("3"):
-		y = 2
-	if Input.is_action_just_pressed("4"):
-		y = 3
+	#if Input.is_action_just_pressed("1"):
+		#y = 0
+	#if Input.is_action_just_pressed("2"):
+		#y = 1
+	#if Input.is_action_just_pressed("3"):
+		#y = 2
+	#if Input.is_action_just_pressed("4"):
+		#y = 3
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
