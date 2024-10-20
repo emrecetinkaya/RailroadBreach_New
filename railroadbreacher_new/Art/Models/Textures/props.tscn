@@ -1,0 +1,46 @@
+[gd_scene load_steps=12 format=3 uid="uid://cxmvxhbl74r2b"]
+
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_bpgkr"]
+[ext_resource type="Texture2D" uid="uid://bf4i2jbpcavji" path="res://Art/Models/Textures/ticket_machine.png" id="2_olbir"]
+[ext_resource type="Texture2D" uid="uid://helqk3v6rvmv" path="res://Art/Models/Textures/trash_can.png" id="3_k4gt8"]
+[ext_resource type="Texture2D" uid="uid://c1utbnxoeedlp" path="res://Art/Models/Textures/Chair.png" id="4_ngcdi"]
+[ext_resource type="Texture2D" uid="uid://udjajuuy65dc" path="res://Art/Models/Textures/Vending_machine.png" id="5_qim36"]
+[ext_resource type="Texture2D" uid="uid://lomx8hwqwo8p" path="res://Art/Models/Textures/automatic_ticket_gate.png" id="6_ew30e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f84ss"]
+render_priority = 0
+shader = ExtResource("1_bpgkr")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_olbir")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ua364"]
+albedo_texture = ExtResource("3_k4gt8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_thfc8"]
+albedo_texture = ExtResource("4_ngcdi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ivas"]
+albedo_texture = ExtResource("5_qim36")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8yths"]
+albedo_texture = ExtResource("6_ew30e")
+
+[node name="Props"]
+
+[node name="ticket_machine" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_f84ss")
+
+[node name="trash_can" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ua364")
+
+[node name="Chair" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_thfc8")
+
+[node name="Vending_machine" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7ivas")
+
+[node name="automatic_ticket_gate" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8yths")
