@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://paper.gd" id="1_ttaeb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rihym"]
+bounce = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_dw2rg"]
 size = Vector3(0.21, 0.297, 0.01)

@@ -1,10 +1,10 @@
 extends RigidBody3D
 @onready var original_parent = get_parent()
 @onready var original_origin = transform.origin
-@onready var new_parent = $"../../SubViewportContainer/SubViewport/Character/Marker3D"
-@onready var character = $"../../SubViewportContainer/SubViewport/Character"
+@onready var new_parent = $SubViewportContainer/SubViewport/Character/Marker3D
+@onready var character = $SubViewportContainer/SubViewport/Character
 @onready var grabbed = false
-@onready var target = $"../../SubViewportContainer/SubViewport/Character/Marker3D2"
+@onready var target = $SubViewportContainer/SubViewport/Character/Marker3D2
 
 
 

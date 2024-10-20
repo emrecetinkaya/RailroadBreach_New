@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://3csx1d3hu3o"]
+[gd_scene load_steps=10 format=3 uid="uid://ps3nt6coafv4"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_3hhqq"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_3y4a6"]
@@ -60,7 +60,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.16
 shader_parameter/vignette_opacity = 0.657
 
-[node name="Models" type="Node3D"]
+[node name="Models3" type="Node3D"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_c2nmq")
