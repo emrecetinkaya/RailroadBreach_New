@@ -4,7 +4,7 @@ const JUMP_VELOCITY = 4.5
 var mouse_sensitivity = 0.002
 var hands_full = false
 var on_camera = false
-
+var crouched = false
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$Control/SubtitleLabel.visible = false
@@ -25,7 +25,22 @@ func _input(event):
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			
-
+	if Input.is_action_just_pressed("crouch"):
+		if !crouched:
+			crouched = true
+			$RayCast3D.position.y -= 0.5
+			$Camera3D.position.y -= 0.5
+			$CollisionShape3D.scale.y -= 0.5
+			$Marker3D.position.y -= 0.5
+			$Marker3D2.position.y -= 0.5
+		elif crouched:
+			crouched = false
+			$RayCast3D.position.y += 0.5
+			$Camera3D.position.y += 0.5
+			$CollisionShape3D.scale.y += 0.5
+			$Marker3D.position.y += 0.5
+			$Marker3D2.position.y += 0.5
+			
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
