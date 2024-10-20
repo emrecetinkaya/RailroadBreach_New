@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://dm8srp7m52ujr"]
 
 [ext_resource type="PackedScene" uid="uid://bq7c1ghnm6mbb" path="res://Art/Models/Tex Test.fbx" id="1_hxwte"]
-[ext_resource type="Texture2D" uid="uid://bvuv7lrcimjsm" path="res://Art/Models/TilesPlain0276_2_seamless_S.jpg" id="2_6bdly"]
+[ext_resource type="Texture2D" uid="uid://bvuv7lrcimjsm" path="res://Art/Models/Textures/TilesPlain0276_2_seamless_S.jpg" id="2_6bdly"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="3_yd255"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcmf0"]

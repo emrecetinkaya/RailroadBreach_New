@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c1feneeddhatx" path="res://Art/Models/MidTunnelWalls.fbx" id="1_yvoeh"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="2_jwch7"]
-[ext_resource type="Texture2D" uid="uid://bvuv7lrcimjsm" path="res://Art/Models/TilesPlain0276_2_seamless_S.jpg" id="3_k80ed"]
+[ext_resource type="Texture2D" uid="uid://bvuv7lrcimjsm" path="res://Art/Models/Textures/TilesPlain0276_2_seamless_S.jpg" id="3_k80ed"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r8cts"]
 render_priority = 0

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c170h4fhjyrxl" path="res://Art/Roof 1st.fbx" id="1_6tm1u"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="2_5xmfa"]
-[ext_resource type="Texture2D" uid="uid://dkd3a4e8aqe0" path="res://Art/Models/Subway_Car_diffuse_1.jpeg" id="3_xho8q"]
+[ext_resource type="Texture2D" uid="uid://dkd3a4e8aqe0" path="res://Art/Models/Textures/Subway_Car_diffuse_1.jpeg" id="3_xho8q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0ymcs"]
 render_priority = 0

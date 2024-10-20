@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvuv7lrcimjsm"
-path.s3tc="res://.godot/imported/TilesPlain0276_2_seamless_S.jpg-9351355c4d1adbb8413da134e2e2e24f.s3tc.ctex"
+uid="uid://dkd3a4e8aqe0"
+path.s3tc="res://.godot/imported/Subway_Car_diffuse_1.jpeg-39b8ec05888c78c9939eab5bdf6c25d2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/Models/TilesPlain0276_2_seamless_S.jpg"
-dest_files=["res://.godot/imported/TilesPlain0276_2_seamless_S.jpg-9351355c4d1adbb8413da134e2e2e24f.s3tc.ctex"]
+source_file="res://Art/Models/Textures/Subway_Car_diffuse_1.jpeg"
+dest_files=["res://.godot/imported/Subway_Car_diffuse_1.jpeg-39b8ec05888c78c9939eab5bdf6c25d2.s3tc.ctex"]
 
 [params]
 
