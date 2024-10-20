@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1mknmxlmj026"]
+
+[ext_resource type="PackedScene" uid="uid://c78b0karyiapy" path="res://Art/Models/New Mods/FBXs/Props.fbx" id="1_ufwqe"]
+[ext_resource type="PackedScene" uid="uid://b4whs7fhbas1u" path="res://Art/Models/Turnike.fbx" id="2_sdyer"]
+
+[node name="Props" instance=ExtResource("1_ufwqe")]
+
+[node name="automatic_ticket_gate" parent="." index="4"]
+visible = false
+
+[node name="Turnike" parent="." index="5" instance=ExtResource("2_sdyer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.79945, 1.44724, -0.337463)
