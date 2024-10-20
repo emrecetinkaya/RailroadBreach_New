@@ -29,18 +29,21 @@ func _input(event):
 	if Input.is_action_just_pressed("crouch"):
 		if !crouched:
 			crouched = true
-			$RayCast3D.position.y -= 0.5
-			$Camera3D.position.y -= 0.5
-			$CollisionShape3D.scale.y -= 0.5
-			$Marker3D.position.y -= 0.5
-			$Marker3D2.position.y -= 0.5
+			$RayCast3D.position.y -= 0.4
+			$Camera3D.position.y -= 0.4
+			$CollisionShape3D.scale.y -= 0.4
+			$CollisionShape3D.position.y -= 0.4
+			$Marker3D.position.y -= 0.4
+			$Marker3D2.position.y -= 0.4
 		elif crouched:
 			crouched = false
-			$RayCast3D.position.y += 0.5
-			$Camera3D.position.y += 0.5
-			$CollisionShape3D.scale.y += 0.5
-			$Marker3D.position.y += 0.5
-			$Marker3D2.position.y += 0.5
+			$RayCast3D.position.y += 0.4
+			$Camera3D.position.y += 0.4
+			$CollisionShape3D.scale.y += 0.4
+			$CollisionShape3D.position.y += 0.4
+			$Marker3D.position.y += 0.4
+			$Marker3D2.position.y += 0.4
+			
 	if Input.is_action_just_pressed("1"):
 		y = 0
 	if Input.is_action_just_pressed("2"):
@@ -58,6 +61,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Toggle Flashlight"):
 			print("f pressed")
 			$SpotLight3D.visible = !$SpotLight3D.visible
+			
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():

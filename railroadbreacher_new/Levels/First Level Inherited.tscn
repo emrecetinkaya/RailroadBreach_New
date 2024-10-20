@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://kbsy2ygpc763"]
+[gd_scene load_steps=25 format=3 uid="uid://kbsy2ygpc763"]
 
 [ext_resource type="PackedScene" uid="uid://c7amcrofntg6r" path="res://Art/Models/Models.tscn" id="1_bd8kc"]
 [ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="2_5jk1y"]
@@ -10,6 +10,115 @@
 [ext_resource type="AudioStream" uid="uid://yrqnmg6bc5mm" path="res://sounds/(train arrival)horror_effect2.wav" id="8_cqa8c"]
 [ext_resource type="FontFile" uid="uid://dtxmbsrj7lne4" path="res://Art/metro-time-sign.ttf" id="9_tmdy0"]
 [ext_resource type="PackedScene" uid="uid://iddumrl7y3i4" path="res://paper.tscn" id="10_npge8"]
+
+[sub_resource type="Animation" id="Animation_eo4pb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RayCast3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.73, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8ld38"]
+resource_name = "crouch"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RayCast3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.73, 0), Vector3(0, 0.43, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.73, 0), Vector3(0, 0.43, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.73, 0), Vector3(0, 0.43, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Marker3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.73, 0), Vector3(0, 0.43, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Marker3D2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.73, 0), Vector3(0, 0.43, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CollisionShape3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tosl6"]
+_data = {
+"RESET": SubResource("Animation_eo4pb"),
+"crouch": SubResource("Animation_8ld38")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fek0r"]
 size = Vector3(21, 12, 8)
@@ -137,7 +246,7 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2i5av"]
 
-[node name="Models" instance=ExtResource("1_bd8kc")]
+[node name="Models2" instance=ExtResource("1_bd8kc")]
 script = ExtResource("2_mg4mm")
 
 [node name="SubViewport" parent="SubViewportContainer" index="0"]
@@ -152,8 +261,19 @@ transform = Transform3D(0.916009, 0, 0, 0, 1.1982, 0, 0, 0, 1.51963, -18.527, -1
 [node name="Character" parent="SubViewportContainer/SubViewport" index="11"]
 transform = Transform3D(-0.890856, 0, -0.454286, 0, 1, 0, 0.454286, 0, -0.890856, -9.65963, -5.93925, 11.0481)
 
+[node name="CollisionShape3D" parent="SubViewportContainer/SubViewport/Character" index="0"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
 [node name="Camera3D" parent="SubViewportContainer/SubViewport/Character" index="2"]
 current = true
+
+[node name="Marker3D2" parent="SubViewportContainer/SubViewport/Character" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
+
+[node name="AnimationPlayer" parent="SubViewportContainer/SubViewport/Character" index="8"]
+libraries = {
+"": SubResource("AnimationLibrary_tosl6")
+}
 
 [node name="Area3D" type="Area3D" parent="." index="1"]
 transform = Transform3D(0.0253571, 0, 0.00543785, 0, 0.07, 0, -0.0543785, 0, 0.00253571, -6.80093, -6.21007, 12.6225)
