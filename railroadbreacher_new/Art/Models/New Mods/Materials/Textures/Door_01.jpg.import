@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2si5fwlqn17m"
-path.s3tc="res://.godot/imported/ConcreteBare.png-003a1cc47321c777a7c71db07c5fed0e.s3tc.ctex"
+uid="uid://cyttul85bnyto"
+path.s3tc="res://.godot/imported/Door_01.jpg-1698f69aaf70c70feff32221d3151d1f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/Models/New Mods/Materials/ConcreteBare.png"
-dest_files=["res://.godot/imported/ConcreteBare.png-003a1cc47321c777a7c71db07c5fed0e.s3tc.ctex"]
+source_file="res://Art/Models/New Mods/Materials/Textures/Door_01.jpg"
+dest_files=["res://.godot/imported/Door_01.jpg-1698f69aaf70c70feff32221d3151d1f.s3tc.ctex"]
 
 [params]
 

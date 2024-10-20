@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://ckh5r0ra3yk6d"]
+
+[ext_resource type="PackedScene" uid="uid://dpbbs8aarf2" path="res://Art/Models/New Mods/FBXs/FullScene.fbx" id="1_1nhx7"]
+[ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="2_md2vp"]
+[ext_resource type="Material" uid="uid://beg5rh37ncp4r" path="res://Art/Models/New Mods/Materials/yellow.tres" id="3_b0j6l"]
+[ext_resource type="Material" uid="uid://dsrwcbw023hkn" path="res://Art/Models/New Mods/Materials/Railroad.tres" id="4_f3hnv"]
+[ext_resource type="Material" uid="uid://dcxagx5qqg4c" path="res://Art/Models/New Mods/Materials/Tile.tres" id="5_10k8n"]
+[ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="6_3el7a"]
+[ext_resource type="Material" uid="uid://chmbhvbhjm780" path="res://Art/Models/New Mods/Materials/Concrete.tres" id="7_pqjfv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1wlv"]
+size = Vector3(0.709473, 1, 0.001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pspua"]
+size = Vector3(0.177094, 0.406738, 0.00732422)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ekff7"]
+size = Vector3(0.0456314, 0.0966492, 0.00622559)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jiicm"]
+size = Vector3(0.291948, 0.166534, 0.001)
+
+[node name="FullScene" instance=ExtResource("1_1nhx7")]
+
+[node name="St_03_509" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_md2vp")
+surface_material_override/1 = ExtResource("3_b0j6l")
+surface_material_override/2 = ExtResource("4_f3hnv")
+surface_material_override/3 = ExtResource("5_10k8n")
+surface_material_override/4 = ExtResource("6_3el7a")
+surface_material_override/5 = ExtResource("7_pqjfv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="St_03_509" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="St_03_509/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, 0.0378418, 1.70069e-08, -0.0371833)
+shape = SubResource("BoxShape3D_f1wlv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="St_03_509/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, -0.171277, -0.00666838, -0.0304738)
+shape = SubResource("BoxShape3D_pspua")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="St_03_509/StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, -0.171277, -0.00666838, -0.0304738)
+shape = SubResource("BoxShape3D_pspua")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="St_03_509/StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, 0.0896727, -0.00666838, -0.0304738)
+shape = SubResource("BoxShape3D_pspua")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="St_03_509/StaticBody3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, -0.171277, -0.00666838, -0.0304738)
+shape = SubResource("BoxShape3D_pspua")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="St_03_509/StaticBody3D" index="5"]
+transform = Transform3D(1, 0, 0, 0, 0.883638, 0.468179, 0, -0.468179, 0.883638, -0.138963, -0.115483, -0.0116776)
+shape = SubResource("BoxShape3D_ekff7")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="St_03_509/StaticBody3D" index="6"]
+transform = Transform3D(1, 0, 0, 0, 0.883638, 0.468179, 0, -0.468179, 0.883638, 0.0585718, -0.115483, -0.0116776)
+shape = SubResource("BoxShape3D_ekff7")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="St_03_509/StaticBody3D" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, -0.0159302, -0.247207, 0.0136264)
+shape = SubResource("BoxShape3D_jiicm")

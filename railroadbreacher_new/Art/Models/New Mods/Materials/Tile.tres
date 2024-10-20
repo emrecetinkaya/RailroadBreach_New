@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dcxagx5qqg4c"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_kegj1"]
-[ext_resource type="Texture2D" uid="uid://icbx0oxhve24" path="res://Art/Models/New Mods/Materials/tile_tile.jpg" id="2_7pi2f"]
+[ext_resource type="Texture2D" uid="uid://icbx0oxhve24" path="res://Art/Models/New Mods/Materials/Textures/tile_tile.jpg" id="2_7pi2f"]
 
 [resource]
 render_priority = 0

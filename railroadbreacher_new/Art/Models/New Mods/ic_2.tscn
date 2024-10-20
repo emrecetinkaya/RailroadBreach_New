@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=3 uid="uid://rmnk7r47i2ta"]
+
+[ext_resource type="PackedScene" uid="uid://cvfpslk4ho04r" path="res://Art/Models/New Mods/FBXs/Ic2.fbx" id="1_jlcob"]
+[ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="2_bti4x"]
+[ext_resource type="Material" uid="uid://beg5rh37ncp4r" path="res://Art/Models/New Mods/Materials/yellow.tres" id="3_eqipc"]
+[ext_resource type="Material" uid="uid://dsrwcbw023hkn" path="res://Art/Models/New Mods/Materials/Railroad.tres" id="4_bvsyl"]
+[ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="5_ilye1"]
+[ext_resource type="Material" uid="uid://chmbhvbhjm780" path="res://Art/Models/New Mods/Materials/Concrete.tres" id="6_28eqm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0qf8d"]
+size = Vector3(0.0765572, 0.124893, 0.00378418)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ebaxs"]
+size = Vector3(0.0510101, 0.134827, 0.00189209)
+
+[node name="Ic2" instance=ExtResource("1_jlcob")]
+
+[node name="İç 2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_bti4x")
+surface_material_override/1 = ExtResource("3_eqipc")
+surface_material_override/2 = ExtResource("4_bvsyl")
+surface_material_override/3 = ExtResource("5_ilye1")
+surface_material_override/4 = ExtResource("6_28eqm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="İç 2" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="İç 2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, -0.0210916, -0.000830424, -0.0250217)
+shape = SubResource("BoxShape3D_0qf8d")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="İç 2/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, 0.0383289, 0.00450414, -0.0376098)
+shape = SubResource("BoxShape3D_ebaxs")

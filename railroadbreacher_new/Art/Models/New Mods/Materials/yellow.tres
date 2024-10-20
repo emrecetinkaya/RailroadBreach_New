@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://beg5rh37ncp4r"]
+
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_fx85q"]
+[ext_resource type="Texture2D" uid="uid://86m2d2getgbb" path="res://Art/Models/New Mods/Materials/Textures/TactilePaving.png" id="2_g0bju"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_fx85q")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_g0bju")

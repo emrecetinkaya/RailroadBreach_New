@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cusu4frx2qyf8"
-path.s3tc="res://.godot/imported/Tiles.png-3fc5c5ca323f025fe7923a8e9dae3a80.s3tc.ctex"
+uid="uid://vo2u4xgfg0sb"
+path.s3tc="res://.godot/imported/metal_02.png-d628b2ed840036941d824da9446a4c6e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/Models/New Mods/Materials/Tiles.png"
-dest_files=["res://.godot/imported/Tiles.png-3fc5c5ca323f025fe7923a8e9dae3a80.s3tc.ctex"]
+source_file="res://Art/Models/New Mods/Materials/Textures/metal_02.png"
+dest_files=["res://.godot/imported/metal_02.png-d628b2ed840036941d824da9446a4c6e.s3tc.ctex"]
 
 [params]
 
