@@ -1,12 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://dpj3vyn2s20xq"]
+[gd_scene load_steps=25 format=3 uid="uid://dyiggmifv1lss"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_76yur"]
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_r4afn"]
-[ext_resource type="PackedScene" uid="uid://twm2ure0v4gp" path="res://Art/Models/Textures/Train_updated.tscn" id="3_qa76i"]
+[ext_resource type="PackedScene" path="res://Art/Models/Textures/Train_updated.tscn" id="3_qa76i"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="3_rki1j"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="4_61u13"]
 [ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="5_0qrds"]
-[ext_resource type="PackedScene" uid="uid://jnqsihyjt5di" path="res://Levels/basic_interactable.tscn" id="5_mrfqy"]
 [ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="6_qd47y"]
 [ext_resource type="Script" path="res://Scripts/camera_panel_controls.gd" id="7_xd24x"]
 [ext_resource type="Script" path="res://Scripts/input_panel_controls.gd" id="8_p8fbp"]
@@ -145,6 +144,8 @@ _data = {
 "RESET": SubResource("Animation_ocjjm"),
 "train_arrive": SubResource("Animation_ri8jk")
 }
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ebg2"]
 
 [node name="Models" type="Node3D"]
 
@@ -491,5 +492,6 @@ libraries = {
 }
 autoplay = "train_arrive"
 
-[node name="Basic Interactable" parent="." instance=ExtResource("5_mrfqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5675, 2.48677, 14.3723)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6465, 2.95572, 13.623)
+mesh = SubResource("BoxMesh_4ebg2")
