@@ -1,17 +1,18 @@
-[gd_scene load_steps=24 format=3 uid="uid://crj1jnequp6c6"]
+[gd_scene load_steps=25 format=3 uid="uid://u6t6denyldwn"]
 
-[ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_pa8ck"]
-[ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_q3n23"]
-[ext_resource type="PackedScene" uid="uid://twm2ure0v4gp" path="res://Art/Models/Textures/Train_updated.tscn" id="3_4mwhq"]
-[ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_ys68d"]
-[ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_1y6on"]
-[ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="6_vlxch"]
-[ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="7_juupq"]
-[ext_resource type="Script" path="res://Scripts/camera_panel_controls.gd" id="8_s5l5q"]
-[ext_resource type="Script" path="res://Scripts/input_panel_controls.gd" id="9_phj6n"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_c3pu0"]
+[ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_66bno"]
+[ext_resource type="PackedScene" uid="uid://twm2ure0v4gp" path="res://Art/Models/Textures/Train_updated.tscn" id="3_da5py"]
+[ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_ttki6"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_cq743"]
+[ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="6_k4tvu"]
+[ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="7_3aur6"]
+[ext_resource type="Script" path="res://Scripts/camera_panel_controls.gd" id="8_thl8p"]
+[ext_resource type="Script" path="res://Scripts/input_panel_controls.gd" id="9_5dyi7"]
+[ext_resource type="PackedScene" uid="uid://jnqsihyjt5di" path="res://Levels/basic_interactable.tscn" id="10_bsnt0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
-shader = ExtResource("1_pa8ck")
+shader = ExtResource("1_c3pu0")
 shader_parameter/enabled = true
 shader_parameter/dithering = true
 shader_parameter/colors = 14
@@ -46,7 +47,7 @@ volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.444893, 0.637527, 0.749093, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dips7"]
-shader = ExtResource("5_1y6on")
+shader = ExtResource("5_cq743")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.0
@@ -70,7 +71,7 @@ shader_parameter/vignette_intensity = 0.16
 shader_parameter/vignette_opacity = 0.657
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8dqjt"]
-shader = ExtResource("5_1y6on")
+shader = ExtResource("5_cq743")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.0
@@ -367,16 +368,16 @@ environment = SubResource("Environment_lahrx")
 
 [node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
-[node name="FullScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_q3n23")]
+[node name="FullScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_66bno")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4611, 0.0175877, -9.56495)
 
-[node name="Train" parent="SubViewportContainer/SubViewport/FullScene" instance=ExtResource("3_4mwhq")]
+[node name="Train" parent="SubViewportContainer/SubViewport/FullScene" instance=ExtResource("3_da5py")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60256, -3.47134, -16.4781)
 
-[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train" instance=ExtResource("3_4mwhq")]
+[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train" instance=ExtResource("3_da5py")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
 
-[node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_ys68d")]
+[node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_ttki6")]
 transform = Transform3D(0.639479, 0, 0.768808, 0, 1, 0, -0.768808, 0, 0.639479, 17.4012, 2.74941, 14.9456)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer"]
@@ -420,20 +421,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
 transform = Transform3D(-4.37114e-08, -0.390731, 0.920505, 0, 0.920505, 0.390731, -1, 1.70794e-08, -4.02365e-08, 28.852, 0.806, -27.83)
-environment = ExtResource("6_vlxch")
+environment = ExtResource("6_k4tvu")
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
 transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, 40.78, 1.5, -50)
-environment = ExtResource("6_vlxch")
+environment = ExtResource("6_k4tvu")
 
 [node name="Camera3D3" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
 transform = Transform3D(-0.951057, 0.0536602, -0.304322, 0, 0.984808, 0.173648, 0.309017, 0.165149, -0.936608, 3.048, 0.806, -25.554)
-environment = ExtResource("6_vlxch")
+environment = ExtResource("6_k4tvu")
 fov = 40.0
 
 [node name="Camera3D4" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 24.12, 5.489, 23.354)
-environment = ExtResource("6_vlxch")
+environment = ExtResource("6_k4tvu")
 fov = 40.0
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
@@ -456,7 +457,7 @@ size_2d_override = Vector2i(1920, 1080)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Control" parent="SubViewportContainer2/SubViewport" instance=ExtResource("7_juupq")]
+[node name="Control" parent="SubViewportContainer2/SubViewport" instance=ExtResource("7_3aur6")]
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(0.0253571, 0, 0.00543785, 0, 0.07, 0, -0.0543785, 0, 0.00253571, 13.5477, 2.95572, 12.7367)
@@ -470,7 +471,7 @@ texture = SubResource("ViewportTexture_fcpeg")
 
 [node name="Area3D2" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5477, 2.95572, 12.7367)
-script = ExtResource("8_s5l5q")
+script = ExtResource("8_thl8p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
 transform = Transform3D(0.604708, 0, 0.079613, 0, 0.91864, 0, -1.30488, 0, 0.0368943, 0.0691948, 0.0147789, 0.0320663)
@@ -478,7 +479,7 @@ shape = SubResource("BoxShape3D_vmlsl")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(0.757519, 0, -0.652813, 0, 1, 0, 0.652813, 0, 0.757519, 14.515, 2.95572, 11.809)
-script = ExtResource("9_phj6n")
+script = ExtResource("9_5dyi7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.484032, 0, 0.0559909, 0, 0.755207, 0, -1.04448, 0, 0.0259474, 0.0825844, -0.0108752, 0.0650787)
@@ -489,3 +490,6 @@ libraries = {
 "": SubResource("AnimationLibrary_jascy")
 }
 autoplay = "train_arrive"
+
+[node name="Basic Interactable" parent="." instance=ExtResource("10_bsnt0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5675, 2.48677, 14.3723)
