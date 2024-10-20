@@ -5,6 +5,7 @@ var mouse_sensitivity = 0.002
 var hands_full = false
 var on_camera = false
 var crouched = false
+var y = 1
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$Control/SubtitleLabel.visible = false
@@ -40,7 +41,15 @@ func _input(event):
 			$CollisionShape3D.scale.y += 0.5
 			$Marker3D.position.y += 0.5
 			$Marker3D2.position.y += 0.5
-			
+	if Input.is_action_just_pressed("1"):
+		y = 0
+	if Input.is_action_just_pressed("2"):
+		y = 1
+	if Input.is_action_just_pressed("3"):
+		y = 2
+	if Input.is_action_just_pressed("4"):
+		y = 3
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
