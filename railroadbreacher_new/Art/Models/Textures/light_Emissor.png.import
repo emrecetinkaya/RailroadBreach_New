@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bec1qt76l0jnf"
-path.s3tc="res://.godot/imported/light_Emissor.png-73e069cf9be7afbf1666598cbc957db7.s3tc.ctex"
+path.s3tc="res://.godot/imported/light_Emissor.png-b4abdc61e18dcba82ca19ae66c2373bd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/Models/textures/light_Emissor.png"
-dest_files=["res://.godot/imported/light_Emissor.png-73e069cf9be7afbf1666598cbc957db7.s3tc.ctex"]
+source_file="res://Art/Models/Textures/light_Emissor.png"
+dest_files=["res://.godot/imported/light_Emissor.png-b4abdc61e18dcba82ca19ae66c2373bd.s3tc.ctex"]
 
 [params]
 
