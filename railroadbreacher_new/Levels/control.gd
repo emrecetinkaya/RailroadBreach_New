@@ -53,6 +53,8 @@ func _on_button_11_pressed() -> void:
 
 func _on_button_12_pressed() -> void:
 	var submit = $LineEdit.text
+	$"../../../MeshInstance3D/Label3D".text = submit
+	$"../../../MeshInstance3D2/Label3D2".text = submit
 	$LineEdit.clear()
 
 func _physics_process(delta: float) -> void:
