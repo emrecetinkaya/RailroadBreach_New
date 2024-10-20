@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bquyqx1xrmlnn"]
+
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_ly2xh"]
+[ext_resource type="Texture2D" uid="uid://bf4i2jbpcavji" path="res://Art/Models/Textures/ticket_machine.png" id="2_jbchx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ly2xh")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_jbchx")

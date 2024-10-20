@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bjutr33mqqfo5" path="res://Art/Final_SceneSetup.fbx" id="1_e048a"]
 [ext_resource type="PackedScene" uid="uid://dm8srp7m52ujr" path="res://Art/Models/tex_test.tscn" id="3_acy7d"]
 [ext_resource type="PackedScene" uid="uid://cr7glhtpc8h27" path="res://Art/Models/mid_tunnel_walls.tscn" id="4_btls4"]
-[ext_resource type="PackedScene" path="res://Art/Models/Shaders/floor_1_st.tscn" id="6_pt67x"]
-[ext_resource type="PackedScene" path="res://Art/Models/Shaders/subway_roof.tscn" id="6_qes8h"]
-[ext_resource type="PackedScene" path="res://roof_1_st.tscn" id="7_apqpj"]
+[ext_resource type="PackedScene" uid="uid://cf0pjj17ecvkt" path="res://Art/Models/Shaders/floor_1_st.tscn" id="6_pt67x"]
+[ext_resource type="PackedScene" uid="uid://dlqdywrhr4h41" path="res://Art/Models/Shaders/subway_roof.tscn" id="6_qes8h"]
+[ext_resource type="PackedScene" uid="uid://bkxog76ks6lwt" path="res://roof_1_st.tscn" id="7_apqpj"]
 [ext_resource type="PackedScene" uid="uid://v8rqdhxcfpch" path="res://Art/Models/Shaders/watcher.tscn" id="7_h3p2s"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1m850"]

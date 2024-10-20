@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cme1rqg521s13"]
+
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_toigq"]
+[ext_resource type="Texture2D" uid="uid://helqk3v6rvmv" path="res://Art/Models/Textures/trash_can.png" id="2_lbsrw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_toigq")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_lbsrw")
