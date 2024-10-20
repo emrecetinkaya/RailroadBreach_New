@@ -1,0 +1,491 @@
+[gd_scene load_steps=24 format=3 uid="uid://crj1jnequp6c6"]
+
+[ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_pa8ck"]
+[ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_q3n23"]
+[ext_resource type="PackedScene" uid="uid://twm2ure0v4gp" path="res://Art/Models/Textures/Train_updated.tscn" id="3_4mwhq"]
+[ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_ys68d"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_1y6on"]
+[ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="6_vlxch"]
+[ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="7_juupq"]
+[ext_resource type="Script" path="res://Scripts/camera_panel_controls.gd" id="8_s5l5q"]
+[ext_resource type="Script" path="res://Scripts/input_panel_controls.gd" id="9_phj6n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
+shader = ExtResource("1_pa8ck")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 14
+shader_parameter/dither_size = 1
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hljep"]
+sky_top_color = Color(0.294627, 0.277917, 0.398024, 1)
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_bottom_color = Color(0.0590545, 0.0450471, 0.029574, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+energy_multiplier = 0.2
+
+[sub_resource type="Sky" id="Sky_4efno"]
+sky_material = SubResource("ProceduralSkyMaterial_hljep")
+
+[sub_resource type="Environment" id="Environment_lahrx"]
+background_mode = 2
+sky = SubResource("Sky_4efno")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+tonemap_mode = 3
+tonemap_white = 2.98
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.895816, 0.812688, 0.409673, 1)
+fog_light_energy = 1.46
+fog_density = 0.008
+fog_aerial_perspective = 0.24
+fog_sky_affect = 0.055
+fog_height = -626.25
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.444893, 0.637527, 0.749093, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dips7"]
+shader = ExtResource("5_1y6on")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(1920, 1080)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 3.0
+shader_parameter/distort_intensity = 0.02
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.00400005
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.058
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.16
+shader_parameter/vignette_opacity = 0.657
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8dqjt"]
+shader = ExtResource("5_1y6on")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(1920, 1080)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 3.0
+shader_parameter/distort_intensity = 0.02
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.00400005
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 5.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.16
+shader_parameter/vignette_opacity = 0.657
+
+[sub_resource type="World3D" id="World3D_40nqx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cneb6"]
+viewport_path = NodePath("SubViewportContainer3/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fcpeg"]
+viewport_path = NodePath("SubViewportContainer2/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vmlsl"]
+size = Vector3(1, 1, 4.77539)
+
+[sub_resource type="Animation" id="Animation_uyj0p"]
+resource_name = "Dolap Kapağı"
+
+[sub_resource type="Animation" id="Animation_ocjjm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.60256, -3.47134, -16.4781)]
+}
+
+[sub_resource type="Animation" id="Animation_ri8jk"]
+resource_name = "train_arrive"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.60256, -3.47134, -16.4781), Vector3(-1.603, -3.471, 100), Vector3(-1.603, -3.471, 500)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jascy"]
+_data = {
+"Dolap Kapağı": SubResource("Animation_uyj0p"),
+"RESET": SubResource("Animation_ocjjm"),
+"train_arrive": SubResource("Animation_ri8jk")
+}
+
+[node name="Models" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_c2nmq")
+offset_right = 1932.0
+offset_bottom = 1089.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Node3D2" type="Node3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6947, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, 7.35622, 2.09289, -20.3533)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, 7.1721, 2.00294, -33.6254)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, 7.35622, 2.09289, -7.785)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, 17.6943, 2.09289, -20.3533)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, 17.5101, 2.00294, -33.6254)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, 17.6943, 2.09289, -7.785)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, -9.30786, 2.09289, -20.3533)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, -9.49198, 2.00294, -33.6254)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, -9.30786, 2.09289, -7.785)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, -19.3859, 2.09289, -20.3533)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, -19.5701, 2.00294, -33.6254)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(0.996749, -0.0805643, -4.43359e-09, 0.0103777, 0.128394, 0.991669, -0.0798931, -0.988445, 0.128813, -19.3859, 2.09289, -7.785)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 2.719
+light_indirect_energy = 3.304
+light_volumetric_fog_energy = 8.424
+light_size = 0.024
+shadow_enabled = true
+spot_range = 6.868
+spot_attenuation = 0.69
+spot_angle_attenuation = 4.28711
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27183, 1.12379, -15.43)
+light_energy = 0.2
+light_volumetric_fog_energy = 2.92
+light_size = 0.704
+omni_range = 44.28
+omni_attenuation = -0.171
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12101, 3.46594, 17.9949)
+light_energy = 0.1
+light_volumetric_fog_energy = 2.92
+light_size = 0.704
+omni_range = 44.28
+omni_attenuation = -0.171
+omni_shadow_mode = 0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.0961063, 0.995371, 0, -0.995371, 0.0961063, 6.6507, 6.31176, 15.0784)
+light_energy = 4.712
+light_volumetric_fog_energy = 8.68
+light_size = 0.168
+light_specular = 0.628
+spot_range = 8.028
+spot_attenuation = 0.94
+spot_angle = 31.25
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.0961063, 0.995371, 0, -0.995371, 0.0961063, 22.779, 6.31176, 15.0784)
+light_energy = 4.712
+light_volumetric_fog_energy = 8.68
+light_size = 0.168
+light_specular = 0.628
+spot_range = 8.028
+spot_attenuation = 0.94
+spot_angle = 31.25
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.0961063, 0.995371, 0, -0.995371, 0.0961063, 14.7385, 6.04561, 20.4085)
+light_energy = 4.712
+light_volumetric_fog_energy = 8.68
+light_size = 0.168
+light_specular = 0.628
+spot_range = 8.028
+spot_attenuation = 0.94
+spot_angle = 31.25
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.0961063, 0.995371, 0, -0.995371, 0.0961063, 16.2148, 5.6948, 13.6949)
+light_energy = 4.712
+light_volumetric_fog_energy = 8.68
+light_size = 0.168
+light_specular = 0.628
+spot_range = 8.028
+spot_attenuation = 0.94
+spot_angle = 31.25
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_lahrx")
+
+[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="FullScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_q3n23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4611, 0.0175877, -9.56495)
+
+[node name="Train" parent="SubViewportContainer/SubViewport/FullScene" instance=ExtResource("3_4mwhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60256, -3.47134, -16.4781)
+
+[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train" instance=ExtResource("3_4mwhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
+
+[node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_ys68d")]
+transform = Transform3D(0.639479, 0, 0.768808, 0, 1, 0, -0.768808, 0, 0.639479, 17.4012, 2.74941, 14.9456)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer"]
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/CanvasLayer"]
+material = SubResource("ShaderMaterial_dips7")
+use_parent_material = true
+anchors_preset = -1
+anchor_top = -0.0157407
+anchor_right = 0.00885417
+anchor_bottom = 0.00740741
+offset_right = 1919.0
+offset_bottom = 1092.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewportContainer3" type="SubViewportContainer" parent="."]
+offset_left = -1920.0
+offset_top = -1080.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer3"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(1920, 1080)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer3/SubViewport"]
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer3/SubViewport/CanvasLayer"]
+material = SubResource("ShaderMaterial_8dqjt")
+use_parent_material = true
+anchors_preset = -1
+anchor_top = -0.0157407
+anchor_right = 0.00885417
+anchor_bottom = 0.00740741
+offset_right = 1919.0
+offset_bottom = 1092.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
+transform = Transform3D(-4.37114e-08, -0.390731, 0.920505, 0, 0.920505, 0.390731, -1, 1.70794e-08, -4.02365e-08, 28.852, 0.806, -27.83)
+environment = ExtResource("6_vlxch")
+
+[node name="Camera3D2" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
+transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, 40.78, 1.5, -50)
+environment = ExtResource("6_vlxch")
+
+[node name="Camera3D3" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
+transform = Transform3D(-0.951057, 0.0536602, -0.304322, 0, 0.984808, 0.173648, 0.309017, 0.165149, -0.936608, 3.048, 0.806, -25.554)
+environment = ExtResource("6_vlxch")
+fov = 40.0
+
+[node name="Camera3D4" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 24.12, 5.489, 23.354)
+environment = ExtResource("6_vlxch")
+fov = 40.0
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer2"]
+world_3d = SubResource("World3D_40nqx")
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(1920, 1080)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Control" parent="SubViewportContainer2/SubViewport" instance=ExtResource("7_juupq")]
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.0253571, 0, 0.00543785, 0, 0.07, 0, -0.0543785, 0, 0.00253571, 13.5477, 2.95572, 12.7367)
+flip_h = true
+texture = SubResource("ViewportTexture_cneb6")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.0543785, 0, 0.0253571, 0, 0.07, 0, -0.0253571, 0, 0.0543785, 14.4974, 2.96025, 11.8355)
+transparent = false
+texture = SubResource("ViewportTexture_fcpeg")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5477, 2.95572, 12.7367)
+script = ExtResource("8_s5l5q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(0.604708, 0, 0.079613, 0, 0.91864, 0, -1.30488, 0, 0.0368943, 0.0691948, 0.0147789, 0.0320663)
+shape = SubResource("BoxShape3D_vmlsl")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(0.757519, 0, -0.652813, 0, 1, 0, 0.652813, 0, 0.757519, 14.515, 2.95572, 11.809)
+script = ExtResource("9_phj6n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.484032, 0, 0.0559909, 0, 0.755207, 0, -1.04448, 0, 0.0259474, 0.0825844, -0.0108752, 0.0650787)
+shape = SubResource("BoxShape3D_vmlsl")
+
+[node name="Train Arrives" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jascy")
+}
+autoplay = "train_arrive"
