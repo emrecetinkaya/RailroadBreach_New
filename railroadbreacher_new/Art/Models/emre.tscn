@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_c3pu0"]
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_66bno"]
-[ext_resource type="PackedScene" uid="uid://twm2ure0v4gp" path="res://Art/Models/Textures/Train_updated.tscn" id="3_da5py"]
+[ext_resource type="PackedScene" uid="uid://bjslps8ek4m2j" path="res://Art/Models/Textures/Train_updated.tscn" id="3_da5py"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_ttki6"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_cq743"]
 [ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="6_k4tvu"]
