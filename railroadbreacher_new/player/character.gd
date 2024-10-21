@@ -86,6 +86,9 @@ func _physics_process(delta: float) -> void:
 		SPEED = 0
 	else: SPEED = 5.0
 		
+	if crouched:
+		SPEED = 2.5
+	else: SPEED = 5.0
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

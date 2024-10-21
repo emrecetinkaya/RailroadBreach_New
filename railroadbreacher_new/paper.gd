@@ -12,7 +12,7 @@ extends RigidBody3D
 
 
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if grabbed: 
 		look_at(new_parent.global_position)
 
@@ -43,7 +43,7 @@ func secondary():
 		grabbed = false
 
 
-func _on_drop_area_body_entered(body: RigidBody3D) -> void:
+func _on_drop_area_body_entered(_body: RigidBody3D) -> void:
 	if !grabbed:
 		print("success") 
 		
