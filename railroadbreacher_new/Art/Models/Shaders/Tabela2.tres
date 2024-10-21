@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dempudk4h3lnn"]
+
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_bdy6i"]
+[ext_resource type="Texture2D" uid="uid://dd5ygr31x5koi" path="res://Art/Models/New Mods/FBXs/Tabelas ve Posters_1.png" id="2_8oxd2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_bdy6i")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_8oxd2")
