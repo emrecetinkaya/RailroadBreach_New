@@ -146,3 +146,5 @@ transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.98023e-08, 0.866025, 0.5
 [node name="paper" parent="." instance=ExtResource("4_odply")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3265)
 continuous_cd = true
+
+[editable path="Character"]

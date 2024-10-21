@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd2xk1jajtsyn"]
+[gd_scene load_steps=5 format=3 uid="uid://bd2xk1jajtsyn"]
 
 [ext_resource type="Script" path="res://player/character.gd" id="1_jdgi3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bosp2"]
 height = 1.73
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h5vxs"]
+height = 1.33
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7qlmc"]
 height = 1.73
@@ -15,7 +18,13 @@ script = ExtResource("1_jdgi3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_bosp2")
 
+[node name="CrouchedCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.205178, 0)
+shape = SubResource("CapsuleShape3D_h5vxs")
+disabled = true
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_7qlmc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
