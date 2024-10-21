@@ -6,6 +6,8 @@ var hands_full = false
 var on_camera = false
 var crouched = false
 var y = 1
+
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$Control/SubtitleLabel.visible = false
@@ -29,20 +31,28 @@ func _input(event):
 	if Input.is_action_just_pressed("crouch"):
 		if !crouched:
 			crouched = true
-			$RayCast3D.position.y -= 0.4
-			$Camera3D.position.y -= 0.4
-			$CollisionShape3D.scale.y -= 0.4
-			$CollisionShape3D.position.y -= 0.4
-			$Marker3D.position.y -= 0.4
-			$Marker3D2.position.y -= 0.4
+			$CrouchedCollision.disabled = false
+			$CollisionShape3D.disabled = true
+			var tween = get_tree().create_tween()
+			tween.tween_property($Camera3D, "position", Vector3(0, 0.33,0), 0.2)
+			tween.set_parallel()
+			tween.tween_property($RayCast3D, "position", Vector3(0, 0.33,0), 0.2)
+			tween.set_parallel()
+			tween.tween_property($Marker3D, "position", Vector3(0, 0.33,0), 0.2)
+			tween.set_parallel()
+			tween.tween_property($Marker3D2, "position", Vector3(0, 0.33,0), 0.2)
 		elif crouched:
 			crouched = false
-			$RayCast3D.position.y += 0.4
-			$Camera3D.position.y += 0.4
-			$CollisionShape3D.scale.y += 0.4
-			$CollisionShape3D.position.y += 0.4
-			$Marker3D.position.y += 0.4
-			$Marker3D2.position.y += 0.4
+			$CrouchedCollision.disabled = true
+			$CollisionShape3D.disabled = false
+			var tween = get_tree().create_tween()
+			tween.tween_property($Camera3D, "position", Vector3(0, 0.73,0), 0.2)
+			tween.set_parallel()
+			tween.tween_property($RayCast3D, "position", Vector3(0, 0.73,0), 0.2)
+			tween.set_parallel()
+			tween.tween_property($Marker3D, "position", Vector3(0, 0.73,0), 0.2)
+			tween.set_parallel()
+			tween.tween_property($Marker3D2, "position", Vector3(0, 0.73,0), 0.2)
 			
 	#if Input.is_action_just_pressed("1"):
 		#y = 0
@@ -76,6 +86,9 @@ func _physics_process(delta: float) -> void:
 		SPEED = 0
 	else: SPEED = 5.0
 		
+	if crouched:
+		SPEED = 2.5
+	else: SPEED = 5.0
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

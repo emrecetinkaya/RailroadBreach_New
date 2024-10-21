@@ -1,20 +1,20 @@
 extends RigidBody3D
 @onready var original_parent = get_parent()
 @onready var original_origin = transform.origin
-@onready var new_parent = $SubViewportContainer/SubViewport/Character/Marker3D
-@onready var character = $SubViewportContainer/SubViewport/Character
+@onready var new_parent = $"../SubViewportContainer/SubViewport/Character/Marker3D"
+@onready var character = $"../SubViewportContainer/SubViewport/Character"
 @onready var grabbed = false
-@onready var target = $SubViewportContainer/SubViewport/Character/Marker3D2
+@onready var target = $"../SubViewportContainer/SubViewport/Character/Marker3D2"
+
 
 
 
 
 
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if grabbed: 
 		look_at(new_parent.global_position)
-		print(position)
 
 func grab():
 	if !grabbed:
@@ -43,7 +43,7 @@ func secondary():
 		grabbed = false
 
 
-func _on_drop_area_body_entered(body: RigidBody3D) -> void:
+func _on_drop_area_body_entered(_body: RigidBody3D) -> void:
 	if !grabbed:
 		print("success") 
 		
