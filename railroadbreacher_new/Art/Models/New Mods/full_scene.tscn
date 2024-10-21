@@ -1,8 +1,8 @@
-[gd_scene load_steps=97 format=4 uid="uid://ckh5r0ra3yk6d"]
+[gd_scene load_steps=98 format=4 uid="uid://ckh5r0ra3yk6d"]
 
 [ext_resource type="PackedScene" uid="uid://dpbbs8aarf2" path="res://Art/Models/New Mods/FBXs/FullScene.fbx" id="1_1nhx7"]
 [ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="2_md2vp"]
-[ext_resource type="Material" uid="uid://beg5rh37ncp4r" path="res://Art/Models/New Mods/Materials/yellow.tres" id="3_b0j6l"]
+[ext_resource type="Material" path="res://Art/Models/New Mods/Materials/yellow.tres" id="3_b0j6l"]
 [ext_resource type="Material" uid="uid://dsrwcbw023hkn" path="res://Art/Models/New Mods/Materials/Railroad.tres" id="4_f3hnv"]
 [ext_resource type="Material" uid="uid://dcxagx5qqg4c" path="res://Art/Models/New Mods/Materials/Tile.tres" id="5_10k8n"]
 [ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="6_3el7a"]
@@ -19,10 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://dd5ygr31x5koi" path="res://Art/Models/New Mods/FBXs/Tabelas ve Posters_1.png" id="16_t4vgv"]
 [ext_resource type="Texture2D" uid="uid://bkdkl6i1h8xwm" path="res://Art/Models/New Mods/FBXs/Tabelas ve Posters_2.png" id="17_ay4x0"]
 [ext_resource type="Material" uid="uid://debocno2t0xdt" path="res://Art/Models/Shaders/Tabela1.tres" id="17_n0imf"]
+[ext_resource type="FontFile" uid="uid://dtxmbsrj7lne4" path="res://Art/metro-time-sign.ttf" id="18_d4qxu"]
 [ext_resource type="Material" uid="uid://dempudk4h3lnn" path="res://Art/Models/Shaders/Tabela2.tres" id="18_g84gx"]
 [ext_resource type="Material" uid="uid://duw4p6k2dod7u" path="res://Art/Models/Shaders/Posters.tres" id="18_rcl2y"]
-[ext_resource type="Material" uid="uid://ddmed8d0i0q1y" path="res://Art/Models/Textures/Metal2.tres" id="22_nnjm2"]
-[ext_resource type="Material" uid="uid://hjifs1ap4whp" path="res://Art/Models/Textures/Glass.tres" id="23_yoenf"]
+[ext_resource type="Material" path="res://Art/Models/Textures/Metal2.tres" id="22_nnjm2"]
+[ext_resource type="Material" path="res://Art/Models/Textures/Glass.tres" id="23_yoenf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f1wlv"]
 size = Vector3(0.709473, 1, 0.001)
@@ -327,7 +328,6 @@ data = PackedVector3Array(0, -0.0029, -0.1239, -0.0969, -0.0029, -0.0772, -0.096
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5lqat"]
 resource_name = "Tabelas.001"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("15_n04gh")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
@@ -336,7 +336,6 @@ emission_energy_multiplier = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmg6r"]
 resource_name = "Tabelas"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("16_t4vgv")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
@@ -402,7 +401,6 @@ shadow_mesh = SubResource("ArrayMesh_e5hur")
 resource_name = "Posters"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("17_ay4x0")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
@@ -1624,60 +1622,204 @@ transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 17.3637, -0.265343, 
 [node name="Tabelas ve Posters" type="Node3D" parent="Props/Tabelas ve Posters2" index="0"]
 
 [node name="Cube_004" type="MeshInstance3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters" index="0"]
-transform = Transform3D(0.011433, 0, 0.35754, 0, 0.545267, 0, -0.72058, 0, 0.00567287, 29.861, 12.6227, -21.891)
+transform = Transform3D(-3.15015e-08, 0, 0.357585, 0, 0.545267, 0, -0.720671, 0, -1.56305e-08, 29.8689, 12.6227, -21.8883)
 mesh = SubResource("ArrayMesh_htu56")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_n0imf")
 surface_material_override/1 = ExtResource("18_g84gx")
+
+[node name="2 WAGONS" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_004" index="0"]
+transform = Transform3D(0.0219189, 0, -1.95326, 0, 1.82609, 0, 2.78418, 0, 0.062459, -0.834, 0.463, 0)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
+
+[node name="InputText" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_004" index="1"]
+transform = Transform3D(-1.21704e-07, 0, -1.95426, 0, 1.82609, 0, 2.78427, 0, -8.54233e-08, -0.839672, -2.29123, 0.0800781)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "TRAIN IS ARRIVING"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
 
 [node name="Cube_005" type="MeshInstance3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters" index="1"]
-transform = Transform3D(-0.0622468, 0, -0.356249, 0, 0.545267, 0, 0.717978, 0, -0.0308858, 29.978, 12.6057, -27.4394)
+transform = Transform3D(-3.15015e-08, 0, 0.357585, 0, 0.545267, 0, -0.720671, 0, -1.56306e-08, 29.9773, 12.6065, -27.4414)
 mesh = SubResource("ArrayMesh_htu56")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_n0imf")
 surface_material_override/1 = ExtResource("18_g84gx")
+
+[node name="2 WAGONS2" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_005" index="0"]
+transform = Transform3D(-6.03933e-08, 0, 1.9535, 0, 1.82609, 0, -2.78453, 0, -1.72094e-07, 0.859, 0.493, 0)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
+
+[node name="InputText" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_005" index="1"]
+transform = Transform3D(-1.21704e-07, 0, 1.95426, 0, 1.82609, 0, -2.78427, 0, -8.54233e-08, 0.865, -2.262, 0)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
 
 [node name="Cube_006" type="MeshInstance3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters" index="2"]
-transform = Transform3D(0.011433, 0, 0.35754, 0, 0.545267, 0, -0.72058, 0, 0.00567287, 7.17393, 12.6227, -21.891)
+transform = Transform3D(-3.15015e-08, 0, 0.357585, 0, 0.545267, 0, -0.720671, 0, -1.56305e-08, 7.17393, 12.6227, -21.891)
 mesh = SubResource("ArrayMesh_htu56")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_n0imf")
 surface_material_override/1 = ExtResource("18_g84gx")
+
+[node name="2 WAGONS" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_006" index="0"]
+transform = Transform3D(0.0219189, 0, -1.95326, 0, 1.82609, 0, 2.78418, 0, 0.062459, -0.834, 0.463, 0)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
+
+[node name="InputText" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_006" index="1"]
+transform = Transform3D(-1.21704e-07, 0, -1.95426, 0, 1.82609, 0, 2.78427, 0, -8.54233e-08, -0.833645, -2.262, 0.0353012)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
 
 [node name="Cube_007" type="MeshInstance3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters" index="3"]
-transform = Transform3D(-0.0622468, 0, -0.356249, 0, 0.545267, 0, 0.717978, 0, -0.0308858, 7.29096, 12.6057, -27.4394)
+transform = Transform3D(-3.15015e-08, 0, -0.357585, 0, 0.545267, 0, 0.720671, 0, -1.56306e-08, 7.29096, 12.6057, -27.4394)
 mesh = SubResource("ArrayMesh_htu56")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_n0imf")
 surface_material_override/1 = ExtResource("18_g84gx")
+
+[node name="2 WAGONS" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_007" index="0"]
+transform = Transform3D(0.0219189, 0, -1.95326, 0, 1.82609, 0, 2.78418, 0, 0.062459, -0.834, 0.463, 0)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
+
+[node name="InputText" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_007" index="1"]
+transform = Transform3D(-1.21704e-07, 0, -1.95426, 0, 1.82609, 0, 2.78427, 0, -8.54233e-08, -0.834, -2.262, 0)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
 
 [node name="Cube_008" type="MeshInstance3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters" index="4"]
-transform = Transform3D(0.011433, 0, 0.35754, 0, 0.545267, 0, -0.72058, 0, 0.00567287, -46.6373, 12.6227, -21.891)
+transform = Transform3D(-3.15015e-08, 0, 0.357585, 0, 0.545267, 0, -0.720671, 0, -1.56305e-08, -46.6373, 12.6227, -21.891)
 mesh = SubResource("ArrayMesh_htu56")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_n0imf")
 surface_material_override/1 = ExtResource("18_g84gx")
+
+[node name="2 WAGONS" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_008" index="0"]
+transform = Transform3D(0.0219189, 0, -1.95326, 0, 1.82609, 0, 2.78418, 0, 0.062459, -0.834, 0.463, 0)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
+
+[node name="InputText" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_008" index="1"]
+transform = Transform3D(-1.21704e-07, 0, -1.95426, 0, 1.82609, 0, 2.78427, 0, -8.54233e-08, -0.833645, -2.262, 0.0353012)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
 
 [node name="Cube_009" type="MeshInstance3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters" index="5"]
-transform = Transform3D(-0.0622468, 0, -0.356249, 0, 0.545267, 0, 0.717978, 0, -0.0308858, -46.5202, 12.6057, -27.4394)
+transform = Transform3D(-3.15015e-08, 0, 0.357585, 0, 0.545267, 0, -0.720671, 0, -1.56306e-08, -46.5202, 12.6057, -27.4394)
 mesh = SubResource("ArrayMesh_htu56")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_n0imf")
 surface_material_override/1 = ExtResource("18_g84gx")
+
+[node name="2 WAGONS" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_009" index="0"]
+transform = Transform3D(0.0219189, 0, -1.95326, 0, 1.82609, 0, 2.78418, 0, 0.062459, -0.834, 0.463, 0)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
+
+[node name="InputText" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_009" index="1"]
+transform = Transform3D(-1.21704e-07, 0, -1.95426, 0, 1.82609, 0, 2.78427, 0, -8.54233e-08, -0.833645, -2.262, 0.0353012)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
 
 [node name="Cube_010" type="MeshInstance3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters" index="6"]
-transform = Transform3D(0.011433, 0, 0.35754, 0, 0.545267, 0, -0.72058, 0, 0.00567287, -69.3243, 12.6227, -21.891)
+transform = Transform3D(-3.15015e-08, 0, 0.357585, 0, 0.545267, 0, -0.720671, 0, -1.56305e-08, -69.3243, 12.6227, -21.891)
 mesh = SubResource("ArrayMesh_htu56")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_n0imf")
 surface_material_override/1 = ExtResource("18_g84gx")
 
+[node name="2 WAGONS" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_010" index="0"]
+transform = Transform3D(0.0219189, 0, -1.95326, 0, 1.82609, 0, 2.78418, 0, 0.062459, -0.834, 0.463, 0)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
+
+[node name="InputText" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_010" index="1"]
+transform = Transform3D(-1.21704e-07, 0, -1.95426, 0, 1.82609, 0, 2.78427, 0, -8.54233e-08, -0.833645, -2.262, 0.0353012)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
+
 [node name="Cube_011" type="MeshInstance3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters" index="7"]
-transform = Transform3D(-0.0622468, 0, -0.356249, 0, 0.545267, 0, 0.717978, 0, -0.0308858, -69.2073, 12.6057, -27.4394)
+transform = Transform3D(-3.15015e-08, 0, 0.357585, 0, 0.545267, 0, -0.720671, 0, -1.56306e-08, -69.2073, 12.6057, -27.4394)
 mesh = SubResource("ArrayMesh_htu56")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("17_n0imf")
 surface_material_override/1 = ExtResource("18_g84gx")
+
+[node name="2 WAGONS" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_011" index="0"]
+transform = Transform3D(0.0219189, 0, -1.95326, 0, 1.82609, 0, 2.78418, 0, 0.062459, -0.834, 0.463, 0)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
+
+[node name="InputText" type="Label3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_011" index="1"]
+transform = Transform3D(-1.21704e-07, 0, -1.95426, 0, 1.82609, 0, 2.78427, 0, -8.54233e-08, -0.833645, -2.262, 0.0353012)
+modulate = Color(1, 1, 1, 0.435294)
+outline_modulate = Color(0.992157, 0.854902, 0.0862745, 1)
+text = "2 WAGONS :"
+font = ExtResource("18_d4qxu")
+font_size = 120
+uppercase = true
 
 [node name="Poster 1" type="MeshInstance3D" parent="Props/Tabelas ve Posters2/Tabelas ve Posters" index="8"]
 transform = Transform3D(0.0866487, -0.00072059, 2.23389, -3.72651, 0.0309853, 0.0519423, -0.0416384, -2.77459, -9.80029e-08, -59.8117, 6.74382, -68.2965)

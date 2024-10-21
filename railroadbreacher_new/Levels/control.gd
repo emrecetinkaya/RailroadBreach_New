@@ -2,7 +2,7 @@ extends Control
 var correct = false
 var submit = null
 func _ready() -> void:
-	$ProgressBar.value = randi_range(32400,64800)
+	$ProgressBar.value = 18000
 func _on_button_pressed() -> void:
 	$LineEdit.insert_text_at_caret("1")
 
@@ -25,35 +25,40 @@ func _on_button_5_pressed() -> void:
 
 func _on_button_6_pressed() -> void:
 	$LineEdit.insert_text_at_caret("6")
-
+	
 
 func _on_button_7_pressed() -> void:
 	$LineEdit.insert_text_at_caret("7")
 	
 
-
 func _on_button_8_pressed() -> void:
 	$LineEdit.insert_text_at_caret("8")
-
+	
 
 func _on_button_9_pressed() -> void:
 	$LineEdit.insert_text_at_caret("9")
 	
 
-
 func _on_button_10_pressed() -> void:
-	$LineEdit.insert_text_at_caret("ARRIVED")
-
-
-
+	$LineEdit.insert_text_at_caret("TRAIN IS ARRIVING")
+	
 
 func _on_button_11_pressed() -> void:
 	$LineEdit.clear()
-
+	
 
 func _on_button_12_pressed() -> void:
 	var submit = $LineEdit.text
+	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_004/InputText".text = (submit)
+	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_005/InputText".text = (submit)
+	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_006/InputText".text = (submit)
+	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_007/InputText".text = (submit)
+	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_008/InputText".text = (submit)
+	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_009/InputText".text = (submit)
+	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_010/InputText".text = (submit)
+	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_011/InputText".text = (submit)
 	$LineEdit.clear()
+	$LineEdit.insert_text_at_caret("    SUBMITTED    ")
 
 func _physics_process(delta: float) -> void:
 	if !correct:

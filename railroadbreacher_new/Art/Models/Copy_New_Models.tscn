@@ -429,8 +429,6 @@ spot_angle = 31.25
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_lahrx")
 
-[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
-
 [node name="FullScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_r4afn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4611, 0.0175877, -9.56495)
 
@@ -545,7 +543,6 @@ render_target_update_mode = 4
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(0.0253571, 0, 0.00543785, 0, 0.07, 0, -0.0543785, 0, 0.00253571, 13.5477, 2.95572, 12.7367)
-flip_h = true
 texture = SubResource("ViewportTexture_cneb6")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -553,19 +550,19 @@ transform = Transform3D(0.0543785, 0, 0.0253571, 0, 0.07, 0, -0.0253571, 0, 0.05
 transparent = false
 texture = SubResource("ViewportTexture_fcpeg")
 
-[node name="Area3D2" type="Area3D" parent="."]
+[node name="Sol Ekran Kameralar" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5477, 2.95572, 12.7367)
 script = ExtResource("7_xd24x")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sol Ekran Kameralar"]
 transform = Transform3D(0.604708, 0, 0.079613, 0, 0.91864, 0, -1.30488, 0, 0.0368943, 0.0691948, 0.0147789, 0.0320663)
 shape = SubResource("BoxShape3D_vmlsl")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Sağ Ekran Input" type="Area3D" parent="."]
 transform = Transform3D(0.757519, 0, -0.652813, 0, 1, 0, 0.652813, 0, 0.757519, 14.515, 2.95572, 11.809)
 script = ExtResource("8_p8fbp")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sağ Ekran Input"]
 transform = Transform3D(0.484032, 0, 0.0559909, 0, 0.755207, 0, -1.04448, 0, 0.0259474, 0.0825844, -0.0108752, 0.0650787)
 shape = SubResource("BoxShape3D_vmlsl")
 
@@ -576,5 +573,6 @@ libraries = {
 autoplay = "train_arrive"
 speed_scale = 0.705
 
+[editable path="SubViewportContainer/SubViewport/FullScene"]
 [editable path="SubViewportContainer/SubViewport/FullScene/Train"]
 [editable path="SubViewportContainer/SubViewport/FullScene/Train/Train2"]

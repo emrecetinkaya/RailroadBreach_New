@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://15k1ob6ownpc"]
+[gd_scene load_steps=4 format=3 uid="uid://15k1ob6ownpc"]
 
 [ext_resource type="Script" path="res://Levels/control.gd" id="1_ab0x0"]
+[ext_resource type="FontFile" uid="uid://73agcd4ie0v" path="res://Art/Courier New.ttf" id="2_pvdfq"]
 
 [sub_resource type="Theme" id="Theme_5ey6a"]
 
@@ -28,9 +29,10 @@ offset_bottom = -281.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.76)
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 alignment = 1
-max_length = 3
+max_length = 17
 context_menu_enabled = false
 virtual_keyboard_type = 2
 shortcut_keys_enabled = false
@@ -54,66 +56,78 @@ offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/h_separation = 15
-theme_override_constants/v_separation = 15
+theme_override_constants/v_separation = 25
 columns = 3
 
 [node name="Button" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "1"
 
 [node name="Button2" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "2"
 
 [node name="Button3" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "3"
 
 [node name="Button4" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "4"
 
 [node name="Button5" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "5"
 
 [node name="Button6" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "6"
 
 [node name="Button7" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "7"
 
 [node name="Button8" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "8"
 
 [node name="Button9" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "9"
 
 [node name="Button10" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "ARRIVED"
 
 [node name="Button11" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "CLEAR"
 
 [node name="Button12" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "SUBMIT"
 

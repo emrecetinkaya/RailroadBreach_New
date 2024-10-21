@@ -111,7 +111,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("interact") and $RayCast3D.is_colliding and on_camera == false:
 				print(collider)
 				$Camera3D.clear_current()
-				on_camera = true
+				collider.enter_cam()
 				collider.change_cam()
 			if Input.is_action_just_pressed("interact") and $RayCast3D.is_colliding and on_camera == true:
 				collider.change_cam()
