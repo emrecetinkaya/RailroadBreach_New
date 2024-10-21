@@ -288,7 +288,7 @@ environment = SubResource("Environment_lahrx")
 [node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
 [node name="FullScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_bqwk4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4611, 0.0175877, -9.56495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4621, 0.0175877, -9.54152)
 
 [node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_3y4a6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9727, -0.386924, -6.95304)

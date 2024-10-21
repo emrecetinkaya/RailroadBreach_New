@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c40tqqg2igw1g"]
+
+[ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_ugqoq"]
+[ext_resource type="Texture2D" uid="uid://lomx8hwqwo8p" path="res://Art/Models/Textures/automatic_ticket_gate.png" id="2_rtaj2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ugqoq")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_rtaj2")
