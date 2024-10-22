@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RailroadBreacher_New"
-run/main_scene="res://Art/Models/New_Models_Best.tscn"
+run/main_scene="res://Levels/First Level Inherited.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
