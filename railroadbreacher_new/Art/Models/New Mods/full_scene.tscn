@@ -1739,279 +1739,287 @@ shape = SubResource("BoxShape3D_ekff7")
 transform = Transform3D(-4.37114e-08, 1, -4.37115e-08, 0, -4.37115e-08, -1, -1, -4.37115e-08, 1.91069e-15, 0.0417337, -0.33021, 0.0348243)
 shape = SubResource("BoxShape3D_ekff7")
 
-[node name="CollisionShape3D49" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="12"]
+[node name="CollisionShape3D82" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="12"]
+transform = Transform3D(1.17567e-07, 0.035824, 0.999358, 7.12551e-08, 0.999358, -0.035824, -1, 7.5421e-08, 1.14938e-07, -0.0073066, -0.208196, 0.0348243)
+shape = SubResource("BoxShape3D_ekff7")
+
+[node name="CollisionShape3D49" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="13"]
 transform = Transform3D(-4.37114e-08, 1, -4.37115e-08, 0, -4.37115e-08, -1, -1, -4.37115e-08, 1.91069e-15, -0.123321, -0.324462, 0.0348243)
 shape = SubResource("BoxShape3D_ekff7")
 
-[node name="CollisionShape3D41" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="13"]
+[node name="CollisionShape3D41" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="14"]
 transform = Transform3D(-0.0232806, 2.98023e-08, -0.999732, 0.510735, 0.859659, -0.0118935, 0.859423, -0.510875, -0.0200134, -0.116357, -0.134556, 0.00542292)
 shape = SubResource("BoxShape3D_ekff7")
 
-[node name="CollisionShape3D50" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="14"]
+[node name="CollisionShape3D50" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="15"]
 transform = Transform3D(1, 0, 0, 0, 0.859659, 0.510875, 0, -0.510875, 0.859659, -0.0369544, -0.376962, 0.0403921)
 shape = SubResource("BoxShape3D_ekff7")
 
-[node name="CollisionShape3D51" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="15"]
+[node name="CollisionShape3D51" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="16"]
 transform = Transform3D(-0.0232806, 2.98023e-08, -0.999732, 0.510735, 0.859659, -0.0118935, 0.859423, -0.510875, -0.0200134, -0.0634175, -0.376057, 0.0428102)
 shape = SubResource("BoxShape3D_ekff7")
 
-[node name="CollisionShape3D52" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="16"]
+[node name="CollisionShape3D52" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="17"]
 transform = Transform3D(-0.0232806, 2.98023e-08, -0.999732, 0.510735, 0.859659, -0.0118935, 0.859423, -0.510875, -0.0200134, -0.0143663, -0.37549, 0.043764)
 shape = SubResource("BoxShape3D_ekff7")
 
-[node name="CollisionShape3D42" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="17"]
+[node name="CollisionShape3D42" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="18"]
 transform = Transform3D(-0.0232806, 2.98023e-08, -0.999732, 0.510735, 0.859659, -0.0118935, 0.859423, -0.510875, -0.0200134, 0.0382839, -0.135123, 0.00446911)
 shape = SubResource("BoxShape3D_ekff7")
 
-[node name="CollisionShape3D43" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="18"]
+[node name="CollisionShape3D43" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="19"]
 transform = Transform3D(-0.0232806, 2.98023e-08, -0.999732, 0.510735, 0.859659, -0.0118935, 0.859423, -0.510875, -0.0200134, 0.0821749, -0.134556, 0.00542292)
 shape = SubResource("BoxShape3D_ekff7")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="19"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="20"]
 transform = Transform3D(1, 0, 0, 0, 0.859659, 0.510875, 0, -0.510875, 0.859659, 0.0592451, -0.120063, -0.0145595)
 shape = SubResource("BoxShape3D_ekff7")
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="20"]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="21"]
 transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, -0.0158934, -0.248961, 0.0125228)
 shape = SubResource("BoxShape3D_jiicm")
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="21"]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="22"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0777621, -0.233655, 0.0366039)
 shape = SubResource("BoxShape3D_q5k1o")
 
-[node name="CollisionShape3D10" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="22"]
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="23"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0182802, -0.235296, 0.0366039)
 shape = SubResource("BoxShape3D_q5k1o")
 
-[node name="CollisionShape3D11" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="23"]
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="24"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1.27055e-21, 1, -0.0533739, -0.258582, 0.0366039)
 shape = SubResource("BoxShape3D_q5k1o")
 
-[node name="CollisionShape3D12" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="24"]
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="25"]
 transform = Transform3D(-4.37114e-08, -1, 1.99476e-19, 1, -4.37114e-08, 0, 0, -2.49875e-20, 1, 0.229018, 0.143029, 0.00840565)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D13" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="25"]
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="26"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -1.27055e-21, 1, -0.312298, 0.143029, 0.00840565)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D54" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="26"]
+[node name="CollisionShape3D54" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="27"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -1.27055e-21, 1, -0.251668, 0.621065, 0.00840571)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D55" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="27"]
+[node name="CollisionShape3D55" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="28"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -1.27055e-21, 1, -0.251668, 0.621065, 0.00840571)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D56" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="28"]
+[node name="CollisionShape3D56" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="29"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -1.27055e-21, 1, -0.251668, -0.406018, 0.00840559)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D77" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="29"]
+[node name="CollisionShape3D77" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="30"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -1.27055e-21, 1, -0.309559, -0.406018, 0.00840559)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D78" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="30"]
+[node name="CollisionShape3D78" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="31"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -4.23516e-21, 1, -0.0864507, -0.504528, -0.0448219)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D79" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="31"]
+[node name="CollisionShape3D79" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="32"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -3.81165e-21, 1, 0.0102094, -0.579673, -0.0607755)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D80" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="32"]
+[node name="CollisionShape3D80" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="33"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -3.81165e-21, 1, 0.170899, -0.579673, 0.00840557)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D57" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="33"]
+[node name="CollisionShape3D57" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="34"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -1.27055e-21, 1, 0.23288, 0.621065, 0.00840571)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D73" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="34"]
+[node name="CollisionShape3D73" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="35"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -1.27055e-21, 1, 0.159653, 0.621065, 0.00840571)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D74" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="35"]
+[node name="CollisionShape3D74" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="36"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -1.69407e-21, 1, 0.0204916, 0.621065, 0.00840571)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D75" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="36"]
+[node name="CollisionShape3D75" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="37"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -2.11758e-21, 1, -0.0853929, 0.621065, 0.00840571)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D76" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="37"]
+[node name="CollisionShape3D76" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="38"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -3.38813e-21, 1, -0.294928, 0.621065, 0.00840571)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D58" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="38"]
+[node name="CollisionShape3D58" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="39"]
 transform = Transform3D(-4.37114e-08, -1, 2.00747e-19, 1, -4.37114e-08, 0, 0, -1.27055e-21, 1, 0.23288, -0.450822, 0.00840558)
 shape = SubResource("BoxShape3D_rahdj")
 
-[node name="CollisionShape3D14" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="39"]
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="40"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.171385, 0.0424589, -0.00676128)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D15" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="40"]
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="41"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.171385, 0.168828, -0.00676126)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D16" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="41"]
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="42"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0931022, 0.0424589, -0.00676128)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D20" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="42"]
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="43"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0931022, -0.0861817, -0.00676129)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D21" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="43"]
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="44"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11733, -0.0861817, -0.00676129)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D22" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="44"]
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="45"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147761, -0.0861817, -0.00676129)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D23" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="45"]
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="46"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.196678, -0.0861817, -0.00676129)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D24" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="46"]
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="47"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.172451, -0.0861817, -0.00676129)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D28" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="47"]
+[node name="CollisionShape3D28" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="48"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.221505, -0.0861817, -0.00676129)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D27" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="48"]
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="49"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179962, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D30" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="49"]
+[node name="CollisionShape3D30" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="50"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.204152, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D29" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="50"]
+[node name="CollisionShape3D29" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="51"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229017, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D53" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="51"]
+[node name="CollisionShape3D53" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="52"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244288, 0.318834, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D59" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="52"]
+[node name="CollisionShape3D59" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="53"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244288, -0.104464, -0.00676129)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D60" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="53"]
+[node name="CollisionShape3D60" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="54"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163357, -0.105247, -0.00676129)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D31" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="54"]
+[node name="CollisionShape3D31" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="55"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.106754, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D32" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="55"]
+[node name="CollisionShape3D32" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="56"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130943, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D33" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="56"]
+[node name="CollisionShape3D33" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="57"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.155808, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D34" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="57"]
+[node name="CollisionShape3D34" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="58"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0742659, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D35" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="58"]
+[node name="CollisionShape3D35" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="59"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500765, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D36" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="59"]
+[node name="CollisionShape3D36" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="60"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0252112, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D37" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="60"]
+[node name="CollisionShape3D37" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="61"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.146443, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D38" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="61"]
+[node name="CollisionShape3D38" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="62"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.122254, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D39" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="62"]
+[node name="CollisionShape3D39" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="63"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0973886, 0.303276, -0.00676124)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D25" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="63"]
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="64"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0991013, -0.0861817, -0.00676129)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D26" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="64"]
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="65"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0991013, -0.0861817, -0.00676129)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D17" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="65"]
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="66"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0927093, 0.168828, -0.00676126)
 shape = SubResource("BoxShape3D_wg55c")
 
-[node name="CollisionShape3D18" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="66"]
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="67"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0267146, 0.106696, -0.0274342)
 shape = SubResource("BoxShape3D_w8c45")
 
-[node name="CollisionShape3D65" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="67"]
+[node name="CollisionShape3D65" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="68"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.177499, 0.293882, -0.00797559)
 shape = SubResource("BoxShape3D_5fagy")
 
-[node name="CollisionShape3D66" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="68"]
+[node name="CollisionShape3D66" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="69"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.257047, 0.292598, -0.0079756)
 shape = SubResource("BoxShape3D_5fagy")
 
-[node name="CollisionShape3D67" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="69"]
+[node name="CollisionShape3D67" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="70"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.177499, -0.0812218, -0.00797564)
 shape = SubResource("BoxShape3D_5fagy")
 
-[node name="CollisionShape3D68" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="70"]
+[node name="CollisionShape3D68" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="71"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.257047, -0.0813316, -0.00797564)
 shape = SubResource("BoxShape3D_5fagy")
 
-[node name="CollisionShape3D61" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="71"]
+[node name="CollisionShape3D61" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="72"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24438, 0.312383, -0.0263032)
 shape = SubResource("BoxShape3D_xqeci")
 
-[node name="CollisionShape3D62" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="72"]
+[node name="CollisionShape3D62" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="73"]
 transform = Transform3D(0.998406, 6.72713e-09, -0.0564314, -6.72713e-09, 1, 1.89978e-10, 0.0564314, 1.89978e-10, 0.998406, -0.246618, -0.100095, -0.0426058)
 shape = SubResource("BoxShape3D_xqeci")
 
-[node name="CollisionShape3D63" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="73"]
+[node name="CollisionShape3D63" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="74"]
 transform = Transform3D(0.998406, 6.72713e-09, -0.0564314, -6.72713e-09, 1, 1.89978e-10, 0.0564314, 1.89978e-10, 0.998406, 0.162987, -0.100095, -0.0426058)
 shape = SubResource("BoxShape3D_xqeci")
 
-[node name="CollisionShape3D64" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="74"]
+[node name="CollisionShape3D64" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="75"]
 transform = Transform3D(0.998406, 6.72713e-09, -0.0564314, -6.72713e-09, 1, 1.89978e-10, 0.0564314, 1.89978e-10, 0.998406, 0.166519, 0.311884, -0.0426058)
 shape = SubResource("BoxShape3D_xqeci")
 
-[node name="CollisionShape3D19" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="75"]
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="76"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0267146, -0.0149729, -0.0274342)
 shape = SubResource("BoxShape3D_w8c45")
 
-[node name="CollisionShape3D69" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="76"]
+[node name="CollisionShape3D69" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="77"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0139127, -0.201036, 0.0316282)
 shape = SubResource("BoxShape3D_vxo18")
 
-[node name="CollisionShape3D70" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="77"]
+[node name="CollisionShape3D70" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="78"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.093513, -0.201036, 0.0316282)
 shape = SubResource("BoxShape3D_vxo18")
 
-[node name="CollisionShape3D71" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="78"]
+[node name="CollisionShape3D71" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="79"]
 transform = Transform3D(-4.37114e-08, -1, -1.19209e-07, 1, -4.37114e-08, -1.19209e-07, 1.19209e-07, -1.19209e-07, 1, -0.107475, -0.188255, 0.0316282)
 shape = SubResource("BoxShape3D_vxo18")
 
-[node name="CollisionShape3D72" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="79"]
+[node name="CollisionShape3D72" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="80"]
 transform = Transform3D(-4.37114e-08, -1, -1.19209e-07, 1, -4.37114e-08, -1.19209e-07, 1.19209e-07, -1.19209e-07, 1, 0.0265526, -0.188255, 0.0316282)
 shape = SubResource("BoxShape3D_vxo18")
 
-[node name="posterler_updated" type="Node3D" parent="Final_final_Setup_Empty/StaticBody3D" index="80"]
+[node name="CollisionShape3D81" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="81"]
+transform = Transform3D(-4.37114e-08, -1, -1.19209e-07, 1, -4.37114e-08, -1.19209e-07, 1.19209e-07, -1.19209e-07, 1, 0.0252566, -0.101316, -0.00975281)
+shape = SubResource("BoxShape3D_vxo18")
+
+[node name="posterler_updated" type="Node3D" parent="Final_final_Setup_Empty/StaticBody3D" index="82"]
 transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 0.12054, -0.0728314, -0.0268467)
 
 [node name="Poster 10" type="MeshInstance3D" parent="Final_final_Setup_Empty/StaticBody3D/posterler_updated" index="0"]
@@ -2052,7 +2060,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("18_rcl2y")
 
 [node name="Poster 11" type="MeshInstance3D" parent="Final_final_Setup_Empty/StaticBody3D/posterler_updated" index="6"]
-transform = Transform3D(-1.34917e-09, 0.332035, -1.43085, -1.78279, -8.38317e-07, -7.94243e-17, -7.79166e-08, 19.1756, 0.0247759, -6.10528, 2.48085, -36.5117)
+transform = Transform3D(-1.74433e-09, 0.329914, -1.95866, -2.30495, -8.32962e-07, -1.08722e-16, -1.00737e-07, 19.0531, 0.0339152, -3.51393, 2.48085, -36.5117)
 material_override = ExtResource("18_rcl2y")
 mesh = SubResource("ArrayMesh_e41fu")
 skeleton = NodePath("")
@@ -2065,7 +2073,7 @@ mesh = SubResource("ArrayMesh_i3a83")
 skeleton = NodePath("")
 
 [node name="Poster 6_001" type="MeshInstance3D" parent="Final_final_Setup_Empty/StaticBody3D/posterler_updated" index="8"]
-transform = Transform3D(-2.84522e-07, -18.9135, 1.13647e-05, -2.38674, 3.382e-06, -2.44166e-12, 1.08536e-12, -0.000120098, -1.78976, -0.630514, -0.121808, -24.5976)
+transform = Transform3D(1.15265e-10, 0.00747218, -1.78976, -2.38674, 3.382e-06, -2.44166e-12, 2.84522e-07, 18.9135, 0.000707083, -28.4774, 2.23492, -36.4442)
 material_override = ExtResource("18_rcl2y")
 mesh = SubResource("ArrayMesh_i3xja")
 skeleton = NodePath("")
