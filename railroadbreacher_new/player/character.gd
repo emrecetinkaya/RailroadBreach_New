@@ -103,7 +103,10 @@ func _physics_process(delta: float) -> void:
 
 	var collider = $RayCast3D.get_collider()
 	if $RayCast3D.is_colliding():
-		
+		if collider.has_method("hold"):
+			if Input.is_action_pressed("interact"):
+				collider.hold()
+
 		if collider.has_method("open_thing"):
 			if Input.is_action_just_pressed("interact") and !hands_full:
 				collider.open_thing()
@@ -119,6 +122,7 @@ func _physics_process(delta: float) -> void:
 				$Camera3D.clear_current()
 				collider.enter_cam()
 				collider.change_cam()
+
 			if Input.is_action_just_pressed("interact") and on_camera == true:
 				collider.change_cam()
 				collider.enter_cam()
@@ -145,5 +149,7 @@ func _physics_process(delta: float) -> void:
 			if collider.has_method("change_cam_better") and !on_camera:
 				if Input.is_action_just_pressed("secondary"):
 					collider.change_cam_better()
+					
+
 	move_and_slide()
 	

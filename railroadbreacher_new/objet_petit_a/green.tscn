@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=4 uid="uid://bl14j76sslju3"]
+
+[ext_resource type="Texture2D" uid="uid://d2si5fwlqn17m" path="res://Art/Models/New Mods/Materials/Textures/ConcreteBare.png" id="1_ah6f0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_acyrg"]
+size = Vector3(0.296421, 0.0638733, 0.197021)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_va722"]
+resource_name = "Para"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hm8eu"]
+_surfaces = [{
+"aabb": AABB(-0.340401, -0.0297667, -0.792965, 0.680801, 0.0595334, 1.58593),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAAAAMAAwAFAAQABgAEAAUABQAHAAYAAQAGAAcABwACAAEABwAFAAMAAwACAAcAAQAAAAQABAAGAAEA"),
+"name": "Para",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AEmuvkDZ8zzA/0q/AEmuvkDZ8zzA/0o/AEmuvkDZ87zA/0o/AEmuvkDZ87zA/0q/AEmuPkDZ8zzA/0q/AEmuPkDZ87zA/0q/AEmuPkDZ8zzA/0o/AEmuPkDZ87zA/0o/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_11504"]
+resource_name = "Cube_021"
+_surfaces = [{
+"aabb": AABB(-0.340401, -0.0297667, -0.792965, 0.680801, 0.0595334, 1.58593),
+"attribute_data": PackedByteArray("AAAgPwAAQD8AACA/AACAPwAAwD4AAIA/AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAQD8AAMA+AAAAPwAAID8AAIA+AAAgPwAAAD8AAMA+AAAAPwAAwD4AAIA+AAAgPwAAAAAAACA/AACAPgAAwD4AAIA+AADAPgAAAAAAAMA+AACAPgAAwD4AAAA/AAAAPgAAAD8AAAA+AACAPgAAYD8AAIA+AABgPwAAAD8AACA/AAAAPwAAID8AAIA+"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_va722"),
+"name": "Para",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AEmuvkDZ8zzA/0q/AEmuvkDZ8zzA/0o/AEmuvkDZ87zA/0o/AEmuvkDZ87zA/0q/AEmuPkDZ8zzA/0q/AEmuvkDZ8zzA/0q/AEmuvkDZ87zA/0q/AEmuPkDZ87zA/0q/AEmuPkDZ8zzA/0o/AEmuPkDZ8zzA/0q/AEmuPkDZ87zA/0q/AEmuPkDZ87zA/0o/AEmuvkDZ8zzA/0o/AEmuPkDZ8zzA/0o/AEmuPkDZ87zA/0o/AEmuvkDZ87zA/0o/AEmuPkDZ87zA/0o/AEmuPkDZ87zA/0q/AEmuvkDZ87zA/0q/AEmuvkDZ87zA/0o/AEmuvkDZ8zzA/0o/AEmuvkDZ8zzA/0q/AEmuPkDZ8zzA/0q/AEmuPkDZ8zzA/0o/AAD/f/9///8AAP9//3///wAA/3//f///AAD/f/9//////////3//////////f/////////9//////////3///////3//f///////f/9///////9//3///////3//f////3//f/9/////f/9//3////9//3//f////3//f/9/////fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hm8eu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nfxn"]
+albedo_color = Color(0.267326, 0.733575, 0.276481, 1)
+albedo_texture = ExtResource("1_ah6f0")
+
+[node name="green" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000860214, -0.000808716, 0.000366211)
+shape = SubResource("BoxShape3D_acyrg")
+
+[node name="Cube_010" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.433746, 0, 0, 0, 1, 0, 0, 0, 0.121108, 0, 0, 0)
+mesh = SubResource("ArrayMesh_11504")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_8nfxn")

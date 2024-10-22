@@ -1,21 +1,18 @@
-[gd_scene load_steps=33 format=3 uid="uid://y5v88jabs4it"]
+[gd_scene load_steps=25 format=3 uid="uid://d1unwy52wwjbs"]
 
-[ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_l8837"]
-[ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_0647e"]
-[ext_resource type="PackedScene" uid="uid://bjslps8ek4m2j" path="res://Art/Models/Textures/Train_updated.tscn" id="3_1jr0y"]
-[ext_resource type="Script" path="res://Art/Models/path_follow_3d.gd" id="4_faqst"]
-[ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_srnru"]
-[ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_6ctlc"]
-[ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="6_5cy2s"]
-[ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="7_3l0ry"]
-[ext_resource type="Script" path="res://Scripts/camera_panel_controls.gd" id="8_6lrtt"]
-[ext_resource type="Script" path="res://Scripts/input_panel_controls.gd" id="9_n2wki"]
-[ext_resource type="Script" path="res://Levels/basic_interactable.gd" id="10_oxpsl"]
-[ext_resource type="PackedScene" uid="uid://cpcfb8vm7br1m" path="res://objet_petit_a/ipod.tscn" id="11_pwrx3"]
-[ext_resource type="PackedScene" uid="uid://bnii8qil18kd7" path="res://Art/Models/people/creepycreepdude.tscn" id="13_cry43"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_0vpuu"]
+[ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_0lv2a"]
+[ext_resource type="Script" path="res://Art/Models/ticket_machine.gd" id="3_agfs4"]
+[ext_resource type="PackedScene" uid="uid://bjslps8ek4m2j" path="res://Art/Models/Textures/Train_updated.tscn" id="3_ut8vv"]
+[ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_i3b7k"]
+[ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_hjdox"]
+[ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="6_7ai2l"]
+[ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="7_5yt8t"]
+[ext_resource type="Script" path="res://Scripts/camera_panel_controls.gd" id="8_rdvmf"]
+[ext_resource type="Script" path="res://Scripts/input_panel_controls.gd" id="9_sxv46"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
-shader = ExtResource("1_l8837")
+shader = ExtResource("1_0vpuu")
 shader_parameter/enabled = true
 shader_parameter/dithering = true
 shader_parameter/colors = 14
@@ -49,15 +46,8 @@ fog_height = -626.25
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.444893, 0.637527, 0.749093, 1)
 
-[sub_resource type="Curve3D" id="Curve3D_lf1uu"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -200),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dips7"]
-shader = ExtResource("5_6ctlc")
+shader = ExtResource("5_hjdox")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.0
@@ -81,7 +71,7 @@ shader_parameter/vignette_intensity = 0.16
 shader_parameter/vignette_opacity = 0.657
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8dqjt"]
-shader = ExtResource("5_6ctlc")
+shader = ExtResource("5_hjdox")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.0
@@ -113,11 +103,10 @@ viewport_path = NodePath("SubViewportContainer3/SubViewport")
 viewport_path = NodePath("SubViewportContainer2/SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vmlsl"]
-size = Vector3(1, 1, 4.77539)
+size = Vector3(0.912598, 1, 3.6886)
 
 [sub_resource type="Animation" id="Animation_uyj0p"]
 resource_name = "Dolap Kapağı"
-loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_ocjjm"]
 length = 0.001
@@ -133,11 +122,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(-1.60256, -3.47134, -16.4781)]
 }
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Burun tarafı kapılar")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
 [sub_resource type="Animation" id="Animation_ri8jk"]
 resource_name = "train_arrive"
 length = 10.0
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -146,10 +142,66 @@ tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 5, 10),
-"transitions": PackedFloat32Array(1, 1, 1),
+"transitions": PackedFloat32Array(2.14355, 1, 1),
 "update": 0,
-"values": [Vector3(-1.60256, -3.47134, -16.4781), Vector3(-1.603, -3.471, 100), Vector3(-1.603, -3.471, 500)]
+"values": [Vector3(-1.603, -3.471, 0), Vector3(-1.603, -3.471, 100), Vector3(-1.603, -3.471, 500)]
 }
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Burun tarafı kapılar")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Kıç tarafı kapılar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/subway_car_004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/subway_car_006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Train2/Burun tarafı kapılar")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Train2/Kıç tarafı kapılar")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Train2/subway_car_004")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Train2/subway_car_006")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jascy"]
 _data = {
@@ -157,15 +209,6 @@ _data = {
 "RESET": SubResource("Animation_ocjjm"),
 "train_arrive": SubResource("Animation_ri8jk")
 }
-
-[sub_resource type="BoxMesh" id="BoxMesh_4ebg2"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_fsxhe"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_j6msb"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vf27a"]
-size = Vector3(2.51703, 2.22205, 1.28961)
 
 [node name="Models" type="Node3D"]
 
@@ -387,33 +430,145 @@ spot_angle = 31.25
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_lahrx")
 
-[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
-
-[node name="FullScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_0647e")]
+[node name="FullScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_0lv2a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4611, 0.0175877, -9.56495)
 
-[node name="Train" parent="SubViewportContainer/SubViewport/FullScene" instance=ExtResource("3_1jr0y")]
+[node name="StaticBody3D" parent="SubViewportContainer/SubViewport/FullScene/Props/ticket_machine6" index="0"]
+script = ExtResource("3_agfs4")
+
+[node name="Marker3D" type="Marker3D" parent="SubViewportContainer/SubViewport/FullScene/Props/ticket_machine6/StaticBody3D" index="1"]
+transform = Transform3D(0.999999, 0, -4.44089e-16, -5.96046e-08, 1, 3.29736e-14, 8.88178e-16, -2.72837e-14, 1, -0.0232892, 0.00590369, 0.00982809)
+
+[node name="Cube_004" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="InputText" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_004" index="1"]
+text = "... MINS LEFT"
+
+[node name="Cube_005" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="Cube_006" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="Cube_007" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="Cube_008" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="Cube_009" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="5"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="Cube_010" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="6"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="Cube_011" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="7"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="Poster 1" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="8"]
+surface_material_override/0 = null
+
+[node name="Poster 7" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="9"]
+surface_material_override/0 = null
+
+[node name="Poster 8" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="10"]
+surface_material_override/0 = null
+
+[node name="Poster 3" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="12"]
+surface_material_override/0 = null
+
+[node name="Poster 4" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="13"]
+surface_material_override/0 = null
+
+[node name="Poster 11" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="14"]
+surface_material_override/0 = null
+
+[node name="Poster 12" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="15"]
+surface_material_override/0 = null
+
+[node name="Poster 5" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="16"]
+surface_material_override/0 = null
+
+[node name="Poster 6" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="17"]
+surface_material_override/0 = null
+
+[node name="Poster 6_001" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="18"]
+surface_material_override/0 = null
+
+[node name="Poster 10" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="20"]
+surface_material_override/0 = null
+
+[node name="Poster 6_002" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="21"]
+surface_material_override/0 = null
+
+[node name="Cube" parent="SubViewportContainer/SubViewport/FullScene/Camera" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="Cube" parent="SubViewportContainer/SubViewport/FullScene/Camera3" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="Cube" parent="SubViewportContainer/SubViewport/FullScene/Camera2" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="Train" parent="SubViewportContainer/SubViewport/FullScene" instance=ExtResource("3_ut8vv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60256, -3.47134, -16.4781)
 
-[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train" instance=ExtResource("3_1jr0y")]
+[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train" index="3"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
+
+[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train" index="4"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
+
+[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train" instance=ExtResource("3_ut8vv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
 
-[node name="Path3D" type="Path3D" parent="SubViewportContainer/SubViewport/FullScene"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7032, -0.963855, 9.25563)
-curve = SubResource("Curve3D_lf1uu")
+[node name="Burun tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
-[node name="PathFollow3D" type="PathFollow3D" parent="SubViewportContainer/SubViewport/FullScene/Path3D"]
-loop = false
-script = ExtResource("4_faqst")
+[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 
-[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Path3D/PathFollow3D" instance=ExtResource("3_1jr0y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0408173, -2.37962, 68.1542)
+[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="3"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
 
-[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Path3D/PathFollow3D/Train2" instance=ExtResource("3_1jr0y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
+[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="4"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
 
-[node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_srnru")]
+[node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_i3b7k")]
 transform = Transform3D(0.639479, 0, 0.768808, 0, 1, 0, -0.768808, 0, 0.639479, 17.4012, 2.74941, 14.9456)
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewportContainer/SubViewport/Character/Control" index="2"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -2.0
+offset_right = -1820.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 360.0
+show_percentage = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer"]
 
@@ -456,20 +611,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
 transform = Transform3D(-4.37114e-08, -0.390731, 0.920505, 0, 0.920505, 0.390731, -1, 1.70794e-08, -4.02365e-08, 28.852, 0.806, -27.83)
-environment = ExtResource("6_5cy2s")
+environment = ExtResource("6_7ai2l")
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
 transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, 40.78, 1.5, -50)
-environment = ExtResource("6_5cy2s")
+environment = ExtResource("6_7ai2l")
 
 [node name="Camera3D3" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
 transform = Transform3D(-0.951057, 0.0536602, -0.304322, 0, 0.984808, 0.173648, 0.309017, 0.165149, -0.936608, 3.048, 0.806, -25.554)
-environment = ExtResource("6_5cy2s")
+environment = ExtResource("6_7ai2l")
 fov = 40.0
 
 [node name="Camera3D4" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 24.12, 5.489, 23.354)
-environment = ExtResource("6_5cy2s")
+environment = ExtResource("6_7ai2l")
 fov = 40.0
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
@@ -492,11 +647,10 @@ size_2d_override = Vector2i(1920, 1080)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Control" parent="SubViewportContainer2/SubViewport" instance=ExtResource("7_3l0ry")]
+[node name="Control" parent="SubViewportContainer2/SubViewport" instance=ExtResource("7_5yt8t")]
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(0.0253571, 0, 0.00543785, 0, 0.07, 0, -0.0543785, 0, 0.00253571, 13.5477, 2.95572, 12.7367)
-flip_h = true
 texture = SubResource("ViewportTexture_cneb6")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -504,19 +658,19 @@ transform = Transform3D(0.0543785, 0, 0.0253571, 0, 0.07, 0, -0.0253571, 0, 0.05
 transparent = false
 texture = SubResource("ViewportTexture_fcpeg")
 
-[node name="Area3D2" type="Area3D" parent="."]
+[node name="Sol Ekran Kameralar" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5477, 2.95572, 12.7367)
-script = ExtResource("8_6lrtt")
+script = ExtResource("8_rdvmf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
-transform = Transform3D(0.604708, 0, 0.079613, 0, 0.91864, 0, -1.30488, 0, 0.0368943, 0.0691948, 0.0147789, 0.0320663)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sol Ekran Kameralar"]
+transform = Transform3D(0.604708, 0, 0.079613, 0, 0.91864, 0, -1.30488, 0, 0.0368943, -0.00049305, 0.0147789, 0.0690432)
 shape = SubResource("BoxShape3D_vmlsl")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Sağ Ekran Input" type="Area3D" parent="."]
 transform = Transform3D(0.757519, 0, -0.652813, 0, 1, 0, 0.652813, 0, 0.757519, 14.515, 2.95572, 11.809)
-script = ExtResource("9_n2wki")
+script = ExtResource("9_sxv46")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sağ Ekran Input"]
 transform = Transform3D(0.484032, 0, 0.0559909, 0, 0.755207, 0, -1.04448, 0, 0.0259474, 0.0825844, -0.0108752, 0.0650787)
 shape = SubResource("BoxShape3D_vmlsl")
 
@@ -524,46 +678,10 @@ shape = SubResource("BoxShape3D_vmlsl")
 libraries = {
 "": SubResource("AnimationLibrary_jascy")
 }
-autoplay = "Dolap Kapağı"
+autoplay = "train_arrive"
+speed_scale = 0.705
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6465, 2.95572, 13.623)
-mesh = SubResource("BoxMesh_4ebg2")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.39956, 0, -10.1842)
-script = ExtResource("10_oxpsl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
-shape = SubResource("SphereShape3D_fsxhe")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
-mesh = SubResource("SphereMesh_j6msb")
-
-[node name="ipod" parent="." instance=ExtResource("11_pwrx3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5013, -2.57912, -3.59718)
-
-[node name="Cylinder_003" parent="ipod" index="0"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-
-[node name="CollisionShape3D" parent="ipod" index="1"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.00458813, -0.00526047, -0.0366516)
-
-[node name="creeep_anim" parent="." instance=ExtResource("13_cry43")]
-transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 37.0082, -2.7226, -0.717769)
-visible = false
-
-[node name="Area3D3" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0585, -2.16851, -39.8338)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0743713, 0.611023, 0.144806)
-shape = SubResource("BoxShape3D_vf27a")
-
-[connection signal="body_entered" from="Area3D3" to="SubViewportContainer/SubViewport/FullScene/Path3D/PathFollow3D" method="_on_area_3d_3_body_entered"]
-[connection signal="body_entered" from="Area3D3" to="ipod" method="_on_area_3d_3_body_entered"]
-
+[editable path="SubViewportContainer/SubViewport/FullScene"]
+[editable path="SubViewportContainer/SubViewport/FullScene/Train"]
+[editable path="SubViewportContainer/SubViewport/FullScene/Train/Train2"]
 [editable path="SubViewportContainer/SubViewport/Character"]
-[editable path="ipod"]
