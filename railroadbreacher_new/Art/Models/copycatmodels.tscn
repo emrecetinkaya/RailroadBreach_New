@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://y5v88jabs4it"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_l8837"]
-[ext_resource type="PackedScene" path="res://Art/Models/New Mods/full_scene.tscn" id="2_0647e"]
+[ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_0647e"]
 [ext_resource type="PackedScene" path="res://Art/Models/Textures/Train_updated.tscn" id="3_1jr0y"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_srnru"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_6ctlc"]
