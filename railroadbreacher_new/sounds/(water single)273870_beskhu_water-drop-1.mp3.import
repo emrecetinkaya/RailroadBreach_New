@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://duml6cv38yme1"
+path="res://.godot/imported/(water single)273870_beskhu_water-drop-1.mp3-54fcca37b4894ecb7775d1e517d6aad0.mp3str"
+
+[deps]
+
+source_file="res://sounds/(water single)273870_beskhu_water-drop-1.mp3"
+dest_files=["res://.godot/imported/(water single)273870_beskhu_water-drop-1.mp3-54fcca37b4894ecb7775d1e517d6aad0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

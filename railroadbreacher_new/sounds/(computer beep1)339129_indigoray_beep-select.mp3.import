@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://duf8fclkv5qu6"
+path="res://.godot/imported/(computer beep1)339129_indigoray_beep-select.mp3-bf14ed4bd3b487caa7430c6be4a2d967.mp3str"
+
+[deps]
+
+source_file="res://sounds/(computer beep1)339129_indigoray_beep-select.mp3"
+dest_files=["res://.godot/imported/(computer beep1)339129_indigoray_beep-select.mp3-bf14ed4bd3b487caa7430c6be4a2d967.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

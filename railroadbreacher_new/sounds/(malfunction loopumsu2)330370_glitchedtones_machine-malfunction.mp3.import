@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://coc1hvipdki3v"
+path="res://.godot/imported/(malfunction loopumsu2)330370_glitchedtones_machine-malfunction.mp3-c0bc473a61315efe9755a2c494ea0d5a.mp3str"
+
+[deps]
+
+source_file="res://sounds/(malfunction loopumsu2)330370_glitchedtones_machine-malfunction.mp3"
+dest_files=["res://.godot/imported/(malfunction loopumsu2)330370_glitchedtones_machine-malfunction.mp3-c0bc473a61315efe9755a2c494ea0d5a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xs2cle4cay6e"
+path="res://.godot/imported/(light flicker2)574100_trp_light-switch-fluorescent-flickering-electric-bulb-banff-190107.flac.mp3-1fe4acb1aa9c31b3e9cb2af8626f119b.mp3str"
+
+[deps]
+
+source_file="res://sounds/(light flicker2)574100_trp_light-switch-fluorescent-flickering-electric-bulb-banff-190107.flac.mp3"
+dest_files=["res://.godot/imported/(light flicker2)574100_trp_light-switch-fluorescent-flickering-electric-bulb-banff-190107.flac.mp3-1fe4acb1aa9c31b3e9cb2af8626f119b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

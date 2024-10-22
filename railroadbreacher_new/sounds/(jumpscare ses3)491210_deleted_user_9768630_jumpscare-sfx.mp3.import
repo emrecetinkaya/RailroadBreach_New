@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsub0643q8bly"
+path="res://.godot/imported/(jumpscare ses3)491210_deleted_user_9768630_jumpscare-sfx.mp3-32a22fdebb820601d23864b404af0838.mp3str"
+
+[deps]
+
+source_file="res://sounds/(jumpscare ses3)491210_deleted_user_9768630_jumpscare-sfx.mp3"
+dest_files=["res://.godot/imported/(jumpscare ses3)491210_deleted_user_9768630_jumpscare-sfx.mp3-32a22fdebb820601d23864b404af0838.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

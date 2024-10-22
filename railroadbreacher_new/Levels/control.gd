@@ -60,6 +60,8 @@ func _on_button_12_pressed() -> void:
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_011/InputText".text = (submit)
 	$LineEdit.clear()
 	$LineEdit.insert_text_at_caret("    SUBMITTED    ")
+	await get_tree().create_timer(1).timeout
+	$LineEdit.clear()
 
 func _physics_process(delta: float) -> void:
 	if !correct:

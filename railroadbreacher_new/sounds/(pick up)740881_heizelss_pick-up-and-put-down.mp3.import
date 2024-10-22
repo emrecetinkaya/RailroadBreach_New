@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxuf6dfwc7i6t"
+path="res://.godot/imported/(pick up)740881_heizelss_pick-up-and-put-down.mp3-30ffd61bd1e34b45baec89ef5fa7ad5b.mp3str"
+
+[deps]
+
+source_file="res://sounds/(pick up)740881_heizelss_pick-up-and-put-down.mp3"
+dest_files=["res://.godot/imported/(pick up)740881_heizelss_pick-up-and-put-down.mp3-30ffd61bd1e34b45baec89ef5fa7ad5b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

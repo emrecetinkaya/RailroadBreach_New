@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dypfwc7qnm6fx"
+path="res://.godot/imported/(creepy ambient4)blackhole2.mp3-35992578f1db625a9ffdfe01d513647b.mp3str"
+
+[deps]
+
+source_file="res://sounds/(creepy ambient4)blackhole2.mp3"
+dest_files=["res://.godot/imported/(creepy ambient4)blackhole2.mp3-35992578f1db625a9ffdfe01d513647b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

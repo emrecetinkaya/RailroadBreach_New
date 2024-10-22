@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wudqk36e7a8y"
+path="res://.godot/imported/(tren fren)616922_trashcanstudios_005-nyc-subway-platform-subway-arriving (online-audio-converter.com).mp3-3c3f8bb6e497c59bc6061c02b096fb8e.mp3str"
+
+[deps]
+
+source_file="res://sounds/(tren fren)616922_trashcanstudios_005-nyc-subway-platform-subway-arriving (online-audio-converter.com).mp3"
+dest_files=["res://.godot/imported/(tren fren)616922_trashcanstudios_005-nyc-subway-platform-subway-arriving (online-audio-converter.com).mp3-3c3f8bb6e497c59bc6061c02b096fb8e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvs472blkns01"
+path="res://.godot/imported/(mouse click soft)678248_pixeliota_mouse-click-sound.mp3.mp3-4092501480f88e883a518d7a8072b170.mp3str"
+
+[deps]
+
+source_file="res://sounds/(mouse click soft)678248_pixeliota_mouse-click-sound.mp3.mp3"
+dest_files=["res://.godot/imported/(mouse click soft)678248_pixeliota_mouse-click-sound.mp3.mp3-4092501480f88e883a518d7a8072b170.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
