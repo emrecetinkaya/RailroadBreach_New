@@ -46,7 +46,6 @@ volumetric_fog_albedo = Color(0.444893, 0.637527, 0.749093, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nitsv"]
 resource_name = "metal_02.001"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("6_4by1o")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
@@ -87,7 +86,6 @@ shadow_mesh = SubResource("ArrayMesh_l1fod")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7yk0s"]
 resource_name = "Door_01.001"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("7_2ktd8")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
@@ -525,6 +523,22 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_r3gj4")
+
+[node name="Küçük merdo" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568/StaticBody3D"]
+transform = Transform3D(-0.102511, -0.86941, -0.483341, -0.0609561, 0.490478, -0.869319, 0.992863, -0.0596519, -0.103275, 40.3338, -1.02453, 0.0742912)
+shape = SubResource("ConvexPolygonShape3D_r3gj4")
+
+[node name="Küçük merdo2" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568/StaticBody3D"]
+transform = Transform3D(-0.102511, -0.86941, -0.483341, -0.0609561, 0.490478, -0.869319, 0.992863, -0.0596519, -0.103275, 37.9801, -1.02453, 38.8739)
+shape = SubResource("ConvexPolygonShape3D_r3gj4")
+
+[node name="Küçük merdo3" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568/StaticBody3D"]
+transform = Transform3D(0.114287, 0.86864, 0.482081, -0.0609561, 0.490478, -0.869319, -0.991576, 0.0699658, 0.109004, -4.43058, -1.19234, 37.0048)
+shape = SubResource("ConvexPolygonShape3D_r3gj4")
+
+[node name="Küçük merdo4" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568/StaticBody3D"]
+transform = Transform3D(0.114287, 0.86864, 0.482081, -0.0609561, 0.490478, -0.869319, -0.991576, 0.0699658, 0.109004, -1.95417, -1.16262, -1.62424)
 shape = SubResource("ConvexPolygonShape3D_r3gj4")
 
 [node name="Door5" type="Node3D" parent="SubViewportContainer/SubViewport"]

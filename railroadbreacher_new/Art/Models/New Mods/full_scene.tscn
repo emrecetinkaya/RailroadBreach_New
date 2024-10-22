@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=4 uid="uid://ckh5r0ra3yk6d"]
+[gd_scene load_steps=171 format=4 uid="uid://ckh5r0ra3yk6d"]
 
 [ext_resource type="PackedScene" uid="uid://dpbbs8aarf2" path="res://Art/Models/New Mods/FBXs/FullScene.fbx" id="1_1nhx7"]
 [ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="2_md2vp"]
@@ -343,6 +343,14 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_f5fyl")
+
+[sub_resource type="BoxMesh" id="BoxMesh_8oce8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ubhf8"]
+albedo_color = Color(0.351563, 0.351563, 0.351563, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vu6w6"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4u7q"]
 resource_name = "Chair.001"
@@ -1708,7 +1716,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, 0.089672
 shape = SubResource("BoxShape3D_pspua")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, -0.171277, 0.0226285, -0.0304738)
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, -0.171277, 0.0226285, -0.0321083)
 shape = SubResource("BoxShape3D_pspua")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="5"]
@@ -1784,7 +1792,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0777621, -0.233655, 0.0366
 shape = SubResource("BoxShape3D_q5k1o")
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="23"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0182802, -0.235296, 0.0366039)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0121065, -0.235296, 0.0366039)
 shape = SubResource("BoxShape3D_q5k1o")
 
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="24"]
@@ -1904,7 +1912,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244288, 0.318834, -0.00676
 shape = SubResource("BoxShape3D_wg55c")
 
 [node name="CollisionShape3D59" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="53"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244288, -0.104464, -0.00676129)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.241846, -0.106622, -0.00676129)
 shape = SubResource("BoxShape3D_wg55c")
 
 [node name="CollisionShape3D60" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="54"]
@@ -1984,7 +1992,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24438, 0.312383, -0.026303
 shape = SubResource("BoxShape3D_xqeci")
 
 [node name="CollisionShape3D62" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="73"]
-transform = Transform3D(0.998406, 6.72713e-09, -0.0564314, -6.72713e-09, 1, 1.89978e-10, 0.0564314, 1.89978e-10, 0.998406, -0.246618, -0.100095, -0.0426058)
+transform = Transform3D(0.998406, 6.72713e-09, -0.0564314, -6.72713e-09, 1, 1.89964e-10, 0.0564314, 1.89978e-10, 0.998406, -0.241613, -0.102675, -0.0426058)
 shape = SubResource("BoxShape3D_xqeci")
 
 [node name="CollisionShape3D63" type="CollisionShape3D" parent="Final_final_Setup_Empty/StaticBody3D" index="74"]
@@ -2099,7 +2107,183 @@ skeleton = NodePath("")
 [node name="Props" type="Node3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4858, -2.75571, 2.51539)
 
-[node name="Chairs" type="Node3D" parent="Props" index="0"]
+[node name="Merdiven küçük" type="Node3D" parent="Props" index="0"]
+transform = Transform3D(2.03109e-08, 0.0471581, 1.12242, -0.172761, -5.75409e-08, 1.33888e-07, 8.28452e-09, -1.31554, 0.0402353, 32.9781, -0.612304, 6.53291)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Props/Merdiven küçük" index="0"]
+transform = Transform3D(1, -8.52651e-14, -1.03029e-13, 0, 0.817143, -7.45058e-09, 2.35922e-15, 1.86265e-08, 1.00809, -1.26174, 0.131435, -0.004776)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Props/Merdiven küçük" index="1"]
+transform = Transform3D(1, 2.84217e-14, -2.18492e-13, 0, 0.345381, -3.72529e-09, 2.35922e-15, 5.58794e-09, 1.02895, -2.30791, 0.374758, -0.00934219)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Props/Merdiven küçük" index="2"]
+transform = Transform3D(1, 5.96856e-13, -9.9476e-14, 4.44089e-16, 1.1521, -2.23517e-08, 5.82867e-15, 7.45058e-09, 0.974881, 1.20662, -0.088141, 0.0373516)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Props/Merdiven küçük" index="3"]
+transform = Transform3D(1, -3.41061e-13, -1.33227e-13, 4.44089e-16, 1.42016, -1.11759e-08, 5.82867e-15, 2.23517e-08, 0.965172, 2.45668, -0.265024, 0.0447826)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Props/Merdiven küçük" index="4"]
+transform = Transform3D(1, 0, -2.83329e-13, 4.44089e-16, 1.91375, -7.45058e-09, 5.82867e-15, 2.98023e-08, 0.953147, 3.82499, -0.410758, 0.0508995)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Props/Merdiven küçük" index="5"]
+transform = Transform3D(1, 3.41061e-13, -4.01457e-13, 1.06581e-14, 2.06486, -7.45058e-09, 5.41234e-15, 6.70552e-08, 0.94622, 4.93382, -0.634735, 0.0603008)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Props/Merdiven küçük" index="6"]
+transform = Transform3D(1, 2.84217e-14, 1.95399e-14, 0, 1, 0, 2.35922e-15, 3.72529e-09, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Props/Merdiven küçük" index="7"]
+transform = Transform3D(1, -1.7053e-13, -5.32907e-14, 8.88178e-16, 0.817143, -7.45058e-09, 1.08247e-15, 1.86265e-08, 1.00809, -1.26177, -1.08966, -39.9299)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Props/Merdiven küçük" index="8"]
+transform = Transform3D(1, 9.9476e-14, -2.57572e-13, 8.88178e-16, 0.345381, -3.72529e-09, 1.08247e-15, 4.65661e-09, 1.02895, -2.30794, -0.846336, -39.9344)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Props/Merdiven küçük" index="9"]
+transform = Transform3D(1, 6.82121e-13, -4.85834e-13, 3.9968e-15, 1.1521, -2.23517e-08, 6.30052e-15, -2.6077e-08, 0.974881, 1.20659, -1.30924, -39.8877)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Props/Merdiven küçük" index="10"]
+transform = Transform3D(1, -3.41061e-13, -2.37144e-13, 3.9968e-15, 1.42016, -1.11759e-08, 6.30052e-15, -1.49012e-08, 0.965172, 2.45665, -1.48612, -39.8803)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Props/Merdiven küçük" index="11"]
+transform = Transform3D(1, 5.68434e-14, -2.1938e-13, 3.9968e-15, 1.91375, 5.58794e-09, 6.30052e-15, -7.45058e-09, 0.953147, 3.82496, -1.63185, -39.8742)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Props/Merdiven küçük" index="12"]
+transform = Transform3D(1, 8.52651e-13, -4.40536e-13, 1.11022e-14, 2.06486, -9.31323e-09, 4.21885e-15, 3.72529e-08, 0.94622, 4.93379, -1.85583, -39.8648)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Props/Merdiven küçük" index="13"]
+transform = Transform3D(1, 5.68434e-14, -2.75335e-14, 8.88178e-16, 1, 3.72529e-09, 1.08247e-15, -1.49012e-08, 1, -3.05176e-05, -1.22109, -39.9251)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Props/Merdiven küçük" index="14"]
+transform = Transform3D(1, 5.25486e-07, -1.5721e-06, 6.88897e-07, -0.816786, 0.0298008, -1.53979e-06, -0.0241561, -1.00765, -1.26177, 28.3067, -41.1262)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Props/Merdiven küçük" index="15"]
+transform = Transform3D(1, 2.22107e-07, -1.60463e-06, 6.88897e-07, -0.34523, 0.0304175, -1.53979e-06, -0.01021, -1.0285, -2.30794, 28.0634, -41.1301)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Props/Merdiven küçük" index="16"]
+transform = Transform3D(1, 7.4089e-07, -1.52031e-06, 6.88897e-07, -1.1516, 0.0288191, -1.53979e-06, -0.034058, -0.974455, 1.20659, 28.5272, -41.1607)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Props/Merdiven küçük" index="17"]
+transform = Transform3D(1, 9.13273e-07, -1.50517e-06, 6.88897e-07, -1.41954, 0.0285321, -1.53979e-06, -0.0419822, -0.96475, 2.45665, 28.7042, -41.162)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Props/Merdiven küçük" index="18"]
+transform = Transform3D(1, 1.23069e-06, -1.48642e-06, 6.88897e-07, -1.91291, 0.0281766, -1.53979e-06, -0.0565736, -0.95273, 3.82496, 28.8501, -41.1631)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="Props/Merdiven küçük" index="19"]
+transform = Transform3D(1, 1.32787e-06, -1.47562e-06, 6.88897e-07, -2.06396, 0.0279718, -1.53979e-06, -0.0610407, -0.945806, 4.93379, 29.0742, -41.1647)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="Props/Merdiven küçük" index="20"]
+transform = Transform3D(1, 6.43077e-07, -1.55949e-06, 6.88897e-07, -0.999563, 0.0295617, -1.53979e-06, -0.0295616, -0.999563, -3.05176e-05, 28.4382, -41.1264)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="Props/Merdiven küçük" index="21"]
+transform = Transform3D(1, 5.25486e-07, -1.5721e-06, 6.88897e-07, -0.816786, 0.0298008, -1.53979e-06, -0.0241561, -1.00765, -1.26174, 28.5203, -1.17626)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="Props/Merdiven küçük" index="22"]
+transform = Transform3D(1, 2.22107e-07, -1.60463e-06, 6.88897e-07, -0.34523, 0.0304175, -1.53979e-06, -0.01021, -1.0285, -2.30791, 28.2769, -1.18014)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D24" type="MeshInstance3D" parent="Props/Merdiven küçük" index="23"]
+transform = Transform3D(1, 7.4089e-07, -1.52031e-06, 6.88897e-07, -1.1516, 0.0288191, -1.53979e-06, -0.0340579, -0.974455, 1.20662, 28.7408, -1.21077)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Props/Merdiven küçük/MeshInstance3D24" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Merdiven küçük/MeshInstance3D24/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_vu6w6")
+
+[node name="MeshInstance3D25" type="MeshInstance3D" parent="Props/Merdiven küçük" index="24"]
+transform = Transform3D(1, 9.13273e-07, -1.50517e-06, 6.88897e-07, -1.41954, 0.0285321, -1.53979e-06, -0.0419822, -0.96475, 2.45668, 28.9178, -1.21207)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="Props/Merdiven küçük" index="25"]
+transform = Transform3D(1, 1.23069e-06, -1.48642e-06, 6.88897e-07, -1.91291, 0.0281766, -1.53979e-06, -0.0565736, -0.95273, 3.825, 29.0636, -1.21313)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D27" type="MeshInstance3D" parent="Props/Merdiven küçük" index="26"]
+transform = Transform3D(1, 1.32787e-06, -1.47562e-06, 6.88897e-07, -2.06396, 0.0279718, -1.53979e-06, -0.0610407, -0.945806, 4.93383, 29.2877, -1.21478)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="MeshInstance3D28" type="MeshInstance3D" parent="Props/Merdiven küçük" index="27"]
+transform = Transform3D(1, 6.43078e-07, -1.55949e-06, 6.88897e-07, -0.999563, 0.0295617, -1.53979e-06, -0.0295616, -0.999563, 0, 28.6518, -1.1765)
+mesh = SubResource("BoxMesh_8oce8")
+skeleton = NodePath("../../../Final_final_Setup_Empty/StaticBody3D/CollisionShape3D82")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubhf8")
+
+[node name="Chairs" type="Node3D" parent="Props" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.918203)
 
 [node name="Chair2" type="MeshInstance3D" parent="Props/Chairs" index="0"]
@@ -2262,7 +2446,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Chairs/Chair17/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_pdcyx")
 
-[node name="Trashs" type="Node3D" parent="Props" index="1"]
+[node name="Trashs" type="Node3D" parent="Props" index="2"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 15.9084, 0, -0.718405)
 
 [node name="trash_can" type="MeshInstance3D" parent="Props/Trashs" index="0"]
@@ -2286,7 +2470,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Trashs/trash_can6/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_xb30w")
 
-[node name="ticket_machine" type="MeshInstance3D" parent="Props" index="2"]
+[node name="ticket_machine" type="MeshInstance3D" parent="Props" index="3"]
 transform = Transform3D(-4.91187e-06, 100, 4.93299e-06, 0, -4.37114e-06, 112.854, 112.37, 4.37114e-06, 2.15628e-13, -1.32996, 4.13837, 26.5207)
 mesh = SubResource("ArrayMesh_mp1fv")
 skeleton = NodePath("")
@@ -2296,7 +2480,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/ticket_machine/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_aqjn5")
 
-[node name="ticket_machine2" type="MeshInstance3D" parent="Props" index="3"]
+[node name="ticket_machine2" type="MeshInstance3D" parent="Props" index="4"]
 transform = Transform3D(-4.91187e-06, 100, 4.93299e-06, 0, -4.37114e-06, 112.854, 112.37, 4.37114e-06, 2.15628e-13, -1.32996, 4.13837, 27.9733)
 mesh = SubResource("ArrayMesh_mp1fv")
 skeleton = NodePath("")
@@ -2306,7 +2490,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/ticket_machine2/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_aqjn5")
 
-[node name="ticket_machine3" type="MeshInstance3D" parent="Props" index="4"]
+[node name="ticket_machine3" type="MeshInstance3D" parent="Props" index="5"]
 transform = Transform3D(-4.91187e-06, 100, 4.93299e-06, 0, -4.37114e-06, 112.854, 112.37, 4.37114e-06, 2.15628e-13, -1.32996, 4.13837, 29.4519)
 mesh = SubResource("ArrayMesh_mp1fv")
 skeleton = NodePath("")
@@ -2316,7 +2500,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/ticket_machine3/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_aqjn5")
 
-[node name="ticket_machine4" type="MeshInstance3D" parent="Props" index="5"]
+[node name="ticket_machine4" type="MeshInstance3D" parent="Props" index="6"]
 transform = Transform3D(9.10643, -100.67, -4.91675e-06, -2.37867e-20, -4.41498e-06, 112.854, -111.96, -8.18818, -3.99911e-07, 22.6202, 4.13837, 26.2913)
 mesh = SubResource("ArrayMesh_mp1fv")
 skeleton = NodePath("")
@@ -2326,7 +2510,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/ticket_machine4/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_aqjn5")
 
-[node name="ticket_machine5" type="MeshInstance3D" parent="Props" index="6"]
+[node name="ticket_machine5" type="MeshInstance3D" parent="Props" index="7"]
 transform = Transform3D(9.10643, -100.67, -4.91675e-06, -2.37867e-20, -4.41498e-06, 112.854, -111.96, -8.18818, -3.99911e-07, 22.5763, 4.13837, 24.8435)
 mesh = SubResource("ArrayMesh_mp1fv")
 skeleton = NodePath("")
@@ -2336,7 +2520,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/ticket_machine5/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_aqjn5")
 
-[node name="ticket_machine6" type="MeshInstance3D" parent="Props" index="7"]
+[node name="ticket_machine6" type="MeshInstance3D" parent="Props" index="8"]
 transform = Transform3D(9.10643, -100.67, -4.91675e-06, -2.37867e-20, -4.41498e-06, 112.854, -111.96, -8.18818, -3.99911e-07, 22.6258, 4.13837, 23.3697)
 mesh = SubResource("ArrayMesh_mp1fv")
 skeleton = NodePath("")
@@ -2346,7 +2530,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/ticket_machine6/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_aqjn5")
 
-[node name="Vending_machine" type="MeshInstance3D" parent="Props" index="8"]
+[node name="Vending_machine" type="MeshInstance3D" parent="Props" index="9"]
 transform = Transform3D(108.46, 0, 0, 0, -1.19209e-05, 109.153, 0, -100, -1.3012e-05, -2.2662, 0, 4.81775)
 mesh = SubResource("ArrayMesh_o8w0w")
 skeleton = NodePath("")
@@ -2356,7 +2540,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Vending_machine/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_bv0vj")
 
-[node name="Vending_machine2" type="MeshInstance3D" parent="Props" index="9"]
+[node name="Vending_machine2" type="MeshInstance3D" parent="Props" index="10"]
 transform = Transform3D(108.46, 0, 0, 0, -1.19209e-05, 109.153, 0, -100, -1.3012e-05, 30.9936, 0, 4.81775)
 mesh = SubResource("ArrayMesh_o8w0w")
 skeleton = NodePath("")
@@ -2366,7 +2550,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Vending_machine2/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_bv0vj")
 
-[node name="Turnike" type="Node3D" parent="Props" index="10"]
+[node name="Turnike" type="Node3D" parent="Props" index="11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.76172, 6.11741, 25.2252)
 
 [node name="automatic_ticket_gate_D2" type="MeshInstance3D" parent="Props/Turnike" index="0"]
@@ -2471,7 +2655,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Turnike/automatic_ticket_gate9/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_icybc")
 
-[node name="Tabelas ve Posters2" type="Node3D" parent="Props" index="11"]
+[node name="Tabelas ve Posters2" type="Node3D" parent="Props" index="12"]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 17.3637, -0.265343, -7.98156)
 
 [node name="Tabelas ve Posters" type="Node3D" parent="Props/Tabelas ve Posters2" index="0"]
