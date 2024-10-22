@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwajh6bqmkywy"
+path="res://.godot/imported/(door close)sfx100v2_door_05.mp3-5dd1fd10d51ba7689d67b3ec8353069b.mp3str"
+
+[deps]
+
+source_file="res://sounds/(door close)sfx100v2_door_05.mp3"
+dest_files=["res://.godot/imported/(door close)sfx100v2_door_05.mp3-5dd1fd10d51ba7689d67b3ec8353069b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

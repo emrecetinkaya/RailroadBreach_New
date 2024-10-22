@@ -1,14 +1,19 @@
-[gd_scene load_steps=24 format=3 uid="uid://dpj3vyn2s20xq"]
+[gd_scene load_steps=33 format=3 uid="uid://dpj3vyn2s20xq"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_76yur"]
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_r4afn"]
 [ext_resource type="PackedScene" uid="uid://bjslps8ek4m2j" path="res://Art/Models/Textures/Train_updated.tscn" id="3_qa76i"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="3_rki1j"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="4_61u13"]
+[ext_resource type="AudioStream" uid="uid://wudqk36e7a8y" path="res://sounds/(tren fren)616922_trashcanstudios_005-nyc-subway-platform-subway-arriving (online-audio-converter.com).mp3" id="4_l0djf"]
 [ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="5_0qrds"]
+[ext_resource type="Script" path="res://Art/Models/train_arrives.gd" id="5_40iwn"]
 [ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="6_qd47y"]
 [ext_resource type="Script" path="res://Scripts/camera_panel_controls.gd" id="7_xd24x"]
 [ext_resource type="Script" path="res://Scripts/input_panel_controls.gd" id="8_p8fbp"]
+[ext_resource type="AudioStream" uid="uid://cig48nge8pawm" path="res://sounds/(ofis ambient)SFX SCI FI Computer room ambience (mp3cut.net)-2.mp3" id="10_7nxht"]
+[ext_resource type="AudioStream" uid="uid://cdxvmdaujnhmx" path="res://sounds/(light flicker loop)143915_scotchio_flickeringlight.aiff.mp3" id="11_d5cpu"]
+[ext_resource type="AudioStream" uid="uid://c23gxta58n3ta" path="res://sounds/(mouse click loud)697565_siyaam_big-mouse-click.mp3" id="11_k0yfl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
 shader = ExtResource("1_76yur")
@@ -44,6 +49,616 @@ fog_sky_affect = 0.055
 fog_height = -626.25
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.444893, 0.637527, 0.749093, 1)
+
+[sub_resource type="Animation" id="Animation_ocjjm"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ri8jk"]
+resource_name = "train_arrive_peron4"
+length = 10.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(0.25, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("./Burun tarafı kapılar")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("./Kıç tarafı kapılar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("./subway_car_004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("./subway_car_006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("./Train2/subway_car_004")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("./Train2/subway_car_006")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("./TrainAudio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.92,
+"start_offset": 3.6,
+"stream": ExtResource("4_l0djf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(6.06286, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_igj63"]
+resource_name = "train_arrive_peron3"
+length = 15.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(0.25, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("./Burun tarafı kapılar")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("./Kıç tarafı kapılar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("./subway_car_004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("./subway_car_006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("./Train2/subway_car_004")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("./Train2/subway_car_006")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("./TrainAudio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.92,
+"start_offset": 3.6,
+"stream": ExtResource("4_l0djf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(6.06286, 1, 1),
+"update": 0,
+"values": [Vector3(-1.6, -3.471, 0), Vector3(-1.6, -3.471, 100), Vector3(-1.6, -3.471, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_0juqp"]
+resource_name = "train_arrive_peron2"
+length = 20.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(0.25, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("./Burun tarafı kapılar")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("./Kıç tarafı kapılar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("./subway_car_004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("./subway_car_006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("./Train2/subway_car_004")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("./Train2/subway_car_006")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("./TrainAudio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.92,
+"start_offset": 3.6,
+"stream": ExtResource("4_l0djf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(6.06286, 1, 1),
+"update": 0,
+"values": [Vector3(-6.13, -3.471, 0), Vector3(-6.13, -3.471, 100), Vector3(-6.13, -3.471, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_t0wj4"]
+resource_name = "train_arrive_peron1"
+length = 10.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(0.25, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("./Burun tarafı kapılar")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("./Kıç tarafı kapılar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("./subway_car_004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("./subway_car_006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("./Train2/subway_car_004")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("./Train2/subway_car_006")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("./TrainAudio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.92,
+"start_offset": 3.6,
+"stream": ExtResource("4_l0djf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(6.06286, 1, 1),
+"update": 0,
+"values": [Vector3(-28.106, -3.471, 0), Vector3(-28.106, -3.471, 100), Vector3(-28.106, -3.471, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_wbb16"]
+resource_name = "trailer_train_anim"
+length = 10.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(0.25, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("./Burun tarafı kapılar")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("./Kıç tarafı kapılar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("./subway_car_004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("./subway_car_006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("./Train2/subway_car_004")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("./Train2/subway_car_006")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("./TrainAudio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/9/use_blend = true
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(6.06286, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, -75), Vector3(20.032, -3.471, 75), Vector3(20.032, -3.471, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_8y05n"]
+resource_name = "train_arrive_peron1_baketrial"
+length = 10.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5, 1.53333, 1.56667, 1.6, 1.63333, 1.66667, 1.7, 1.73333, 1.76667, 1.8, 1.83333, 1.86667, 1.9, 1.93333, 1.96667, 2, 2.03333, 2.06667, 2.1, 2.13333, 2.16667, 2.2, 2.23333, 2.26667, 2.3, 2.33333, 2.36667, 2.4, 2.43333, 2.46667, 2.5, 2.53333, 2.56667, 2.6, 2.63333, 2.66667, 2.7, 2.73333, 2.76667, 2.8, 2.83333, 2.86667, 2.9, 2.93333, 2.96667, 3, 3.03333, 3.06667, 3.1, 3.13333, 3.16667, 3.2, 3.23333, 3.26667, 3.3, 3.33333, 3.36667, 3.4, 3.43333, 3.46667, 3.5, 3.53333, 3.56667, 3.6, 3.63333, 3.66667, 3.7, 3.73333, 3.76667, 3.8, 3.83333, 3.86667, 3.9, 3.93333, 3.96667, 4, 4.03333, 4.06667, 4.1, 4.13333, 4.16667, 4.2, 4.23333, 4.26667, 4.3, 4.33333, 4.36667, 4.4, 4.43333, 4.46667, 4.5, 4.53333, 4.56667, 4.6, 4.63333, 4.66667, 4.7, 4.73333, 4.76667, 4.8, 4.83333, 4.86667, 4.9, 4.93333, 4.96667, 5, 5.03333, 5.06667, 5.1, 5.13333, 5.16667, 5.2, 5.23333, 5.26667, 5.3, 5.33333, 5.36667, 5.4, 5.43333, 5.46667, 5.5, 5.53333, 5.56667, 5.6, 5.63333, 5.66667, 5.7, 5.73333, 5.76667, 5.8, 5.83333, 5.86667, 5.9, 5.93333, 5.96667, 6, 6.03333, 6.06667, 6.1, 6.13333, 6.16667, 6.2, 6.23333, 6.26667, 6.3, 6.33333, 6.36667, 6.4, 6.43333, 6.46667, 6.5, 6.53333, 6.56667, 6.6, 6.63333, 6.66667, 6.7, 6.73333, 6.76667, 6.8, 6.83333, 6.86667, 6.9, 6.93333, 6.96667, 7, 7.03333, 7.06667, 7.1, 7.13333, 7.16667, 7.2, 7.23333, 7.26667, 7.3, 7.33333, 7.36667, 7.4, 7.43333, 7.46667, 7.5, 7.53333, 7.56667, 7.6, 7.63333, 7.66667, 7.7, 7.73333, 7.76667, 7.8, 7.83333, 7.86667, 7.9, 7.93333, 7.96667, 8, 8.03333, 8.06667, 8.1, 8.13333, 8.16667, 8.2, 8.23333, 8.26667, 8.3, 8.33333, 8.36667, 8.4, 8.43333, 8.46667, 8.5, 8.53333, 8.56667, 8.6, 8.63333, 8.66667, 8.7, 8.73333, 8.76667, 8.8, 8.83333, 8.86667, 8.9, 8.93333, 8.96667, 9, 9.03333, 9.06667, 9.1, 9.13333, 9.16667, 9.2, 9.23333, 9.26667, 9.3, 9.33333, 9.36667, 9.4, 9.43333, 9.46667, 9.5, 9.53333, 9.56667, 9.6, 9.63333, 9.66667, 9.7, 9.73333, 9.76667, 9.8, 9.83333, 9.86667, 9.9, 9.93333, 9.96667, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 0.0357713), Vector3(20.032, -3.471, 0.143783), Vector3(20.032, -3.471, 0.324728), Vector3(20.032, -3.471, 0.578866), Vector3(20.032, -3.471, 0.906053), Vector3(20.032, -3.471, 1.30579), Vector3(20.032, -3.471, 1.77724), Vector3(20.032, -3.471, 2.31929), Vector3(20.032, -3.471, 2.93053), Vector3(20.032, -3.471, 3.60936), Vector3(20.032, -3.471, 4.35393), Vector3(20.032, -3.471, 5.16222), Vector3(20.032, -3.471, 6.03205), Vector3(20.032, -3.471, 6.96111), Vector3(20.032, -3.471, 7.94697), Vector3(20.032, -3.471, 8.98707), Vector3(20.032, -3.471, 10.0788), Vector3(20.032, -3.471, 11.2195), Vector3(20.032, -3.471, 12.4064), Vector3(20.032, -3.471, 13.6368), Vector3(20.032, -3.471, 14.9078), Vector3(20.032, -3.471, 16.2167), Vector3(20.032, -3.471, 17.5606), Vector3(20.032, -3.471, 18.9368), Vector3(20.032, -3.471, 20.3425), Vector3(20.032, -3.471, 21.7749), Vector3(20.032, -3.471, 23.2314), Vector3(20.032, -3.471, 24.7092), Vector3(20.032, -3.471, 26.2057), Vector3(20.032, -3.471, 27.7185), Vector3(20.032, -3.471, 29.2449), Vector3(20.032, -3.471, 30.7825), Vector3(20.032, -3.471, 32.3289), Vector3(20.032, -3.471, 33.8819), Vector3(20.032, -3.471, 35.4392), Vector3(20.032, -3.471, 36.9986), Vector3(20.032, -3.471, 38.5581), Vector3(20.032, -3.471, 40.1156), Vector3(20.032, -3.471, 41.6693), Vector3(20.032, -3.471, 43.2172), Vector3(20.032, -3.471, 44.7577), Vector3(20.032, -3.471, 46.289), Vector3(20.032, -3.471, 47.8096), Vector3(20.032, -3.471, 49.3179), Vector3(20.032, -3.471, 50.8125), Vector3(20.032, -3.471, 52.2921), Vector3(20.032, -3.471, 53.7554), Vector3(20.032, -3.471, 55.2011), Vector3(20.032, -3.471, 56.6282), Vector3(20.032, -3.471, 58.0356), Vector3(20.032, -3.471, 59.4224), Vector3(20.032, -3.471, 60.7877), Vector3(20.032, -3.471, 62.1306), Vector3(20.032, -3.471, 63.4504), Vector3(20.032, -3.471, 64.7464), Vector3(20.032, -3.471, 66.018), Vector3(20.032, -3.471, 67.2647), Vector3(20.032, -3.471, 68.4859), Vector3(20.032, -3.471, 69.6813), Vector3(20.032, -3.471, 70.8504), Vector3(20.032, -3.471, 71.993), Vector3(20.032, -3.471, 73.1088), Vector3(20.032, -3.471, 74.1976), Vector3(20.032, -3.471, 75.2592), Vector3(20.032, -3.471, 76.2935), Vector3(20.032, -3.471, 77.3006), Vector3(20.032, -3.471, 78.2802), Vector3(20.032, -3.471, 79.2326), Vector3(20.032, -3.471, 80.1577), Vector3(20.032, -3.471, 81.0556), Vector3(20.032, -3.471, 81.9265), Vector3(20.032, -3.471, 82.7706), Vector3(20.032, -3.471, 83.5881), Vector3(20.032, -3.471, 84.3791), Vector3(20.032, -3.471, 85.1441), Vector3(20.032, -3.471, 85.8831), Vector3(20.032, -3.471, 86.5967), Vector3(20.032, -3.471, 87.2851), Vector3(20.032, -3.471, 87.9486), Vector3(20.032, -3.471, 88.5878), Vector3(20.032, -3.471, 89.2028), Vector3(20.032, -3.471, 89.7943), Vector3(20.032, -3.471, 90.3626), Vector3(20.032, -3.471, 90.9081), Vector3(20.032, -3.471, 91.4314), Vector3(20.032, -3.471, 91.9328), Vector3(20.032, -3.471, 92.4129), Vector3(20.032, -3.471, 92.8722), Vector3(20.032, -3.471, 93.3111), Vector3(20.032, -3.471, 93.7302), Vector3(20.032, -3.471, 94.13), Vector3(20.032, -3.471, 94.511), Vector3(20.032, -3.471, 94.8737), Vector3(20.032, -3.471, 95.2186), Vector3(20.032, -3.471, 95.5462), Vector3(20.032, -3.471, 95.8571), Vector3(20.032, -3.471, 96.1519), Vector3(20.032, -3.471, 96.4309), Vector3(20.032, -3.471, 96.6948), Vector3(20.032, -3.471, 96.944), Vector3(20.032, -3.471, 97.179), Vector3(20.032, -3.471, 97.4005), Vector3(20.032, -3.471, 97.6088), Vector3(20.032, -3.471, 97.8045), Vector3(20.032, -3.471, 97.9881), Vector3(20.032, -3.471, 98.1601), Vector3(20.032, -3.471, 98.3208), Vector3(20.032, -3.471, 98.4709), Vector3(20.032, -3.471, 98.6108), Vector3(20.032, -3.471, 98.7409), Vector3(20.032, -3.471, 98.8617), Vector3(20.032, -3.471, 98.9737), Vector3(20.032, -3.471, 99.0772), Vector3(20.032, -3.471, 99.1728), Vector3(20.032, -3.471, 99.2607), Vector3(20.032, -3.471, 99.3415), Vector3(20.032, -3.471, 99.4154), Vector3(20.032, -3.471, 99.483), Vector3(20.032, -3.471, 99.5446), Vector3(20.032, -3.471, 99.6005), Vector3(20.032, -3.471, 99.6511), Vector3(20.032, -3.471, 99.6968), Vector3(20.032, -3.471, 99.7378), Vector3(20.032, -3.471, 99.7745), Vector3(20.032, -3.471, 99.8072), Vector3(20.032, -3.471, 99.8362), Vector3(20.032, -3.471, 99.8619), Vector3(20.032, -3.471, 99.8844), Vector3(20.032, -3.471, 99.904), Vector3(20.032, -3.471, 99.921), Vector3(20.032, -3.471, 99.9357), Vector3(20.032, -3.471, 99.9482), Vector3(20.032, -3.471, 99.9588), Vector3(20.032, -3.471, 99.9676), Vector3(20.032, -3.471, 99.975), Vector3(20.032, -3.471, 99.981), Vector3(20.032, -3.471, 99.9859), Vector3(20.032, -3.471, 99.9898), Vector3(20.032, -3.471, 99.9928), Vector3(20.032, -3.471, 99.9951), Vector3(20.032, -3.471, 99.9968), Vector3(20.032, -3.471, 99.998), Vector3(20.032, -3.471, 99.9988), Vector3(20.032, -3.471, 99.9994), Vector3(20.032, -3.471, 99.9997), Vector3(20.032, -3.471, 99.9999), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 101.698), Vector3(20.032, -3.471, 103.456), Vector3(20.032, -3.471, 105.276), Vector3(20.032, -3.471, 107.154), Vector3(20.032, -3.471, 109.091), Vector3(20.032, -3.471, 111.085), Vector3(20.032, -3.471, 113.135), Vector3(20.032, -3.471, 115.241), Vector3(20.032, -3.471, 117.401), Vector3(20.032, -3.471, 119.615), Vector3(20.032, -3.471, 121.881), Vector3(20.032, -3.471, 124.198), Vector3(20.032, -3.471, 126.566), Vector3(20.032, -3.471, 128.984), Vector3(20.032, -3.471, 131.45), Vector3(20.032, -3.471, 133.964), Vector3(20.032, -3.471, 136.524), Vector3(20.032, -3.471, 139.13), Vector3(20.032, -3.471, 141.78), Vector3(20.032, -3.471, 144.474), Vector3(20.032, -3.471, 147.211), Vector3(20.032, -3.471, 149.989), Vector3(20.032, -3.471, 152.808), Vector3(20.032, -3.471, 155.667), Vector3(20.032, -3.471, 158.565), Vector3(20.032, -3.471, 161.5), Vector3(20.032, -3.471, 164.472), Vector3(20.032, -3.471, 167.48), Vector3(20.032, -3.471, 170.523), Vector3(20.032, -3.471, 173.6), Vector3(20.032, -3.471, 176.71), Vector3(20.032, -3.471, 179.851), Vector3(20.032, -3.471, 183.024), Vector3(20.032, -3.471, 186.226), Vector3(20.032, -3.471, 189.457), Vector3(20.032, -3.471, 192.717), Vector3(20.032, -3.471, 196.003), Vector3(20.032, -3.471, 199.316), Vector3(20.032, -3.471, 202.653), Vector3(20.032, -3.471, 206.015), Vector3(20.032, -3.471, 209.4), Vector3(20.032, -3.471, 212.806), Vector3(20.032, -3.471, 216.234), Vector3(20.032, -3.471, 219.683), Vector3(20.032, -3.471, 223.15), Vector3(20.032, -3.471, 226.636), Vector3(20.032, -3.471, 230.138), Vector3(20.032, -3.471, 233.658), Vector3(20.032, -3.471, 237.192), Vector3(20.032, -3.471, 240.741), Vector3(20.032, -3.471, 244.303), Vector3(20.032, -3.471, 247.877), Vector3(20.032, -3.471, 251.463), Vector3(20.032, -3.471, 255.059), Vector3(20.032, -3.471, 258.665), Vector3(20.032, -3.471, 262.279), Vector3(20.032, -3.471, 265.9), Vector3(20.032, -3.471, 269.528), Vector3(20.032, -3.471, 273.162), Vector3(20.032, -3.471, 276.8), Vector3(20.032, -3.471, 280.442), Vector3(20.032, -3.471, 284.086), Vector3(20.032, -3.471, 287.732), Vector3(20.032, -3.471, 291.378), Vector3(20.032, -3.471, 295.024), Vector3(20.032, -3.471, 298.669), Vector3(20.032, -3.471, 302.311), Vector3(20.032, -3.471, 305.95), Vector3(20.032, -3.471, 309.585), Vector3(20.032, -3.471, 313.215), Vector3(20.032, -3.471, 316.838), Vector3(20.032, -3.471, 320.454), Vector3(20.032, -3.471, 324.062), Vector3(20.032, -3.471, 327.661), Vector3(20.032, -3.471, 331.25), Vector3(20.032, -3.471, 334.828), Vector3(20.032, -3.471, 338.393), Vector3(20.032, -3.471, 341.946), Vector3(20.032, -3.471, 345.484), Vector3(20.032, -3.471, 349.007), Vector3(20.032, -3.471, 352.515), Vector3(20.032, -3.471, 356.005), Vector3(20.032, -3.471, 359.478), Vector3(20.032, -3.471, 362.931), Vector3(20.032, -3.471, 366.365), Vector3(20.032, -3.471, 369.778), Vector3(20.032, -3.471, 373.168), Vector3(20.032, -3.471, 376.536), Vector3(20.032, -3.471, 379.881), Vector3(20.032, -3.471, 383.2), Vector3(20.032, -3.471, 386.494), Vector3(20.032, -3.471, 389.76), Vector3(20.032, -3.471, 393), Vector3(20.032, -3.471, 396.21), Vector3(20.032, -3.471, 399.391), Vector3(20.032, -3.471, 402.541), Vector3(20.032, -3.471, 405.659), Vector3(20.032, -3.471, 408.745), Vector3(20.032, -3.471, 411.797), Vector3(20.032, -3.471, 414.815), Vector3(20.032, -3.471, 417.797), Vector3(20.032, -3.471, 420.742), Vector3(20.032, -3.471, 423.65), Vector3(20.032, -3.471, 426.52), Vector3(20.032, -3.471, 429.35), Vector3(20.032, -3.471, 432.14), Vector3(20.032, -3.471, 434.888), Vector3(20.032, -3.471, 437.594), Vector3(20.032, -3.471, 440.256), Vector3(20.032, -3.471, 442.874), Vector3(20.032, -3.471, 445.447), Vector3(20.032, -3.471, 447.973), Vector3(20.032, -3.471, 450.452), Vector3(20.032, -3.471, 452.883), Vector3(20.032, -3.471, 455.265), Vector3(20.032, -3.471, 457.596), Vector3(20.032, -3.471, 459.876), Vector3(20.032, -3.471, 462.104), Vector3(20.032, -3.471, 464.279), Vector3(20.032, -3.471, 466.4), Vector3(20.032, -3.471, 468.466), Vector3(20.032, -3.471, 470.475), Vector3(20.032, -3.471, 472.428), Vector3(20.032, -3.471, 474.322), Vector3(20.032, -3.471, 476.157), Vector3(20.032, -3.471, 477.933), Vector3(20.032, -3.471, 479.647), Vector3(20.032, -3.471, 481.3), Vector3(20.032, -3.471, 482.889), Vector3(20.032, -3.471, 484.415), Vector3(20.032, -3.471, 485.876), Vector3(20.032, -3.471, 487.27), Vector3(20.032, -3.471, 488.598), Vector3(20.032, -3.471, 489.859), Vector3(20.032, -3.471, 491.05), Vector3(20.032, -3.471, 492.172), Vector3(20.032, -3.471, 493.222), Vector3(20.032, -3.471, 494.202), Vector3(20.032, -3.471, 495.108), Vector3(20.032, -3.471, 495.941), Vector3(20.032, -3.471, 496.699), Vector3(20.032, -3.471, 497.381), Vector3(20.032, -3.471, 497.987), Vector3(20.032, -3.471, 498.515), Vector3(20.032, -3.471, 498.965), Vector3(20.032, -3.471, 499.335), Vector3(20.032, -3.471, 499.624), Vector3(20.032, -3.471, 499.832), Vector3(20.032, -3.471, 499.958), Vector3(20.032, -3.471, 500)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("./Burun tarafı kapılar")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0.467742, 0.0333333, 1, 0, 0, 0.435484, 0.0666667, 1, 0, 0, 0.403226, 0.1, 1, 0, 0, 0.370968, 0.133333, 1, 0, 0, 0.33871, 0.166667, 1, 0, 0, 0.306452, 0.2, 1, 0, 0, 0.274194, 0.233333, 1, 0, 0, 0.241936, 0.266667, 1, 0, 0, 0.209677, 0.3, 1, 0, 0, 0.177419, 0.333333, 1, 0, 0, 0.145161, 0.366667, 1, 0, 0, 0.112903, 0.4, 1, 0, 0, 0.0806452, 0.433333, 1, 0, 0, 0.0483871, 0.466667, 1, 0, 0, 0.016129, 0.5, 1, 0, 0, -0.016129, 0.533333, 1, 0, 0, -0.0483871, 0.566667, 1, 0, 0, -0.0806451, 0.6, 1, 0, 0, -0.112903, 0.633333, 1, 0, 0, -0.145161, 0.666667, 1, 0, 0, -0.177419, 0.7, 1, 0, 0, -0.209677, 0.733333, 1, 0, 0, -0.241935, 0.766667, 1, 0, 0, -0.274194, 0.8, 1, 0, 0, -0.306452, 0.833333, 1, 0, 0, -0.33871, 0.866667, 1, 0, 0, -0.370968, 0.9, 1, 0, 0, -0.403226, 0.933333, 1, 0, 0, -0.435484, 0.966667, 1, 0, 0, -0.467742, 1, 1, 0, 0, -0.5, 1.03333, 1, 0, 0, -0.5, 1.06667, 1, 0, 0, -0.5, 1.1, 1, 0, 0, -0.5, 1.13333, 1, 0, 0, -0.5, 1.16667, 1, 0, 0, -0.5, 1.2, 1, 0, 0, -0.5, 1.23333, 1, 0, 0, -0.5, 1.26667, 1, 0, 0, -0.5, 1.3, 1, 0, 0, -0.5, 1.33333, 1, 0, 0, -0.5, 1.36667, 1, 0, 0, -0.5, 1.4, 1, 0, 0, -0.5, 1.43333, 1, 0, 0, -0.5, 1.46667, 1, 0, 0, -0.5, 1.5, 1, 0, 0, -0.5, 1.53333, 1, 0, 0, -0.5, 1.56667, 1, 0, 0, -0.5, 1.6, 1, 0, 0, -0.5, 1.63333, 1, 0, 0, -0.5, 1.66667, 1, 0, 0, -0.5, 1.7, 1, 0, 0, -0.5, 1.73333, 1, 0, 0, -0.5, 1.76667, 1, 0, 0, -0.5, 1.8, 1, 0, 0, -0.5, 1.83333, 1, 0, 0, -0.5, 1.86667, 1, 0, 0, -0.5, 1.9, 1, 0, 0, -0.5, 1.93333, 1, 0, 0, -0.5, 1.96667, 1, 0, 0, -0.5, 2, 1, 0, 0, -0.5, 2.03333, 1, 0, 0, -0.5, 2.06667, 1, 0, 0, -0.5, 2.1, 1, 0, 0, -0.5, 2.13333, 1, 0, 0, -0.5, 2.16667, 1, 0, 0, -0.5, 2.2, 1, 0, 0, -0.5, 2.23333, 1, 0, 0, -0.5, 2.26667, 1, 0, 0, -0.5, 2.3, 1, 0, 0, -0.5, 2.33333, 1, 0, 0, -0.5, 2.36667, 1, 0, 0, -0.5, 2.4, 1, 0, 0, -0.5, 2.43333, 1, 0, 0, -0.5, 2.46667, 1, 0, 0, -0.5, 2.5, 1, 0, 0, -0.5, 2.53333, 1, 0, 0, -0.5, 2.56667, 1, 0, 0, -0.5, 2.6, 1, 0, 0, -0.5, 2.63333, 1, 0, 0, -0.5, 2.66667, 1, 0, 0, -0.5, 2.7, 1, 0, 0, -0.5, 2.73333, 1, 0, 0, -0.5, 2.76667, 1, 0, 0, -0.5, 2.8, 1, 0, 0, -0.5, 2.83333, 1, 0, 0, -0.5, 2.86667, 1, 0, 0, -0.5, 2.9, 1, 0, 0, -0.5, 2.93333, 1, 0, 0, -0.5, 2.96667, 1, 0, 0, -0.5, 3, 1, 0, 0, -0.5, 3.03333, 1, 0, 0, -0.5, 3.06667, 1, 0, 0, -0.5, 3.1, 1, 0, 0, -0.5, 3.13333, 1, 0, 0, -0.5, 3.16667, 1, 0, 0, -0.5, 3.2, 1, 0, 0, -0.5, 3.23333, 1, 0, 0, -0.5, 3.26667, 1, 0, 0, -0.5, 3.3, 1, 0, 0, -0.5, 3.33333, 1, 0, 0, -0.5, 3.36667, 1, 0, 0, -0.5, 3.4, 1, 0, 0, -0.5, 3.43333, 1, 0, 0, -0.5, 3.46667, 1, 0, 0, -0.5, 3.5, 1, 0, 0, -0.5, 3.53333, 1, 0, 0, -0.5, 3.56667, 1, 0, 0, -0.5, 3.6, 1, 0, 0, -0.5, 3.63333, 1, 0, 0, -0.5, 3.66667, 1, 0, 0, -0.5, 3.7, 1, 0, 0, -0.5, 3.73333, 1, 0, 0, -0.5, 3.76667, 1, 0, 0, -0.5, 3.8, 1, 0, 0, -0.5, 3.83333, 1, 0, 0, -0.5, 3.86667, 1, 0, 0, -0.5, 3.9, 1, 0, 0, -0.5, 3.93333, 1, 0, 0, -0.5, 3.96667, 1, 0, 0, -0.5, 4, 1, 0, 0, -0.5, 4.03333, 1, 0, 0, -0.5, 4.06667, 1, 0, 0, -0.5, 4.1, 1, 0, 0, -0.5, 4.13333, 1, 0, 0, -0.5, 4.16667, 1, 0, 0, -0.5, 4.2, 1, 0, 0, -0.5, 4.23333, 1, 0, 0, -0.5, 4.26667, 1, 0, 0, -0.5, 4.3, 1, 0, 0, -0.5, 4.33333, 1, 0, 0, -0.5, 4.36667, 1, 0, 0, -0.5, 4.4, 1, 0, 0, -0.5, 4.43333, 1, 0, 0, -0.5, 4.46667, 1, 0, 0, -0.5, 4.5, 1, 0, 0, -0.5, 4.53333, 1, 0, 0, -0.5, 4.56667, 1, 0, 0, -0.5, 4.6, 1, 0, 0, -0.5, 4.63333, 1, 0, 0, -0.5, 4.66667, 1, 0, 0, -0.5, 4.7, 1, 0, 0, -0.5, 4.73333, 1, 0, 0, -0.5, 4.76667, 1, 0, 0, -0.5, 4.8, 1, 0, 0, -0.5, 4.83333, 1, 0, 0, -0.5, 4.86667, 1, 0, 0, -0.5, 4.9, 1, 0, 0, -0.5, 4.93333, 1, 0, 0, -0.5, 4.96667, 1, 0, 0, -0.5, 5, 1, 0, 0, -0.5, 5.03333, 1, 0, 0, -0.5, 5.06667, 1, 0, 0, -0.5, 5.1, 1, 0, 0, -0.5, 5.13333, 1, 0, 0, -0.5, 5.16667, 1, 0, 0, -0.5, 5.2, 1, 0, 0, -0.5, 5.23333, 1, 0, 0, -0.5, 5.26667, 1, 0, 0, -0.5, 5.3, 1, 0, 0, -0.5, 5.33333, 1, 0, 0, -0.5, 5.36667, 1, 0, 0, -0.5, 5.4, 1, 0, 0, -0.5, 5.43333, 1, 0, 0, -0.5, 5.46667, 1, 0, 0, -0.5, 5.5, 1, 0, 0, -0.5, 5.53333, 1, 0, 0, -0.5, 5.56667, 1, 0, 0, -0.5, 5.6, 1, 0, 0, -0.5, 5.63333, 1, 0, 0, -0.5, 5.66667, 1, 0, 0, -0.5, 5.7, 1, 0, 0, -0.5, 5.73333, 1, 0, 0, -0.5, 5.76667, 1, 0, 0, -0.5, 5.8, 1, 0, 0, -0.5, 5.83333, 1, 0, 0, -0.5, 5.86667, 1, 0, 0, -0.5, 5.9, 1, 0, 0, -0.5, 5.93333, 1, 0, 0, -0.5, 5.96667, 1, 0, 0, -0.5, 6, 1, 0, 0, -0.5, 6.03333, 1, 0, 0, -0.5, 6.06667, 1, 0, 0, -0.5, 6.1, 1, 0, 0, -0.5, 6.13333, 1, 0, 0, -0.5, 6.16667, 1, 0, 0, -0.5, 6.2, 1, 0, 0, -0.5, 6.23333, 1, 0, 0, -0.5, 6.26667, 1, 0, 0, -0.5, 6.3, 1, 0, 0, -0.5, 6.33333, 1, 0, 0, -0.5, 6.36667, 1, 0, 0, -0.5, 6.4, 1, 0, 0, -0.5, 6.43333, 1, 0, 0, -0.5, 6.46667, 1, 0, 0, -0.5, 6.5, 1, 0, 0, -0.5, 6.53333, 1, 0, 0, -0.5, 6.56667, 1, 0, 0, -0.5, 6.6, 1, 0, 0, -0.5, 6.63333, 1, 0, 0, -0.5, 6.66667, 1, 0, 0, -0.5, 6.7, 1, 0, 0, -0.5, 6.73333, 1, 0, 0, -0.5, 6.76667, 1, 0, 0, -0.5, 6.8, 1, 0, 0, -0.5, 6.83333, 1, 0, 0, -0.5, 6.86667, 1, 0, 0, -0.5, 6.9, 1, 0, 0, -0.5, 6.93333, 1, 0, 0, -0.5, 6.96667, 1, 0, 0, -0.5, 7, 1, 0, 0, -0.5, 7.03333, 1, 0, 0, -0.5, 7.06667, 1, 0, 0, -0.5, 7.1, 1, 0, 0, -0.5, 7.13333, 1, 0, 0, -0.5, 7.16667, 1, 0, 0, -0.5, 7.2, 1, 0, 0, -0.5, 7.23333, 1, 0, 0, -0.5, 7.26667, 1, 0, 0, -0.5, 7.3, 1, 0, 0, -0.5, 7.33333, 1, 0, 0, -0.5, 7.36667, 1, 0, 0, -0.5, 7.4, 1, 0, 0, -0.5, 7.43333, 1, 0, 0, -0.5, 7.46667, 1, 0, 0, -0.5, 7.5, 1, 0, 0, -0.5, 7.53333, 1, 0, 0, -0.5, 7.56667, 1, 0, 0, -0.5, 7.6, 1, 0, 0, -0.5, 7.63333, 1, 0, 0, -0.5, 7.66667, 1, 0, 0, -0.5, 7.7, 1, 0, 0, -0.5, 7.73333, 1, 0, 0, -0.5, 7.76667, 1, 0, 0, -0.5, 7.8, 1, 0, 0, -0.5, 7.83333, 1, 0, 0, -0.5, 7.86667, 1, 0, 0, -0.5, 7.9, 1, 0, 0, -0.5, 7.93333, 1, 0, 0, -0.5, 7.96667, 1, 0, 0, -0.5, 8, 1, 0, 0, -0.5, 8.03333, 1, 0, 0, -0.5, 8.06667, 1, 0, 0, -0.5, 8.1, 1, 0, 0, -0.5, 8.13333, 1, 0, 0, -0.5, 8.16667, 1, 0, 0, -0.5, 8.2, 1, 0, 0, -0.5, 8.23333, 1, 0, 0, -0.5, 8.26667, 1, 0, 0, -0.5, 8.3, 1, 0, 0, -0.5, 8.33333, 1, 0, 0, -0.5, 8.36667, 1, 0, 0, -0.5, 8.4, 1, 0, 0, -0.5, 8.43333, 1, 0, 0, -0.5, 8.46667, 1, 0, 0, -0.5, 8.5, 1, 0, 0, -0.5, 8.53333, 1, 0, 0, -0.5, 8.56667, 1, 0, 0, -0.5, 8.6, 1, 0, 0, -0.5, 8.63333, 1, 0, 0, -0.5, 8.66667, 1, 0, 0, -0.5, 8.7, 1, 0, 0, -0.5, 8.73333, 1, 0, 0, -0.5, 8.76667, 1, 0, 0, -0.5, 8.8, 1, 0, 0, -0.5, 8.83333, 1, 0, 0, -0.5, 8.86667, 1, 0, 0, -0.5, 8.9, 1, 0, 0, -0.5, 8.93333, 1, 0, 0, -0.5, 8.96667, 1, 0, 0, -0.5, 9, 1, 0, 0, -0.5, 9.03333, 1, 0, 0, -0.5, 9.06667, 1, 0, 0, -0.5, 9.1, 1, 0, 0, -0.5, 9.13333, 1, 0, 0, -0.5, 9.16667, 1, 0, 0, -0.5, 9.2, 1, 0, 0, -0.5, 9.23333, 1, 0, 0, -0.5, 9.26667, 1, 0, 0, -0.5, 9.3, 1, 0, 0, -0.5, 9.33333, 1, 0, 0, -0.5, 9.36667, 1, 0, 0, -0.5, 9.4, 1, 0, 0, -0.5, 9.43333, 1, 0, 0, -0.5, 9.46667, 1, 0, 0, -0.5, 9.5, 1, 0, 0, -0.5, 9.53333, 1, 0, 0, -0.5, 9.56667, 1, 0, 0, -0.5, 9.6, 1, 0, 0, -0.5, 9.63333, 1, 0, 0, -0.5, 9.66667, 1, 0, 0, -0.5, 9.7, 1, 0, 0, -0.5, 9.73333, 1, 0, 0, -0.5, 9.76667, 1, 0, 0, -0.5, 9.8, 1, 0, 0, -0.5, 9.83333, 1, 0, 0, -0.5, 9.86667, 1, 0, 0, -0.5, 9.9, 1, 0, 0, -0.5, 9.93333, 1, 0, 0, -0.5, 9.96667, 1, 0, 0, -0.5, 10, 1, 0, 0, -0.5)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("./Kıç tarafı kapılar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, -0.435484, 0.0333333, 1, 0, 0, -0.403226, 0.0666667, 1, 0, 0, -0.370968, 0.1, 1, 0, 0, -0.33871, 0.133333, 1, 0, 0, -0.306452, 0.166667, 1, 0, 0, -0.274194, 0.2, 1, 0, 0, -0.241936, 0.233333, 1, 0, 0, -0.209677, 0.266667, 1, 0, 0, -0.177419, 0.3, 1, 0, 0, -0.145161, 0.333333, 1, 0, 0, -0.112903, 0.366667, 1, 0, 0, -0.0806453, 0.4, 1, 0, 0, -0.0483872, 0.433333, 1, 0, 0, -0.0161291, 0.466667, 1, 0, 0, 0.0161289, 0.5, 1, 0, 0, 0.048387, 0.533333, 1, 0, 0, 0.080645, 0.566667, 1, 0, 0, 0.112903, 0.6, 1, 0, 0, 0.145161, 0.633333, 1, 0, 0, 0.177419, 0.666667, 1, 0, 0, 0.209677, 0.7, 1, 0, 0, 0.241935, 0.733333, 1, 0, 0, 0.274193, 0.766667, 1, 0, 0, 0.306451, 0.8, 1, 0, 0, 0.338709, 0.833333, 1, 0, 0, 0.370968, 0.866667, 1, 0, 0, 0.403226, 0.9, 1, 0, 0, 0.435484, 0.933333, 1, 0, 0, 0.467742, 0.966667, 1, 0, 0, 0.5, 1, 1, 0, 0, 0.5, 1.03333, 1, 0, 0, 0.5, 1.06667, 1, 0, 0, 0.5, 1.1, 1, 0, 0, 0.5, 1.13333, 1, 0, 0, 0.5, 1.16667, 1, 0, 0, 0.5, 1.2, 1, 0, 0, 0.5, 1.23333, 1, 0, 0, 0.5, 1.26667, 1, 0, 0, 0.5, 1.3, 1, 0, 0, 0.5, 1.33333, 1, 0, 0, 0.5, 1.36667, 1, 0, 0, 0.5, 1.4, 1, 0, 0, 0.5, 1.43333, 1, 0, 0, 0.5, 1.46667, 1, 0, 0, 0.5, 1.5, 1, 0, 0, 0.5, 1.53333, 1, 0, 0, 0.5, 1.56667, 1, 0, 0, 0.5, 1.6, 1, 0, 0, 0.5, 1.63333, 1, 0, 0, 0.5, 1.66667, 1, 0, 0, 0.5, 1.7, 1, 0, 0, 0.5, 1.73333, 1, 0, 0, 0.5, 1.76667, 1, 0, 0, 0.5, 1.8, 1, 0, 0, 0.5, 1.83333, 1, 0, 0, 0.5, 1.86667, 1, 0, 0, 0.5, 1.9, 1, 0, 0, 0.5, 1.93333, 1, 0, 0, 0.5, 1.96667, 1, 0, 0, 0.5, 2, 1, 0, 0, 0.5, 2.03333, 1, 0, 0, 0.5, 2.06667, 1, 0, 0, 0.5, 2.1, 1, 0, 0, 0.5, 2.13333, 1, 0, 0, 0.5, 2.16667, 1, 0, 0, 0.5, 2.2, 1, 0, 0, 0.5, 2.23333, 1, 0, 0, 0.5, 2.26667, 1, 0, 0, 0.5, 2.3, 1, 0, 0, 0.5, 2.33333, 1, 0, 0, 0.5, 2.36667, 1, 0, 0, 0.5, 2.4, 1, 0, 0, 0.5, 2.43333, 1, 0, 0, 0.5, 2.46667, 1, 0, 0, 0.5, 2.5, 1, 0, 0, 0.5, 2.53333, 1, 0, 0, 0.5, 2.56667, 1, 0, 0, 0.5, 2.6, 1, 0, 0, 0.5, 2.63333, 1, 0, 0, 0.5, 2.66667, 1, 0, 0, 0.5, 2.7, 1, 0, 0, 0.5, 2.73333, 1, 0, 0, 0.5, 2.76667, 1, 0, 0, 0.5, 2.8, 1, 0, 0, 0.5, 2.83333, 1, 0, 0, 0.5, 2.86667, 1, 0, 0, 0.5, 2.9, 1, 0, 0, 0.5, 2.93333, 1, 0, 0, 0.5, 2.96667, 1, 0, 0, 0.5, 3, 1, 0, 0, 0.5, 3.03333, 1, 0, 0, 0.5, 3.06667, 1, 0, 0, 0.5, 3.1, 1, 0, 0, 0.5, 3.13333, 1, 0, 0, 0.5, 3.16667, 1, 0, 0, 0.5, 3.2, 1, 0, 0, 0.5, 3.23333, 1, 0, 0, 0.5, 3.26667, 1, 0, 0, 0.5, 3.3, 1, 0, 0, 0.5, 3.33333, 1, 0, 0, 0.5, 3.36667, 1, 0, 0, 0.5, 3.4, 1, 0, 0, 0.5, 3.43333, 1, 0, 0, 0.5, 3.46667, 1, 0, 0, 0.5, 3.5, 1, 0, 0, 0.5, 3.53333, 1, 0, 0, 0.5, 3.56667, 1, 0, 0, 0.5, 3.6, 1, 0, 0, 0.5, 3.63333, 1, 0, 0, 0.5, 3.66667, 1, 0, 0, 0.5, 3.7, 1, 0, 0, 0.5, 3.73333, 1, 0, 0, 0.5, 3.76667, 1, 0, 0, 0.5, 3.8, 1, 0, 0, 0.5, 3.83333, 1, 0, 0, 0.5, 3.86667, 1, 0, 0, 0.5, 3.9, 1, 0, 0, 0.5, 3.93333, 1, 0, 0, 0.5, 3.96667, 1, 0, 0, 0.5, 4, 1, 0, 0, 0.5, 4.03333, 1, 0, 0, 0.5, 4.06667, 1, 0, 0, 0.5, 4.1, 1, 0, 0, 0.5, 4.13333, 1, 0, 0, 0.5, 4.16667, 1, 0, 0, 0.5, 4.2, 1, 0, 0, 0.5, 4.23333, 1, 0, 0, 0.5, 4.26667, 1, 0, 0, 0.5, 4.3, 1, 0, 0, 0.5, 4.33333, 1, 0, 0, 0.5, 4.36667, 1, 0, 0, 0.5, 4.4, 1, 0, 0, 0.5, 4.43333, 1, 0, 0, 0.5, 4.46667, 1, 0, 0, 0.5, 4.5, 1, 0, 0, 0.5, 4.53333, 1, 0, 0, 0.5, 4.56667, 1, 0, 0, 0.5, 4.6, 1, 0, 0, 0.5, 4.63333, 1, 0, 0, 0.5, 4.66667, 1, 0, 0, 0.5, 4.7, 1, 0, 0, 0.5, 4.73333, 1, 0, 0, 0.5, 4.76667, 1, 0, 0, 0.5, 4.8, 1, 0, 0, 0.5, 4.83333, 1, 0, 0, 0.5, 4.86667, 1, 0, 0, 0.5, 4.9, 1, 0, 0, 0.5, 4.93333, 1, 0, 0, 0.5, 4.96667, 1, 0, 0, 0.5, 5, 1, 0, 0, 0.5, 5.03333, 1, 0, 0, 0.5, 5.06667, 1, 0, 0, 0.5, 5.1, 1, 0, 0, 0.5, 5.13333, 1, 0, 0, 0.5, 5.16667, 1, 0, 0, 0.5, 5.2, 1, 0, 0, 0.5, 5.23333, 1, 0, 0, 0.5, 5.26667, 1, 0, 0, 0.5, 5.3, 1, 0, 0, 0.5, 5.33333, 1, 0, 0, 0.5, 5.36667, 1, 0, 0, 0.5, 5.4, 1, 0, 0, 0.5, 5.43333, 1, 0, 0, 0.5, 5.46667, 1, 0, 0, 0.5, 5.5, 1, 0, 0, 0.5, 5.53333, 1, 0, 0, 0.5, 5.56667, 1, 0, 0, 0.5, 5.6, 1, 0, 0, 0.5, 5.63333, 1, 0, 0, 0.5, 5.66667, 1, 0, 0, 0.5, 5.7, 1, 0, 0, 0.5, 5.73333, 1, 0, 0, 0.5, 5.76667, 1, 0, 0, 0.5, 5.8, 1, 0, 0, 0.5, 5.83333, 1, 0, 0, 0.5, 5.86667, 1, 0, 0, 0.5, 5.9, 1, 0, 0, 0.5, 5.93333, 1, 0, 0, 0.5, 5.96667, 1, 0, 0, 0.5, 6, 1, 0, 0, 0.5, 6.03333, 1, 0, 0, 0.5, 6.06667, 1, 0, 0, 0.5, 6.1, 1, 0, 0, 0.5, 6.13333, 1, 0, 0, 0.5, 6.16667, 1, 0, 0, 0.5, 6.2, 1, 0, 0, 0.5, 6.23333, 1, 0, 0, 0.5, 6.26667, 1, 0, 0, 0.5, 6.3, 1, 0, 0, 0.5, 6.33333, 1, 0, 0, 0.5, 6.36667, 1, 0, 0, 0.5, 6.4, 1, 0, 0, 0.5, 6.43333, 1, 0, 0, 0.5, 6.46667, 1, 0, 0, 0.5, 6.5, 1, 0, 0, 0.5, 6.53333, 1, 0, 0, 0.5, 6.56667, 1, 0, 0, 0.5, 6.6, 1, 0, 0, 0.5, 6.63333, 1, 0, 0, 0.5, 6.66667, 1, 0, 0, 0.5, 6.7, 1, 0, 0, 0.5, 6.73333, 1, 0, 0, 0.5, 6.76667, 1, 0, 0, 0.5, 6.8, 1, 0, 0, 0.5, 6.83333, 1, 0, 0, 0.5, 6.86667, 1, 0, 0, 0.5, 6.9, 1, 0, 0, 0.5, 6.93333, 1, 0, 0, 0.5, 6.96667, 1, 0, 0, 0.5, 7, 1, 0, 0, 0.5, 7.03333, 1, 0, 0, 0.5, 7.06667, 1, 0, 0, 0.5, 7.1, 1, 0, 0, 0.5, 7.13333, 1, 0, 0, 0.5, 7.16667, 1, 0, 0, 0.5, 7.2, 1, 0, 0, 0.5, 7.23333, 1, 0, 0, 0.5, 7.26667, 1, 0, 0, 0.5, 7.3, 1, 0, 0, 0.5, 7.33333, 1, 0, 0, 0.5, 7.36667, 1, 0, 0, 0.5, 7.4, 1, 0, 0, 0.5, 7.43333, 1, 0, 0, 0.5, 7.46667, 1, 0, 0, 0.5, 7.5, 1, 0, 0, 0.5, 7.53333, 1, 0, 0, 0.5, 7.56667, 1, 0, 0, 0.5, 7.6, 1, 0, 0, 0.5, 7.63333, 1, 0, 0, 0.5, 7.66667, 1, 0, 0, 0.5, 7.7, 1, 0, 0, 0.5, 7.73333, 1, 0, 0, 0.5, 7.76667, 1, 0, 0, 0.5, 7.8, 1, 0, 0, 0.5, 7.83333, 1, 0, 0, 0.5, 7.86667, 1, 0, 0, 0.5, 7.9, 1, 0, 0, 0.5, 7.93333, 1, 0, 0, 0.5, 7.96667, 1, 0, 0, 0.5, 8, 1, 0, 0, 0.5, 8.03333, 1, 0, 0, 0.5, 8.06667, 1, 0, 0, 0.5, 8.1, 1, 0, 0, 0.5, 8.13333, 1, 0, 0, 0.5, 8.16667, 1, 0, 0, 0.5, 8.2, 1, 0, 0, 0.5, 8.23333, 1, 0, 0, 0.5, 8.26667, 1, 0, 0, 0.5, 8.3, 1, 0, 0, 0.5, 8.33333, 1, 0, 0, 0.5, 8.36667, 1, 0, 0, 0.5, 8.4, 1, 0, 0, 0.5, 8.43333, 1, 0, 0, 0.5, 8.46667, 1, 0, 0, 0.5, 8.5, 1, 0, 0, 0.5, 8.53333, 1, 0, 0, 0.5, 8.56667, 1, 0, 0, 0.5, 8.6, 1, 0, 0, 0.5, 8.63333, 1, 0, 0, 0.5, 8.66667, 1, 0, 0, 0.5, 8.7, 1, 0, 0, 0.5, 8.73333, 1, 0, 0, 0.5, 8.76667, 1, 0, 0, 0.5, 8.8, 1, 0, 0, 0.5, 8.83333, 1, 0, 0, 0.5, 8.86667, 1, 0, 0, 0.5, 8.9, 1, 0, 0, 0.5, 8.93333, 1, 0, 0, 0.5, 8.96667, 1, 0, 0, 0.5, 9, 1, 0, 0, 0.5, 9.03333, 1, 0, 0, 0.5, 9.06667, 1, 0, 0, 0.5, 9.1, 1, 0, 0, 0.5, 9.13333, 1, 0, 0, 0.5, 9.16667, 1, 0, 0, 0.5, 9.2, 1, 0, 0, 0.5, 9.23333, 1, 0, 0, 0.5, 9.26667, 1, 0, 0, 0.5, 9.3, 1, 0, 0, 0.5, 9.33333, 1, 0, 0, 0.5, 9.36667, 1, 0, 0, 0.5, 9.4, 1, 0, 0, 0.5, 9.43333, 1, 0, 0, 0.5, 9.46667, 1, 0, 0, 0.5, 9.5, 1, 0, 0, 0.5, 9.53333, 1, 0, 0, 0.5, 9.56667, 1, 0, 0, 0.5, 9.6, 1, 0, 0, 0.5, 9.63333, 1, 0, 0, 0.5, 9.66667, 1, 0, 0, 0.5, 9.7, 1, 0, 0, 0.5, 9.73333, 1, 0, 0, 0.5, 9.76667, 1, 0, 0, 0.5, 9.8, 1, 0, 0, 0.5, 9.83333, 1, 0, 0, 0.5, 9.86667, 1, 0, 0, 0.5, 9.9, 1, 0, 0, 0.5, 9.93333, 1, 0, 0, 0.5, 9.96667, 1, 0, 0, 0.5, 10, 1, 0, 0, 0.5)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("./subway_car_004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 0.0333333, 1, 0, 0, 0.469697, 0.0666667, 1, 0, 0, 0.439394, 0.1, 1, 0, 0, 0.409091, 0.133333, 1, 0, 0, 0.378788, 0.166667, 1, 0, 0, 0.348485, 0.2, 1, 0, 0, 0.318182, 0.233333, 1, 0, 0, 0.287879, 0.266667, 1, 0, 0, 0.257576, 0.3, 1, 0, 0, 0.227273, 0.333333, 1, 0, 0, 0.19697, 0.366667, 1, 0, 0, 0.166667, 0.4, 1, 0, 0, 0.136364, 0.433333, 1, 0, 0, 0.106061, 0.466667, 1, 0, 0, 0.0757577, 0.5, 1, 0, 0, 0.0454546, 0.533333, 1, 0, 0, 0.0151516, 0.566667, 1, 0, 0, -0.0151514, 0.6, 1, 0, 0, -0.0454545, 0.633333, 1, 0, 0, -0.0757575, 0.666667, 1, 0, 0, -0.106061, 0.7, 1, 0, 0, -0.136364, 0.733333, 1, 0, 0, -0.166667, 0.766667, 1, 0, 0, -0.19697, 0.8, 1, 0, 0, -0.227273, 0.833333, 1, 0, 0, -0.257576, 0.866667, 1, 0, 0, -0.287879, 0.9, 1, 0, 0, -0.318182, 0.933333, 1, 0, 0, -0.348485, 0.966667, 1, 0, 0, -0.378788, 1, 1, 0, 0, -0.409091, 1.03333, 1, 0, 0, -0.439394, 1.06667, 1, 0, 0, -0.469697, 1.1, 1, 0, 0, -0.5, 1.13333, 1, 0, 0, -0.5, 1.16667, 1, 0, 0, -0.5, 1.2, 1, 0, 0, -0.5, 1.23333, 1, 0, 0, -0.5, 1.26667, 1, 0, 0, -0.5, 1.3, 1, 0, 0, -0.5, 1.33333, 1, 0, 0, -0.5, 1.36667, 1, 0, 0, -0.5, 1.4, 1, 0, 0, -0.5, 1.43333, 1, 0, 0, -0.5, 1.46667, 1, 0, 0, -0.5, 1.5, 1, 0, 0, -0.5, 1.53333, 1, 0, 0, -0.5, 1.56667, 1, 0, 0, -0.5, 1.6, 1, 0, 0, -0.5, 1.63333, 1, 0, 0, -0.5, 1.66667, 1, 0, 0, -0.5, 1.7, 1, 0, 0, -0.5, 1.73333, 1, 0, 0, -0.5, 1.76667, 1, 0, 0, -0.5, 1.8, 1, 0, 0, -0.5, 1.83333, 1, 0, 0, -0.5, 1.86667, 1, 0, 0, -0.5, 1.9, 1, 0, 0, -0.5, 1.93333, 1, 0, 0, -0.5, 1.96667, 1, 0, 0, -0.5, 2, 1, 0, 0, -0.5, 2.03333, 1, 0, 0, -0.5, 2.06667, 1, 0, 0, -0.5, 2.1, 1, 0, 0, -0.5, 2.13333, 1, 0, 0, -0.5, 2.16667, 1, 0, 0, -0.5, 2.2, 1, 0, 0, -0.5, 2.23333, 1, 0, 0, -0.5, 2.26667, 1, 0, 0, -0.5, 2.3, 1, 0, 0, -0.5, 2.33333, 1, 0, 0, -0.5, 2.36667, 1, 0, 0, -0.5, 2.4, 1, 0, 0, -0.5, 2.43333, 1, 0, 0, -0.5, 2.46667, 1, 0, 0, -0.5, 2.5, 1, 0, 0, -0.5, 2.53333, 1, 0, 0, -0.5, 2.56667, 1, 0, 0, -0.5, 2.6, 1, 0, 0, -0.5, 2.63333, 1, 0, 0, -0.5, 2.66667, 1, 0, 0, -0.5, 2.7, 1, 0, 0, -0.5, 2.73333, 1, 0, 0, -0.5, 2.76667, 1, 0, 0, -0.5, 2.8, 1, 0, 0, -0.5, 2.83333, 1, 0, 0, -0.5, 2.86667, 1, 0, 0, -0.5, 2.9, 1, 0, 0, -0.5, 2.93333, 1, 0, 0, -0.5, 2.96667, 1, 0, 0, -0.5, 3, 1, 0, 0, -0.5, 3.03333, 1, 0, 0, -0.5, 3.06667, 1, 0, 0, -0.5, 3.1, 1, 0, 0, -0.5, 3.13333, 1, 0, 0, -0.5, 3.16667, 1, 0, 0, -0.5, 3.2, 1, 0, 0, -0.5, 3.23333, 1, 0, 0, -0.5, 3.26667, 1, 0, 0, -0.5, 3.3, 1, 0, 0, -0.5, 3.33333, 1, 0, 0, -0.5, 3.36667, 1, 0, 0, -0.5, 3.4, 1, 0, 0, -0.5, 3.43333, 1, 0, 0, -0.5, 3.46667, 1, 0, 0, -0.5, 3.5, 1, 0, 0, -0.5, 3.53333, 1, 0, 0, -0.5, 3.56667, 1, 0, 0, -0.5, 3.6, 1, 0, 0, -0.5, 3.63333, 1, 0, 0, -0.5, 3.66667, 1, 0, 0, -0.5, 3.7, 1, 0, 0, -0.5, 3.73333, 1, 0, 0, -0.5, 3.76667, 1, 0, 0, -0.5, 3.8, 1, 0, 0, -0.5, 3.83333, 1, 0, 0, -0.5, 3.86667, 1, 0, 0, -0.5, 3.9, 1, 0, 0, -0.5, 3.93333, 1, 0, 0, -0.5, 3.96667, 1, 0, 0, -0.5, 4, 1, 0, 0, -0.5, 4.03333, 1, 0, 0, -0.5, 4.06667, 1, 0, 0, -0.5, 4.1, 1, 0, 0, -0.5, 4.13333, 1, 0, 0, -0.5, 4.16667, 1, 0, 0, -0.5, 4.2, 1, 0, 0, -0.5, 4.23333, 1, 0, 0, -0.5, 4.26667, 1, 0, 0, -0.5, 4.3, 1, 0, 0, -0.5, 4.33333, 1, 0, 0, -0.5, 4.36667, 1, 0, 0, -0.5, 4.4, 1, 0, 0, -0.5, 4.43333, 1, 0, 0, -0.5, 4.46667, 1, 0, 0, -0.5, 4.5, 1, 0, 0, -0.5, 4.53333, 1, 0, 0, -0.5, 4.56667, 1, 0, 0, -0.5, 4.6, 1, 0, 0, -0.5, 4.63333, 1, 0, 0, -0.5, 4.66667, 1, 0, 0, -0.5, 4.7, 1, 0, 0, -0.5, 4.73333, 1, 0, 0, -0.5, 4.76667, 1, 0, 0, -0.5, 4.8, 1, 0, 0, -0.5, 4.83333, 1, 0, 0, -0.5, 4.86667, 1, 0, 0, -0.5, 4.9, 1, 0, 0, -0.5, 4.93333, 1, 0, 0, -0.5, 4.96667, 1, 0, 0, -0.5, 5, 1, 0, 0, -0.5, 5.03333, 1, 0, 0, -0.5, 5.06667, 1, 0, 0, -0.5, 5.1, 1, 0, 0, -0.5, 5.13333, 1, 0, 0, -0.5, 5.16667, 1, 0, 0, -0.5, 5.2, 1, 0, 0, -0.5, 5.23333, 1, 0, 0, -0.5, 5.26667, 1, 0, 0, -0.5, 5.3, 1, 0, 0, -0.5, 5.33333, 1, 0, 0, -0.5, 5.36667, 1, 0, 0, -0.5, 5.4, 1, 0, 0, -0.5, 5.43333, 1, 0, 0, -0.5, 5.46667, 1, 0, 0, -0.5, 5.5, 1, 0, 0, -0.5, 5.53333, 1, 0, 0, -0.5, 5.56667, 1, 0, 0, -0.5, 5.6, 1, 0, 0, -0.5, 5.63333, 1, 0, 0, -0.5, 5.66667, 1, 0, 0, -0.5, 5.7, 1, 0, 0, -0.5, 5.73333, 1, 0, 0, -0.5, 5.76667, 1, 0, 0, -0.5, 5.8, 1, 0, 0, -0.5, 5.83333, 1, 0, 0, -0.5, 5.86667, 1, 0, 0, -0.5, 5.9, 1, 0, 0, -0.5, 5.93333, 1, 0, 0, -0.5, 5.96667, 1, 0, 0, -0.5, 6, 1, 0, 0, -0.5, 6.03333, 1, 0, 0, -0.5, 6.06667, 1, 0, 0, -0.5, 6.1, 1, 0, 0, -0.5, 6.13333, 1, 0, 0, -0.5, 6.16667, 1, 0, 0, -0.5, 6.2, 1, 0, 0, -0.5, 6.23333, 1, 0, 0, -0.5, 6.26667, 1, 0, 0, -0.5, 6.3, 1, 0, 0, -0.5, 6.33333, 1, 0, 0, -0.5, 6.36667, 1, 0, 0, -0.5, 6.4, 1, 0, 0, -0.5, 6.43333, 1, 0, 0, -0.5, 6.46667, 1, 0, 0, -0.5, 6.5, 1, 0, 0, -0.5, 6.53333, 1, 0, 0, -0.5, 6.56667, 1, 0, 0, -0.5, 6.6, 1, 0, 0, -0.5, 6.63333, 1, 0, 0, -0.5, 6.66667, 1, 0, 0, -0.5, 6.7, 1, 0, 0, -0.5, 6.73333, 1, 0, 0, -0.5, 6.76667, 1, 0, 0, -0.5, 6.8, 1, 0, 0, -0.5, 6.83333, 1, 0, 0, -0.5, 6.86667, 1, 0, 0, -0.5, 6.9, 1, 0, 0, -0.5, 6.93333, 1, 0, 0, -0.5, 6.96667, 1, 0, 0, -0.5, 7, 1, 0, 0, -0.5, 7.03333, 1, 0, 0, -0.5, 7.06667, 1, 0, 0, -0.5, 7.1, 1, 0, 0, -0.5, 7.13333, 1, 0, 0, -0.5, 7.16667, 1, 0, 0, -0.5, 7.2, 1, 0, 0, -0.5, 7.23333, 1, 0, 0, -0.5, 7.26667, 1, 0, 0, -0.5, 7.3, 1, 0, 0, -0.5, 7.33333, 1, 0, 0, -0.5, 7.36667, 1, 0, 0, -0.5, 7.4, 1, 0, 0, -0.5, 7.43333, 1, 0, 0, -0.5, 7.46667, 1, 0, 0, -0.5, 7.5, 1, 0, 0, -0.5, 7.53333, 1, 0, 0, -0.5, 7.56667, 1, 0, 0, -0.5, 7.6, 1, 0, 0, -0.5, 7.63333, 1, 0, 0, -0.5, 7.66667, 1, 0, 0, -0.5, 7.7, 1, 0, 0, -0.5, 7.73333, 1, 0, 0, -0.5, 7.76667, 1, 0, 0, -0.5, 7.8, 1, 0, 0, -0.5, 7.83333, 1, 0, 0, -0.5, 7.86667, 1, 0, 0, -0.5, 7.9, 1, 0, 0, -0.5, 7.93333, 1, 0, 0, -0.5, 7.96667, 1, 0, 0, -0.5, 8, 1, 0, 0, -0.5, 8.03333, 1, 0, 0, -0.5, 8.06667, 1, 0, 0, -0.5, 8.1, 1, 0, 0, -0.5, 8.13333, 1, 0, 0, -0.5, 8.16667, 1, 0, 0, -0.5, 8.2, 1, 0, 0, -0.5, 8.23333, 1, 0, 0, -0.5, 8.26667, 1, 0, 0, -0.5, 8.3, 1, 0, 0, -0.5, 8.33333, 1, 0, 0, -0.5, 8.36667, 1, 0, 0, -0.5, 8.4, 1, 0, 0, -0.5, 8.43333, 1, 0, 0, -0.5, 8.46667, 1, 0, 0, -0.5, 8.5, 1, 0, 0, -0.5, 8.53333, 1, 0, 0, -0.5, 8.56667, 1, 0, 0, -0.5, 8.6, 1, 0, 0, -0.5, 8.63333, 1, 0, 0, -0.5, 8.66667, 1, 0, 0, -0.5, 8.7, 1, 0, 0, -0.5, 8.73333, 1, 0, 0, -0.5, 8.76667, 1, 0, 0, -0.5, 8.8, 1, 0, 0, -0.5, 8.83333, 1, 0, 0, -0.5, 8.86667, 1, 0, 0, -0.5, 8.9, 1, 0, 0, -0.5, 8.93333, 1, 0, 0, -0.5, 8.96667, 1, 0, 0, -0.5, 9, 1, 0, 0, -0.5, 9.03333, 1, 0, 0, -0.5, 9.06667, 1, 0, 0, -0.5, 9.1, 1, 0, 0, -0.5, 9.13333, 1, 0, 0, -0.5, 9.16667, 1, 0, 0, -0.5, 9.2, 1, 0, 0, -0.5, 9.23333, 1, 0, 0, -0.5, 9.26667, 1, 0, 0, -0.5, 9.3, 1, 0, 0, -0.5, 9.33333, 1, 0, 0, -0.5, 9.36667, 1, 0, 0, -0.5, 9.4, 1, 0, 0, -0.5, 9.43333, 1, 0, 0, -0.5, 9.46667, 1, 0, 0, -0.5, 9.5, 1, 0, 0, -0.5, 9.53333, 1, 0, 0, -0.5, 9.56667, 1, 0, 0, -0.5, 9.6, 1, 0, 0, -0.5, 9.63333, 1, 0, 0, -0.5, 9.66667, 1, 0, 0, -0.5, 9.7, 1, 0, 0, -0.5, 9.73333, 1, 0, 0, -0.5, 9.76667, 1, 0, 0, -0.5, 9.8, 1, 0, 0, -0.5, 9.83333, 1, 0, 0, -0.5, 9.86667, 1, 0, 0, -0.5, 9.9, 1, 0, 0, -0.5, 9.93333, 1, 0, 0, -0.5, 9.96667, 1, 0, 0, -0.5, 10, 1, 0, 0, -0.5)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("./subway_car_006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 0.0333333, 1, 0, 0, -0.466667, 0.0666667, 1, 0, 0, -0.433333, 0.1, 1, 0, 0, -0.4, 0.133333, 1, 0, 0, -0.366667, 0.166667, 1, 0, 0, -0.333333, 0.2, 1, 0, 0, -0.3, 0.233333, 1, 0, 0, -0.266667, 0.266667, 1, 0, 0, -0.233333, 0.3, 1, 0, 0, -0.2, 0.333333, 1, 0, 0, -0.166667, 0.366667, 1, 0, 0, -0.133333, 0.4, 1, 0, 0, -0.1, 0.433333, 1, 0, 0, -0.0666667, 0.466667, 1, 0, 0, -0.0333333, 0.5, 1, 0, 0, 0, 0.533333, 1, 0, 0, 0.0333334, 0.566667, 1, 0, 0, 0.0666667, 0.6, 1, 0, 0, 0.1, 0.633333, 1, 0, 0, 0.133333, 0.666667, 1, 0, 0, 0.166667, 0.7, 1, 0, 0, 0.2, 0.733333, 1, 0, 0, 0.233333, 0.766667, 1, 0, 0, 0.266667, 0.8, 1, 0, 0, 0.3, 0.833333, 1, 0, 0, 0.333333, 0.866667, 1, 0, 0, 0.366667, 0.9, 1, 0, 0, 0.4, 0.933333, 1, 0, 0, 0.433333, 0.966667, 1, 0, 0, 0.466667, 1, 1, 0, 0, 0.5, 1.03333, 1, 0, 0, 0.5, 1.06667, 1, 0, 0, 0.5, 1.1, 1, 0, 0, 0.5, 1.13333, 1, 0, 0, 0.5, 1.16667, 1, 0, 0, 0.5, 1.2, 1, 0, 0, 0.5, 1.23333, 1, 0, 0, 0.5, 1.26667, 1, 0, 0, 0.5, 1.3, 1, 0, 0, 0.5, 1.33333, 1, 0, 0, 0.5, 1.36667, 1, 0, 0, 0.5, 1.4, 1, 0, 0, 0.5, 1.43333, 1, 0, 0, 0.5, 1.46667, 1, 0, 0, 0.5, 1.5, 1, 0, 0, 0.5, 1.53333, 1, 0, 0, 0.5, 1.56667, 1, 0, 0, 0.5, 1.6, 1, 0, 0, 0.5, 1.63333, 1, 0, 0, 0.5, 1.66667, 1, 0, 0, 0.5, 1.7, 1, 0, 0, 0.5, 1.73333, 1, 0, 0, 0.5, 1.76667, 1, 0, 0, 0.5, 1.8, 1, 0, 0, 0.5, 1.83333, 1, 0, 0, 0.5, 1.86667, 1, 0, 0, 0.5, 1.9, 1, 0, 0, 0.5, 1.93333, 1, 0, 0, 0.5, 1.96667, 1, 0, 0, 0.5, 2, 1, 0, 0, 0.5, 2.03333, 1, 0, 0, 0.5, 2.06667, 1, 0, 0, 0.5, 2.1, 1, 0, 0, 0.5, 2.13333, 1, 0, 0, 0.5, 2.16667, 1, 0, 0, 0.5, 2.2, 1, 0, 0, 0.5, 2.23333, 1, 0, 0, 0.5, 2.26667, 1, 0, 0, 0.5, 2.3, 1, 0, 0, 0.5, 2.33333, 1, 0, 0, 0.5, 2.36667, 1, 0, 0, 0.5, 2.4, 1, 0, 0, 0.5, 2.43333, 1, 0, 0, 0.5, 2.46667, 1, 0, 0, 0.5, 2.5, 1, 0, 0, 0.5, 2.53333, 1, 0, 0, 0.5, 2.56667, 1, 0, 0, 0.5, 2.6, 1, 0, 0, 0.5, 2.63333, 1, 0, 0, 0.5, 2.66667, 1, 0, 0, 0.5, 2.7, 1, 0, 0, 0.5, 2.73333, 1, 0, 0, 0.5, 2.76667, 1, 0, 0, 0.5, 2.8, 1, 0, 0, 0.5, 2.83333, 1, 0, 0, 0.5, 2.86667, 1, 0, 0, 0.5, 2.9, 1, 0, 0, 0.5, 2.93333, 1, 0, 0, 0.5, 2.96667, 1, 0, 0, 0.5, 3, 1, 0, 0, 0.5, 3.03333, 1, 0, 0, 0.5, 3.06667, 1, 0, 0, 0.5, 3.1, 1, 0, 0, 0.5, 3.13333, 1, 0, 0, 0.5, 3.16667, 1, 0, 0, 0.5, 3.2, 1, 0, 0, 0.5, 3.23333, 1, 0, 0, 0.5, 3.26667, 1, 0, 0, 0.5, 3.3, 1, 0, 0, 0.5, 3.33333, 1, 0, 0, 0.5, 3.36667, 1, 0, 0, 0.5, 3.4, 1, 0, 0, 0.5, 3.43333, 1, 0, 0, 0.5, 3.46667, 1, 0, 0, 0.5, 3.5, 1, 0, 0, 0.5, 3.53333, 1, 0, 0, 0.5, 3.56667, 1, 0, 0, 0.5, 3.6, 1, 0, 0, 0.5, 3.63333, 1, 0, 0, 0.5, 3.66667, 1, 0, 0, 0.5, 3.7, 1, 0, 0, 0.5, 3.73333, 1, 0, 0, 0.5, 3.76667, 1, 0, 0, 0.5, 3.8, 1, 0, 0, 0.5, 3.83333, 1, 0, 0, 0.5, 3.86667, 1, 0, 0, 0.5, 3.9, 1, 0, 0, 0.5, 3.93333, 1, 0, 0, 0.5, 3.96667, 1, 0, 0, 0.5, 4, 1, 0, 0, 0.5, 4.03333, 1, 0, 0, 0.5, 4.06667, 1, 0, 0, 0.5, 4.1, 1, 0, 0, 0.5, 4.13333, 1, 0, 0, 0.5, 4.16667, 1, 0, 0, 0.5, 4.2, 1, 0, 0, 0.5, 4.23333, 1, 0, 0, 0.5, 4.26667, 1, 0, 0, 0.5, 4.3, 1, 0, 0, 0.5, 4.33333, 1, 0, 0, 0.5, 4.36667, 1, 0, 0, 0.5, 4.4, 1, 0, 0, 0.5, 4.43333, 1, 0, 0, 0.5, 4.46667, 1, 0, 0, 0.5, 4.5, 1, 0, 0, 0.5, 4.53333, 1, 0, 0, 0.5, 4.56667, 1, 0, 0, 0.5, 4.6, 1, 0, 0, 0.5, 4.63333, 1, 0, 0, 0.5, 4.66667, 1, 0, 0, 0.5, 4.7, 1, 0, 0, 0.5, 4.73333, 1, 0, 0, 0.5, 4.76667, 1, 0, 0, 0.5, 4.8, 1, 0, 0, 0.5, 4.83333, 1, 0, 0, 0.5, 4.86667, 1, 0, 0, 0.5, 4.9, 1, 0, 0, 0.5, 4.93333, 1, 0, 0, 0.5, 4.96667, 1, 0, 0, 0.5, 5, 1, 0, 0, 0.5, 5.03333, 1, 0, 0, 0.5, 5.06667, 1, 0, 0, 0.5, 5.1, 1, 0, 0, 0.5, 5.13333, 1, 0, 0, 0.5, 5.16667, 1, 0, 0, 0.5, 5.2, 1, 0, 0, 0.5, 5.23333, 1, 0, 0, 0.5, 5.26667, 1, 0, 0, 0.5, 5.3, 1, 0, 0, 0.5, 5.33333, 1, 0, 0, 0.5, 5.36667, 1, 0, 0, 0.5, 5.4, 1, 0, 0, 0.5, 5.43333, 1, 0, 0, 0.5, 5.46667, 1, 0, 0, 0.5, 5.5, 1, 0, 0, 0.5, 5.53333, 1, 0, 0, 0.5, 5.56667, 1, 0, 0, 0.5, 5.6, 1, 0, 0, 0.5, 5.63333, 1, 0, 0, 0.5, 5.66667, 1, 0, 0, 0.5, 5.7, 1, 0, 0, 0.5, 5.73333, 1, 0, 0, 0.5, 5.76667, 1, 0, 0, 0.5, 5.8, 1, 0, 0, 0.5, 5.83333, 1, 0, 0, 0.5, 5.86667, 1, 0, 0, 0.5, 5.9, 1, 0, 0, 0.5, 5.93333, 1, 0, 0, 0.5, 5.96667, 1, 0, 0, 0.5, 6, 1, 0, 0, 0.5, 6.03333, 1, 0, 0, 0.5, 6.06667, 1, 0, 0, 0.5, 6.1, 1, 0, 0, 0.5, 6.13333, 1, 0, 0, 0.5, 6.16667, 1, 0, 0, 0.5, 6.2, 1, 0, 0, 0.5, 6.23333, 1, 0, 0, 0.5, 6.26667, 1, 0, 0, 0.5, 6.3, 1, 0, 0, 0.5, 6.33333, 1, 0, 0, 0.5, 6.36667, 1, 0, 0, 0.5, 6.4, 1, 0, 0, 0.5, 6.43333, 1, 0, 0, 0.5, 6.46667, 1, 0, 0, 0.5, 6.5, 1, 0, 0, 0.5, 6.53333, 1, 0, 0, 0.5, 6.56667, 1, 0, 0, 0.5, 6.6, 1, 0, 0, 0.5, 6.63333, 1, 0, 0, 0.5, 6.66667, 1, 0, 0, 0.5, 6.7, 1, 0, 0, 0.5, 6.73333, 1, 0, 0, 0.5, 6.76667, 1, 0, 0, 0.5, 6.8, 1, 0, 0, 0.5, 6.83333, 1, 0, 0, 0.5, 6.86667, 1, 0, 0, 0.5, 6.9, 1, 0, 0, 0.5, 6.93333, 1, 0, 0, 0.5, 6.96667, 1, 0, 0, 0.5, 7, 1, 0, 0, 0.5, 7.03333, 1, 0, 0, 0.5, 7.06667, 1, 0, 0, 0.5, 7.1, 1, 0, 0, 0.5, 7.13333, 1, 0, 0, 0.5, 7.16667, 1, 0, 0, 0.5, 7.2, 1, 0, 0, 0.5, 7.23333, 1, 0, 0, 0.5, 7.26667, 1, 0, 0, 0.5, 7.3, 1, 0, 0, 0.5, 7.33333, 1, 0, 0, 0.5, 7.36667, 1, 0, 0, 0.5, 7.4, 1, 0, 0, 0.5, 7.43333, 1, 0, 0, 0.5, 7.46667, 1, 0, 0, 0.5, 7.5, 1, 0, 0, 0.5, 7.53333, 1, 0, 0, 0.5, 7.56667, 1, 0, 0, 0.5, 7.6, 1, 0, 0, 0.5, 7.63333, 1, 0, 0, 0.5, 7.66667, 1, 0, 0, 0.5, 7.7, 1, 0, 0, 0.5, 7.73333, 1, 0, 0, 0.5, 7.76667, 1, 0, 0, 0.5, 7.8, 1, 0, 0, 0.5, 7.83333, 1, 0, 0, 0.5, 7.86667, 1, 0, 0, 0.5, 7.9, 1, 0, 0, 0.5, 7.93333, 1, 0, 0, 0.5, 7.96667, 1, 0, 0, 0.5, 8, 1, 0, 0, 0.5, 8.03333, 1, 0, 0, 0.5, 8.06667, 1, 0, 0, 0.5, 8.1, 1, 0, 0, 0.5, 8.13333, 1, 0, 0, 0.5, 8.16667, 1, 0, 0, 0.5, 8.2, 1, 0, 0, 0.5, 8.23333, 1, 0, 0, 0.5, 8.26667, 1, 0, 0, 0.5, 8.3, 1, 0, 0, 0.5, 8.33333, 1, 0, 0, 0.5, 8.36667, 1, 0, 0, 0.5, 8.4, 1, 0, 0, 0.5, 8.43333, 1, 0, 0, 0.5, 8.46667, 1, 0, 0, 0.5, 8.5, 1, 0, 0, 0.5, 8.53333, 1, 0, 0, 0.5, 8.56667, 1, 0, 0, 0.5, 8.6, 1, 0, 0, 0.5, 8.63333, 1, 0, 0, 0.5, 8.66667, 1, 0, 0, 0.5, 8.7, 1, 0, 0, 0.5, 8.73333, 1, 0, 0, 0.5, 8.76667, 1, 0, 0, 0.5, 8.8, 1, 0, 0, 0.5, 8.83333, 1, 0, 0, 0.5, 8.86667, 1, 0, 0, 0.5, 8.9, 1, 0, 0, 0.5, 8.93333, 1, 0, 0, 0.5, 8.96667, 1, 0, 0, 0.5, 9, 1, 0, 0, 0.5, 9.03333, 1, 0, 0, 0.5, 9.06667, 1, 0, 0, 0.5, 9.1, 1, 0, 0, 0.5, 9.13333, 1, 0, 0, 0.5, 9.16667, 1, 0, 0, 0.5, 9.2, 1, 0, 0, 0.5, 9.23333, 1, 0, 0, 0.5, 9.26667, 1, 0, 0, 0.5, 9.3, 1, 0, 0, 0.5, 9.33333, 1, 0, 0, 0.5, 9.36667, 1, 0, 0, 0.5, 9.4, 1, 0, 0, 0.5, 9.43333, 1, 0, 0, 0.5, 9.46667, 1, 0, 0, 0.5, 9.5, 1, 0, 0, 0.5, 9.53333, 1, 0, 0, 0.5, 9.56667, 1, 0, 0, 0.5, 9.6, 1, 0, 0, 0.5, 9.63333, 1, 0, 0, 0.5, 9.66667, 1, 0, 0, 0.5, 9.7, 1, 0, 0, 0.5, 9.73333, 1, 0, 0, 0.5, 9.76667, 1, 0, 0, 0.5, 9.8, 1, 0, 0, 0.5, 9.83333, 1, 0, 0, 0.5, 9.86667, 1, 0, 0, 0.5, 9.9, 1, 0, 0, 0.5, 9.93333, 1, 0, 0, 0.5, 9.96667, 1, 0, 0, 0.5, 10, 1, 0, 0, 0.5)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 0.0333333, 1, 0, 0, 0.466667, 0.0666667, 1, 0, 0, 0.433333, 0.1, 1, 0, 0, 0.4, 0.133333, 1, 0, 0, 0.366667, 0.166667, 1, 0, 0, 0.333333, 0.2, 1, 0, 0, 0.3, 0.233333, 1, 0, 0, 0.266667, 0.266667, 1, 0, 0, 0.233333, 0.3, 1, 0, 0, 0.2, 0.333333, 1, 0, 0, 0.166667, 0.366667, 1, 0, 0, 0.133333, 0.4, 1, 0, 0, 0.1, 0.433333, 1, 0, 0, 0.0666667, 0.466667, 1, 0, 0, 0.0333333, 0.5, 1, 0, 0, 0, 0.533333, 1, 0, 0, -0.0333334, 0.566667, 1, 0, 0, -0.0666667, 0.6, 1, 0, 0, -0.1, 0.633333, 1, 0, 0, -0.133333, 0.666667, 1, 0, 0, -0.166667, 0.7, 1, 0, 0, -0.2, 0.733333, 1, 0, 0, -0.233333, 0.766667, 1, 0, 0, -0.266667, 0.8, 1, 0, 0, -0.3, 0.833333, 1, 0, 0, -0.333333, 0.866667, 1, 0, 0, -0.366667, 0.9, 1, 0, 0, -0.4, 0.933333, 1, 0, 0, -0.433333, 0.966667, 1, 0, 0, -0.466667, 1, 1, 0, 0, -0.5, 1.03333, 1, 0, 0, -0.5, 1.06667, 1, 0, 0, -0.5, 1.1, 1, 0, 0, -0.5, 1.13333, 1, 0, 0, -0.5, 1.16667, 1, 0, 0, -0.5, 1.2, 1, 0, 0, -0.5, 1.23333, 1, 0, 0, -0.5, 1.26667, 1, 0, 0, -0.5, 1.3, 1, 0, 0, -0.5, 1.33333, 1, 0, 0, -0.5, 1.36667, 1, 0, 0, -0.5, 1.4, 1, 0, 0, -0.5, 1.43333, 1, 0, 0, -0.5, 1.46667, 1, 0, 0, -0.5, 1.5, 1, 0, 0, -0.5, 1.53333, 1, 0, 0, -0.5, 1.56667, 1, 0, 0, -0.5, 1.6, 1, 0, 0, -0.5, 1.63333, 1, 0, 0, -0.5, 1.66667, 1, 0, 0, -0.5, 1.7, 1, 0, 0, -0.5, 1.73333, 1, 0, 0, -0.5, 1.76667, 1, 0, 0, -0.5, 1.8, 1, 0, 0, -0.5, 1.83333, 1, 0, 0, -0.5, 1.86667, 1, 0, 0, -0.5, 1.9, 1, 0, 0, -0.5, 1.93333, 1, 0, 0, -0.5, 1.96667, 1, 0, 0, -0.5, 2, 1, 0, 0, -0.5, 2.03333, 1, 0, 0, -0.5, 2.06667, 1, 0, 0, -0.5, 2.1, 1, 0, 0, -0.5, 2.13333, 1, 0, 0, -0.5, 2.16667, 1, 0, 0, -0.5, 2.2, 1, 0, 0, -0.5, 2.23333, 1, 0, 0, -0.5, 2.26667, 1, 0, 0, -0.5, 2.3, 1, 0, 0, -0.5, 2.33333, 1, 0, 0, -0.5, 2.36667, 1, 0, 0, -0.5, 2.4, 1, 0, 0, -0.5, 2.43333, 1, 0, 0, -0.5, 2.46667, 1, 0, 0, -0.5, 2.5, 1, 0, 0, -0.5, 2.53333, 1, 0, 0, -0.5, 2.56667, 1, 0, 0, -0.5, 2.6, 1, 0, 0, -0.5, 2.63333, 1, 0, 0, -0.5, 2.66667, 1, 0, 0, -0.5, 2.7, 1, 0, 0, -0.5, 2.73333, 1, 0, 0, -0.5, 2.76667, 1, 0, 0, -0.5, 2.8, 1, 0, 0, -0.5, 2.83333, 1, 0, 0, -0.5, 2.86667, 1, 0, 0, -0.5, 2.9, 1, 0, 0, -0.5, 2.93333, 1, 0, 0, -0.5, 2.96667, 1, 0, 0, -0.5, 3, 1, 0, 0, -0.5, 3.03333, 1, 0, 0, -0.5, 3.06667, 1, 0, 0, -0.5, 3.1, 1, 0, 0, -0.5, 3.13333, 1, 0, 0, -0.5, 3.16667, 1, 0, 0, -0.5, 3.2, 1, 0, 0, -0.5, 3.23333, 1, 0, 0, -0.5, 3.26667, 1, 0, 0, -0.5, 3.3, 1, 0, 0, -0.5, 3.33333, 1, 0, 0, -0.5, 3.36667, 1, 0, 0, -0.5, 3.4, 1, 0, 0, -0.5, 3.43333, 1, 0, 0, -0.5, 3.46667, 1, 0, 0, -0.5, 3.5, 1, 0, 0, -0.5, 3.53333, 1, 0, 0, -0.5, 3.56667, 1, 0, 0, -0.5, 3.6, 1, 0, 0, -0.5, 3.63333, 1, 0, 0, -0.5, 3.66667, 1, 0, 0, -0.5, 3.7, 1, 0, 0, -0.5, 3.73333, 1, 0, 0, -0.5, 3.76667, 1, 0, 0, -0.5, 3.8, 1, 0, 0, -0.5, 3.83333, 1, 0, 0, -0.5, 3.86667, 1, 0, 0, -0.5, 3.9, 1, 0, 0, -0.5, 3.93333, 1, 0, 0, -0.5, 3.96667, 1, 0, 0, -0.5, 4, 1, 0, 0, -0.5, 4.03333, 1, 0, 0, -0.5, 4.06667, 1, 0, 0, -0.5, 4.1, 1, 0, 0, -0.5, 4.13333, 1, 0, 0, -0.5, 4.16667, 1, 0, 0, -0.5, 4.2, 1, 0, 0, -0.5, 4.23333, 1, 0, 0, -0.5, 4.26667, 1, 0, 0, -0.5, 4.3, 1, 0, 0, -0.5, 4.33333, 1, 0, 0, -0.5, 4.36667, 1, 0, 0, -0.5, 4.4, 1, 0, 0, -0.5, 4.43333, 1, 0, 0, -0.5, 4.46667, 1, 0, 0, -0.5, 4.5, 1, 0, 0, -0.5, 4.53333, 1, 0, 0, -0.5, 4.56667, 1, 0, 0, -0.5, 4.6, 1, 0, 0, -0.5, 4.63333, 1, 0, 0, -0.5, 4.66667, 1, 0, 0, -0.5, 4.7, 1, 0, 0, -0.5, 4.73333, 1, 0, 0, -0.5, 4.76667, 1, 0, 0, -0.5, 4.8, 1, 0, 0, -0.5, 4.83333, 1, 0, 0, -0.5, 4.86667, 1, 0, 0, -0.5, 4.9, 1, 0, 0, -0.5, 4.93333, 1, 0, 0, -0.5, 4.96667, 1, 0, 0, -0.5, 5, 1, 0, 0, -0.5, 5.03333, 1, 0, 0, -0.5, 5.06667, 1, 0, 0, -0.5, 5.1, 1, 0, 0, -0.5, 5.13333, 1, 0, 0, -0.5, 5.16667, 1, 0, 0, -0.5, 5.2, 1, 0, 0, -0.5, 5.23333, 1, 0, 0, -0.5, 5.26667, 1, 0, 0, -0.5, 5.3, 1, 0, 0, -0.5, 5.33333, 1, 0, 0, -0.5, 5.36667, 1, 0, 0, -0.5, 5.4, 1, 0, 0, -0.5, 5.43333, 1, 0, 0, -0.5, 5.46667, 1, 0, 0, -0.5, 5.5, 1, 0, 0, -0.5, 5.53333, 1, 0, 0, -0.5, 5.56667, 1, 0, 0, -0.5, 5.6, 1, 0, 0, -0.5, 5.63333, 1, 0, 0, -0.5, 5.66667, 1, 0, 0, -0.5, 5.7, 1, 0, 0, -0.5, 5.73333, 1, 0, 0, -0.5, 5.76667, 1, 0, 0, -0.5, 5.8, 1, 0, 0, -0.5, 5.83333, 1, 0, 0, -0.5, 5.86667, 1, 0, 0, -0.5, 5.9, 1, 0, 0, -0.5, 5.93333, 1, 0, 0, -0.5, 5.96667, 1, 0, 0, -0.5, 6, 1, 0, 0, -0.5, 6.03333, 1, 0, 0, -0.5, 6.06667, 1, 0, 0, -0.5, 6.1, 1, 0, 0, -0.5, 6.13333, 1, 0, 0, -0.5, 6.16667, 1, 0, 0, -0.5, 6.2, 1, 0, 0, -0.5, 6.23333, 1, 0, 0, -0.5, 6.26667, 1, 0, 0, -0.5, 6.3, 1, 0, 0, -0.5, 6.33333, 1, 0, 0, -0.5, 6.36667, 1, 0, 0, -0.5, 6.4, 1, 0, 0, -0.5, 6.43333, 1, 0, 0, -0.5, 6.46667, 1, 0, 0, -0.5, 6.5, 1, 0, 0, -0.5, 6.53333, 1, 0, 0, -0.5, 6.56667, 1, 0, 0, -0.5, 6.6, 1, 0, 0, -0.5, 6.63333, 1, 0, 0, -0.5, 6.66667, 1, 0, 0, -0.5, 6.7, 1, 0, 0, -0.5, 6.73333, 1, 0, 0, -0.5, 6.76667, 1, 0, 0, -0.5, 6.8, 1, 0, 0, -0.5, 6.83333, 1, 0, 0, -0.5, 6.86667, 1, 0, 0, -0.5, 6.9, 1, 0, 0, -0.5, 6.93333, 1, 0, 0, -0.5, 6.96667, 1, 0, 0, -0.5, 7, 1, 0, 0, -0.5, 7.03333, 1, 0, 0, -0.5, 7.06667, 1, 0, 0, -0.5, 7.1, 1, 0, 0, -0.5, 7.13333, 1, 0, 0, -0.5, 7.16667, 1, 0, 0, -0.5, 7.2, 1, 0, 0, -0.5, 7.23333, 1, 0, 0, -0.5, 7.26667, 1, 0, 0, -0.5, 7.3, 1, 0, 0, -0.5, 7.33333, 1, 0, 0, -0.5, 7.36667, 1, 0, 0, -0.5, 7.4, 1, 0, 0, -0.5, 7.43333, 1, 0, 0, -0.5, 7.46667, 1, 0, 0, -0.5, 7.5, 1, 0, 0, -0.5, 7.53333, 1, 0, 0, -0.5, 7.56667, 1, 0, 0, -0.5, 7.6, 1, 0, 0, -0.5, 7.63333, 1, 0, 0, -0.5, 7.66667, 1, 0, 0, -0.5, 7.7, 1, 0, 0, -0.5, 7.73333, 1, 0, 0, -0.5, 7.76667, 1, 0, 0, -0.5, 7.8, 1, 0, 0, -0.5, 7.83333, 1, 0, 0, -0.5, 7.86667, 1, 0, 0, -0.5, 7.9, 1, 0, 0, -0.5, 7.93333, 1, 0, 0, -0.5, 7.96667, 1, 0, 0, -0.5, 8, 1, 0, 0, -0.5, 8.03333, 1, 0, 0, -0.5, 8.06667, 1, 0, 0, -0.5, 8.1, 1, 0, 0, -0.5, 8.13333, 1, 0, 0, -0.5, 8.16667, 1, 0, 0, -0.5, 8.2, 1, 0, 0, -0.5, 8.23333, 1, 0, 0, -0.5, 8.26667, 1, 0, 0, -0.5, 8.3, 1, 0, 0, -0.5, 8.33333, 1, 0, 0, -0.5, 8.36667, 1, 0, 0, -0.5, 8.4, 1, 0, 0, -0.5, 8.43333, 1, 0, 0, -0.5, 8.46667, 1, 0, 0, -0.5, 8.5, 1, 0, 0, -0.5, 8.53333, 1, 0, 0, -0.5, 8.56667, 1, 0, 0, -0.5, 8.6, 1, 0, 0, -0.5, 8.63333, 1, 0, 0, -0.5, 8.66667, 1, 0, 0, -0.5, 8.7, 1, 0, 0, -0.5, 8.73333, 1, 0, 0, -0.5, 8.76667, 1, 0, 0, -0.5, 8.8, 1, 0, 0, -0.5, 8.83333, 1, 0, 0, -0.5, 8.86667, 1, 0, 0, -0.5, 8.9, 1, 0, 0, -0.5, 8.93333, 1, 0, 0, -0.5, 8.96667, 1, 0, 0, -0.5, 9, 1, 0, 0, -0.5, 9.03333, 1, 0, 0, -0.5, 9.06667, 1, 0, 0, -0.5, 9.1, 1, 0, 0, -0.5, 9.13333, 1, 0, 0, -0.5, 9.16667, 1, 0, 0, -0.5, 9.2, 1, 0, 0, -0.5, 9.23333, 1, 0, 0, -0.5, 9.26667, 1, 0, 0, -0.5, 9.3, 1, 0, 0, -0.5, 9.33333, 1, 0, 0, -0.5, 9.36667, 1, 0, 0, -0.5, 9.4, 1, 0, 0, -0.5, 9.43333, 1, 0, 0, -0.5, 9.46667, 1, 0, 0, -0.5, 9.5, 1, 0, 0, -0.5, 9.53333, 1, 0, 0, -0.5, 9.56667, 1, 0, 0, -0.5, 9.6, 1, 0, 0, -0.5, 9.63333, 1, 0, 0, -0.5, 9.66667, 1, 0, 0, -0.5, 9.7, 1, 0, 0, -0.5, 9.73333, 1, 0, 0, -0.5, 9.76667, 1, 0, 0, -0.5, 9.8, 1, 0, 0, -0.5, 9.83333, 1, 0, 0, -0.5, 9.86667, 1, 0, 0, -0.5, 9.9, 1, 0, 0, -0.5, 9.93333, 1, 0, 0, -0.5, 9.96667, 1, 0, 0, -0.5, 10, 1, 0, 0, -0.5)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 0.0333333, 1, 0, 0, -0.466667, 0.0666667, 1, 0, 0, -0.433333, 0.1, 1, 0, 0, -0.4, 0.133333, 1, 0, 0, -0.366667, 0.166667, 1, 0, 0, -0.333333, 0.2, 1, 0, 0, -0.3, 0.233333, 1, 0, 0, -0.266667, 0.266667, 1, 0, 0, -0.233333, 0.3, 1, 0, 0, -0.2, 0.333333, 1, 0, 0, -0.166667, 0.366667, 1, 0, 0, -0.133333, 0.4, 1, 0, 0, -0.1, 0.433333, 1, 0, 0, -0.0666667, 0.466667, 1, 0, 0, -0.0333333, 0.5, 1, 0, 0, 0, 0.533333, 1, 0, 0, 0.0333334, 0.566667, 1, 0, 0, 0.0666667, 0.6, 1, 0, 0, 0.1, 0.633333, 1, 0, 0, 0.133333, 0.666667, 1, 0, 0, 0.166667, 0.7, 1, 0, 0, 0.2, 0.733333, 1, 0, 0, 0.233333, 0.766667, 1, 0, 0, 0.266667, 0.8, 1, 0, 0, 0.3, 0.833333, 1, 0, 0, 0.333333, 0.866667, 1, 0, 0, 0.366667, 0.9, 1, 0, 0, 0.4, 0.933333, 1, 0, 0, 0.433333, 0.966667, 1, 0, 0, 0.466667, 1, 1, 0, 0, 0.5, 1.03333, 1, 0, 0, 0.5, 1.06667, 1, 0, 0, 0.5, 1.1, 1, 0, 0, 0.5, 1.13333, 1, 0, 0, 0.5, 1.16667, 1, 0, 0, 0.5, 1.2, 1, 0, 0, 0.5, 1.23333, 1, 0, 0, 0.5, 1.26667, 1, 0, 0, 0.5, 1.3, 1, 0, 0, 0.5, 1.33333, 1, 0, 0, 0.5, 1.36667, 1, 0, 0, 0.5, 1.4, 1, 0, 0, 0.5, 1.43333, 1, 0, 0, 0.5, 1.46667, 1, 0, 0, 0.5, 1.5, 1, 0, 0, 0.5, 1.53333, 1, 0, 0, 0.5, 1.56667, 1, 0, 0, 0.5, 1.6, 1, 0, 0, 0.5, 1.63333, 1, 0, 0, 0.5, 1.66667, 1, 0, 0, 0.5, 1.7, 1, 0, 0, 0.5, 1.73333, 1, 0, 0, 0.5, 1.76667, 1, 0, 0, 0.5, 1.8, 1, 0, 0, 0.5, 1.83333, 1, 0, 0, 0.5, 1.86667, 1, 0, 0, 0.5, 1.9, 1, 0, 0, 0.5, 1.93333, 1, 0, 0, 0.5, 1.96667, 1, 0, 0, 0.5, 2, 1, 0, 0, 0.5, 2.03333, 1, 0, 0, 0.5, 2.06667, 1, 0, 0, 0.5, 2.1, 1, 0, 0, 0.5, 2.13333, 1, 0, 0, 0.5, 2.16667, 1, 0, 0, 0.5, 2.2, 1, 0, 0, 0.5, 2.23333, 1, 0, 0, 0.5, 2.26667, 1, 0, 0, 0.5, 2.3, 1, 0, 0, 0.5, 2.33333, 1, 0, 0, 0.5, 2.36667, 1, 0, 0, 0.5, 2.4, 1, 0, 0, 0.5, 2.43333, 1, 0, 0, 0.5, 2.46667, 1, 0, 0, 0.5, 2.5, 1, 0, 0, 0.5, 2.53333, 1, 0, 0, 0.5, 2.56667, 1, 0, 0, 0.5, 2.6, 1, 0, 0, 0.5, 2.63333, 1, 0, 0, 0.5, 2.66667, 1, 0, 0, 0.5, 2.7, 1, 0, 0, 0.5, 2.73333, 1, 0, 0, 0.5, 2.76667, 1, 0, 0, 0.5, 2.8, 1, 0, 0, 0.5, 2.83333, 1, 0, 0, 0.5, 2.86667, 1, 0, 0, 0.5, 2.9, 1, 0, 0, 0.5, 2.93333, 1, 0, 0, 0.5, 2.96667, 1, 0, 0, 0.5, 3, 1, 0, 0, 0.5, 3.03333, 1, 0, 0, 0.5, 3.06667, 1, 0, 0, 0.5, 3.1, 1, 0, 0, 0.5, 3.13333, 1, 0, 0, 0.5, 3.16667, 1, 0, 0, 0.5, 3.2, 1, 0, 0, 0.5, 3.23333, 1, 0, 0, 0.5, 3.26667, 1, 0, 0, 0.5, 3.3, 1, 0, 0, 0.5, 3.33333, 1, 0, 0, 0.5, 3.36667, 1, 0, 0, 0.5, 3.4, 1, 0, 0, 0.5, 3.43333, 1, 0, 0, 0.5, 3.46667, 1, 0, 0, 0.5, 3.5, 1, 0, 0, 0.5, 3.53333, 1, 0, 0, 0.5, 3.56667, 1, 0, 0, 0.5, 3.6, 1, 0, 0, 0.5, 3.63333, 1, 0, 0, 0.5, 3.66667, 1, 0, 0, 0.5, 3.7, 1, 0, 0, 0.5, 3.73333, 1, 0, 0, 0.5, 3.76667, 1, 0, 0, 0.5, 3.8, 1, 0, 0, 0.5, 3.83333, 1, 0, 0, 0.5, 3.86667, 1, 0, 0, 0.5, 3.9, 1, 0, 0, 0.5, 3.93333, 1, 0, 0, 0.5, 3.96667, 1, 0, 0, 0.5, 4, 1, 0, 0, 0.5, 4.03333, 1, 0, 0, 0.5, 4.06667, 1, 0, 0, 0.5, 4.1, 1, 0, 0, 0.5, 4.13333, 1, 0, 0, 0.5, 4.16667, 1, 0, 0, 0.5, 4.2, 1, 0, 0, 0.5, 4.23333, 1, 0, 0, 0.5, 4.26667, 1, 0, 0, 0.5, 4.3, 1, 0, 0, 0.5, 4.33333, 1, 0, 0, 0.5, 4.36667, 1, 0, 0, 0.5, 4.4, 1, 0, 0, 0.5, 4.43333, 1, 0, 0, 0.5, 4.46667, 1, 0, 0, 0.5, 4.5, 1, 0, 0, 0.5, 4.53333, 1, 0, 0, 0.5, 4.56667, 1, 0, 0, 0.5, 4.6, 1, 0, 0, 0.5, 4.63333, 1, 0, 0, 0.5, 4.66667, 1, 0, 0, 0.5, 4.7, 1, 0, 0, 0.5, 4.73333, 1, 0, 0, 0.5, 4.76667, 1, 0, 0, 0.5, 4.8, 1, 0, 0, 0.5, 4.83333, 1, 0, 0, 0.5, 4.86667, 1, 0, 0, 0.5, 4.9, 1, 0, 0, 0.5, 4.93333, 1, 0, 0, 0.5, 4.96667, 1, 0, 0, 0.5, 5, 1, 0, 0, 0.5, 5.03333, 1, 0, 0, 0.5, 5.06667, 1, 0, 0, 0.5, 5.1, 1, 0, 0, 0.5, 5.13333, 1, 0, 0, 0.5, 5.16667, 1, 0, 0, 0.5, 5.2, 1, 0, 0, 0.5, 5.23333, 1, 0, 0, 0.5, 5.26667, 1, 0, 0, 0.5, 5.3, 1, 0, 0, 0.5, 5.33333, 1, 0, 0, 0.5, 5.36667, 1, 0, 0, 0.5, 5.4, 1, 0, 0, 0.5, 5.43333, 1, 0, 0, 0.5, 5.46667, 1, 0, 0, 0.5, 5.5, 1, 0, 0, 0.5, 5.53333, 1, 0, 0, 0.5, 5.56667, 1, 0, 0, 0.5, 5.6, 1, 0, 0, 0.5, 5.63333, 1, 0, 0, 0.5, 5.66667, 1, 0, 0, 0.5, 5.7, 1, 0, 0, 0.5, 5.73333, 1, 0, 0, 0.5, 5.76667, 1, 0, 0, 0.5, 5.8, 1, 0, 0, 0.5, 5.83333, 1, 0, 0, 0.5, 5.86667, 1, 0, 0, 0.5, 5.9, 1, 0, 0, 0.5, 5.93333, 1, 0, 0, 0.5, 5.96667, 1, 0, 0, 0.5, 6, 1, 0, 0, 0.5, 6.03333, 1, 0, 0, 0.5, 6.06667, 1, 0, 0, 0.5, 6.1, 1, 0, 0, 0.5, 6.13333, 1, 0, 0, 0.5, 6.16667, 1, 0, 0, 0.5, 6.2, 1, 0, 0, 0.5, 6.23333, 1, 0, 0, 0.5, 6.26667, 1, 0, 0, 0.5, 6.3, 1, 0, 0, 0.5, 6.33333, 1, 0, 0, 0.5, 6.36667, 1, 0, 0, 0.5, 6.4, 1, 0, 0, 0.5, 6.43333, 1, 0, 0, 0.5, 6.46667, 1, 0, 0, 0.5, 6.5, 1, 0, 0, 0.5, 6.53333, 1, 0, 0, 0.5, 6.56667, 1, 0, 0, 0.5, 6.6, 1, 0, 0, 0.5, 6.63333, 1, 0, 0, 0.5, 6.66667, 1, 0, 0, 0.5, 6.7, 1, 0, 0, 0.5, 6.73333, 1, 0, 0, 0.5, 6.76667, 1, 0, 0, 0.5, 6.8, 1, 0, 0, 0.5, 6.83333, 1, 0, 0, 0.5, 6.86667, 1, 0, 0, 0.5, 6.9, 1, 0, 0, 0.5, 6.93333, 1, 0, 0, 0.5, 6.96667, 1, 0, 0, 0.5, 7, 1, 0, 0, 0.5, 7.03333, 1, 0, 0, 0.5, 7.06667, 1, 0, 0, 0.5, 7.1, 1, 0, 0, 0.5, 7.13333, 1, 0, 0, 0.5, 7.16667, 1, 0, 0, 0.5, 7.2, 1, 0, 0, 0.5, 7.23333, 1, 0, 0, 0.5, 7.26667, 1, 0, 0, 0.5, 7.3, 1, 0, 0, 0.5, 7.33333, 1, 0, 0, 0.5, 7.36667, 1, 0, 0, 0.5, 7.4, 1, 0, 0, 0.5, 7.43333, 1, 0, 0, 0.5, 7.46667, 1, 0, 0, 0.5, 7.5, 1, 0, 0, 0.5, 7.53333, 1, 0, 0, 0.5, 7.56667, 1, 0, 0, 0.5, 7.6, 1, 0, 0, 0.5, 7.63333, 1, 0, 0, 0.5, 7.66667, 1, 0, 0, 0.5, 7.7, 1, 0, 0, 0.5, 7.73333, 1, 0, 0, 0.5, 7.76667, 1, 0, 0, 0.5, 7.8, 1, 0, 0, 0.5, 7.83333, 1, 0, 0, 0.5, 7.86667, 1, 0, 0, 0.5, 7.9, 1, 0, 0, 0.5, 7.93333, 1, 0, 0, 0.5, 7.96667, 1, 0, 0, 0.5, 8, 1, 0, 0, 0.5, 8.03333, 1, 0, 0, 0.5, 8.06667, 1, 0, 0, 0.5, 8.1, 1, 0, 0, 0.5, 8.13333, 1, 0, 0, 0.5, 8.16667, 1, 0, 0, 0.5, 8.2, 1, 0, 0, 0.5, 8.23333, 1, 0, 0, 0.5, 8.26667, 1, 0, 0, 0.5, 8.3, 1, 0, 0, 0.5, 8.33333, 1, 0, 0, 0.5, 8.36667, 1, 0, 0, 0.5, 8.4, 1, 0, 0, 0.5, 8.43333, 1, 0, 0, 0.5, 8.46667, 1, 0, 0, 0.5, 8.5, 1, 0, 0, 0.5, 8.53333, 1, 0, 0, 0.5, 8.56667, 1, 0, 0, 0.5, 8.6, 1, 0, 0, 0.5, 8.63333, 1, 0, 0, 0.5, 8.66667, 1, 0, 0, 0.5, 8.7, 1, 0, 0, 0.5, 8.73333, 1, 0, 0, 0.5, 8.76667, 1, 0, 0, 0.5, 8.8, 1, 0, 0, 0.5, 8.83333, 1, 0, 0, 0.5, 8.86667, 1, 0, 0, 0.5, 8.9, 1, 0, 0, 0.5, 8.93333, 1, 0, 0, 0.5, 8.96667, 1, 0, 0, 0.5, 9, 1, 0, 0, 0.5, 9.03333, 1, 0, 0, 0.5, 9.06667, 1, 0, 0, 0.5, 9.1, 1, 0, 0, 0.5, 9.13333, 1, 0, 0, 0.5, 9.16667, 1, 0, 0, 0.5, 9.2, 1, 0, 0, 0.5, 9.23333, 1, 0, 0, 0.5, 9.26667, 1, 0, 0, 0.5, 9.3, 1, 0, 0, 0.5, 9.33333, 1, 0, 0, 0.5, 9.36667, 1, 0, 0, 0.5, 9.4, 1, 0, 0, 0.5, 9.43333, 1, 0, 0, 0.5, 9.46667, 1, 0, 0, 0.5, 9.5, 1, 0, 0, 0.5, 9.53333, 1, 0, 0, 0.5, 9.56667, 1, 0, 0, 0.5, 9.6, 1, 0, 0, 0.5, 9.63333, 1, 0, 0, 0.5, 9.66667, 1, 0, 0, 0.5, 9.7, 1, 0, 0, 0.5, 9.73333, 1, 0, 0, 0.5, 9.76667, 1, 0, 0, 0.5, 9.8, 1, 0, 0, 0.5, 9.83333, 1, 0, 0, 0.5, 9.86667, 1, 0, 0, 0.5, 9.9, 1, 0, 0, 0.5, 9.93333, 1, 0, 0, 0.5, 9.96667, 1, 0, 0, 0.5, 10, 1, 0, 0, 0.5)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("./Train2/subway_car_004")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 0.0333333, 1, 0, 0, 0.466667, 0.0666667, 1, 0, 0, 0.433333, 0.1, 1, 0, 0, 0.4, 0.133333, 1, 0, 0, 0.366667, 0.166667, 1, 0, 0, 0.333333, 0.2, 1, 0, 0, 0.3, 0.233333, 1, 0, 0, 0.266667, 0.266667, 1, 0, 0, 0.233333, 0.3, 1, 0, 0, 0.2, 0.333333, 1, 0, 0, 0.166667, 0.366667, 1, 0, 0, 0.133333, 0.4, 1, 0, 0, 0.1, 0.433333, 1, 0, 0, 0.0666667, 0.466667, 1, 0, 0, 0.0333333, 0.5, 1, 0, 0, 0, 0.533333, 1, 0, 0, -0.0333334, 0.566667, 1, 0, 0, -0.0666667, 0.6, 1, 0, 0, -0.1, 0.633333, 1, 0, 0, -0.133333, 0.666667, 1, 0, 0, -0.166667, 0.7, 1, 0, 0, -0.2, 0.733333, 1, 0, 0, -0.233333, 0.766667, 1, 0, 0, -0.266667, 0.8, 1, 0, 0, -0.3, 0.833333, 1, 0, 0, -0.333333, 0.866667, 1, 0, 0, -0.366667, 0.9, 1, 0, 0, -0.4, 0.933333, 1, 0, 0, -0.433333, 0.966667, 1, 0, 0, -0.466667, 1, 1, 0, 0, -0.5, 1.03333, 1, 0, 0, -0.5, 1.06667, 1, 0, 0, -0.5, 1.1, 1, 0, 0, -0.5, 1.13333, 1, 0, 0, -0.5, 1.16667, 1, 0, 0, -0.5, 1.2, 1, 0, 0, -0.5, 1.23333, 1, 0, 0, -0.5, 1.26667, 1, 0, 0, -0.5, 1.3, 1, 0, 0, -0.5, 1.33333, 1, 0, 0, -0.5, 1.36667, 1, 0, 0, -0.5, 1.4, 1, 0, 0, -0.5, 1.43333, 1, 0, 0, -0.5, 1.46667, 1, 0, 0, -0.5, 1.5, 1, 0, 0, -0.5, 1.53333, 1, 0, 0, -0.5, 1.56667, 1, 0, 0, -0.5, 1.6, 1, 0, 0, -0.5, 1.63333, 1, 0, 0, -0.5, 1.66667, 1, 0, 0, -0.5, 1.7, 1, 0, 0, -0.5, 1.73333, 1, 0, 0, -0.5, 1.76667, 1, 0, 0, -0.5, 1.8, 1, 0, 0, -0.5, 1.83333, 1, 0, 0, -0.5, 1.86667, 1, 0, 0, -0.5, 1.9, 1, 0, 0, -0.5, 1.93333, 1, 0, 0, -0.5, 1.96667, 1, 0, 0, -0.5, 2, 1, 0, 0, -0.5, 2.03333, 1, 0, 0, -0.5, 2.06667, 1, 0, 0, -0.5, 2.1, 1, 0, 0, -0.5, 2.13333, 1, 0, 0, -0.5, 2.16667, 1, 0, 0, -0.5, 2.2, 1, 0, 0, -0.5, 2.23333, 1, 0, 0, -0.5, 2.26667, 1, 0, 0, -0.5, 2.3, 1, 0, 0, -0.5, 2.33333, 1, 0, 0, -0.5, 2.36667, 1, 0, 0, -0.5, 2.4, 1, 0, 0, -0.5, 2.43333, 1, 0, 0, -0.5, 2.46667, 1, 0, 0, -0.5, 2.5, 1, 0, 0, -0.5, 2.53333, 1, 0, 0, -0.5, 2.56667, 1, 0, 0, -0.5, 2.6, 1, 0, 0, -0.5, 2.63333, 1, 0, 0, -0.5, 2.66667, 1, 0, 0, -0.5, 2.7, 1, 0, 0, -0.5, 2.73333, 1, 0, 0, -0.5, 2.76667, 1, 0, 0, -0.5, 2.8, 1, 0, 0, -0.5, 2.83333, 1, 0, 0, -0.5, 2.86667, 1, 0, 0, -0.5, 2.9, 1, 0, 0, -0.5, 2.93333, 1, 0, 0, -0.5, 2.96667, 1, 0, 0, -0.5, 3, 1, 0, 0, -0.5, 3.03333, 1, 0, 0, -0.5, 3.06667, 1, 0, 0, -0.5, 3.1, 1, 0, 0, -0.5, 3.13333, 1, 0, 0, -0.5, 3.16667, 1, 0, 0, -0.5, 3.2, 1, 0, 0, -0.5, 3.23333, 1, 0, 0, -0.5, 3.26667, 1, 0, 0, -0.5, 3.3, 1, 0, 0, -0.5, 3.33333, 1, 0, 0, -0.5, 3.36667, 1, 0, 0, -0.5, 3.4, 1, 0, 0, -0.5, 3.43333, 1, 0, 0, -0.5, 3.46667, 1, 0, 0, -0.5, 3.5, 1, 0, 0, -0.5, 3.53333, 1, 0, 0, -0.5, 3.56667, 1, 0, 0, -0.5, 3.6, 1, 0, 0, -0.5, 3.63333, 1, 0, 0, -0.5, 3.66667, 1, 0, 0, -0.5, 3.7, 1, 0, 0, -0.5, 3.73333, 1, 0, 0, -0.5, 3.76667, 1, 0, 0, -0.5, 3.8, 1, 0, 0, -0.5, 3.83333, 1, 0, 0, -0.5, 3.86667, 1, 0, 0, -0.5, 3.9, 1, 0, 0, -0.5, 3.93333, 1, 0, 0, -0.5, 3.96667, 1, 0, 0, -0.5, 4, 1, 0, 0, -0.5, 4.03333, 1, 0, 0, -0.5, 4.06667, 1, 0, 0, -0.5, 4.1, 1, 0, 0, -0.5, 4.13333, 1, 0, 0, -0.5, 4.16667, 1, 0, 0, -0.5, 4.2, 1, 0, 0, -0.5, 4.23333, 1, 0, 0, -0.5, 4.26667, 1, 0, 0, -0.5, 4.3, 1, 0, 0, -0.5, 4.33333, 1, 0, 0, -0.5, 4.36667, 1, 0, 0, -0.5, 4.4, 1, 0, 0, -0.5, 4.43333, 1, 0, 0, -0.5, 4.46667, 1, 0, 0, -0.5, 4.5, 1, 0, 0, -0.5, 4.53333, 1, 0, 0, -0.5, 4.56667, 1, 0, 0, -0.5, 4.6, 1, 0, 0, -0.5, 4.63333, 1, 0, 0, -0.5, 4.66667, 1, 0, 0, -0.5, 4.7, 1, 0, 0, -0.5, 4.73333, 1, 0, 0, -0.5, 4.76667, 1, 0, 0, -0.5, 4.8, 1, 0, 0, -0.5, 4.83333, 1, 0, 0, -0.5, 4.86667, 1, 0, 0, -0.5, 4.9, 1, 0, 0, -0.5, 4.93333, 1, 0, 0, -0.5, 4.96667, 1, 0, 0, -0.5, 5, 1, 0, 0, -0.5, 5.03333, 1, 0, 0, -0.5, 5.06667, 1, 0, 0, -0.5, 5.1, 1, 0, 0, -0.5, 5.13333, 1, 0, 0, -0.5, 5.16667, 1, 0, 0, -0.5, 5.2, 1, 0, 0, -0.5, 5.23333, 1, 0, 0, -0.5, 5.26667, 1, 0, 0, -0.5, 5.3, 1, 0, 0, -0.5, 5.33333, 1, 0, 0, -0.5, 5.36667, 1, 0, 0, -0.5, 5.4, 1, 0, 0, -0.5, 5.43333, 1, 0, 0, -0.5, 5.46667, 1, 0, 0, -0.5, 5.5, 1, 0, 0, -0.5, 5.53333, 1, 0, 0, -0.5, 5.56667, 1, 0, 0, -0.5, 5.6, 1, 0, 0, -0.5, 5.63333, 1, 0, 0, -0.5, 5.66667, 1, 0, 0, -0.5, 5.7, 1, 0, 0, -0.5, 5.73333, 1, 0, 0, -0.5, 5.76667, 1, 0, 0, -0.5, 5.8, 1, 0, 0, -0.5, 5.83333, 1, 0, 0, -0.5, 5.86667, 1, 0, 0, -0.5, 5.9, 1, 0, 0, -0.5, 5.93333, 1, 0, 0, -0.5, 5.96667, 1, 0, 0, -0.5, 6, 1, 0, 0, -0.5, 6.03333, 1, 0, 0, -0.5, 6.06667, 1, 0, 0, -0.5, 6.1, 1, 0, 0, -0.5, 6.13333, 1, 0, 0, -0.5, 6.16667, 1, 0, 0, -0.5, 6.2, 1, 0, 0, -0.5, 6.23333, 1, 0, 0, -0.5, 6.26667, 1, 0, 0, -0.5, 6.3, 1, 0, 0, -0.5, 6.33333, 1, 0, 0, -0.5, 6.36667, 1, 0, 0, -0.5, 6.4, 1, 0, 0, -0.5, 6.43333, 1, 0, 0, -0.5, 6.46667, 1, 0, 0, -0.5, 6.5, 1, 0, 0, -0.5, 6.53333, 1, 0, 0, -0.5, 6.56667, 1, 0, 0, -0.5, 6.6, 1, 0, 0, -0.5, 6.63333, 1, 0, 0, -0.5, 6.66667, 1, 0, 0, -0.5, 6.7, 1, 0, 0, -0.5, 6.73333, 1, 0, 0, -0.5, 6.76667, 1, 0, 0, -0.5, 6.8, 1, 0, 0, -0.5, 6.83333, 1, 0, 0, -0.5, 6.86667, 1, 0, 0, -0.5, 6.9, 1, 0, 0, -0.5, 6.93333, 1, 0, 0, -0.5, 6.96667, 1, 0, 0, -0.5, 7, 1, 0, 0, -0.5, 7.03333, 1, 0, 0, -0.5, 7.06667, 1, 0, 0, -0.5, 7.1, 1, 0, 0, -0.5, 7.13333, 1, 0, 0, -0.5, 7.16667, 1, 0, 0, -0.5, 7.2, 1, 0, 0, -0.5, 7.23333, 1, 0, 0, -0.5, 7.26667, 1, 0, 0, -0.5, 7.3, 1, 0, 0, -0.5, 7.33333, 1, 0, 0, -0.5, 7.36667, 1, 0, 0, -0.5, 7.4, 1, 0, 0, -0.5, 7.43333, 1, 0, 0, -0.5, 7.46667, 1, 0, 0, -0.5, 7.5, 1, 0, 0, -0.5, 7.53333, 1, 0, 0, -0.5, 7.56667, 1, 0, 0, -0.5, 7.6, 1, 0, 0, -0.5, 7.63333, 1, 0, 0, -0.5, 7.66667, 1, 0, 0, -0.5, 7.7, 1, 0, 0, -0.5, 7.73333, 1, 0, 0, -0.5, 7.76667, 1, 0, 0, -0.5, 7.8, 1, 0, 0, -0.5, 7.83333, 1, 0, 0, -0.5, 7.86667, 1, 0, 0, -0.5, 7.9, 1, 0, 0, -0.5, 7.93333, 1, 0, 0, -0.5, 7.96667, 1, 0, 0, -0.5, 8, 1, 0, 0, -0.5, 8.03333, 1, 0, 0, -0.5, 8.06667, 1, 0, 0, -0.5, 8.1, 1, 0, 0, -0.5, 8.13333, 1, 0, 0, -0.5, 8.16667, 1, 0, 0, -0.5, 8.2, 1, 0, 0, -0.5, 8.23333, 1, 0, 0, -0.5, 8.26667, 1, 0, 0, -0.5, 8.3, 1, 0, 0, -0.5, 8.33333, 1, 0, 0, -0.5, 8.36667, 1, 0, 0, -0.5, 8.4, 1, 0, 0, -0.5, 8.43333, 1, 0, 0, -0.5, 8.46667, 1, 0, 0, -0.5, 8.5, 1, 0, 0, -0.5, 8.53333, 1, 0, 0, -0.5, 8.56667, 1, 0, 0, -0.5, 8.6, 1, 0, 0, -0.5, 8.63333, 1, 0, 0, -0.5, 8.66667, 1, 0, 0, -0.5, 8.7, 1, 0, 0, -0.5, 8.73333, 1, 0, 0, -0.5, 8.76667, 1, 0, 0, -0.5, 8.8, 1, 0, 0, -0.5, 8.83333, 1, 0, 0, -0.5, 8.86667, 1, 0, 0, -0.5, 8.9, 1, 0, 0, -0.5, 8.93333, 1, 0, 0, -0.5, 8.96667, 1, 0, 0, -0.5, 9, 1, 0, 0, -0.5, 9.03333, 1, 0, 0, -0.5, 9.06667, 1, 0, 0, -0.5, 9.1, 1, 0, 0, -0.5, 9.13333, 1, 0, 0, -0.5, 9.16667, 1, 0, 0, -0.5, 9.2, 1, 0, 0, -0.5, 9.23333, 1, 0, 0, -0.5, 9.26667, 1, 0, 0, -0.5, 9.3, 1, 0, 0, -0.5, 9.33333, 1, 0, 0, -0.5, 9.36667, 1, 0, 0, -0.5, 9.4, 1, 0, 0, -0.5, 9.43333, 1, 0, 0, -0.5, 9.46667, 1, 0, 0, -0.5, 9.5, 1, 0, 0, -0.5, 9.53333, 1, 0, 0, -0.5, 9.56667, 1, 0, 0, -0.5, 9.6, 1, 0, 0, -0.5, 9.63333, 1, 0, 0, -0.5, 9.66667, 1, 0, 0, -0.5, 9.7, 1, 0, 0, -0.5, 9.73333, 1, 0, 0, -0.5, 9.76667, 1, 0, 0, -0.5, 9.8, 1, 0, 0, -0.5, 9.83333, 1, 0, 0, -0.5, 9.86667, 1, 0, 0, -0.5, 9.9, 1, 0, 0, -0.5, 9.93333, 1, 0, 0, -0.5, 9.96667, 1, 0, 0, -0.5, 10, 1, 0, 0, -0.5)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("./Train2/subway_car_006")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 0.0333333, 1, 0, 0, -0.466667, 0.0666667, 1, 0, 0, -0.433333, 0.1, 1, 0, 0, -0.4, 0.133333, 1, 0, 0, -0.366667, 0.166667, 1, 0, 0, -0.333333, 0.2, 1, 0, 0, -0.3, 0.233333, 1, 0, 0, -0.266667, 0.266667, 1, 0, 0, -0.233333, 0.3, 1, 0, 0, -0.2, 0.333333, 1, 0, 0, -0.166667, 0.366667, 1, 0, 0, -0.133333, 0.4, 1, 0, 0, -0.1, 0.433333, 1, 0, 0, -0.0666667, 0.466667, 1, 0, 0, -0.0333333, 0.5, 1, 0, 0, 0, 0.533333, 1, 0, 0, 0.0333334, 0.566667, 1, 0, 0, 0.0666667, 0.6, 1, 0, 0, 0.1, 0.633333, 1, 0, 0, 0.133333, 0.666667, 1, 0, 0, 0.166667, 0.7, 1, 0, 0, 0.2, 0.733333, 1, 0, 0, 0.233333, 0.766667, 1, 0, 0, 0.266667, 0.8, 1, 0, 0, 0.3, 0.833333, 1, 0, 0, 0.333333, 0.866667, 1, 0, 0, 0.366667, 0.9, 1, 0, 0, 0.4, 0.933333, 1, 0, 0, 0.433333, 0.966667, 1, 0, 0, 0.466667, 1, 1, 0, 0, 0.5, 1.03333, 1, 0, 0, 0.5, 1.06667, 1, 0, 0, 0.5, 1.1, 1, 0, 0, 0.5, 1.13333, 1, 0, 0, 0.5, 1.16667, 1, 0, 0, 0.5, 1.2, 1, 0, 0, 0.5, 1.23333, 1, 0, 0, 0.5, 1.26667, 1, 0, 0, 0.5, 1.3, 1, 0, 0, 0.5, 1.33333, 1, 0, 0, 0.5, 1.36667, 1, 0, 0, 0.5, 1.4, 1, 0, 0, 0.5, 1.43333, 1, 0, 0, 0.5, 1.46667, 1, 0, 0, 0.5, 1.5, 1, 0, 0, 0.5, 1.53333, 1, 0, 0, 0.5, 1.56667, 1, 0, 0, 0.5, 1.6, 1, 0, 0, 0.5, 1.63333, 1, 0, 0, 0.5, 1.66667, 1, 0, 0, 0.5, 1.7, 1, 0, 0, 0.5, 1.73333, 1, 0, 0, 0.5, 1.76667, 1, 0, 0, 0.5, 1.8, 1, 0, 0, 0.5, 1.83333, 1, 0, 0, 0.5, 1.86667, 1, 0, 0, 0.5, 1.9, 1, 0, 0, 0.5, 1.93333, 1, 0, 0, 0.5, 1.96667, 1, 0, 0, 0.5, 2, 1, 0, 0, 0.5, 2.03333, 1, 0, 0, 0.5, 2.06667, 1, 0, 0, 0.5, 2.1, 1, 0, 0, 0.5, 2.13333, 1, 0, 0, 0.5, 2.16667, 1, 0, 0, 0.5, 2.2, 1, 0, 0, 0.5, 2.23333, 1, 0, 0, 0.5, 2.26667, 1, 0, 0, 0.5, 2.3, 1, 0, 0, 0.5, 2.33333, 1, 0, 0, 0.5, 2.36667, 1, 0, 0, 0.5, 2.4, 1, 0, 0, 0.5, 2.43333, 1, 0, 0, 0.5, 2.46667, 1, 0, 0, 0.5, 2.5, 1, 0, 0, 0.5, 2.53333, 1, 0, 0, 0.5, 2.56667, 1, 0, 0, 0.5, 2.6, 1, 0, 0, 0.5, 2.63333, 1, 0, 0, 0.5, 2.66667, 1, 0, 0, 0.5, 2.7, 1, 0, 0, 0.5, 2.73333, 1, 0, 0, 0.5, 2.76667, 1, 0, 0, 0.5, 2.8, 1, 0, 0, 0.5, 2.83333, 1, 0, 0, 0.5, 2.86667, 1, 0, 0, 0.5, 2.9, 1, 0, 0, 0.5, 2.93333, 1, 0, 0, 0.5, 2.96667, 1, 0, 0, 0.5, 3, 1, 0, 0, 0.5, 3.03333, 1, 0, 0, 0.5, 3.06667, 1, 0, 0, 0.5, 3.1, 1, 0, 0, 0.5, 3.13333, 1, 0, 0, 0.5, 3.16667, 1, 0, 0, 0.5, 3.2, 1, 0, 0, 0.5, 3.23333, 1, 0, 0, 0.5, 3.26667, 1, 0, 0, 0.5, 3.3, 1, 0, 0, 0.5, 3.33333, 1, 0, 0, 0.5, 3.36667, 1, 0, 0, 0.5, 3.4, 1, 0, 0, 0.5, 3.43333, 1, 0, 0, 0.5, 3.46667, 1, 0, 0, 0.5, 3.5, 1, 0, 0, 0.5, 3.53333, 1, 0, 0, 0.5, 3.56667, 1, 0, 0, 0.5, 3.6, 1, 0, 0, 0.5, 3.63333, 1, 0, 0, 0.5, 3.66667, 1, 0, 0, 0.5, 3.7, 1, 0, 0, 0.5, 3.73333, 1, 0, 0, 0.5, 3.76667, 1, 0, 0, 0.5, 3.8, 1, 0, 0, 0.5, 3.83333, 1, 0, 0, 0.5, 3.86667, 1, 0, 0, 0.5, 3.9, 1, 0, 0, 0.5, 3.93333, 1, 0, 0, 0.5, 3.96667, 1, 0, 0, 0.5, 4, 1, 0, 0, 0.5, 4.03333, 1, 0, 0, 0.5, 4.06667, 1, 0, 0, 0.5, 4.1, 1, 0, 0, 0.5, 4.13333, 1, 0, 0, 0.5, 4.16667, 1, 0, 0, 0.5, 4.2, 1, 0, 0, 0.5, 4.23333, 1, 0, 0, 0.5, 4.26667, 1, 0, 0, 0.5, 4.3, 1, 0, 0, 0.5, 4.33333, 1, 0, 0, 0.5, 4.36667, 1, 0, 0, 0.5, 4.4, 1, 0, 0, 0.5, 4.43333, 1, 0, 0, 0.5, 4.46667, 1, 0, 0, 0.5, 4.5, 1, 0, 0, 0.5, 4.53333, 1, 0, 0, 0.5, 4.56667, 1, 0, 0, 0.5, 4.6, 1, 0, 0, 0.5, 4.63333, 1, 0, 0, 0.5, 4.66667, 1, 0, 0, 0.5, 4.7, 1, 0, 0, 0.5, 4.73333, 1, 0, 0, 0.5, 4.76667, 1, 0, 0, 0.5, 4.8, 1, 0, 0, 0.5, 4.83333, 1, 0, 0, 0.5, 4.86667, 1, 0, 0, 0.5, 4.9, 1, 0, 0, 0.5, 4.93333, 1, 0, 0, 0.5, 4.96667, 1, 0, 0, 0.5, 5, 1, 0, 0, 0.5, 5.03333, 1, 0, 0, 0.5, 5.06667, 1, 0, 0, 0.5, 5.1, 1, 0, 0, 0.5, 5.13333, 1, 0, 0, 0.5, 5.16667, 1, 0, 0, 0.5, 5.2, 1, 0, 0, 0.5, 5.23333, 1, 0, 0, 0.5, 5.26667, 1, 0, 0, 0.5, 5.3, 1, 0, 0, 0.5, 5.33333, 1, 0, 0, 0.5, 5.36667, 1, 0, 0, 0.5, 5.4, 1, 0, 0, 0.5, 5.43333, 1, 0, 0, 0.5, 5.46667, 1, 0, 0, 0.5, 5.5, 1, 0, 0, 0.5, 5.53333, 1, 0, 0, 0.5, 5.56667, 1, 0, 0, 0.5, 5.6, 1, 0, 0, 0.5, 5.63333, 1, 0, 0, 0.5, 5.66667, 1, 0, 0, 0.5, 5.7, 1, 0, 0, 0.5, 5.73333, 1, 0, 0, 0.5, 5.76667, 1, 0, 0, 0.5, 5.8, 1, 0, 0, 0.5, 5.83333, 1, 0, 0, 0.5, 5.86667, 1, 0, 0, 0.5, 5.9, 1, 0, 0, 0.5, 5.93333, 1, 0, 0, 0.5, 5.96667, 1, 0, 0, 0.5, 6, 1, 0, 0, 0.5, 6.03333, 1, 0, 0, 0.5, 6.06667, 1, 0, 0, 0.5, 6.1, 1, 0, 0, 0.5, 6.13333, 1, 0, 0, 0.5, 6.16667, 1, 0, 0, 0.5, 6.2, 1, 0, 0, 0.5, 6.23333, 1, 0, 0, 0.5, 6.26667, 1, 0, 0, 0.5, 6.3, 1, 0, 0, 0.5, 6.33333, 1, 0, 0, 0.5, 6.36667, 1, 0, 0, 0.5, 6.4, 1, 0, 0, 0.5, 6.43333, 1, 0, 0, 0.5, 6.46667, 1, 0, 0, 0.5, 6.5, 1, 0, 0, 0.5, 6.53333, 1, 0, 0, 0.5, 6.56667, 1, 0, 0, 0.5, 6.6, 1, 0, 0, 0.5, 6.63333, 1, 0, 0, 0.5, 6.66667, 1, 0, 0, 0.5, 6.7, 1, 0, 0, 0.5, 6.73333, 1, 0, 0, 0.5, 6.76667, 1, 0, 0, 0.5, 6.8, 1, 0, 0, 0.5, 6.83333, 1, 0, 0, 0.5, 6.86667, 1, 0, 0, 0.5, 6.9, 1, 0, 0, 0.5, 6.93333, 1, 0, 0, 0.5, 6.96667, 1, 0, 0, 0.5, 7, 1, 0, 0, 0.5, 7.03333, 1, 0, 0, 0.5, 7.06667, 1, 0, 0, 0.5, 7.1, 1, 0, 0, 0.5, 7.13333, 1, 0, 0, 0.5, 7.16667, 1, 0, 0, 0.5, 7.2, 1, 0, 0, 0.5, 7.23333, 1, 0, 0, 0.5, 7.26667, 1, 0, 0, 0.5, 7.3, 1, 0, 0, 0.5, 7.33333, 1, 0, 0, 0.5, 7.36667, 1, 0, 0, 0.5, 7.4, 1, 0, 0, 0.5, 7.43333, 1, 0, 0, 0.5, 7.46667, 1, 0, 0, 0.5, 7.5, 1, 0, 0, 0.5, 7.53333, 1, 0, 0, 0.5, 7.56667, 1, 0, 0, 0.5, 7.6, 1, 0, 0, 0.5, 7.63333, 1, 0, 0, 0.5, 7.66667, 1, 0, 0, 0.5, 7.7, 1, 0, 0, 0.5, 7.73333, 1, 0, 0, 0.5, 7.76667, 1, 0, 0, 0.5, 7.8, 1, 0, 0, 0.5, 7.83333, 1, 0, 0, 0.5, 7.86667, 1, 0, 0, 0.5, 7.9, 1, 0, 0, 0.5, 7.93333, 1, 0, 0, 0.5, 7.96667, 1, 0, 0, 0.5, 8, 1, 0, 0, 0.5, 8.03333, 1, 0, 0, 0.5, 8.06667, 1, 0, 0, 0.5, 8.1, 1, 0, 0, 0.5, 8.13333, 1, 0, 0, 0.5, 8.16667, 1, 0, 0, 0.5, 8.2, 1, 0, 0, 0.5, 8.23333, 1, 0, 0, 0.5, 8.26667, 1, 0, 0, 0.5, 8.3, 1, 0, 0, 0.5, 8.33333, 1, 0, 0, 0.5, 8.36667, 1, 0, 0, 0.5, 8.4, 1, 0, 0, 0.5, 8.43333, 1, 0, 0, 0.5, 8.46667, 1, 0, 0, 0.5, 8.5, 1, 0, 0, 0.5, 8.53333, 1, 0, 0, 0.5, 8.56667, 1, 0, 0, 0.5, 8.6, 1, 0, 0, 0.5, 8.63333, 1, 0, 0, 0.5, 8.66667, 1, 0, 0, 0.5, 8.7, 1, 0, 0, 0.5, 8.73333, 1, 0, 0, 0.5, 8.76667, 1, 0, 0, 0.5, 8.8, 1, 0, 0, 0.5, 8.83333, 1, 0, 0, 0.5, 8.86667, 1, 0, 0, 0.5, 8.9, 1, 0, 0, 0.5, 8.93333, 1, 0, 0, 0.5, 8.96667, 1, 0, 0, 0.5, 9, 1, 0, 0, 0.5, 9.03333, 1, 0, 0, 0.5, 9.06667, 1, 0, 0, 0.5, 9.1, 1, 0, 0, 0.5, 9.13333, 1, 0, 0, 0.5, 9.16667, 1, 0, 0, 0.5, 9.2, 1, 0, 0, 0.5, 9.23333, 1, 0, 0, 0.5, 9.26667, 1, 0, 0, 0.5, 9.3, 1, 0, 0, 0.5, 9.33333, 1, 0, 0, 0.5, 9.36667, 1, 0, 0, 0.5, 9.4, 1, 0, 0, 0.5, 9.43333, 1, 0, 0, 0.5, 9.46667, 1, 0, 0, 0.5, 9.5, 1, 0, 0, 0.5, 9.53333, 1, 0, 0, 0.5, 9.56667, 1, 0, 0, 0.5, 9.6, 1, 0, 0, 0.5, 9.63333, 1, 0, 0, 0.5, 9.66667, 1, 0, 0, 0.5, 9.7, 1, 0, 0, 0.5, 9.73333, 1, 0, 0, 0.5, 9.76667, 1, 0, 0, 0.5, 9.8, 1, 0, 0, 0.5, 9.83333, 1, 0, 0, 0.5, 9.86667, 1, 0, 0, 0.5, 9.9, 1, 0, 0, 0.5, 9.93333, 1, 0, 0, 0.5, 9.96667, 1, 0, 0, 0.5, 10, 1, 0, 0, 0.5)
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("./TrainAudio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.92,
+"start_offset": 3.6,
+"stream": ExtResource("4_l0djf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5, 1.53333, 1.56667, 1.6, 1.63333, 1.66667, 1.7, 1.73333, 1.76667, 1.8, 1.83333, 1.86667, 1.9, 1.93333, 1.96667, 2, 2.03333, 2.06667, 2.1, 2.13333, 2.16667, 2.2, 2.23333, 2.26667, 2.3, 2.33333, 2.36667, 2.4, 2.43333, 2.46667, 2.5, 2.53333, 2.56667, 2.6, 2.63333, 2.66667, 2.7, 2.73333, 2.76667, 2.8, 2.83333, 2.86667, 2.9, 2.93333, 2.96667, 3, 3.03333, 3.06667, 3.1, 3.13333, 3.16667, 3.2, 3.23333, 3.26667, 3.3, 3.33333, 3.36667, 3.4, 3.43333, 3.46667, 3.5, 3.53333, 3.56667, 3.6, 3.63333, 3.66667, 3.7, 3.73333, 3.76667, 3.8, 3.83333, 3.86667, 3.9, 3.93333, 3.96667, 4, 4.03333, 4.06667, 4.1, 4.13333, 4.16667, 4.2, 4.23333, 4.26667, 4.3, 4.33333, 4.36667, 4.4, 4.43333, 4.46667, 4.5, 4.53333, 4.56667, 4.6, 4.63333, 4.66667, 4.7, 4.73333, 4.76667, 4.8, 4.83333, 4.86667, 4.9, 4.93333, 4.96667, 5, 5.03333, 5.06667, 5.1, 5.13333, 5.16667, 5.2, 5.23333, 5.26667, 5.3, 5.33333, 5.36667, 5.4, 5.43333, 5.46667, 5.5, 5.53333, 5.56667, 5.6, 5.63333, 5.66667, 5.7, 5.73333, 5.76667, 5.8, 5.83333, 5.86667, 5.9, 5.93333, 5.96667, 6, 6.03333, 6.06667, 6.1, 6.13333, 6.16667, 6.2, 6.23333, 6.26667, 6.3, 6.33333, 6.36667, 6.4, 6.43333, 6.46667, 6.5, 6.53333, 6.56667, 6.6, 6.63333, 6.66667, 6.7, 6.73333, 6.76667, 6.8, 6.83333, 6.86667, 6.9, 6.93333, 6.96667, 7, 7.03333, 7.06667, 7.1, 7.13333, 7.16667, 7.2, 7.23333, 7.26667, 7.3, 7.33333, 7.36667, 7.4, 7.43333, 7.46667, 7.5, 7.53333, 7.56667, 7.6, 7.63333, 7.66667, 7.7, 7.73333, 7.76667, 7.8, 7.83333, 7.86667, 7.9, 7.93333, 7.96667, 8, 8.03333, 8.06667, 8.1, 8.13333, 8.16667, 8.2, 8.23333, 8.26667, 8.3, 8.33333, 8.36667, 8.4, 8.43333, 8.46667, 8.5, 8.53333, 8.56667, 8.6, 8.63333, 8.66667, 8.7, 8.73333, 8.76667, 8.8, 8.83333, 8.86667, 8.9, 8.93333, 8.96667, 9, 9.03333, 9.06667, 9.1, 9.13333, 9.16667, 9.2, 9.23333, 9.26667, 9.3, 9.33333, 9.36667, 9.4, 9.43333, 9.46667, 9.5, 9.53333, 9.56667, 9.6, 9.63333, 9.66667, 9.7, 9.73333, 9.76667, 9.8, 9.83333, 9.86667, 9.9, 9.93333, 9.96667, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-28.106, -3.471, 0), Vector3(-28.106, -3.471, 6.40697e-12), Vector3(-28.106, -3.471, 4.28309e-10), Vector3(-28.106, -3.471, 5.00466e-09), Vector3(-28.106, -3.471, 2.86326e-08), Vector3(-28.106, -3.471, 1.10768e-07), Vector3(-28.106, -3.471, 3.34564e-07), Vector3(-28.106, -3.471, 8.5186e-07), Vector3(-28.106, -3.471, 1.9141e-06), Vector3(-28.106, -3.471, 3.90928e-06), Vector3(-28.106, -3.471, 7.40488e-06), Vector3(-28.106, -3.471, 1.3197e-05), Vector3(-28.106, -3.471, 2.23657e-05), Vector3(-28.106, -3.471, 3.63363e-05), Vector3(-28.106, -3.471, 5.69472e-05), Vector3(-28.106, -3.471, 8.65237e-05), Vector3(-28.106, -3.471, 0.000127959), Vector3(-28.106, -3.471, 0.000184798), Vector3(-28.106, -3.471, 0.000261337), Vector3(-28.106, -3.471, 0.000362713), Vector3(-28.106, -3.471, 0.000495019), Vector3(-28.106, -3.471, 0.000665411), Vector3(-28.106, -3.471, 0.000882227), Vector3(-28.106, -3.471, 0.00115511), Vector3(-28.106, -3.471, 0.00149516), Vector3(-28.106, -3.471, 0.00191502), Vector3(-28.106, -3.471, 0.0024291), Vector3(-28.106, -3.471, 0.00305364), Vector3(-28.106, -3.471, 0.00380694), Vector3(-28.106, -3.471, 0.00470949), Vector3(-28.106, -3.471, 0.00578415), Vector3(-28.106, -3.471, 0.0070563), Vector3(-28.106, -3.471, 0.00855409), Vector3(-28.106, -3.471, 0.0103086), Vector3(-28.106, -3.471, 0.0123539), Vector3(-28.106, -3.471, 0.0147275), Vector3(-28.106, -3.471, 0.0174705), Vector3(-28.106, -3.471, 0.0206276), Vector3(-28.106, -3.471, 0.0242475), Vector3(-28.106, -3.471, 0.0283833), Vector3(-28.106, -3.471, 0.0330922), Vector3(-28.106, -3.471, 0.0384365), Vector3(-28.106, -3.471, 0.044483), Vector3(-28.106, -3.471, 0.051304), Vector3(-28.106, -3.471, 0.0589772), Vector3(-28.106, -3.471, 0.067586), Vector3(-28.106, -3.471, 0.0772198), Vector3(-28.106, -3.471, 0.0879744), Vector3(-28.106, -3.471, 0.0999519), Vector3(-28.106, -3.471, 0.113262), Vector3(-28.106, -3.471, 0.12802), Vector3(-28.106, -3.471, 0.144351), Vector3(-28.106, -3.471, 0.162386), Vector3(-28.106, -3.471, 0.182265), Vector3(-28.106, -3.471, 0.204137), Vector3(-28.106, -3.471, 0.228159), Vector3(-28.106, -3.471, 0.254496), Vector3(-28.106, -3.471, 0.283325), Vector3(-28.106, -3.471, 0.314832), Vector3(-28.106, -3.471, 0.349212), Vector3(-28.106, -3.471, 0.386673), Vector3(-28.106, -3.471, 0.427431), Vector3(-28.106, -3.471, 0.471717), Vector3(-28.106, -3.471, 0.51977), Vector3(-28.106, -3.471, 0.571845), Vector3(-28.106, -3.471, 0.628205), Vector3(-28.106, -3.471, 0.689131), Vector3(-28.106, -3.471, 0.754914), Vector3(-28.106, -3.471, 0.82586), Vector3(-28.106, -3.471, 0.90229), Vector3(-28.106, -3.471, 0.984539), Vector3(-28.106, -3.471, 1.07296), Vector3(-28.106, -3.471, 1.16791), Vector3(-28.106, -3.471, 1.26978), Vector3(-28.106, -3.471, 1.37896), Vector3(-28.106, -3.471, 1.49588), Vector3(-28.106, -3.471, 1.62096), Vector3(-28.106, -3.471, 1.75465), Vector3(-28.106, -3.471, 1.89743), Vector3(-28.106, -3.471, 2.04979), Vector3(-28.106, -3.471, 2.21223), Vector3(-28.106, -3.471, 2.38528), Vector3(-28.106, -3.471, 2.56949), Vector3(-28.106, -3.471, 2.76544), Vector3(-28.106, -3.471, 2.97371), Vector3(-28.106, -3.471, 3.19491), Vector3(-28.106, -3.471, 3.42969), Vector3(-28.106, -3.471, 3.67871), Vector3(-28.106, -3.471, 3.94265), Vector3(-28.106, -3.471, 4.22222), Vector3(-28.106, -3.471, 4.51816), Vector3(-28.106, -3.471, 4.83121), Vector3(-28.106, -3.471, 5.16218), Vector3(-28.106, -3.471, 5.51187), Vector3(-28.106, -3.471, 5.88112), Vector3(-28.106, -3.471, 6.27081), Vector3(-28.106, -3.471, 6.68183), Vector3(-28.106, -3.471, 7.1151), Vector3(-28.106, -3.471, 7.57159), Vector3(-28.106, -3.471, 8.05229), Vector3(-28.106, -3.471, 8.5582), Vector3(-28.106, -3.471, 9.09038), Vector3(-28.106, -3.471, 9.64993), Vector3(-28.106, -3.471, 10.2379), Vector3(-28.106, -3.471, 10.8556), Vector3(-28.106, -3.471, 11.504), Vector3(-28.106, -3.471, 12.1845), Vector3(-28.106, -3.471, 12.8983), Vector3(-28.106, -3.471, 13.6467), Vector3(-28.106, -3.471, 14.4309), Vector3(-28.106, -3.471, 15.2525), Vector3(-28.106, -3.471, 16.1127), Vector3(-28.106, -3.471, 17.0132), Vector3(-28.106, -3.471, 17.9552), Vector3(-28.106, -3.471, 18.9404), Vector3(-28.106, -3.471, 19.9703), Vector3(-28.106, -3.471, 21.0466), Vector3(-28.106, -3.471, 22.1709), Vector3(-28.106, -3.471, 23.345), Vector3(-28.106, -3.471, 24.5705), Vector3(-28.106, -3.471, 25.8492), Vector3(-28.106, -3.471, 27.1831), Vector3(-28.106, -3.471, 28.574), Vector3(-28.106, -3.471, 30.0238), Vector3(-28.106, -3.471, 31.5345), Vector3(-28.106, -3.471, 33.1081), Vector3(-28.106, -3.471, 34.7469), Vector3(-28.106, -3.471, 36.4528), Vector3(-28.106, -3.471, 38.228), Vector3(-28.106, -3.471, 40.075), Vector3(-28.106, -3.471, 41.9958), Vector3(-28.106, -3.471, 43.9929), Vector3(-28.106, -3.471, 46.0687), Vector3(-28.106, -3.471, 48.2257), Vector3(-28.106, -3.471, 50.4663), Vector3(-28.106, -3.471, 52.7933), Vector3(-28.106, -3.471, 55.2091), Vector3(-28.106, -3.471, 57.7166), Vector3(-28.106, -3.471, 60.3185), Vector3(-28.106, -3.471, 63.0176), Vector3(-28.106, -3.471, 65.8168), Vector3(-28.106, -3.471, 68.7191), Vector3(-28.106, -3.471, 71.7275), Vector3(-28.106, -3.471, 74.8452), Vector3(-28.106, -3.471, 78.0752), Vector3(-28.106, -3.471, 81.4207), Vector3(-28.106, -3.471, 84.8851), Vector3(-28.106, -3.471, 88.4718), Vector3(-28.106, -3.471, 92.1842), Vector3(-28.106, -3.471, 96.0257), Vector3(-28.106, -3.471, 100), Vector3(-28.106, -3.471, 102.667), Vector3(-28.106, -3.471, 105.333), Vector3(-28.106, -3.471, 108), Vector3(-28.106, -3.471, 110.667), Vector3(-28.106, -3.471, 113.333), Vector3(-28.106, -3.471, 116), Vector3(-28.106, -3.471, 118.667), Vector3(-28.106, -3.471, 121.333), Vector3(-28.106, -3.471, 124), Vector3(-28.106, -3.471, 126.667), Vector3(-28.106, -3.471, 129.333), Vector3(-28.106, -3.471, 132), Vector3(-28.106, -3.471, 134.667), Vector3(-28.106, -3.471, 137.333), Vector3(-28.106, -3.471, 140), Vector3(-28.106, -3.471, 142.667), Vector3(-28.106, -3.471, 145.333), Vector3(-28.106, -3.471, 148), Vector3(-28.106, -3.471, 150.667), Vector3(-28.106, -3.471, 153.333), Vector3(-28.106, -3.471, 156), Vector3(-28.106, -3.471, 158.667), Vector3(-28.106, -3.471, 161.333), Vector3(-28.106, -3.471, 164), Vector3(-28.106, -3.471, 166.667), Vector3(-28.106, -3.471, 169.333), Vector3(-28.106, -3.471, 172), Vector3(-28.106, -3.471, 174.667), Vector3(-28.106, -3.471, 177.333), Vector3(-28.106, -3.471, 180), Vector3(-28.106, -3.471, 182.667), Vector3(-28.106, -3.471, 185.333), Vector3(-28.106, -3.471, 188), Vector3(-28.106, -3.471, 190.667), Vector3(-28.106, -3.471, 193.333), Vector3(-28.106, -3.471, 196), Vector3(-28.106, -3.471, 198.667), Vector3(-28.106, -3.471, 201.333), Vector3(-28.106, -3.471, 204), Vector3(-28.106, -3.471, 206.667), Vector3(-28.106, -3.471, 209.333), Vector3(-28.106, -3.471, 212), Vector3(-28.106, -3.471, 214.667), Vector3(-28.106, -3.471, 217.333), Vector3(-28.106, -3.471, 220), Vector3(-28.106, -3.471, 222.667), Vector3(-28.106, -3.471, 225.333), Vector3(-28.106, -3.471, 228), Vector3(-28.106, -3.471, 230.667), Vector3(-28.106, -3.471, 233.333), Vector3(-28.106, -3.471, 236), Vector3(-28.106, -3.471, 238.667), Vector3(-28.106, -3.471, 241.333), Vector3(-28.106, -3.471, 244), Vector3(-28.106, -3.471, 246.667), Vector3(-28.106, -3.471, 249.333), Vector3(-28.106, -3.471, 252), Vector3(-28.106, -3.471, 254.667), Vector3(-28.106, -3.471, 257.333), Vector3(-28.106, -3.471, 260), Vector3(-28.106, -3.471, 262.667), Vector3(-28.106, -3.471, 265.333), Vector3(-28.106, -3.471, 268), Vector3(-28.106, -3.471, 270.667), Vector3(-28.106, -3.471, 273.333), Vector3(-28.106, -3.471, 276), Vector3(-28.106, -3.471, 278.667), Vector3(-28.106, -3.471, 281.333), Vector3(-28.106, -3.471, 284), Vector3(-28.106, -3.471, 286.667), Vector3(-28.106, -3.471, 289.333), Vector3(-28.106, -3.471, 292), Vector3(-28.106, -3.471, 294.667), Vector3(-28.106, -3.471, 297.333), Vector3(-28.106, -3.471, 300), Vector3(-28.106, -3.471, 302.667), Vector3(-28.106, -3.471, 305.333), Vector3(-28.106, -3.471, 308), Vector3(-28.106, -3.471, 310.667), Vector3(-28.106, -3.471, 313.333), Vector3(-28.106, -3.471, 316), Vector3(-28.106, -3.471, 318.667), Vector3(-28.106, -3.471, 321.333), Vector3(-28.106, -3.471, 324), Vector3(-28.106, -3.471, 326.667), Vector3(-28.106, -3.471, 329.333), Vector3(-28.106, -3.471, 332), Vector3(-28.106, -3.471, 334.667), Vector3(-28.106, -3.471, 337.333), Vector3(-28.106, -3.471, 340), Vector3(-28.106, -3.471, 342.667), Vector3(-28.106, -3.471, 345.333), Vector3(-28.106, -3.471, 348), Vector3(-28.106, -3.471, 350.667), Vector3(-28.106, -3.471, 353.333), Vector3(-28.106, -3.471, 356), Vector3(-28.106, -3.471, 358.667), Vector3(-28.106, -3.471, 361.333), Vector3(-28.106, -3.471, 364), Vector3(-28.106, -3.471, 366.667), Vector3(-28.106, -3.471, 369.333), Vector3(-28.106, -3.471, 372), Vector3(-28.106, -3.471, 374.667), Vector3(-28.106, -3.471, 377.333), Vector3(-28.106, -3.471, 380), Vector3(-28.106, -3.471, 382.667), Vector3(-28.106, -3.471, 385.333), Vector3(-28.106, -3.471, 388), Vector3(-28.106, -3.471, 390.667), Vector3(-28.106, -3.471, 393.333), Vector3(-28.106, -3.471, 396), Vector3(-28.106, -3.471, 398.667), Vector3(-28.106, -3.471, 401.333), Vector3(-28.106, -3.471, 404), Vector3(-28.106, -3.471, 406.667), Vector3(-28.106, -3.471, 409.333), Vector3(-28.106, -3.471, 412), Vector3(-28.106, -3.471, 414.667), Vector3(-28.106, -3.471, 417.333), Vector3(-28.106, -3.471, 420), Vector3(-28.106, -3.471, 422.667), Vector3(-28.106, -3.471, 425.333), Vector3(-28.106, -3.471, 428), Vector3(-28.106, -3.471, 430.667), Vector3(-28.106, -3.471, 433.333), Vector3(-28.106, -3.471, 436), Vector3(-28.106, -3.471, 438.667), Vector3(-28.106, -3.471, 441.333), Vector3(-28.106, -3.471, 444), Vector3(-28.106, -3.471, 446.667), Vector3(-28.106, -3.471, 449.333), Vector3(-28.106, -3.471, 452), Vector3(-28.106, -3.471, 454.667), Vector3(-28.106, -3.471, 457.333), Vector3(-28.106, -3.471, 460), Vector3(-28.106, -3.471, 462.667), Vector3(-28.106, -3.471, 465.333), Vector3(-28.106, -3.471, 468), Vector3(-28.106, -3.471, 470.667), Vector3(-28.106, -3.471, 473.333), Vector3(-28.106, -3.471, 476), Vector3(-28.106, -3.471, 478.667), Vector3(-28.106, -3.471, 481.333), Vector3(-28.106, -3.471, 484), Vector3(-28.106, -3.471, 486.667), Vector3(-28.106, -3.471, 489.333), Vector3(-28.106, -3.471, 492), Vector3(-28.106, -3.471, 494.667), Vector3(-28.106, -3.471, 497.333), Vector3(-28.106, -3.471, 500)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jascy"]
+_data = {
+"RESET": SubResource("Animation_ocjjm"),
+"trailer_train_anim": SubResource("Animation_wbb16"),
+"train_arrive_peron1": SubResource("Animation_t0wj4"),
+"train_arrive_peron1_baketrial": SubResource("Animation_8y05n"),
+"train_arrive_peron2": SubResource("Animation_0juqp"),
+"train_arrive_peron3": SubResource("Animation_igj63"),
+"train_arrive_peron4": SubResource("Animation_ri8jk")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dips7"]
 shader = ExtResource("4_61u13")
@@ -104,111 +719,6 @@ viewport_path = NodePath("SubViewportContainer2/SubViewport")
 [sub_resource type="BoxShape3D" id="BoxShape3D_vmlsl"]
 size = Vector3(0.912598, 1, 3.6886)
 
-[sub_resource type="Animation" id="Animation_uyj0p"]
-resource_name = "Dolap Kapağı"
-
-[sub_resource type="Animation" id="Animation_ocjjm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.60256, -3.47134, -16.4781)]
-}
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Burun tarafı kapılar")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
-
-[sub_resource type="Animation" id="Animation_ri8jk"]
-resource_name = "train_arrive"
-length = 10.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5, 10),
-"transitions": PackedFloat32Array(2.14355, 1, 1),
-"update": 0,
-"values": [Vector3(-1.603, -3.471, 0), Vector3(-1.603, -3.471, 100), Vector3(-1.603, -3.471, 500)]
-}
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Burun tarafı kapılar")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Kıç tarafı kapılar")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
-tracks/3/type = "position_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/subway_car_004")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
-tracks/4/type = "position_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/subway_car_006")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-tracks/5/type = "position_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Train2/Burun tarafı kapılar")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/6/type = "position_3d"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Train2/Kıç tarafı kapılar")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-tracks/7/type = "position_3d"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Train2/subway_car_004")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/8/type = "position_3d"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("SubViewportContainer/SubViewport/FullScene/Train/Train2/subway_car_006")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jascy"]
-_data = {
-"Dolap Kapağı": SubResource("Animation_uyj0p"),
-"RESET": SubResource("Animation_ocjjm"),
-"train_arrive": SubResource("Animation_ri8jk")
-}
-
 [node name="Models" type="Node3D"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -218,6 +728,7 @@ offset_bottom = 1089.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
+audio_listener_enable_3d = true
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
@@ -459,6 +970,12 @@ surface_material_override/1 = null
 surface_material_override/0 = null
 surface_material_override/1 = null
 
+[node name="2 WAGONS" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_009" index="0"]
+transform = Transform3D(-1.21704e-07, 0, 1.95426, 0, 1.82609, 0, -2.78427, 0, -8.54233e-08, 0.88456, 0.463, 0.0069046)
+
+[node name="InputText" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_009" index="1"]
+transform = Transform3D(-1.21704e-07, 0, 1.95426, 0, 1.82609, 0, -2.78427, 0, -8.54234e-08, 0.884911, -2.262, 0.0422211)
+
 [node name="Cube_010" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="6"]
 surface_material_override/0 = null
 surface_material_override/1 = null
@@ -466,6 +983,12 @@ surface_material_override/1 = null
 [node name="Cube_011" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="7"]
 surface_material_override/0 = null
 surface_material_override/1 = null
+
+[node name="2 WAGONS" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_011" index="0"]
+transform = Transform3D(-1.21704e-07, 0, 1.95426, 0, 1.82609, 0, -2.78427, 0, -8.54233e-08, 0.894249, 0.463, 0)
+
+[node name="InputText" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_011" index="1"]
+transform = Transform3D(-1.21704e-07, 0, 1.95426, 0, 1.82609, 0, -2.78427, 0, -8.54234e-08, 0.8946, -2.262, 0.0352936)
 
 [node name="Poster 1" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="8"]
 surface_material_override/0 = null
@@ -503,47 +1026,665 @@ surface_material_override/0 = null
 [node name="Poster 6_002" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="21"]
 surface_material_override/0 = null
 
+[node name="Camera" parent="SubViewportContainer/SubViewport/FullScene" index="8"]
+transform = Transform3D(0.0196938, 0.00171476, -0.166857, -0.0111243, 0.158139, -1.16415e-10, 0.14077, 0.012257, 0.0233433, -16.7377, 1.4737, -15.8782)
+
 [node name="Cube" parent="SubViewportContainer/SubViewport/FullScene/Camera" index="0"]
 surface_material_override/0 = null
 surface_material_override/1 = null
 surface_material_override/2 = null
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/FullScene/Camera" index="2"]
+transform = Transform3D(7.01381, -4.64916e-06, -9.83477e-07, 8.34465e-07, 6.30427, 2.6077e-08, 0, -3.35276e-08, 5.93535, 3.66599, 1.34266, -2.23589)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.0
+
+[node name="Camera3" parent="SubViewportContainer/SubViewport/FullScene" index="9"]
+transform = Transform3D(-0.0288567, 0.0375759, -0.159682, -0.00877522, -0.154484, -0.0383958, -0.139783, 0.00194095, 0.0353751, 8.38759, 1.39576, -17.8481)
 
 [node name="Cube" parent="SubViewportContainer/SubViewport/FullScene/Camera3" index="0"]
 surface_material_override/0 = null
 surface_material_override/1 = null
 surface_material_override/2 = null
 
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/FullScene/Camera3" index="2"]
+transform = Transform3D(6.99301, -8.64267e-07, 7.15256e-07, 6.03497e-07, 6.28931, -1.16788e-06, 0, 6.73346e-07, 5.95238, 1.97908, 0.515049, 0.221939)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.0
+
+[node name="Camera2" parent="SubViewportContainer/SubViewport/FullScene" index="10"]
+transform = Transform3D(0.00783545, 0.000682241, 0.168226, -0.02449, 0.156263, 0.0008779, -0.140238, -0.0272504, 0.00924587, 3.56887, 5.42753, 33.0686)
+
 [node name="Cube" parent="SubViewportContainer/SubViewport/FullScene/Camera2" index="0"]
 surface_material_override/0 = null
 surface_material_override/1 = null
 surface_material_override/2 = null
 
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/FullScene/Camera2" index="2"]
+transform = Transform3D(7.01381, -4.64916e-06, -9.83477e-07, 8.34465e-07, 6.30427, 2.6077e-08, 0, -3.35276e-08, 5.93535, 3.66599, 1.34266, -2.23589)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.0
+
+[node name="Cylinder_001" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="0"]
+surface_material_override/0 = null
+
+[node name="Cylinder_002" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_007" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="2"]
+transform = Transform3D(0.418488, 0, 0, 0, 1, 0, 0, 0, 0.314846, 0, 0.165209, -8.99545)
+
+[node name="Cube_010" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="3"]
+transform = Transform3D(0.433746, 0, 0, 0, 1, 0, 0, 0, 0.121108, -0.492214, 0, -8.92672)
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="4"]
+transform = Transform3D(0.414194, 0.00937151, 0, -0.00432313, 0.897874, 0, 0, 0, 0.476799, 0.239275, 0, -10.1509)
+
+[node name="chips" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="5"]
+transform = Transform3D(0.246735, 0, 0, 0, 0.309543, 0, 0, 0, 0.250853, -0.0703959, 0.126267, -7.97099)
+surface_material_override/0 = null
+
+[node name="Gem" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects 2" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="Cube_011" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects 2" index="1"]
+transform = Transform3D(0.336265, 0, 0, 0, 0.417083, 0.00932542, 0, -0.0128451, 0.3028, -6.56742, -0.157325, -10.3211)
+
+[node name="Cylinder_003" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/ipod2" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="cekirdek" parent="SubViewportContainer/SubViewport/FullScene/Int Objects2" index="0"]
+transform = Transform3D(0.330567, 0, 0, 0, 0.350395, 0, 0, 0, 0.329511, -3.05615, 0.277727, -4.66218)
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="leather" parent="SubViewportContainer/SubViewport/FullScene/Int Objects2/Keys" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
 [node name="Train" parent="SubViewportContainer/SubViewport/FullScene" instance=ExtResource("3_qa76i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60256, -3.47134, -16.4781)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.106, -3.471, 0)
+
+[node name="Burun tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.467742)
+
+[node name="subway_car_005" parent="SubViewportContainer/SubViewport/FullScene/Train/Burun tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_008" parent="SubViewportContainer/SubViewport/FullScene/Train/Burun tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_010" parent="SubViewportContainer/SubViewport/FullScene/Train/Burun tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_012" parent="SubViewportContainer/SubViewport/FullScene/Train/Burun tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_014" parent="SubViewportContainer/SubViewport/FullScene/Train/Burun tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
 
 [node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.435484)
+
+[node name="subway_car_007" parent="SubViewportContainer/SubViewport/FullScene/Train/Kıç tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_009" parent="SubViewportContainer/SubViewport/FullScene/Train/Kıç tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_011" parent="SubViewportContainer/SubViewport/FullScene/Train/Kıç tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_013" parent="SubViewportContainer/SubViewport/FullScene/Train/Kıç tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_015" parent="SubViewportContainer/SubViewport/FullScene/Train/Kıç tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
 
 [node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train" index="3"]
-transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
+surface_material_override/2 = null
 
 [node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train" index="4"]
-transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
+surface_material_override/2 = null
 
 [node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train" instance=ExtResource("3_qa76i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
 
 [node name="Burun tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
-
-[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 
+[node name="subway_car_005" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2/Burun tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_008" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2/Burun tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_010" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2/Burun tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_012" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2/Burun tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_014" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2/Burun tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="subway_car_007" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2/Kıç tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_009" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2/Kıç tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_011" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2/Kıç tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_013" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2/Kıç tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_015" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2/Kıç tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
 [node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="3"]
-transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
+surface_material_override/2 = null
 
 [node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="4"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
+surface_material_override/2 = null
+
+[node name="TrainAudio" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/FullScene/Train"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475586, 1.3829, -12.5557)
+
+[node name="Train Arrives" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/FullScene/Train"]
+libraries = {
+"": SubResource("AnimationLibrary_jascy")
+}
+autoplay = "train_arrive_peron1_baketrial"
+speed_scale = 0.705
+script = ExtResource("5_40iwn")
+
+[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene" instance=ExtResource("3_qa76i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.13, -3.471, 0)
+
+[node name="Burun tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.467742)
+
+[node name="subway_car_005" parent="SubViewportContainer/SubViewport/FullScene/Train2/Burun tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_008" parent="SubViewportContainer/SubViewport/FullScene/Train2/Burun tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_010" parent="SubViewportContainer/SubViewport/FullScene/Train2/Burun tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_012" parent="SubViewportContainer/SubViewport/FullScene/Train2/Burun tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_014" parent="SubViewportContainer/SubViewport/FullScene/Train2/Burun tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.435484)
+
+[node name="subway_car_007" parent="SubViewportContainer/SubViewport/FullScene/Train2/Kıç tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_009" parent="SubViewportContainer/SubViewport/FullScene/Train2/Kıç tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_011" parent="SubViewportContainer/SubViewport/FullScene/Train2/Kıç tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_013" parent="SubViewportContainer/SubViewport/FullScene/Train2/Kıç tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_015" parent="SubViewportContainer/SubViewport/FullScene/Train2/Kıç tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train2" index="3"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
+surface_material_override/2 = null
+
+[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train2" index="4"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
+surface_material_override/2 = null
+
+[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train2" instance=ExtResource("3_qa76i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
+
+[node name="Burun tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="subway_car_005" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2/Burun tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_008" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2/Burun tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_010" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2/Burun tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_012" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2/Burun tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_014" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2/Burun tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="subway_car_007" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2/Kıç tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_009" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2/Kıç tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_011" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2/Kıç tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_013" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2/Kıç tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_015" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2/Kıç tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2" index="3"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
+surface_material_override/2 = null
+
+[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2" index="4"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
+surface_material_override/2 = null
+
+[node name="TrainAudio" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/FullScene/Train2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475586, 1.3829, -12.5557)
+
+[node name="Train Arrives" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/FullScene/Train2"]
+libraries = {
+"": SubResource("AnimationLibrary_jascy")
+}
+autoplay = "train_arrive_peron2"
+speed_scale = 0.705
+
+[node name="Train3" parent="SubViewportContainer/SubViewport/FullScene" instance=ExtResource("3_qa76i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, -3.471, 0)
+
+[node name="Burun tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train3" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.467742)
+
+[node name="subway_car_005" parent="SubViewportContainer/SubViewport/FullScene/Train3/Burun tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_008" parent="SubViewportContainer/SubViewport/FullScene/Train3/Burun tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_010" parent="SubViewportContainer/SubViewport/FullScene/Train3/Burun tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_012" parent="SubViewportContainer/SubViewport/FullScene/Train3/Burun tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_014" parent="SubViewportContainer/SubViewport/FullScene/Train3/Burun tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train3" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.435484)
+
+[node name="subway_car_007" parent="SubViewportContainer/SubViewport/FullScene/Train3/Kıç tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_009" parent="SubViewportContainer/SubViewport/FullScene/Train3/Kıç tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_011" parent="SubViewportContainer/SubViewport/FullScene/Train3/Kıç tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_013" parent="SubViewportContainer/SubViewport/FullScene/Train3/Kıç tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_015" parent="SubViewportContainer/SubViewport/FullScene/Train3/Kıç tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train3" index="3"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
+surface_material_override/2 = null
+
+[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train3" index="4"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
+surface_material_override/2 = null
+
+[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train3" instance=ExtResource("3_qa76i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
+
+[node name="Burun tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="subway_car_005" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2/Burun tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_008" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2/Burun tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_010" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2/Burun tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_012" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2/Burun tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_014" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2/Burun tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="subway_car_007" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2/Kıç tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_009" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2/Kıç tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_011" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2/Kıç tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_013" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2/Kıç tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_015" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2/Kıç tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2" index="3"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
+surface_material_override/2 = null
+
+[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2" index="4"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
+surface_material_override/2 = null
+
+[node name="TrainAudio" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/FullScene/Train3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475586, 1.3829, -12.5557)
+
+[node name="Train Arrives" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/FullScene/Train3"]
+libraries = {
+"": SubResource("AnimationLibrary_jascy")
+}
+autoplay = "train_arrive_peron3"
+speed_scale = 0.705
+
+[node name="Train4" parent="SubViewportContainer/SubViewport/FullScene" instance=ExtResource("3_qa76i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.032, -3.471, -75)
+
+[node name="Burun tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train4" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.467742)
+
+[node name="subway_car_005" parent="SubViewportContainer/SubViewport/FullScene/Train4/Burun tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_008" parent="SubViewportContainer/SubViewport/FullScene/Train4/Burun tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_010" parent="SubViewportContainer/SubViewport/FullScene/Train4/Burun tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_012" parent="SubViewportContainer/SubViewport/FullScene/Train4/Burun tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_014" parent="SubViewportContainer/SubViewport/FullScene/Train4/Burun tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train4" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.435484)
+
+[node name="subway_car_007" parent="SubViewportContainer/SubViewport/FullScene/Train4/Kıç tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_009" parent="SubViewportContainer/SubViewport/FullScene/Train4/Kıç tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_011" parent="SubViewportContainer/SubViewport/FullScene/Train4/Kıç tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_013" parent="SubViewportContainer/SubViewport/FullScene/Train4/Kıç tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_015" parent="SubViewportContainer/SubViewport/FullScene/Train4/Kıç tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train4" index="3"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
+surface_material_override/2 = null
+
+[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train4" index="4"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
+surface_material_override/2 = null
+
+[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train4" instance=ExtResource("3_qa76i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
+
+[node name="Burun tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="subway_car_005" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2/Burun tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_008" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2/Burun tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_010" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2/Burun tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_012" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2/Burun tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_014" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2/Burun tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="subway_car_007" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2/Kıç tarafı kapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_009" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2/Kıç tarafı kapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_011" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2/Kıç tarafı kapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_013" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2/Kıç tarafı kapılar" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_015" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2/Kıç tarafı kapılar" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2" index="3"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
+surface_material_override/2 = null
+
+[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2" index="4"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
+surface_material_override/2 = null
+
+[node name="TrainAudio" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/FullScene/Train4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475586, 1.3829, -12.5557)
+
+[node name="Train Arrives" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/FullScene/Train4"]
+libraries = {
+"": SubResource("AnimationLibrary_jascy")
+}
+autoplay = "train_arrive_peron4"
+speed_scale = 0.705
 
 [node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_rki1j")]
 transform = Transform3D(0.639479, 0, 0.768808, 0, 1, 0, -0.768808, 0, 0.639479, 17.4012, 2.74941, 14.9456)
@@ -652,13 +1793,36 @@ script = ExtResource("8_p8fbp")
 transform = Transform3D(0.484032, 0, 0.0559909, 0, 0.755207, 0, -1.04448, 0, 0.0259474, 0.0825844, -0.0108752, 0.0650787)
 shape = SubResource("BoxShape3D_vmlsl")
 
-[node name="Train Arrives" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_jascy")
-}
-autoplay = "train_arrive"
-speed_scale = 0.705
+[node name="PCAmbientSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0974, 5.60622, 15.772)
+stream = ExtResource("10_7nxht")
+volume_db = 20.0
+unit_size = 0.1
+autoplay = true
+max_distance = 100.0
+parameters/looping = true
+
+[node name="PCInteractSounds" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4468, 2.90712, 12.5954)
+stream = ExtResource("11_k0yfl")
+volume_db = 70.0
+max_distance = 30.0
+
+[node name="Light Flicker" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.563122, 1.87235, -13.9738)
+stream = ExtResource("11_d5cpu")
+volume_db = 1.0
+unit_size = 0.43
+autoplay = true
+max_distance = 100.0
+parameters/looping = true
 
 [editable path="SubViewportContainer/SubViewport/FullScene"]
 [editable path="SubViewportContainer/SubViewport/FullScene/Train"]
 [editable path="SubViewportContainer/SubViewport/FullScene/Train/Train2"]
+[editable path="SubViewportContainer/SubViewport/FullScene/Train2"]
+[editable path="SubViewportContainer/SubViewport/FullScene/Train2/Train2"]
+[editable path="SubViewportContainer/SubViewport/FullScene/Train3"]
+[editable path="SubViewportContainer/SubViewport/FullScene/Train3/Train2"]
+[editable path="SubViewportContainer/SubViewport/FullScene/Train4"]
+[editable path="SubViewportContainer/SubViewport/FullScene/Train4/Train2"]

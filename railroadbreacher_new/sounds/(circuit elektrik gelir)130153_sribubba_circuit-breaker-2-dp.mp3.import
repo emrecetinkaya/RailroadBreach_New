@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2mt0indchvcm"
+path="res://.godot/imported/(circuit elektrik gelir)130153_sribubba_circuit-breaker-2-dp.mp3-27dd5886c3dd52440e91e5a6329f83cb.mp3str"
+
+[deps]
+
+source_file="res://sounds/(circuit elektrik gelir)130153_sribubba_circuit-breaker-2-dp.mp3"
+dest_files=["res://.godot/imported/(circuit elektrik gelir)130153_sribubba_circuit-breaker-2-dp.mp3-27dd5886c3dd52440e91e5a6329f83cb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,33 +1,33 @@
 
-#CHANGE THE GREEN TXT AND USE WISELY
-#CREATE A NEW .gd OR ALL WILL SHARE THE SAME SCRIPT
 extends RigidBody3D
 @onready var original_parent = get_parent()
 @onready var original_origin = transform.origin
-@onready var new_parent = $"../../SubViewportContainer/SubViewport/Character/Marker3D"
-@onready var character = $"../../SubViewportContainer/SubViewport/Character"
+@onready var new_parent = $"../../SubViewport/Character/Marker3D"
+@onready var character = $"../../SubViewport/Character"
 @onready var grabbed = false
-@onready var target = $"../../SubViewportContainer/SubViewport/Character/Marker3D2"
+@onready var target = $"../../SubViewport/Character/Marker3D2"
+
+func _physics_process(delta: float) -> void:
+	pass
 
 func grab():
 	if !grabbed:
 		freeze = true
 		self.reparent(new_parent, true)
+		if grabbed:
+			global_transform.origin = new_parent.transform.origin
 		collision_layer = 0
 		collision_mask = 0
 		grabbed = true
-
-func _physics_process(delta: float) -> void:
-	if grabbed:
-		global_transform.origin = new_parent.origin
+		
+		
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and grabbed:
-		var target_direction = Vector3(target.global_position - new_parent.global_position).normalized()
+		secondary()
+		var target_direction = (target.global_position - new_parent.global_position).normalized()
 		apply_impulse((Vector3(target_direction)*10), global_position)
 		character.hands_full = false
-		grabbed = false
-		secondary()
 
 func secondary():
 	if grabbed:
@@ -36,8 +36,3 @@ func secondary():
 		collision_layer = 1
 		collision_mask = 1
 		grabbed = false
-
-
-func _on_drop_area_body_entered(_body: RigidBody3D) -> void:
-	if !grabbed:
-		print("success") 

@@ -103,6 +103,7 @@ func _physics_process(delta: float) -> void:
 
 	var collider = $RayCast3D.get_collider()
 	if $RayCast3D.is_colliding():
+		
 		if collider.has_method("hold"):
 			if Input.is_action_pressed("interact"):
 				collider.hold()

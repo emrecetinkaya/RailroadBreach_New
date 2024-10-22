@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbt2roala0lrc"
+path="res://.godot/imported/(possible error)Phonering-otherend.mp3-6fbbe8354171fab4c278d00a623e9221.mp3str"
+
+[deps]
+
+source_file="res://sounds/(possible error)Phonering-otherend.mp3"
+dest_files=["res://.godot/imported/(possible error)Phonering-otherend.mp3-6fbbe8354171fab4c278d00a623e9221.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

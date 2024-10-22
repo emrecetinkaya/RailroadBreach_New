@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hktn6xyyo4xt"
+path="res://.godot/imported/(train horn)sfx100v2_misc_12.mp3-96a7186b02354a9b8fd79d1bce18e348.mp3str"
+
+[deps]
+
+source_file="res://sounds/(train horn)sfx100v2_misc_12.mp3"
+dest_files=["res://.godot/imported/(train horn)sfx100v2_misc_12.mp3-96a7186b02354a9b8fd79d1bce18e348.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

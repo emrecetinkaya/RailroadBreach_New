@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0jc6v6ggsy44"
+path="res://.godot/imported/(circuit elektrik gider)130154_sribubba_circuit-breaker-3-dp.mp3-89b2e390413b0402e7a92cce51a0460d.mp3str"
+
+[deps]
+
+source_file="res://sounds/(circuit elektrik gider)130154_sribubba_circuit-breaker-3-dp.mp3"
+dest_files=["res://.godot/imported/(circuit elektrik gider)130154_sribubba_circuit-breaker-3-dp.mp3-89b2e390413b0402e7a92cce51a0460d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

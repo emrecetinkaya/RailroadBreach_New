@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dlrw6rt26u6xu"
+path="res://.godot/imported/(jumpscare ses1)excited horror sound.mp3-093e13c3dff0f512760eb54f577d2a5f.mp3str"
+
+[deps]
+
+source_file="res://sounds/(jumpscare ses1)excited horror sound.mp3"
+dest_files=["res://.godot/imported/(jumpscare ses1)excited horror sound.mp3-093e13c3dff0f512760eb54f577d2a5f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

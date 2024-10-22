@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsg0jmox6e4r0"
+path="res://.godot/imported/(vendind machine fix)740881_heizelss_pick-up-and-put-down.mp3-c1c32a92d5c7cfbaaa94ea05e8877dab.mp3str"
+
+[deps]
+
+source_file="res://sounds/(vendind machine fix)740881_heizelss_pick-up-and-put-down.mp3"
+dest_files=["res://.godot/imported/(vendind machine fix)740881_heizelss_pick-up-and-put-down.mp3-c1c32a92d5c7cfbaaa94ea05e8877dab.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

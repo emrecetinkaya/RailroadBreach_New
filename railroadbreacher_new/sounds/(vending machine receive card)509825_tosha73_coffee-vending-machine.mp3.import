@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b68yptfkwwvid"
+path="res://.godot/imported/(vending machine receive card)509825_tosha73_coffee-vending-machine.mp3-19fdb2e2ecb77f0c479d4b0126dfe8df.mp3str"
+
+[deps]
+
+source_file="res://sounds/(vending machine receive card)509825_tosha73_coffee-vending-machine.mp3"
+dest_files=["res://.godot/imported/(vending machine receive card)509825_tosha73_coffee-vending-machine.mp3-19fdb2e2ecb77f0c479d4b0126dfe8df.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
