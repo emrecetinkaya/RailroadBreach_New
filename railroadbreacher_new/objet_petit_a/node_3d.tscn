@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm5ewqxlfhhfh"]
+
+[ext_resource type="PackedScene" uid="uid://bofg2spby5aem" path="res://Art/Models/New Mods/Textures/ipod.fbx" id="1_8rf8l"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ipod" parent="." instance=ExtResource("1_8rf8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0907896, 0, -0.0771811)

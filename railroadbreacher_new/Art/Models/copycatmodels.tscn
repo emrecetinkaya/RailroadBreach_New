@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://y5v88jabs4it"]
+[gd_scene load_steps=33 format=3 uid="uid://y5v88jabs4it"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_l8837"]
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_0647e"]
 [ext_resource type="PackedScene" uid="uid://chamup4hbl7lp" path="res://Art/Models/Textures/Train_updated.tscn" id="3_1jr0y"]
+[ext_resource type="Script" path="res://Art/Models/path_follow_3d.gd" id="4_faqst"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_srnru"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_6ctlc"]
 [ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="6_5cy2s"]
@@ -10,6 +11,8 @@
 [ext_resource type="Script" path="res://Scripts/camera_panel_controls.gd" id="8_6lrtt"]
 [ext_resource type="Script" path="res://Scripts/input_panel_controls.gd" id="9_n2wki"]
 [ext_resource type="Script" path="res://Levels/basic_interactable.gd" id="10_oxpsl"]
+[ext_resource type="PackedScene" uid="uid://cpcfb8vm7br1m" path="res://objet_petit_a/ipod.tscn" id="11_pwrx3"]
+[ext_resource type="PackedScene" uid="uid://bnii8qil18kd7" path="res://Art/Models/people/creepycreepdude.tscn" id="13_cry43"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
 shader = ExtResource("1_l8837")
@@ -45,6 +48,13 @@ fog_sky_affect = 0.055
 fog_height = -626.25
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.444893, 0.637527, 0.749093, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_lf1uu"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -200),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dips7"]
 shader = ExtResource("5_6ctlc")
@@ -153,6 +163,9 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_fsxhe"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_j6msb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vf27a"]
+size = Vector3(2.51703, 2.22205, 1.28961)
 
 [node name="Models" type="Node3D"]
 
@@ -385,6 +398,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60256, -3.47134, -16.4781)
 [node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train" instance=ExtResource("3_1jr0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
 
+[node name="Path3D" type="Path3D" parent="SubViewportContainer/SubViewport/FullScene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7032, -0.963855, 9.25563)
+curve = SubResource("Curve3D_lf1uu")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="SubViewportContainer/SubViewport/FullScene/Path3D"]
+loop = false
+script = ExtResource("4_faqst")
+
+[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Path3D/PathFollow3D" instance=ExtResource("3_1jr0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0408173, -2.37962, 68.1542)
+
+[node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Path3D/PathFollow3D/Train2" instance=ExtResource("3_1jr0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
+
 [node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_srnru")]
 transform = Transform3D(0.639479, 0, 0.768808, 0, 1, 0, -0.768808, 0, 0.639479, 17.4012, 2.74941, 14.9456)
 
@@ -515,4 +542,28 @@ shape = SubResource("SphereShape3D_fsxhe")
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 mesh = SubResource("SphereMesh_j6msb")
 
+[node name="ipod" parent="." instance=ExtResource("11_pwrx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5013, -2.57912, -3.59718)
+
+[node name="Cylinder_003" parent="ipod" index="0"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="ipod" index="1"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.00458813, -0.00526047, -0.0366516)
+
+[node name="creeep_anim" parent="." instance=ExtResource("13_cry43")]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 37.0082, -2.7226, -0.717769)
+visible = false
+
+[node name="Area3D3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0585, -2.16851, -39.8338)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0743713, 0.611023, 0.144806)
+shape = SubResource("BoxShape3D_vf27a")
+
+[connection signal="body_entered" from="Area3D3" to="ipod" method="_on_area_3d_3_body_entered"]
+[connection signal="body_entered" from="Area3D3" to="SubViewportContainer/SubViewport/FullScene/Path3D/PathFollow3D" method="_on_area_3d_3_body_entered"]
+
 [editable path="SubViewportContainer/SubViewport/Character"]
+[editable path="ipod"]
