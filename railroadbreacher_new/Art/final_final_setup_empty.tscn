@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://7mvw7ixv34np"]
+[gd_scene load_steps=10 format=3 uid="uid://c81d6cutul0gy"]
 
 [ext_resource type="PackedScene" uid="uid://dmg5exdyiie1j" path="res://Art/Final_final_Setup_Empty.fbx" id="1_wlyds"]
 [ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="2_6ex08"]
-[ext_resource type="Material" uid="uid://beg5rh37ncp4r" path="res://Art/Models/New Mods/Materials/yellow.tres" id="3_nuhpp"]
+[ext_resource type="Material" path="res://Art/Models/New Mods/Materials/yellow.tres" id="3_nuhpp"]
 [ext_resource type="Material" uid="uid://dsrwcbw023hkn" path="res://Art/Models/New Mods/Materials/Railroad.tres" id="4_4ql18"]
 [ext_resource type="Material" uid="uid://dcxagx5qqg4c" path="res://Art/Models/New Mods/Materials/Tile.tres" id="5_ewtm7"]
 [ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="6_hy787"]

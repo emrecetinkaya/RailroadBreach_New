@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/static_body_3d.gd" id="4_l0g8g"]
 [ext_resource type="PackedScene" uid="uid://iddumrl7y3i4" path="res://paper.tscn" id="4_odply"]
 [ext_resource type="Script" path="res://Levels/character_body_3d.gd" id="5_ek524"]
-[ext_resource type="PackedScene" uid="uid://cvd43k4lebb5a" path="res://Art/Models/creeep_anim.glb" id="5_sj88k"]
+[ext_resource type="PackedScene" uid="uid://clfjnih2vrlig" path="res://Art/Models/people/creep_anim.glb" id="5_sj88k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bbsjm"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

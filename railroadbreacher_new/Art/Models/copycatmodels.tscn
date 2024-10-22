@@ -1,14 +1,15 @@
-[gd_scene load_steps=25 format=3 uid="uid://y5v88jabs4it"]
+[gd_scene load_steps=28 format=3 uid="uid://y5v88jabs4it"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_l8837"]
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_0647e"]
-[ext_resource type="PackedScene" path="res://Art/Models/Textures/Train_updated.tscn" id="3_1jr0y"]
+[ext_resource type="PackedScene" uid="uid://chamup4hbl7lp" path="res://Art/Models/Textures/Train_updated.tscn" id="3_1jr0y"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_srnru"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_6ctlc"]
 [ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="6_5cy2s"]
 [ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="7_3l0ry"]
 [ext_resource type="Script" path="res://Scripts/camera_panel_controls.gd" id="8_6lrtt"]
 [ext_resource type="Script" path="res://Scripts/input_panel_controls.gd" id="9_n2wki"]
+[ext_resource type="Script" path="res://Levels/basic_interactable.gd" id="10_oxpsl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
 shader = ExtResource("1_l8837")
@@ -106,6 +107,7 @@ size = Vector3(1, 1, 4.77539)
 
 [sub_resource type="Animation" id="Animation_uyj0p"]
 resource_name = "Dolap Kapağı"
+loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_ocjjm"]
 length = 0.001
@@ -147,6 +149,10 @@ _data = {
 }
 
 [sub_resource type="BoxMesh" id="BoxMesh_4ebg2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fsxhe"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_j6msb"]
 
 [node name="Models" type="Node3D"]
 
@@ -491,8 +497,22 @@ shape = SubResource("BoxShape3D_vmlsl")
 libraries = {
 "": SubResource("AnimationLibrary_jascy")
 }
-autoplay = "train_arrive"
+autoplay = "Dolap Kapağı"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6465, 2.95572, 13.623)
 mesh = SubResource("BoxMesh_4ebg2")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.39956, 0, -10.1842)
+script = ExtResource("10_oxpsl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+shape = SubResource("SphereShape3D_fsxhe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+mesh = SubResource("SphereMesh_j6msb")
+
+[editable path="SubViewportContainer/SubViewport/Character"]

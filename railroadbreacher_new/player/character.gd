@@ -103,7 +103,11 @@ func _physics_process(delta: float) -> void:
 
 	var collider = $RayCast3D.get_collider()
 	if $RayCast3D.is_colliding():
-	
+		
+		if collider.has_method("open_thing"):
+			if Input.is_action_just_pressed("interact") and !hands_full:
+				collider.open_thing()
+				
 		if collider.has_method("grab"):
 			if Input.is_action_just_pressed("interact") and !hands_full:
 				hands_full = true

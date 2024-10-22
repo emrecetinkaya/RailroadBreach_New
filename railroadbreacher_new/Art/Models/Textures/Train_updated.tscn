@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bjslps8ek4m2j"]
+[gd_scene load_steps=17 format=4 uid="uid://chamup4hbl7lp"]
 
 [ext_resource type="PackedScene" uid="uid://b5t2mmack5xo6" path="res://Art/Models/New Mods/FBXs/Train.fbx" id="1_em4p1"]
 [ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="2_7v85o"]
@@ -15,7 +15,6 @@ data = PackedVector3Array(-0.0127, 0.1216, 0.0389, 0.011, 0.1216, 0.0389, 0.011,
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfqxc"]
 resource_name = "metal_02.001"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -23,7 +22,6 @@ emission_energy_multiplier = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3d4nn"]
 resource_name = "Door.001"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0

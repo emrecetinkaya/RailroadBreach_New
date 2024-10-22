@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1mknmxlmj026"]
 
 [ext_resource type="PackedScene" uid="uid://c78b0karyiapy" path="res://Art/Models/New Mods/FBXs/Props.fbx" id="1_ufwqe"]
-[ext_resource type="PackedScene" uid="uid://b4whs7fhbas1u" path="res://Art/Models/Turnike.fbx" id="2_sdyer"]
+[ext_resource type="PackedScene" uid="uid://d1vx63rmekeql" path="res://Turnike.fbx" id="2_sdyer"]
 
 [node name="Props" instance=ExtResource("1_ufwqe")]
 

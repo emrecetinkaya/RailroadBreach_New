@@ -1,10 +1,10 @@
 extends RigidBody3D
 @onready var original_parent = get_parent()
 @onready var original_origin = transform.origin
-@onready var new_parent = $"../Character/Marker3D"
-@onready var character = $"../Character"
+@onready var new_parent = $"../SubViewportContainer/SubViewport/Character/Marker3D"
+@onready var character = $"../SubViewportContainer/SubViewport/Character"
 @onready var grabbed = false
-@onready var target = $"../Character/Marker3D2"
+@onready var target = $"../SubViewportContainer/SubViewport/Character/Marker3D2"
 
 
 func grab():
@@ -23,6 +23,7 @@ func _input(_event: InputEvent) -> void:
 		var target_direction = (target.global_position - new_parent.global_position).normalized()
 		apply_impulse((Vector3(target_direction)*10), global_position)
 		character.hands_full = false
+		grabbed = false
 
 func secondary():
 	if grabbed:
