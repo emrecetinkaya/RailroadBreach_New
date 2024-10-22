@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://boms57wbvdq65"]
+
+[ext_resource type="Script" path="res://paper.gd" id="1_1exov"]
+[ext_resource type="FontFile" uid="uid://b37nm8thbuatj" path="res://Art/fax font.ttf" id="2_grrf3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rihym"]
+bounce = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_dw2rg"]
+size = Vector3(0.21, 0.297, 0.01)
+
+[sub_resource type="Skin" id="Skin_ovffp"]
+bind_count = 5
+bind/0/name = &""
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/1/name = &""
+bind/1/bone = -1
+bind/1/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/2/name = &""
+bind/2/bone = -1
+bind/2/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/3/name = &""
+bind/3/bone = -1
+bind/3/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/4/name = &""
+bind/4/bone = -1
+bind/4/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q77b"]
+size = Vector3(0.522654, 0.297, 0.01)
+
+[node name="paper_15" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_rihym")
+script = ExtResource("1_1exov")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.48207, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_dw2rg")
+skin = SubResource("Skin_ovffp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000269778, 0, 0)
+shape = SubResource("BoxShape3D_3q77b")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00739276)
+pixel_size = 0.001
+modulate = Color(0, 0, 0, 1)
+text = "date : 11.12.2005
+time : 04.15
+from: BOSS
+
+To whom it may concern,
+
+Thanks."
+font = ExtResource("2_grrf3")
+font_size = 15
+outline_size = 0

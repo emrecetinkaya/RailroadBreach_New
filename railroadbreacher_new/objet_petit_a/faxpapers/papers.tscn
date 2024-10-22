@@ -1,0 +1,58 @@
+[gd_scene load_steps=19 format=3 uid="uid://cl7sdvgxf56le"]
+
+[ext_resource type="PackedScene" uid="uid://iddumrl7y3i4" path="res://objet_petit_a/faxpapers/paper.tscn" id="1_2qujv"]
+[ext_resource type="PackedScene" uid="uid://c0ndcsned243h" path="res://objet_petit_a/faxpapers/paper_2.tscn" id="2_3ag8o"]
+[ext_resource type="PackedScene" uid="uid://beejxbqsmj7y1" path="res://objet_petit_a/faxpapers/paper_3.tscn" id="3_8ev0u"]
+[ext_resource type="PackedScene" uid="uid://c7m5i0xgjm01b" path="res://objet_petit_a/faxpapers/paper_4.tscn" id="4_pj6qp"]
+[ext_resource type="PackedScene" uid="uid://dbrre0eo7wqbm" path="res://objet_petit_a/faxpapers/paper_5.tscn" id="5_48ew4"]
+[ext_resource type="PackedScene" uid="uid://ct4jkc3ecn146" path="res://objet_petit_a/faxpapers/paper_6.tscn" id="6_x7juc"]
+[ext_resource type="PackedScene" uid="uid://dr5vs7pn8xd56" path="res://objet_petit_a/faxpapers/paper_7.tscn" id="7_a4078"]
+[ext_resource type="PackedScene" uid="uid://ci0fjwrgwmslj" path="res://objet_petit_a/faxpapers/paper_8.tscn" id="8_jbb6l"]
+[ext_resource type="PackedScene" uid="uid://bstrugo4j5y74" path="res://objet_petit_a/faxpapers/paper_9.tscn" id="9_ro8v1"]
+[ext_resource type="PackedScene" uid="uid://xaauenlsbu55" path="res://objet_petit_a/faxpapers/paper_10.tscn" id="10_rjehn"]
+[ext_resource type="PackedScene" uid="uid://qayq7igvt8ia" path="res://objet_petit_a/faxpapers/paper_11.tscn" id="11_o8sp0"]
+[ext_resource type="PackedScene" uid="uid://o5jjlmygnoi7" path="res://objet_petit_a/faxpapers/paper_12.tscn" id="12_xurvv"]
+[ext_resource type="PackedScene" uid="uid://sbfygsg4568v" path="res://objet_petit_a/faxpapers/paper_13.tscn" id="13_heg2k"]
+[ext_resource type="PackedScene" uid="uid://cqjptnpdcmm6b" path="res://objet_petit_a/faxpapers/paper_14.tscn" id="14_cw88g"]
+[ext_resource type="PackedScene" uid="uid://boms57wbvdq65" path="res://objet_petit_a/faxpapers/paper_15.tscn" id="15_qmd01"]
+[ext_resource type="PackedScene" uid="uid://ds1bkc4ne2uo5" path="res://objet_petit_a/faxpapers/paper_16.tscn" id="16_k6ugf"]
+[ext_resource type="PackedScene" uid="uid://uvsadas3a5eo" path="res://objet_petit_a/faxpapers/paper_17.tscn" id="17_fqk2r"]
+[ext_resource type="PackedScene" uid="uid://d1t2mnjcma67p" path="res://objet_petit_a/faxpapers/paper_18.tscn" id="18_v8hqk"]
+
+[node name="Papers" type="Node3D"]
+
+[node name="paper_1" parent="." instance=ExtResource("1_2qujv")]
+
+[node name="paper_2" parent="." instance=ExtResource("2_3ag8o")]
+
+[node name="paper_3" parent="." instance=ExtResource("3_8ev0u")]
+
+[node name="paper_4" parent="." instance=ExtResource("4_pj6qp")]
+
+[node name="paper_5" parent="." instance=ExtResource("5_48ew4")]
+
+[node name="paper_6" parent="." instance=ExtResource("6_x7juc")]
+
+[node name="paper_7" parent="." instance=ExtResource("7_a4078")]
+
+[node name="paper_8" parent="." instance=ExtResource("8_jbb6l")]
+
+[node name="paper_9" parent="." instance=ExtResource("9_ro8v1")]
+
+[node name="paper_10" parent="." instance=ExtResource("10_rjehn")]
+
+[node name="paper_11" parent="." instance=ExtResource("11_o8sp0")]
+
+[node name="paper_12" parent="." instance=ExtResource("12_xurvv")]
+
+[node name="paper_13" parent="." instance=ExtResource("13_heg2k")]
+
+[node name="paper_14" parent="." instance=ExtResource("14_cw88g")]
+
+[node name="paper_15" parent="." instance=ExtResource("15_qmd01")]
+
+[node name="paper_16" parent="." instance=ExtResource("16_k6ugf")]
+
+[node name="paper_17" parent="." instance=ExtResource("17_fqk2r")]
+
+[node name="paper_18" parent="." instance=ExtResource("18_v8hqk")]

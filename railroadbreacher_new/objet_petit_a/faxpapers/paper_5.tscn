@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://iddumrl7y3i4"]
+[gd_scene load_steps=7 format=3 uid="uid://dbrre0eo7wqbm"]
 
-[ext_resource type="Script" path="res://paper.gd" id="1_ttaeb"]
+[ext_resource type="Script" path="res://paper.gd" id="1_446sb"]
+[ext_resource type="FontFile" uid="uid://b37nm8thbuatj" path="res://Art/fax font.ttf" id="2_geuce"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rihym"]
 bounce = 0.1
@@ -27,25 +28,37 @@ bind/4/bone = -1
 bind/4/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3q77b"]
-size = Vector3(0.21, 0.297, 0.01)
+size = Vector3(0.522654, 0.297, 0.01)
 
-[node name="paper" type="RigidBody3D"]
+[node name="paper_5" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_rihym")
-script = ExtResource("1_ttaeb")
+script = ExtResource("1_446sb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.48207, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_dw2rg")
 skin = SubResource("Skin_ovffp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000269778, 0, 0)
 shape = SubResource("BoxShape3D_3q77b")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00739276)
 pixel_size = 0.001
 modulate = Color(0, 0, 0, 1)
-text = "geç kaldı tren
-sizin ben amk
-çek ciğerine"
+text = "
+date : 10.12.2005
+time : 02.30
+from: Cindy
+
+URGENT!!!
+Hello, I think I lost my ring at the station. 
+I remember having it on when I was still on the train.
+It must've fallen at the station! 
+Please find my ring, it was so expensive. 
+Thank you so much.
+"
+font = ExtResource("2_geuce")
 font_size = 15
 outline_size = 0
