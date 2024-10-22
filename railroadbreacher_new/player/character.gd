@@ -21,6 +21,8 @@ func _input(event):
 		$RayCast3D.rotation.x = clampf($RayCast3D.rotation.x, -deg_to_rad(80), deg_to_rad(80))
 		$Marker3D.rotate_x(-event.relative.y * mouse_sensitivity)
 		$Marker3D.rotation.x = clampf($Marker3D.rotation.x, -deg_to_rad(80), deg_to_rad(80))
+		$Marker3D2.rotate_x(-event.relative.y * mouse_sensitivity)
+		$Marker3D2.rotation.x = clampf($Marker3D.rotation.x, -deg_to_rad(80), deg_to_rad(80))
 
 	if event.is_action_pressed("menu"):
 		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
@@ -40,7 +42,7 @@ func _input(event):
 			tween.set_parallel()
 			tween.tween_property($Marker3D, "position", Vector3(0, 0.33,0), 0.2)
 			tween.set_parallel()
-			tween.tween_property($Marker3D2, "position", Vector3(0, 0.33,0), 0.2)
+			tween.tween_property($Marker3D2, "position", Vector3(0, 0.33,-2), 0.2)
 		elif crouched:
 			crouched = false
 			$CrouchedCollision.disabled = true
@@ -52,7 +54,7 @@ func _input(event):
 			tween.set_parallel()
 			tween.tween_property($Marker3D, "position", Vector3(0, 0.73,0), 0.2)
 			tween.set_parallel()
-			tween.tween_property($Marker3D2, "position", Vector3(0, 0.73,0), 0.2)
+			tween.tween_property($Marker3D2, "position", Vector3(0, 0.73,-2), 0.2)
 			
 	#if Input.is_action_just_pressed("1"):
 		#y = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dgx4k2c886vkd"]
+[gd_scene load_steps=33 format=3 uid="uid://dgx4k2c886vkd"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_5g14c"]
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_nysh5"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bvsesiq0tblcl" path="res://objet_petit_a/keys.tscn" id="16_d18an"]
 [ext_resource type="PackedScene" uid="uid://ledgn211qm3w" path="res://Art/Models/cekirdek.tscn" id="18_udj4f"]
 [ext_resource type="PackedScene" uid="uid://owol6vtv1j8g" path="res://objet_petit_a/nds.tscn" id="19_lq537"]
+[ext_resource type="Script" path="res://objet_petit_a/akbil.gd" id="21_lgq6r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
 shader = ExtResource("1_5g14c")
@@ -525,6 +526,14 @@ script = ExtResource("9_0qldg")
 [node name="nds" parent="SubViewportContainer/Int Objects" instance=ExtResource("19_lq537")]
 script = ExtResource("9_0qldg")
 
+[node name="Cube_006" parent="SubViewportContainer/Int Objects" instance=ExtResource("6_353r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.3435, 5.41212, 25.8776)
+script = ExtResource("21_lgq6r")
+
+[node name="Cube_007" parent="SubViewportContainer/Int Objects" instance=ExtResource("6_353r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.3435, 5.41212, 25.8776)
+script = ExtResource("21_lgq6r")
+
 [node name="trashbin" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1895, -3.47134, -16.4781)
 script = ExtResource("7_tecrx")
@@ -562,10 +571,6 @@ shape = SubResource("BoxShape3D_4dp70")
 
 [node name="Marker3D" type="Marker3D" parent="atm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.35399, -0.722854, 3.85964)
-
-[node name="Cube_006" parent="atm" instance=ExtResource("6_353r6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.64559, -0.513452, 3.4009)
-script = ExtResource("9_0qldg")
 
 [node name="ProgressBar" type="ProgressBar" parent="atm"]
 visible = false

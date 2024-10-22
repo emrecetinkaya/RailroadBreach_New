@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://duw4p6k2dod7u"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dyt0dosf6klfb"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/Jiggle.gdshader" id="1_uatsr"]
 [ext_resource type="Texture2D" uid="uid://del1upsnajf63" path="res://Art/Models/Shaders/posterler toplu siyah.png" id="2_uywoj"]

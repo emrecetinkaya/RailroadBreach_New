@@ -50,7 +50,6 @@ size = Vector3(1.6791, 0.0913086, 1.12817)
 
 [node name="card" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64197, 0, 0)
-freeze = true
 
 [node name="Cube_006" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
