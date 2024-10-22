@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlem4x25w3ll5"]
+[gd_scene load_steps=12 format=3 uid="uid://dlem4x25w3ll5"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_3hhqq"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_3y4a6"]
 [ext_resource type="PackedScene" uid="uid://bjslps8ek4m2j" path="res://Art/Models/Textures/Train_updated.tscn" id="4_e3nos"]
+[ext_resource type="PackedScene" uid="uid://p88gbdrgkq52" path="res://Art/Models/Shaders/lamps.tscn" id="5_4jrja"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_nrwip"]
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="10_bqwk4"]
 
@@ -234,7 +235,7 @@ omni_attenuation = -0.171
 omni_shadow_mode = 0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Node3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12101, 3.46594, 17.9949)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12101, 5.46831, 17.9949)
 light_energy = 0.1
 light_volumetric_fog_energy = 2.92
 light_size = 0.704
@@ -243,34 +244,34 @@ omni_attenuation = -0.171
 omni_shadow_mode = 0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.0961063, 0.995371, 0, -0.995371, 0.0961063, 6.6507, 6.31176, 15.0784)
+transform = Transform3D(1, 0, 0, 0, 0.0961063, 0.995371, 0, -0.995371, 0.0961063, 7.59438, 6.01381, 15.22)
 light_energy = 4.712
 light_volumetric_fog_energy = 8.68
 light_size = 0.168
 light_specular = 0.628
 spot_range = 8.028
 spot_attenuation = 0.94
-spot_angle = 31.25
+spot_angle = 68.69
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.0961063, 0.995371, 0, -0.995371, 0.0961063, 22.779, 6.31176, 15.0784)
+transform = Transform3D(1, 0, 0, 0, 0.0961063, 0.995371, 0, -0.995371, 0.0961063, 26.0997, 5.79787, 15.0784)
 light_energy = 4.712
 light_volumetric_fog_energy = 8.68
 light_size = 0.168
 light_specular = 0.628
 spot_range = 8.028
 spot_attenuation = 0.94
-spot_angle = 31.25
+spot_angle = 83.09
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.0961063, 0.995371, 0, -0.995371, 0.0961063, 14.7385, 6.04561, 20.4085)
+transform = Transform3D(1, 0, 0, 0, 0.0961063, 0.995371, 0, -0.995371, 0.0961063, 17.0767, 5.71776, 20.9685)
 light_energy = 4.712
 light_volumetric_fog_energy = 8.68
 light_size = 0.168
 light_specular = 0.628
 spot_range = 8.028
 spot_attenuation = 0.94
-spot_angle = 31.25
+spot_angle = 84.53
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 0.0961063, 0.995371, 0, -0.995371, 0.0961063, 16.2148, 5.6948, 13.6949)
@@ -295,6 +296,75 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9727, -0.386924, -6.95304)
 
 [node name="Train" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_e3nos")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1895, -3.47134, -16.4781)
+
+[node name="Lamps" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 0.995239, -0.0974613, 0, 0.0974613, 0.995239, 26.3432, 5.81674, 15.9188)
+
+[node name="Lamps3" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 0.995239, -0.0974613, 0, 0.0974613, 0.995239, 17.1414, 5.81674, 21.6236)
+
+[node name="Lamps4" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 0.995239, -0.0974613, 0, 0.0974613, 0.995239, 6.98353, 5.81674, 15.4863)
+
+[node name="Lamps5" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, -0.277493, 1.99495, -7.75711)
+
+[node name="Lamps6" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, -0.277493, 1.99495, -13.8897)
+
+[node name="Lamps7" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, -0.277493, 1.99495, -20.3181)
+
+[node name="Lamps8" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, -0.277493, 1.99495, -26.4697)
+
+[node name="Lamps9" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, -0.277493, 1.99495, -32.6892)
+
+[node name="Lamps2" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 0.995239, -0.0974613, 0, 0.0974613, 0.995239, 26.3432, 5.81674, 10.6352)
+
+[node name="Lamps10" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 36.5285, 1.99495, -13.8897)
+
+[node name="Lamps11" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 36.5285, 1.99495, -20.3181)
+
+[node name="Lamps12" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 36.5285, 1.99495, -26.4697)
+
+[node name="Lamps13" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 36.5285, 1.99495, -32.6892)
+
+[node name="Lamps14" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 0.995239, -0.0974613, 0, 0.0974613, 0.995239, 63.1493, 5.81674, 10.6352)
+
+[node name="Lamps15" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 26.0716, 1.99495, -13.8897)
+
+[node name="Lamps20" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 26.0716, 1.99495, -7.80384)
+
+[node name="Lamps16" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 26.0716, 1.99495, -20.3181)
+
+[node name="Lamps21" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 7.97101, 1.99495, -13.8897)
+
+[node name="Lamps22" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 7.97101, 1.99495, -7.80384)
+
+[node name="Lamps23" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 7.97101, 1.99495, -20.3181)
+
+[node name="Lamps17" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 26.0716, 1.99495, -26.4697)
+
+[node name="Lamps18" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 26.0716, 1.99495, -32.6892)
+
+[node name="Lamps19" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
+transform = Transform3D(1.11983, 0, 0, 0, 0.995239, -0.0974613, 0, 0.0974613, 0.995239, 52.6924, 5.81674, 10.6352)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer"]
 
