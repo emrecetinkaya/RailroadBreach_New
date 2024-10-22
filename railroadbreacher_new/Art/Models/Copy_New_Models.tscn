@@ -102,7 +102,7 @@ viewport_path = NodePath("SubViewportContainer3/SubViewport")
 viewport_path = NodePath("SubViewportContainer2/SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vmlsl"]
-size = Vector3(0.912598, 1, 3.6886)
+size = Vector3(1, 1, 4.77539)
 
 [sub_resource type="Animation" id="Animation_uyj0p"]
 resource_name = "Dolap Kapağı"
@@ -555,7 +555,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5477, 2.95572, 12.7367)
 script = ExtResource("7_xd24x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sol Ekran Kameralar"]
-transform = Transform3D(0.604708, 0, 0.079613, 0, 0.91864, 0, -1.30488, 0, 0.0368943, -0.00049305, 0.0147789, 0.0690432)
+transform = Transform3D(0.604708, 0, 0.079613, 0, 0.91864, 0, -1.30488, 0, 0.0368943, 0.0691948, 0.0147789, 0.0320663)
 shape = SubResource("BoxShape3D_vmlsl")
 
 [node name="Sağ Ekran Input" type="Area3D" parent="."]

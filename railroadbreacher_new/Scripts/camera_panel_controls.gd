@@ -15,9 +15,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	
 
 	
@@ -36,7 +35,7 @@ func enter_cam():
 
 
 func change_cam():
-	print ("camera cycle", cameracycle)
+	print ("camera", cameracycle)
 	if $"../SubViewportContainer/SubViewport/Character".on_camera == true: 
 		if camera_1.current and cameracycle > 0:
 			camera_2.current = true
