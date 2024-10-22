@@ -1,21 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://c81d6cutul0gy"]
+[gd_scene load_steps=13 format=3 uid="uid://c81d6cutul0gy"]
 
 [ext_resource type="PackedScene" uid="uid://dmg5exdyiie1j" path="res://Art/Final_final_Setup_Empty.fbx" id="1_wlyds"]
 [ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="2_6ex08"]
-[ext_resource type="Material" path="res://Art/Models/New Mods/Materials/yellow.tres" id="3_nuhpp"]
+[ext_resource type="Material" uid="uid://beg5rh37ncp4r" path="res://Art/Models/New Mods/Materials/yellow.tres" id="3_nuhpp"]
 [ext_resource type="Material" uid="uid://dsrwcbw023hkn" path="res://Art/Models/New Mods/Materials/Railroad.tres" id="4_4ql18"]
 [ext_resource type="Material" uid="uid://dcxagx5qqg4c" path="res://Art/Models/New Mods/Materials/Tile.tres" id="5_ewtm7"]
 [ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="6_hy787"]
 [ext_resource type="Material" uid="uid://chmbhvbhjm780" path="res://Art/Models/New Mods/Materials/Concrete.tres" id="7_3djvi"]
 [ext_resource type="PackedScene" uid="uid://v8rqdhxcfpch" path="res://Art/Models/Shaders/watcher.tscn" id="7_42kik"]
+[ext_resource type="PackedScene" uid="uid://dlryy0d3404b" path="res://Art/Models/New Mods/Materials/final_scene_updated.fbx" id="9_c8ruk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jaev"]
 transparency = 1
 albedo_color = Color(0, 0.431373, 0.435294, 0.356863)
 
+[sub_resource type="BoxMesh" id="BoxMesh_kwf74"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbt1u"]
+albedo_color = Color(0, 0, 0, 1)
+
 [node name="Final_final_Setup_Empty" instance=ExtResource("1_wlyds")]
 
 [node name="St_03_002" parent="." index="0"]
+visible = false
 surface_material_override/0 = ExtResource("2_6ex08")
 surface_material_override/1 = ExtResource("3_nuhpp")
 surface_material_override/2 = ExtResource("4_4ql18")
@@ -26,3 +33,11 @@ surface_material_override/8 = SubResource("StandardMaterial3D_4jaev")
 
 [node name="Watcher" parent="." index="1" instance=ExtResource("7_42kik")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.63201, 0.176678, -2.23647)
+
+[node name="final_scene_updated" parent="." index="2" instance=ExtResource("9_c8ruk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119915, 0, 0.0389023)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(9.22267, 0, 0, 0, 1.1483, 0, 0, 0, 31.0953, -3.85819, 0.752694, 38.4304)
+mesh = SubResource("BoxMesh_kwf74")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbt1u")
