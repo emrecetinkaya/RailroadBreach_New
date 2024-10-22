@@ -3,6 +3,7 @@ var correct = false
 var submit = null
 func _ready() -> void:
 	$ProgressBar.value = 18000
+	
 func _on_button_pressed() -> void:
 	$LineEdit.insert_text_at_caret("1")
 

@@ -108,7 +108,7 @@ material_override = ExtResource("2_2815y")
 shape = SubResource("ConcavePolygonShape3D_8prby")
 
 [node name="SafeBox_cover" parent="." index="8"]
-transform = Transform3D(-2.25648e-06, -0.894957, 3.90814, -18.5644, 1.11184e-06, -4.58794e-07, -1.26679e-06, -14.6995, -0.237941, 2.05928, 2.57235, -23.5211)
+transform = Transform3D(8.11476e-07, -16.4012, -3.42293e-07, -18.5644, -7.16919e-07, 0, -7.09415e-14, 1.43384e-06, -3.91538, 2.05928, 2.57235, -23.5211)
 material_override = ExtResource("2_2815y")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SafeBox_cover" index="0"]

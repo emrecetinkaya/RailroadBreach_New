@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://chamup4hbl7lp"]
+[gd_scene load_steps=17 format=4 uid="uid://bjslps8ek4m2j"]
 
 [ext_resource type="PackedScene" uid="uid://b5t2mmack5xo6" path="res://Art/Models/New Mods/FBXs/Train.fbx" id="1_em4p1"]
 [ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="2_7v85o"]
