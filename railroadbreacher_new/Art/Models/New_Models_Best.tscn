@@ -2,9 +2,9 @@
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_3hhqq"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_3y4a6"]
-[ext_resource type="PackedScene" path="res://Art/Models/Textures/Train_updated.tscn" id="4_e3nos"]
+[ext_resource type="PackedScene" uid="uid://bjslps8ek4m2j" path="res://Art/Models/Textures/Train_updated.tscn" id="4_e3nos"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_nrwip"]
-[ext_resource type="PackedScene" path="res://Art/Models/New Mods/full_scene.tscn" id="10_bqwk4"]
+[ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="10_bqwk4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
 shader = ExtResource("1_3hhqq")
