@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://cpcfb8vm7br1m"]
+[gd_scene load_steps=12 format=4 uid="uid://cpcfb8vm7br1m"]
 
-[ext_resource type="Script" path="res://objet_petit_a/ipod.gd" id="1_53nu8"]
+[ext_resource type="Texture2D" uid="uid://pyv3530lxkij" path="res://Art/Models/Textures/ConcreteBare.png" id="1_aoow3"]
+[ext_resource type="Texture2D" uid="uid://dsivg8bnbjgy" path="res://Art/Models/Textures/metal_04.png" id="2_rwxem"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ygd0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_psmhj"]
 resource_name = "Material.010"
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
@@ -10,7 +11,7 @@ emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_or84i"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxvqw"]
 resource_name = "ipod"
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
@@ -18,7 +19,7 @@ emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hkvvp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fajra"]
 resource_name = "screen"
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
@@ -26,7 +27,7 @@ emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8b634"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xxprr"]
 _surfaces = [{
 "aabb": AABB(-0.541174, 0.0383942, -0.161727, 1.0559, 0.0642941, 1.0559),
 "format": 34359742465,
@@ -62,7 +63,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_mpoa8"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_itk52"]
 resource_name = "Cylinder_007"
 _surfaces = [{
 "aabb": AABB(-0.541174, 0.0383942, -0.161727, 1.0559, 0.0642941, 1.0559),
@@ -71,7 +72,7 @@ _surfaces = [{
 "index_count": 372,
 "index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAANAA1ADYANgA3ADQAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAQABBAEIAQgBDAEAARABFAEYARgBHAEQASABJAEoASgBLAEgATABNAE4ATgBPAEwAUABRAFIAUgBTAFAAVABVAFYAVgBXAFQAWABZAFoAWgBbAFgAXABdAF4AXgBfAFwAYABhAGIAYgBjAGAAZABlAGYAZgBnAGQAaABpAGoAagBrAGgAbABtAG4AbgBvAGwAcABxAHIAcgBzAHAAdAB1AHYAdgB3AHQAeAB5AHoAeAB7AHkAfAB9AHsAfgB8AHsAfwB+AHsAgAB/AHsAgQCAAHsAggCBAHsAgwCCAHsAhACDAHsAhQCEAHsAhgCFAHsAhwCGAHsAiACHAHsAiQCIAHsAigCJAHsAiwCKAHsAjACLAHsAjQCMAHsAeACNAHsAjgB4AI8AkACOAI8AkQCQAI8AkQCPAJIAeACTAI8AeACUAJMAeACVAJQAeACWAJUAeACXAJYAeAB6AJcAmACZAJoAmgCbAJgAnACdAJ4AngCfAJwAoAChAKIAowCkAKEApQCjAKEApgClAKEApwCmAKEAqACnAKEAqQCoAKEAqgCpAKEAqwCqAKEAoACrAKEArACgAK0ArgCsAK0ArwCuALAAsQCvALAAsQCwALIArgCzALAArgC0ALMArgC1ALQArgC2ALUArgC3ALYArgC4ALcArgC5ALgArgC6ALkArgC7ALoArgC8ALsArgC9ALwArgC+AL0ArgC/AL4ArgCtAL8AoACiAK0A"),
 "lods": [0.0570001, PackedByteArray("AAABAAIAAgAHAAAACAAAAAcADAAIAAcAFAAMABcA5gAUABcA5QDoAOYA4gDkAOMA6wDnAOkA6gDsADAAOAAwADcAPAA4ADcAQAA8ADcA7QDuAEAARABAAEcASABEAEcA8ABIAEcA7wDxAPAAVADwAFcAXABUAFcAZABcAGcA9gBkAGcA9QD4APYA8gD0APMAeAB7AHkAeAB5AJcAeACXAJYAeACWAJQAeACUAI8AeACMAHsAjACLAHsAiwCKAHsAigCJAHsAiQCIAHsAiACHAHsAhwCFAHsAhQCDAHsAgwCBAHsAgQB/AHsA+gD3APkA+QCfAJwAoAChAK0AoACtALwAoAC8ALgAoAC4ALQAoAC0ALEAoACoAKEAqACjAKEA"), 0.126194, PackedByteArray("DAABAAIAwADDAMEAwwDIAMYAxQDCAMQAywDHAMkA0ADLAM4AygDNAMwAzwDTANEA1gDSANQA1QDZANcA3ADYANoA2wDfAN0AeAB7AJYAeACWAI8AeACHAHsAhwCDAHsAgwB/AHsA4QDeAOAA4ACfAJwAoAChAK0AoACoAKEAoACtALwAoAC8ALgAoAC4ALQA")],
-"material": SubResource("StandardMaterial3D_0ygd0"),
+"material": SubResource("StandardMaterial3D_psmhj"),
 "name": "Material.010",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -84,7 +85,7 @@ _surfaces = [{
 "index_count": 342,
 "index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACAALAAkADAAIAAoADAANAA4ADAAKAA0ABQAPABAAEAAGAAUAEQASABMAEwAUABEAFQAWABcAFQAYABYAGQAVABoAGQAaABsAFQAXABoAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApAAAAAAAqACgAJQArACwALAAmACUAKwAtAC4ALgAsACsALwAwADEALwAyADAAMwAvADQAMwA0ADUALwAxADQANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPgA/AEAAQABBAD4AQgBDAEQARABFAEIAQwBGAEcARwBEAEMASABJAEoASgApAEgARgBLAEwATABHAEYATQBOAE8ATQBQAE4ATQBRAFAATQBSAFMATQBPAFIAVABVAFYAVgBXAFQAWABZAFoAWgBbAFgAXABdAF4AXgBfAFwAYABhAGIAYgBjAGAAYQBkAGUAZQBiAGEASgBmAGcAZwABAEoAaABpAGoAagBrAGgAbABtAG4AbwBwAG0AcQBvAG0AcgBxAG0AbAByAG0AcwBrAHQAdAB1AHMAdgB3AHgAeAB5AHYAegB7AHwAfAB9AHoAfgB/AIAAgACBAH4AggCDAIQAhACFAIIAhgCHAGgAaACIAIYAiQCIAHMAcwCKAIkAigB1AIsAigBzAHUAjACKAIsAjACNAI4AjACLAI0AjwCQAJEAjwCSAJAAjwCTAJIAjwCUAJUAjwCRAJQAlgAEAAcABwCXAJYAmACZAJoAmgCbAJgAnACdAJ4AnwCgAJ0AoQCfAJ0AogChAJ0AnACiAJ0AowCkAKUApQCmAKMApwCoAKkAqQCqAKcAZACrAKwArABlAGQArQCuAK8ArwCwAK0A"),
 "lods": [0.147539, PackedByteArray("mgAFAJkAEACZAAUABQAPABAAHgAQAA8ADwAdAB4ACACdAAoACAAKAA4AnQAIACgAKAAvAJ0AZwCdAC8ALwAyAGcAMgBNAGcAFQAWABcAFQAXABsAFQAYABYAFwAWAHMAaAAWABgAGACPAGgAjwBpAGgAaABpAG8AbwBrAGgAawBvAG0AcwBrAG0AbQB1AHMAFwBzAHUAFwB1AI0AIAAlACYAJgAjACAALAAmACUAJQC8ACwAvgC7AL0ARAC+AL0AvQBDAEQAQwBXAEQAVABEAFcAVwDAAFQAwQBkAGUAZQC/AMEAZADDAGUAwgBlAMMAdgB3AHgAeAB5AHYAegB7AHwAfAB9AHoAfgB/AIAAgACBAH4AggCDAIQAhACFAIIA"), 1.02794, PackedByteArray("ugCxALQAsgC0ALEAuQC6ALQAFQAWAIsAFQCLABsAiwAWAHMAaAAWABUAcwBrAIsAFQCPAGgAiwBrAG8AjwBvAGgAbwBrAGgADwAdAB4AswC2ACwALAAjACAAtwC4ALUAdgB3AHgAeAB5AHYAegB7AHwAfAB9AHoAfgB/AIAAgACBAH4AggCDAIQAhACFAIIA")],
-"material": SubResource("StandardMaterial3D_or84i"),
+"material": SubResource("StandardMaterial3D_gxvqw"),
 "name": "ipod",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -96,7 +97,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 6,
 "index_data": PackedByteArray("AAABAAIAAgADAAAA"),
-"material": SubResource("StandardMaterial3D_hkvvp"),
+"material": SubResource("StandardMaterial3D_fajra"),
 "name": "screen",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -104,18 +105,32 @@ _surfaces = [{
 "vertex_data": PackedByteArray("Q+DrvoqtRbyOdNW+Q+DrvoqtRbxSKKG/mab5PoqtRbxSKKG/mab5PoqtRbyOdNW+/3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_8b634")
+shadow_mesh = SubResource("ArrayMesh_xxprr")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xad3v"]
-size = Vector3(1.65869, 0.297668, 2.83909)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlufj"]
+albedo_texture = ExtResource("1_aoow3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8cqfu"]
+albedo_color = Color(1, 0.686548, 0.996509, 1)
+albedo_texture = ExtResource("1_aoow3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3kue"]
+albedo_color = Color(0.41598, 0.41598, 0.41598, 1)
+albedo_texture = ExtResource("2_rwxem")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3gijf"]
+size = Vector3(0.463318, 0.0704651, 0.710999)
 
 [node name="ipod" type="RigidBody3D"]
-script = ExtResource("1_53nu8")
 
 [node name="Cylinder_003" type="MeshInstance3D" parent="."]
-mesh = SubResource("ArrayMesh_mpoa8")
+transform = Transform3D(0.277645, 0, 0, 0, 0.19457, 0, 0, 0, 0.250278, 0, 0, 0)
+mesh = SubResource("ArrayMesh_itk52")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_vlufj")
+surface_material_override/1 = SubResource("StandardMaterial3D_8cqfu")
+surface_material_override/2 = SubResource("StandardMaterial3D_u3kue")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00366211, -0.0837708, -0.170589)
-shape = SubResource("BoxShape3D_xad3v")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00650024, -0.0130463, -0.0483704)
+shape = SubResource("BoxShape3D_3gijf")

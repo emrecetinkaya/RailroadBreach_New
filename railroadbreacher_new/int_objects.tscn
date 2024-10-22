@@ -1,0 +1,64 @@
+[gd_scene load_steps=14 format=3 uid="uid://d1hjbduhu1rmj"]
+
+[ext_resource type="Script" path="res://Levels/basic_interactable.gd" id="2_al2kt"]
+[ext_resource type="PackedScene" uid="uid://bcbbburkewam8" path="res://objet_petit_a/coke_yellow.tscn" id="4_dt2xn"]
+[ext_resource type="PackedScene" uid="uid://bvhvwaxoyi4g6" path="res://objet_petit_a/book.tscn" id="5_bim2j"]
+[ext_resource type="PackedScene" uid="uid://cpcfb8vm7br1m" path="res://objet_petit_a/ipod.tscn" id="6_mxl5b"]
+[ext_resource type="PackedScene" uid="uid://qn6iefflgiw2" path="res://objet_petit_a/chips.tscn" id="7_gskan"]
+[ext_resource type="PackedScene" uid="uid://bxqeldckbndwm" path="res://objet_petit_a/polaroid.tscn" id="8_pnjr2"]
+[ext_resource type="PackedScene" uid="uid://cqrqfxp8cap3e" path="res://objet_petit_a/coke.tscn" id="9_8mihw"]
+[ext_resource type="PackedScene" uid="uid://buqq1uh5s4dbw" path="res://objet_petit_a/gem.tscn" id="9_i3cs3"]
+[ext_resource type="PackedScene" uid="uid://bl14j76sslju3" path="res://objet_petit_a/green.tscn" id="9_u15dt"]
+[ext_resource type="PackedScene" uid="uid://bvsesiq0tblcl" path="res://objet_petit_a/keys.tscn" id="10_2gt11"]
+[ext_resource type="PackedScene" uid="uid://dtqsirbio8dda" path="res://objet_petit_a/card.tscn" id="11_jewfj"]
+[ext_resource type="PackedScene" uid="uid://ledgn211qm3w" path="res://Art/Models/cekirdek.tscn" id="12_c1nnv"]
+[ext_resource type="PackedScene" uid="uid://owol6vtv1j8g" path="res://objet_petit_a/nds.tscn" id="13_6j8tw"]
+
+[node name="Int Objects" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5509, -2.60126, -7.39741)
+
+[node name="coke" parent="." instance=ExtResource("9_8mihw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27454, 0, 1.21386)
+script = ExtResource("2_al2kt")
+
+[node name="coke_yellow" parent="." instance=ExtResource("4_dt2xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6474, 0, 0)
+script = ExtResource("2_al2kt")
+
+[node name="book" parent="." instance=ExtResource("5_bim2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.258, 0, 0)
+script = ExtResource("2_al2kt")
+
+[node name="ipod" parent="." instance=ExtResource("6_mxl5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08962, 0, 0)
+script = ExtResource("2_al2kt")
+
+[node name="chips" parent="." instance=ExtResource("7_gskan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6499, 0, 0)
+script = ExtResource("2_al2kt")
+
+[node name="polaroid" parent="." instance=ExtResource("8_pnjr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.86954)
+script = ExtResource("2_al2kt")
+
+[node name="green" parent="." instance=ExtResource("9_u15dt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.417342)
+script = ExtResource("2_al2kt")
+
+[node name="gem" parent="." instance=ExtResource("9_i3cs3")]
+script = ExtResource("2_al2kt")
+
+[node name="Keys" parent="." instance=ExtResource("10_2gt11")]
+transform = Transform3D(0.118157, 0, 0, 0, 0.145439, 0, 0, 0, 0.0912071, 3.86157, 0.048166, -2.22946)
+script = ExtResource("2_al2kt")
+
+[node name="card" parent="." instance=ExtResource("11_jewfj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64197, 0, 0.422977)
+script = ExtResource("2_al2kt")
+
+[node name="cekirdek" parent="." instance=ExtResource("12_c1nnv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.27337)
+script = ExtResource("2_al2kt")
+
+[node name="nds" parent="." instance=ExtResource("13_6j8tw")]
+script = ExtResource("2_al2kt")
