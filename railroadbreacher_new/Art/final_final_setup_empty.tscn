@@ -8,7 +8,7 @@
 [ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="6_hy787"]
 [ext_resource type="Material" uid="uid://chmbhvbhjm780" path="res://Art/Models/New Mods/Materials/Concrete.tres" id="7_3djvi"]
 [ext_resource type="PackedScene" uid="uid://v8rqdhxcfpch" path="res://Art/Models/Shaders/watcher.tscn" id="7_42kik"]
-[ext_resource type="PackedScene" uid="uid://dlryy0d3404b" path="res://Art/Models/New Mods/Materials/final_scene_updated.fbx" id="9_c8ruk"]
+[ext_resource type="PackedScene" uid="uid://dbatvckwjs6aw" path="res://Art/Models/Textures/final_scene_updated.tscn" id="9_34lsr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jaev"]
 transparency = 1
@@ -34,10 +34,10 @@ surface_material_override/8 = SubResource("StandardMaterial3D_4jaev")
 [node name="Watcher" parent="." index="1" instance=ExtResource("7_42kik")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.63201, 0.176678, -2.23647)
 
-[node name="final_scene_updated" parent="." index="2" instance=ExtResource("9_c8ruk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119915, 0, 0.0389023)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
 transform = Transform3D(9.22267, 0, 0, 0, 1.1483, 0, 0, 0, 31.0953, -3.85819, 0.752694, 38.4304)
 mesh = SubResource("BoxMesh_kwf74")
 surface_material_override/0 = SubResource("StandardMaterial3D_fbt1u")
+
+[node name="final_scene_updated2" parent="." index="3" instance=ExtResource("9_34lsr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049561, 0, 0.192194)

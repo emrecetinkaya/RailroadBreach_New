@@ -1,0 +1,19 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbatvckwjs6aw"]
+
+[ext_resource type="PackedScene" uid="uid://dlryy0d3404b" path="res://Art/Models/New Mods/Materials/final_scene_updated.fbx" id="1_q8fed"]
+[ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="2_p7kk0"]
+[ext_resource type="Material" uid="uid://hjifs1ap4whp" path="res://Art/Models/Textures/Glass.tres" id="2_s3ry3"]
+[ext_resource type="Material" uid="uid://beg5rh37ncp4r" path="res://Art/Models/New Mods/Materials/yellow.tres" id="3_qvhhw"]
+[ext_resource type="Material" uid="uid://dsrwcbw023hkn" path="res://Art/Models/New Mods/Materials/Railroad.tres" id="4_3wl2p"]
+[ext_resource type="Material" uid="uid://dcxagx5qqg4c" path="res://Art/Models/New Mods/Materials/Tile.tres" id="5_prcyx"]
+[ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="6_7v3wq"]
+
+[node name="final_scene_updated" instance=ExtResource("1_q8fed")]
+
+[node name="St_03_020" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_p7kk0")
+surface_material_override/1 = ExtResource("3_qvhhw")
+surface_material_override/2 = ExtResource("4_3wl2p")
+surface_material_override/3 = ExtResource("5_prcyx")
+surface_material_override/4 = ExtResource("6_7v3wq")
+surface_material_override/8 = ExtResource("2_s3ry3")
