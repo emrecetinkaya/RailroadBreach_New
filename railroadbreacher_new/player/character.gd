@@ -103,24 +103,42 @@ func _physics_process(delta: float) -> void:
 
 	var collider = $RayCast3D.get_collider()
 	if $RayCast3D.is_colliding():
+	
 		if collider.has_method("grab"):
-			if Input.is_action_just_pressed("interact") and $RayCast3D.is_colliding and !hands_full:
+			if Input.is_action_just_pressed("interact") and !hands_full:
 				hands_full = true
 				collider.grab()
+
 		if collider.has_method("change_cam") and collider.has_method("enter_cam"):
-			if Input.is_action_just_pressed("interact") and $RayCast3D.is_colliding and on_camera == false:
+			if Input.is_action_just_pressed("interact") and on_camera == false:
 				print(collider)
 				$Camera3D.clear_current()
 				collider.enter_cam()
 				collider.change_cam()
-			if Input.is_action_just_pressed("interact") and $RayCast3D.is_colliding and on_camera == true:
+			if Input.is_action_just_pressed("interact") and on_camera == true:
 				collider.change_cam()
 				collider.enter_cam()
+
+
 		if collider.has_method("exit_cam"):
-			if Input.is_action_just_pressed("secondary") and on_camera == true:
-				$Camera3D.make_current()
-				collider.exit_cam()
-				on_camera = false
+			
+			if (
+				
+				(Input.is_action_just_pressed("secondary") or 
+				Input.is_action_just_pressed("forward") or 
+				Input.is_action_just_pressed("backward") or 
+				Input.is_action_just_pressed("left") or 
+				Input.is_action_just_pressed("right") or 
+				Input.is_action_just_pressed("jump") or
+				Input.is_action_just_pressed("crouch")) and on_camera == true
+				
+				):
+					
+					$Camera3D.make_current()
+					collider.exit_cam()
+					on_camera = false
+
+
 			if collider.has_method("change_cam_better") and !on_camera:
 				if Input.is_action_just_pressed("secondary"):
 					collider.change_cam_better()

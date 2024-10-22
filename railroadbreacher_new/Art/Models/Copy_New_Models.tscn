@@ -1,8 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://dpj3vyn2s20xq"]
+[gd_scene load_steps=24 format=3 uid="uid://dat43n1lnfro5"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_76yur"]
-[ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_r4afn"]
-[ext_resource type="PackedScene" uid="uid://bjslps8ek4m2j" path="res://Art/Models/Textures/Train_updated.tscn" id="3_qa76i"]
+[ext_resource type="PackedScene" path="res://Art/Models/New Mods/full_scene.tscn" id="2_r4afn"]
+[ext_resource type="PackedScene" path="res://Art/Models/Textures/Train_updated.tscn" id="3_qa76i"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="3_rki1j"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="4_61u13"]
 [ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="5_0qrds"]
@@ -209,7 +209,7 @@ _data = {
 "train_arrive": SubResource("Animation_ri8jk")
 }
 
-[node name="Models" type="Node3D"]
+[node name="Models2" type="Node3D"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_c2nmq")
@@ -435,28 +435,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4611, 0.0175877, -9.56495)
 [node name="Train" parent="SubViewportContainer/SubViewport/FullScene" instance=ExtResource("3_qa76i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60256, -3.47134, -16.4781)
 
-[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
-
-[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train" index="3"]
+[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train" index="1"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
 
-[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train" index="4"]
+[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train" index="2"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
 
 [node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train" instance=ExtResource("3_qa76i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
 
-[node name="Burun tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
-
-[node name="Kıç tarafı kapılar" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
-
-[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="3"]
+[node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="1"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
 
-[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="4"]
+[node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="2"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
 
 [node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_rki1j")]
