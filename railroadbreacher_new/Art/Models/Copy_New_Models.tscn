@@ -954,16 +954,16 @@ surface_material_override/0 = null
 [node name="Poster 11" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D/posterler_updated" index="6"]
 surface_material_override/0 = null
 
-[node name="CollisionShape3D4" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="35"]
+[node name="CollisionShape3D4" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="38"]
 transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, -0.171277, 0.0226285, -0.0304738)
 
-[node name="CollisionShape3D10" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="39"]
+[node name="CollisionShape3D10" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="42"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0182802, -0.235296, 0.0366039)
 
-[node name="CollisionShape3D59" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="51"]
+[node name="CollisionShape3D59" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="54"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244288, -0.104464, -0.00676129)
 
-[node name="CollisionShape3D62" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="54"]
+[node name="CollisionShape3D62" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="57"]
 transform = Transform3D(0.998406, 6.72713e-09, -0.0564314, -6.72713e-09, 1, 1.89978e-10, 0.0564314, 1.89978e-10, 0.998406, -0.246618, -0.100095, -0.0426058)
 
 [node name="Cube_004" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="0"]
@@ -1036,43 +1036,6 @@ transform = Transform3D(7.01381, -4.64916e-06, -9.83477e-07, 8.34465e-07, 6.3042
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.1
 light_indirect_energy = 0.0
-
-[node name="Cylinder_001" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="0"]
-surface_material_override/0 = null
-
-[node name="Cylinder_002" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="1"]
-surface_material_override/0 = null
-
-[node name="Cube_007" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="2"]
-transform = Transform3D(0.418488, 0, 0, 0, 1, 0, 0, 0, 0.314846, 0, 0.165209, -8.99545)
-
-[node name="Cube_010" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="3"]
-transform = Transform3D(0.433746, 0, 0, 0, 1, 0, 0, 0, 0.121108, -0.492214, 0, -8.92672)
-surface_material_override/0 = null
-
-[node name="Cube_012" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="4"]
-transform = Transform3D(0.414194, 0.00937151, 0, -0.00432313, 0.897874, 0, 0, 0, 0.476799, 0.239275, 0, -10.1509)
-
-[node name="chips" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects" index="5"]
-transform = Transform3D(0.246735, 0, 0, 0, 0.309543, 0, 0, 0, 0.250853, -0.0703959, 0.126267, -7.97099)
-surface_material_override/0 = null
-
-[node name="Gem" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects 2" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-
-[node name="Cube_011" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/Int Objects 2" index="1"]
-transform = Transform3D(0.336265, 0, 0, 0, 0.417083, 0.00932542, 0, -0.0128451, 0.3028, -6.56742, -0.157325, -10.3211)
-
-[node name="Cylinder_003" parent="SubViewportContainer/SubViewport/FullScene/Int Objects/ipod2" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="cekirdek" parent="SubViewportContainer/SubViewport/FullScene/Int Objects2" index="0"]
-transform = Transform3D(0.330567, 0, 0, 0, 0.350395, 0, 0, 0, 0.329511, -3.05615, 0.277727, -4.66218)
-surface_material_override/0 = null
-surface_material_override/1 = null
 
 [node name="leather" parent="SubViewportContainer/SubViewport/FullScene/Int Objects2/Keys" index="0"]
 surface_material_override/0 = null

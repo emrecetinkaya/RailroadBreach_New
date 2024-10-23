@@ -1,15 +1,16 @@
-[gd_scene load_steps=38 format=4 uid="uid://dlem4x25w3ll5"]
+[gd_scene load_steps=39 format=4 uid="uid://dlem4x25w3ll5"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_3hhqq"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_3y4a6"]
 [ext_resource type="PackedScene" uid="uid://bjslps8ek4m2j" path="res://Art/Models/Textures/Train_updated.tscn" id="4_e3nos"]
-[ext_resource type="PackedScene" uid="uid://p88gbdrgkq52" path="res://Art/Models/Shaders/lamps.tscn" id="5_4jrja"]
+[ext_resource type="PackedScene" path="res://Art/Models/Shaders/lamps.tscn" id="5_4jrja"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_nrwip"]
 [ext_resource type="Texture2D" uid="uid://b170l4jkd8bt0" path="res://Art/Models/Textures/metal_02.png" id="6_4by1o"]
 [ext_resource type="Texture2D" uid="uid://c2nfjsrip53n5" path="res://Art/Models/Textures/Door_01.jpg" id="7_2ktd8"]
 [ext_resource type="Script" path="res://Art/Models/ofiskapısı.gd" id="8_wm8yr"]
 [ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="8_xg7oc"]
 [ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="9_c228i"]
+[ext_resource type="Script" path="res://Art/Models/door_facing_minus_z.gd" id="10_47m42"]
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="10_bqwk4"]
 [ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="10_jurgp"]
 [ext_resource type="Script" path="res://Scripts/camera_panel_controls.gd" id="11_7ee3c"]
@@ -536,14 +537,20 @@ mesh = SubResource("ArrayMesh_1xae7")
 skeleton = NodePath("")
 
 [node name="St_03_568" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door2"]
-transform = Transform3D(-0.0853996, 0, 0.996347, 0, 1, 0, -0.996347, 0, -0.0853996, 0.631328, -0.00481868, 0.000171781)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.631328, -0.00481868, 0.000171781)
 mesh = SubResource("ArrayMesh_gqfxo")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Door2/St_03_568"]
+script = ExtResource("10_47m42")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door2/St_03_568/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_r3gj4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Door2/St_03_568/StaticBody3D"]
+transform = Transform3D(-0.999959, 0, -0.0089884, 0, 1, 0, 0.0089884, 0, -0.999959, -0.857058, 1.48289, 2.49661)
+stream = ExtResource("16_kjmdv")
+volume_db = 30.0
 
 [node name="Door3" type="Node3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.999795, 0, -0.0202619, 0, 1, 0, 0.0202619, 0, 0.999795, 35.8141, -2.85429, -1.32511)
@@ -554,14 +561,20 @@ mesh = SubResource("ArrayMesh_1xae7")
 skeleton = NodePath("")
 
 [node name="St_03_568" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door3"]
-transform = Transform3D(-0.0853996, 0, 0.996347, 0, 1, 0, -0.996347, 0, -0.0853996, 0.631328, -0.00481868, 0.000171781)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.631328, -0.00481868, 0.000171781)
 mesh = SubResource("ArrayMesh_gqfxo")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Door3/St_03_568"]
+script = ExtResource("10_47m42")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door3/St_03_568/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_r3gj4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Door3/St_03_568/StaticBody3D"]
+transform = Transform3D(-0.999959, 0, -0.0089884, 0, 1, 0, 0.0089884, 0, -0.999959, -0.857058, 1.48289, 2.49661)
+stream = ExtResource("16_kjmdv")
+volume_db = 30.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door3"]
 transform = Transform3D(2.99974, 0, 7.45058e-09, 0, 1, 0, 0, 0, 1.70622, -0.123363, -0.531445, 0.937659)
@@ -797,7 +810,6 @@ bones/71/rotation = Quaternion(-0.636684, 0.165309, 0.00112528, 0.753196)
 bones/71/scale = Vector3(0.983932, 0.983014, 1.03439)
 bones/72/rotation = Quaternion(-8.07249e-06, 0.982125, -0.188232, 3.29258e-06)
 bones/72/scale = Vector3(0.99984, 1.00026, 0.999929)
-bones/79/rotation = Quaternion(-5.78827e-08, 0.999509, 0.0313308, -1.86253e-06)
 bones/81/rotation = Quaternion(-0.803622, 0.0888234, -0.130154, 0.5739)
 bones/82/rotation = Quaternion(-0.00417333, -0.00553798, -2.30934e-05, 0.999976)
 bones/82/scale = Vector3(1.01442, 1.01442, 1.01442)
@@ -823,7 +835,6 @@ bones/102/rotation = Quaternion(0.193993, 0.0303168, -0.0128136, 0.980451)
 bones/103/rotation = Quaternion(-0.0948099, -0.0313756, 0.00298968, 0.994996)
 bones/104/rotation = Quaternion(-0.0534237, -0.000791413, 0.000148749, 0.998572)
 bones/105/rotation = Quaternion(-0.74408, 0.0264935, 0.0195292, 0.667279)
-bones/106/rotation = Quaternion(0.83541, 5.13246e-10, -9.29288e-11, 0.549627)
 bones/107/rotation = Quaternion(-0.87067, 0.030087, 0.0133441, 0.490765)
 bones/108/rotation = Quaternion(0.815179, -0.0444397, -0.0444397, 0.575789)
 bones/111/rotation = Quaternion(0.0849878, -0.0315536, -5.96173e-09, 0.995882)
@@ -839,7 +850,6 @@ bones/123/scale = Vector3(1.03304, 1.03304, 1.03304)
 bones/125/scale = Vector3(1.02803, 1.02803, 1.02803)
 bones/126/rotation = Quaternion(2.80855e-07, -0.052679, -1.48604e-08, 0.998612)
 bones/126/scale = Vector3(1.02803, 1.02803, 1.02803)
-bones/131/rotation = Quaternion(-0.230097, -0.640976, 0.694623, -0.231741)
 bones/135/rotation = Quaternion(-0.0915563, -0.343499, 0.925842, 0.128229)
 bones/136/rotation = Quaternion(-0.24649, -0.00103198, -0.000263185, 0.969145)
 bones/136/scale = Vector3(0.972737, 0.972737, 0.972737)
@@ -890,13 +900,11 @@ bones/192/position = Vector3(-1.52437, 4.54171, -2.30738)
 bones/192/rotation = Quaternion(-0.606953, -0.00762359, -0.00318794, 0.794695)
 bones/195/position = Vector3(-0.105493, 1.22253, 0.580629)
 bones/195/rotation = Quaternion(0.489796, -1.08587e-16, 0, 0.871837)
-bones/202/rotation = Quaternion(0.999762, -2.60226e-09, 1.19181e-07, -0.0218293)
 bones/205/rotation = Quaternion(1.68385e-06, 0.166967, 0.985962, -3.87022e-07)
 bones/206/position = Vector3(1.68137, 1.51297, 3.00542)
 bones/206/rotation = Quaternion(-0.709035, 0.0407412, 0.0407412, 0.702816)
 bones/209/position = Vector3(0.105493, -1.15945, -0.0315422)
 bones/209/rotation = Quaternion(-0.256493, 7.37759e-17, 0, 0.966546)
-bones/216/rotation = Quaternion(0.999762, 2.60225e-09, -1.19181e-07, -0.0218293)
 bones/219/rotation = Quaternion(-1.74196e-06, -0.0531427, 0.998587, 9.27021e-08)
 bones/220/position = Vector3(-1.03383, 1.51435, 3.31986)
 bones/220/rotation = Quaternion(-0.709035, 0.0407412, 0.0407412, 0.702816)

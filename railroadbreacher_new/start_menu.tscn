@@ -1,8 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhaj6hrdq7iol"]
-
-[ext_resource type="Script" path="res://start_menu.gd" id="1_0xcdu"]
-[ext_resource type="Script" path="res://h_slider.gd" id="2_k3chp"]
-[ext_resource type="AudioStream" path="res://Art/Models/Shaders/Horrors.mp3" id="3_7sbhy"]
+[gd_scene format=3 uid="uid://dhaj6hrdq7iol"]
 
 [node name="START MENU" type="Control"]
 layout_mode = 3
@@ -11,7 +7,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0xcdu")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -61,11 +56,8 @@ size_flags_vertical = 8
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("2_k3chp")
-bus_name = "Master"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_7sbhy")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
