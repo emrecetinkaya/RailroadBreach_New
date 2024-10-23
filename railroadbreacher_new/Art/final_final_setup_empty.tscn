@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://c81d6cutul0gy"]
+[gd_scene load_steps=35 format=4 uid="uid://c81d6cutul0gy"]
 
 [ext_resource type="PackedScene" uid="uid://dmg5exdyiie1j" path="res://Art/Final_final_Setup_Empty.fbx" id="1_wlyds"]
 [ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="2_6ex08"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://v8rqdhxcfpch" path="res://Art/Models/Shaders/watcher.tscn" id="7_42kik"]
 [ext_resource type="PackedScene" uid="uid://dbatvckwjs6aw" path="res://Art/Models/Textures/final_scene_updated.tscn" id="9_34lsr"]
 [ext_resource type="Texture2D" uid="uid://pyv3530lxkij" path="res://Art/Models/Textures/ConcreteBare.png" id="10_pfvgd"]
+[ext_resource type="Material" uid="uid://de8bwuybksrl3" path="res://Art/Models/Textures/Glass.tres" id="11_5o4jw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jaev"]
 transparency = 1
@@ -452,6 +453,7 @@ surface_material_override/2 = ExtResource("4_4ql18")
 surface_material_override/3 = ExtResource("5_ewtm7")
 surface_material_override/4 = ExtResource("6_hy787")
 surface_material_override/5 = SubResource("StandardMaterial3D_ol8gs")
+surface_material_override/8 = ExtResource("11_5o4jw")
 surface_material_override/10 = ExtResource("5_ewtm7")
 
 [node name="Cube_009" type="MeshInstance3D" parent="final_scene_updated_updated" index="1"]

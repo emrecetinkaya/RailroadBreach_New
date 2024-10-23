@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dlem4x25w3ll5"]
+[gd_scene load_steps=24 format=4 uid="uid://dlem4x25w3ll5"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_3hhqq"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_3y4a6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_nrwip"]
 [ext_resource type="Texture2D" uid="uid://b170l4jkd8bt0" path="res://Art/Models/Textures/metal_02.png" id="6_4by1o"]
 [ext_resource type="Texture2D" uid="uid://c2nfjsrip53n5" path="res://Art/Models/Textures/Door_01.jpg" id="7_2ktd8"]
+[ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="8_xg7oc"]
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="10_bqwk4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
@@ -128,6 +129,8 @@ points = PackedVector3Array(1.09257, 1.43505, 0.1239, -0.0219333, -0.0217965, -0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r3gj4"]
 points = PackedVector3Array(1.09257, 1.43505, 0.1239, -0.0219333, -0.0217965, -0.0904333, 1.17833, -0.0217965, -0.0904333, -0.0219333, 2.7206, -0.0904333, 1.17833, 2.7206, -0.0904333, -0.0219333, -0.0217965, 0.0381541, -0.0219333, 2.7206, 0.0381541, 1.17833, -0.0217965, 0.0381541, 1.17833, 2.7206, 0.0381541, 1.00668, 1.30671, 0.1239, 1.13545, 1.30671, 0.1239, 1.00668, 1.39209, 0.1239, 1.13545, 1.39209, 0.1239, 1.04957, 1.43505, 0.1239)
+
+[sub_resource type="BoxMesh" id="BoxMesh_75bhl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dips7"]
 shader = ExtResource("5_nrwip")
@@ -376,7 +379,7 @@ environment = SubResource("Environment_lahrx")
 [node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
 [node name="FullScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_bqwk4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6911, 0.0175877, -9.54152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6891, 0.0175867, -9.58348)
 
 [node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_3y4a6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.456863, -0.386924, -6.95304)
@@ -474,7 +477,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_sx2lk")
 
 [node name="Door2" type="Node3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.999795, 0, -0.0202619, 0, 1, 0, 0.0202619, 0, 0.999795, -4.33045, -2.85429, -1.28525)
+transform = Transform3D(1.12772, 0, -0.0202109, 0, 1.02903, 0, 0.0228544, 0, 0.997279, -3.15818, -2.84172, -1.12122)
 
 [node name="St_03_085" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0281105, 0, -0.00025177)
@@ -492,7 +495,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_r3gj4")
 
 [node name="Door3" type="Node3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.999795, 0, -0.0202619, 0, 1, 0, 0.0202619, 0, 0.999795, 37.3571, -2.85429, -1.32511)
+transform = Transform3D(0.999795, 0, -0.0202619, 0, 1, 0, 0.0202619, 0, 0.999795, 35.8141, -2.85429, -1.32511)
 
 [node name="St_03_085" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0281105, 0, -0.00025177)
@@ -509,8 +512,33 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door3/St_03_568/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_r3gj4")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door3"]
+transform = Transform3D(2.99974, 0, 7.45058e-09, 0, 1, 0, 0, 0, 1.70622, -0.123363, -0.531445, 0.937659)
+material_override = ExtResource("8_xg7oc")
+mesh = SubResource("BoxMesh_75bhl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door3"]
+transform = Transform3D(2.99974, 0, 3.72529e-08, 0, 1, 0, -2.98023e-08, 0, 1.70622, -38.4977, -0.531445, 1.71536)
+material_override = ExtResource("8_xg7oc")
+mesh = SubResource("BoxMesh_75bhl")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door3"]
+transform = Transform3D(2.93229, 0, -6.28643e-09, 0, 1, 0, -6.70552e-08, 0, -0.186707, -39.4052, -0.750555, 0.644344)
+material_override = ExtResource("8_xg7oc")
+mesh = SubResource("BoxMesh_75bhl")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door3"]
+transform = Transform3D(2.99974, 0, 2.23517e-08, 0, 1, 0, -1.49012e-08, 0, 1.70622, -0.913372, -0.531445, -38.0441)
+material_override = ExtResource("8_xg7oc")
+mesh = SubResource("BoxMesh_75bhl")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door3"]
+transform = Transform3D(2.99974, 0, 5.21541e-08, 0, 1, 0, -4.47035e-08, 0, 1.70622, -39.2877, -0.531445, -37.2664)
+material_override = ExtResource("8_xg7oc")
+mesh = SubResource("BoxMesh_75bhl")
+
 [node name="Door4" type="Node3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(-1.15842, 0, 0.019694, 0, 1, 0, -0.0228901, 0, -0.996671, 37.4243, -3.07578, -38.8093)
+transform = Transform3D(-1.15842, 0, 0.019694, 0, 1, 0, -0.0228901, 0, -0.996671, 35.8594, -3.07578, -38.6014)
 
 [node name="St_03_085" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0281105, 0, -0.00025177)
@@ -522,23 +550,21 @@ transform = Transform3D(-0.0853996, 0, 0.996347, 0, 1, 0, -0.996347, 0, -0.08539
 mesh = SubResource("ArrayMesh_gqfxo")
 skeleton = NodePath("")
 
-[node name="Door5" type="Node3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(-1.15842, 0, 0.019694, 0, 1, 0, -0.0228901, 0, -0.996671, -4.22155, -3.07578, -38.6483)
+[node name="Door6" type="Node3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-1.2451, 0, 0.0196649, 0, 1.08911, 0, -0.0246029, 0, -0.995197, -3.0996, -3.07578, -38.6014)
 
-[node name="St_03_085" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door5"]
+[node name="St_03_085" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0281105, 0, -0.00025177)
 mesh = SubResource("ArrayMesh_1xae7")
 skeleton = NodePath("")
 
-[node name="St_03_568" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door5"]
+[node name="St_03_568" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door6"]
 transform = Transform3D(-0.0853996, 0, 0.996347, 0, 1, 0, -0.996347, 0, -0.0853996, 0.631328, -0.00481868, 0.000171781)
 mesh = SubResource("ArrayMesh_gqfxo")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Door5/St_03_568"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door5/St_03_568/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_r3gj4")
+[node name="Door5" type="Node3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-1.15842, 0, 0.019694, 0, 1, 0, -0.0228901, 0, -0.996671, -4.22155, -3.07578, -38.6483)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer"]
 
