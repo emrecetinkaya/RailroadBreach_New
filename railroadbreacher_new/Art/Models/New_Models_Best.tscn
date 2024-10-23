@@ -2,8 +2,7 @@
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_3hhqq"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_3y4a6"]
-[ext_resource type="PackedScene" uid="uid://bjslps8ek4m2j" path="res://Art/Models/Textures/Train_updated.tscn" id="4_e3nos"]
-[ext_resource type="PackedScene" path="res://Art/Models/Shaders/lamps.tscn" id="5_4jrja"]
+[ext_resource type="PackedScene" uid="uid://p88gbdrgkq52" path="res://Art/Models/Shaders/lamps.tscn" id="5_4jrja"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_nrwip"]
 [ext_resource type="Texture2D" uid="uid://b170l4jkd8bt0" path="res://Art/Models/Textures/metal_02.png" id="6_4by1o"]
 [ext_resource type="Texture2D" uid="uid://c2nfjsrip53n5" path="res://Art/Models/Textures/Door_01.jpg" id="7_2ktd8"]
@@ -20,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://brmxrbgirbed8" path="res://sounds/(kapi)sfx100v2_door_04.mp3" id="16_kjmdv"]
 [ext_resource type="AudioStream" uid="uid://c23gxta58n3ta" path="res://sounds/(mouse click loud)697565_siyaam_big-mouse-click.mp3" id="17_frfxy"]
 [ext_resource type="Texture2D" uid="uid://die5owjhqsu7h" path="res://2D Sprites/metro pst yazili textured lowq.png" id="18_0l7bw"]
+[ext_resource type="PackedScene" uid="uid://ju1ppssnen4c" path="res://Art/Models/New Mods/FBXs/Train.tscn" id="20_f8iss"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
 shader = ExtResource("1_3hhqq")
@@ -435,9 +435,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6891, 0.0175867, -9.58348)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3639, 3.06562, 14.7983)
 collision_layer = 3
 collision_mask = 3
-
-[node name="Train" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_e3nos")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1895, -3.47134, -9.5457)
 
 [node name="Lamps" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_4jrja")]
 transform = Transform3D(1.11983, 0, 0, 0, 0.995239, -0.0974613, 0, 0.0974613, 0.995239, 26.3432, 5.81674, 15.9188)
@@ -953,5 +950,156 @@ transform = Transform3D(0.0299874, 0.000868005, 0, -0.000868005, 0.0299874, 0, 0
 modulate = Color(0.499439, 0.49944, 0.499439, 1)
 texture = ExtResource("18_0l7bw")
 
+[node name="Train" parent="." instance=ExtResource("20_f8iss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58, -3.471, -4.12621)
+
+[node name="önvagon" parent="Train" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+surface_material_override/3 = null
+surface_material_override/4 = null
+surface_material_override/5 = null
+surface_material_override/6 = null
+surface_material_override/7 = null
+surface_material_override/8 = null
+surface_material_override/9 = null
+
+[node name="subway_car_004" parent="Train/önvagon/SagOnKapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_005" parent="Train/önvagon/SagOnKapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_008" parent="Train/önvagon/SagOnKapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_006" parent="Train/önvagon/SagArkaKapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_007" parent="Train/önvagon/SagArkaKapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_009" parent="Train/önvagon/SagArkaKapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_010" parent="Train/önvagon/SolOnKapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_012" parent="Train/önvagon/SolOnKapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_014" parent="Train/önvagon/SolOnKapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_011" parent="Train/önvagon/SolArkaKapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_013" parent="Train/önvagon/SolArkaKapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_015" parent="Train/önvagon/SolArkaKapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="arkavagon" parent="Train" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+surface_material_override/3 = null
+surface_material_override/4 = null
+surface_material_override/5 = null
+surface_material_override/6 = null
+surface_material_override/7 = null
+surface_material_override/8 = null
+surface_material_override/9 = null
+
+[node name="subway_car_004" parent="Train/arkavagon/SagOnKapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_005" parent="Train/arkavagon/SagOnKapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_008" parent="Train/arkavagon/SagOnKapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_006" parent="Train/arkavagon/SagArkaKapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_007" parent="Train/arkavagon/SagArkaKapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_009" parent="Train/arkavagon/SagArkaKapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_010" parent="Train/arkavagon/SolOnKapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_012" parent="Train/arkavagon/SolOnKapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_014" parent="Train/arkavagon/SolOnKapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_011" parent="Train/arkavagon/SolArkaKapılar" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_013" parent="Train/arkavagon/SolArkaKapılar" index="1"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="subway_car_015" parent="Train/arkavagon/SolArkaKapılar" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="AnimationPlayer" parent="Train" index="5"]
+autoplay = "Train Animations/new_train_arrive"
+
 [editable path="SubViewportContainer/SubViewport/Character"]
 [editable path="creeep_anim"]
+[editable path="Train"]

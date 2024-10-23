@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://b5t2mmack5xo6" path="res://Art/Models/New Mods/FBXs/Train.fbx" id="1_em4p1"]
 [ext_resource type="Material" uid="uid://d1yn3m2ur67cm" path="res://Art/Models/New Mods/Materials/Metal.tres" id="2_7v85o"]
-[ext_resource type="Material" uid="uid://ddmed8d0i0q1y" path="res://Art/Models/Textures/Metal2.tres" id="3_nastx"]
-[ext_resource type="Material" uid="uid://dt8k3o3ob10o0" path="res://Art/Models/Textures/Floor.tres" id="4_tw6u8"]
-[ext_resource type="Material" uid="uid://cmg6e3rfwrbo" path="res://Art/Models/Textures/Train1.tres" id="5_6ry2x"]
-[ext_resource type="Material" uid="uid://dptlbs82ir1rt" path="res://Art/Models/New Mods/Materials/Seats.tres" id="6_rya5n"]
+[ext_resource type="Material" path="res://Art/Models/Textures/Metal2.tres" id="3_nastx"]
+[ext_resource type="Material" path="res://Art/Models/Textures/Floor.tres" id="4_tw6u8"]
+[ext_resource type="Material" path="res://Art/Models/Textures/Train1.tres" id="5_6ry2x"]
+[ext_resource type="Material" path="res://Art/Models/New Mods/Materials/Seats.tres" id="6_rya5n"]
 [ext_resource type="Material" uid="uid://c7nbvcuu8ciyx" path="res://Art/Models/New Mods/Materials/Door.tres" id="7_4o4tu"]
-[ext_resource type="Material" uid="uid://hjifs1ap4whp" path="res://Art/Models/Textures/Glass.tres" id="8_8d22e"]
+[ext_resource type="Material" uid="uid://de8bwuybksrl3" path="res://Art/Models/Textures/Glass.tres" id="8_8d22e"]
 [ext_resource type="Texture2D" uid="uid://dlbutj5buehlw" path="res://Art/Models/Textures/Door.png" id="9_1o872"]
-[ext_resource type="SphereMesh" uid="uid://qxe7inpwgygw" path="res://Art/Models/Textures/Far.tres" id="10_5b7co"]
+[ext_resource type="SphereMesh" path="res://Art/Models/Textures/Far.tres" id="10_5b7co"]
 [ext_resource type="Texture2D" uid="uid://d2si5fwlqn17m" path="res://Art/Models/New Mods/Materials/Textures/ConcreteBare.png" id="11_cpuv1"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v24io"]
@@ -362,14 +362,6 @@ mesh = SubResource("ArrayMesh_xwu4g")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_de71u")
 surface_material_override/1 = SubResource("StandardMaterial3D_yglva")
-surface_material_override/2 = ExtResource("8_8d22e")
-
-[node name="subway_car_004" parent="." index="3"]
-transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.15051)
-surface_material_override/2 = ExtResource("8_8d22e")
-
-[node name="subway_car_006" parent="." index="4"]
-transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.10051)
 surface_material_override/2 = ExtResource("8_8d22e")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="5"]

@@ -1101,11 +1101,9 @@ surface_material_override/2 = null
 
 [node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train" index="3"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
-surface_material_override/2 = null
 
 [node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train" index="4"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
-surface_material_override/2 = null
 
 [node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train" instance=ExtResource("3_qa76i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
@@ -1168,11 +1166,9 @@ surface_material_override/2 = null
 
 [node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="3"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
-surface_material_override/2 = null
 
 [node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train/Train2" index="4"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
-surface_material_override/2 = null
 
 [node name="TrainAudio" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/FullScene/Train"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475586, 1.3829, -12.5557)
@@ -1246,11 +1242,9 @@ surface_material_override/2 = null
 
 [node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train2" index="3"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
-surface_material_override/2 = null
 
 [node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train2" index="4"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
-surface_material_override/2 = null
 
 [node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train2" instance=ExtResource("3_qa76i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
@@ -1313,11 +1307,9 @@ surface_material_override/2 = null
 
 [node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2" index="3"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
-surface_material_override/2 = null
 
 [node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train2/Train2" index="4"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
-surface_material_override/2 = null
 
 [node name="TrainAudio" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/FullScene/Train2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475586, 1.3829, -12.5557)
@@ -1390,11 +1382,9 @@ surface_material_override/2 = null
 
 [node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train3" index="3"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
-surface_material_override/2 = null
 
 [node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train3" index="4"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
-surface_material_override/2 = null
 
 [node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train3" instance=ExtResource("3_qa76i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
@@ -1457,11 +1447,9 @@ surface_material_override/2 = null
 
 [node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2" index="3"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
-surface_material_override/2 = null
 
 [node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train3/Train2" index="4"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
-surface_material_override/2 = null
 
 [node name="TrainAudio" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/FullScene/Train3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475586, 1.3829, -12.5557)
@@ -1534,11 +1522,9 @@ surface_material_override/2 = null
 
 [node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train4" index="3"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
-surface_material_override/2 = null
 
 [node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train4" index="4"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
-surface_material_override/2 = null
 
 [node name="Train2" parent="SubViewportContainer/SubViewport/FullScene/Train4" instance=ExtResource("3_qa76i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.3641)
@@ -1601,11 +1587,9 @@ surface_material_override/2 = null
 
 [node name="subway_car_004" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2" index="3"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0.5)
-surface_material_override/2 = null
 
 [node name="subway_car_006" parent="SubViewportContainer/SubViewport/FullScene/Train4/Train2" index="4"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, -0.5)
-surface_material_override/2 = null
 
 [node name="TrainAudio" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/FullScene/Train4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475586, 1.3829, -12.5557)

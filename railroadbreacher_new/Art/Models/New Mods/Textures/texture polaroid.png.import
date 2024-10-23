@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://crtpxh1qse2wq"
 path.s3tc="res://.godot/imported/texture polaroid.png-a1727817ab9c22a9e84e9c2bda3ad3a1.s3tc.ctex"
+path.etc2="res://.godot/imported/texture polaroid.png-a1727817ab9c22a9e84e9c2bda3ad3a1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/Models/New Mods/Textures/texture polaroid.png"
-dest_files=["res://.godot/imported/texture polaroid.png-a1727817ab9c22a9e84e9c2bda3ad3a1.s3tc.ctex"]
+dest_files=["res://.godot/imported/texture polaroid.png-a1727817ab9c22a9e84e9c2bda3ad3a1.s3tc.ctex", "res://.godot/imported/texture polaroid.png-a1727817ab9c22a9e84e9c2bda3ad3a1.etc2.ctex"]
 
 [params]
 

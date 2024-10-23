@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://helqk3v6rvmv"
 path.s3tc="res://.godot/imported/trash_can.png-c7c3ccf5938f1a8b0cbdb6d287ed4925.s3tc.ctex"
+path.etc2="res://.godot/imported/trash_can.png-c7c3ccf5938f1a8b0cbdb6d287ed4925.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/Models/Textures/trash_can.png"
-dest_files=["res://.godot/imported/trash_can.png-c7c3ccf5938f1a8b0cbdb6d287ed4925.s3tc.ctex"]
+dest_files=["res://.godot/imported/trash_can.png-c7c3ccf5938f1a8b0cbdb6d287ed4925.s3tc.ctex", "res://.godot/imported/trash_can.png-c7c3ccf5938f1a8b0cbdb6d287ed4925.etc2.ctex"]
 
 [params]
 
