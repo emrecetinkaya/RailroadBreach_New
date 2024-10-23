@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvwu1md1lwmxd"]
+
+[ext_resource type="VideoStream" path="res://menu/backgroundmenu.ogv" id="1_dyso6"]
+[ext_resource type="Script" path="res://options.gd" id="1_hxljb"]
+[ext_resource type="FontFile" uid="uid://jj61r8gqrgd1" path="res://menu/Parisine Bold.otf" id="2_onoj5"]
+[ext_resource type="FontFile" uid="uid://p5uorqcgb6dv" path="res://menu/Parisine Regular.otf" id="3_cwwku"]
+[ext_resource type="Script" path="res://soundslider.gd" id="5_iqb5v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6fdo8"]
+font = ExtResource("3_cwwku")
+font_size = 32
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hxljb")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("1_dyso6")
+autoplay = true
+loop = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.5
+anchor_right = 0.2
+anchor_bottom = 0.5
+offset_top = -33.5
+offset_right = 501.0
+offset_bottom = 33.5
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_onoj5")
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "< Back"
+flat = true
+alignment = 0
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sound"
+label_settings = SubResource("LabelSettings_6fdo8")
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("5_iqb5v")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/VBoxContainer/HSlider" to="MarginContainer/HBoxContainer/VBoxContainer/HSlider" method="_on_value_changed"]

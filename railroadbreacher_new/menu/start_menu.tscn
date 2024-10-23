@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhaj6hrdq7iol"]
+
+[ext_resource type="Texture2D" uid="uid://dvyb3gr8n0tcs" path="res://menu/play.PNG" id="1_alwla"]
+[ext_resource type="VideoStream" path="res://menu/backgroundmenu.ogv" id="1_kohbc"]
+[ext_resource type="Script" path="res://menu/start_menu.gd" id="1_oepf3"]
+[ext_resource type="Texture2D" uid="uid://2nropopevvaf" path="res://menu/settings.PNG" id="2_3uklq"]
+[ext_resource type="FontFile" uid="uid://jj61r8gqrgd1" path="res://menu/Parisine Bold.otf" id="2_dmj0j"]
+[ext_resource type="Texture2D" uid="uid://b6fkrr7fam0an" path="res://menu/credits.PNG" id="3_m1c3g"]
+[ext_resource type="Texture2D" uid="uid://csdk0rbucpoyp" path="res://menu/exit.PNG" id="4_w0evh"]
+
+[node name="START MENU" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oepf3")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("1_kohbc")
+autoplay = true
+loop = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027
+anchor_top = 0.6
+anchor_right = 0.963
+anchor_bottom = 1.0
+offset_top = -320.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.0392157, 0.176471, 1)
+theme_override_fonts/font = ExtResource("2_dmj0j")
+theme_override_font_sizes/font_size = 120
+theme_override_icons/icon = ExtResource("1_alwla")
+action_mode = 0
+text = "Play"
+icon = ExtResource("1_alwla")
+flat = true
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+text_direction = 1
+
+[node name="Button2" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(610, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.0392157, 0.176471, 1)
+theme_override_fonts/font = ExtResource("2_dmj0j")
+theme_override_font_sizes/font_size = 120
+action_mode = 0
+text = "Settings"
+icon = ExtResource("2_3uklq")
+flat = true
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Button3" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(570, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.0392157, 0.176471, 1)
+theme_override_fonts/font = ExtResource("2_dmj0j")
+theme_override_font_sizes/font_size = 120
+action_mode = 0
+text = "Credits"
+icon = ExtResource("3_m1c3g")
+flat = true
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Button4" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.0392157, 0.176471, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_dmj0j")
+theme_override_font_sizes/font_size = 120
+action_mode = 0
+text = "Exit"
+icon = ExtResource("4_w0evh")
+flat = true
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="MarginContainer/GridContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Button4" to="." method="_on_button_4_pressed"]

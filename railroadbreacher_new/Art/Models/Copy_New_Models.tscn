@@ -1037,10 +1037,6 @@ light_color = Color(1, 0, 0, 1)
 light_energy = 0.1
 light_indirect_energy = 0.0
 
-[node name="leather" parent="SubViewportContainer/SubViewport/FullScene/Int Objects2/Keys" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-
 [node name="St_03_163" parent="SubViewportContainer/SubViewport/FullScene/Int Objects2/Trashcan2" index="5"]
 transform = Transform3D(1, 0, 0, 0, 0.866091, 0, 0, 0, 1, -15.2746, -4.76837e-07, -0.523643)
 
