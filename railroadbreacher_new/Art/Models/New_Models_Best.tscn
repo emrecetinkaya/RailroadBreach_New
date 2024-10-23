@@ -376,10 +376,12 @@ environment = SubResource("Environment_lahrx")
 [node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
 [node name="FullScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_bqwk4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4621, 0.0175877, -9.54152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6911, 0.0175877, -9.54152)
 
 [node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_3y4a6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9727, -0.386924, -6.95304)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.456863, -0.386924, -6.95304)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Train" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_e3nos")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1895, -3.47134, -9.5457)
@@ -519,27 +521,6 @@ skeleton = NodePath("")
 transform = Transform3D(-0.0853996, 0, 0.996347, 0, 1, 0, -0.996347, 0, -0.0853996, 0.631328, -0.00481868, 0.000171781)
 mesh = SubResource("ArrayMesh_gqfxo")
 skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_r3gj4")
-
-[node name="Küçük merdo" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568/StaticBody3D"]
-transform = Transform3D(-0.102511, -0.86941, -0.483341, -0.0609561, 0.490478, -0.869319, 0.992863, -0.0596519, -0.103275, 40.3338, -1.02453, 0.0742912)
-shape = SubResource("ConvexPolygonShape3D_r3gj4")
-
-[node name="Küçük merdo2" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568/StaticBody3D"]
-transform = Transform3D(-0.102511, -0.86941, -0.483341, -0.0609561, 0.490478, -0.869319, 0.992863, -0.0596519, -0.103275, 37.9801, -1.02453, 38.8739)
-shape = SubResource("ConvexPolygonShape3D_r3gj4")
-
-[node name="Küçük merdo3" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568/StaticBody3D"]
-transform = Transform3D(0.114287, 0.86864, 0.482081, -0.0609561, 0.490478, -0.869319, -0.991576, 0.0699658, 0.109004, -4.43058, -1.19234, 37.0048)
-shape = SubResource("ConvexPolygonShape3D_r3gj4")
-
-[node name="Küçük merdo4" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568/StaticBody3D"]
-transform = Transform3D(0.114287, 0.86864, 0.482081, -0.0609561, 0.490478, -0.869319, -0.991576, 0.0699658, 0.109004, -1.95417, -1.16262, -1.62424)
-shape = SubResource("ConvexPolygonShape3D_r3gj4")
 
 [node name="Door5" type="Node3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-1.15842, 0, 0.019694, 0, 1, 0, -0.0228901, 0, -0.996671, -4.22155, -3.07578, -38.6483)

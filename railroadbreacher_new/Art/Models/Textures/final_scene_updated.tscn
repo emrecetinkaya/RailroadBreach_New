@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dlryy0d3404b" path="res://Art/Models/New Mods/Materials/final_scene_updated.fbx" id="1_q8fed"]
 [ext_resource type="Material" uid="uid://b60fh7pcxk80k" path="res://Art/Models/New Mods/Materials/TileGround.tres" id="2_p7kk0"]
-[ext_resource type="Material" uid="uid://hjifs1ap4whp" path="res://Art/Models/Textures/Glass.tres" id="2_s3ry3"]
+[ext_resource type="Material" uid="uid://de8bwuybksrl3" path="res://Art/Models/Textures/Glass.tres" id="2_s3ry3"]
 [ext_resource type="Material" uid="uid://beg5rh37ncp4r" path="res://Art/Models/New Mods/Materials/yellow.tres" id="3_qvhhw"]
 [ext_resource type="Material" uid="uid://dsrwcbw023hkn" path="res://Art/Models/New Mods/Materials/Railroad.tres" id="4_3wl2p"]
 [ext_resource type="Material" uid="uid://dcxagx5qqg4c" path="res://Art/Models/New Mods/Materials/Tile.tres" id="5_prcyx"]
