@@ -16,17 +16,17 @@ func open_thing():
 	print("sesame")
 	if open:
 		var tween = get_tree().create_tween()
-		tween.tween_property($"..", "rotation_degrees", Vector3(0,180,0) , 0.1)
+		tween.tween_property($"..", "rotation_degrees", Vector3(0,90,0) , 0.1)
 		open = false
 		audio = load("res://sounds/(door close)sfx100v2_door_05.mp3")
-		$"../../../Door3/AudioStreamPlayer3D".set_stream(audio)
+		$"../../../Door6/AudioStreamPlayer3D".set_stream(audio)
 		await get_tree().create_timer(0.1).timeout
-		$"../../../Door3/AudioStreamPlayer3D".play()
+		$"../../../Door6/AudioStreamPlayer3D".play()
 		
 	elif !open:
 		var tween = get_tree().create_tween()
-		tween.tween_property($"..", "rotation_degrees", Vector3(0,90,0), 0.1)
+		tween.tween_property($"..", "rotation_degrees", Vector3(0,180,0), 0.1)
 		open = true
 		audio = load("res://sounds/(kapi)sfx100v2_door_04.mp3")
-		$"../../../Door3/AudioStreamPlayer3D".set_stream(audio)
-		$"../../../Door3/AudioStreamPlayer3D".play()
+		$"../../../Door6/AudioStreamPlayer3D".set_stream(audio)
+		$"../../../Door6/AudioStreamPlayer3D".play()

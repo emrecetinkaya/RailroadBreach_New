@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://dlem4x25w3ll5"]
+[gd_scene load_steps=41 format=4 uid="uid://dlem4x25w3ll5"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_3hhqq"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_3y4a6"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="10_bqwk4"]
 [ext_resource type="PackedScene" uid="uid://15k1ob6ownpc" path="res://control.tscn" id="10_jurgp"]
 [ext_resource type="Script" path="res://Scripts/camera_panel_controls.gd" id="11_7ee3c"]
+[ext_resource type="Script" path="res://Art/Models/doors_facing_z_plus.gd" id="12_6nq7e"]
 [ext_resource type="Script" path="res://Scripts/input_panel_controls.gd" id="12_jvmdo"]
 [ext_resource type="PackedScene" uid="uid://bnii8qil18kd7" path="res://Art/Models/people/creepycreepdude.tscn" id="14_ycjhh"]
 [ext_resource type="AudioStream" uid="uid://brmxrbgirbed8" path="res://sounds/(kapi)sfx100v2_door_04.mp3" id="16_kjmdv"]
@@ -141,6 +142,9 @@ points = PackedVector3Array(1.09257, 1.43505, 0.1239, -0.0219333, -0.0217965, -0
 points = PackedVector3Array(1.09257, 1.43505, 0.1239, -0.0219333, -0.0217965, -0.0904333, 1.17833, -0.0217965, -0.0904333, -0.0219333, 2.7206, -0.0904333, 1.17833, 2.7206, -0.0904333, -0.0219333, -0.0217965, 0.0381541, -0.0219333, 2.7206, 0.0381541, 1.17833, -0.0217965, 0.0381541, 1.17833, 2.7206, 0.0381541, 1.00668, 1.30671, 0.1239, 1.13545, 1.30671, 0.1239, 1.00668, 1.39209, 0.1239, 1.13545, 1.39209, 0.1239, 1.04957, 1.43505, 0.1239)
 
 [sub_resource type="BoxMesh" id="BoxMesh_75bhl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_826i0"]
+size = Vector3(1.25879, 2.48193, 0.0900879)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dips7"]
 shader = ExtResource("5_nrwip")
@@ -561,7 +565,7 @@ mesh = SubResource("ArrayMesh_1xae7")
 skeleton = NodePath("")
 
 [node name="St_03_568" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door3"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.631328, -0.00481868, 0.000171781)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.631328, -0.00481868, 0.000171781)
 mesh = SubResource("ArrayMesh_gqfxo")
 skeleton = NodePath("")
 
@@ -570,11 +574,6 @@ script = ExtResource("10_47m42")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door3/St_03_568/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_r3gj4")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Door3/St_03_568/StaticBody3D"]
-transform = Transform3D(-0.999959, 0, -0.0089884, 0, 1, 0, 0.0089884, 0, -0.999959, -0.857058, 1.48289, 2.49661)
-stream = ExtResource("16_kjmdv")
-volume_db = 30.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door3"]
 transform = Transform3D(2.99974, 0, 7.45058e-09, 0, 1, 0, 0, 0, 1.70622, -0.123363, -0.531445, 0.937659)
@@ -601,6 +600,11 @@ transform = Transform3D(2.99974, 0, 5.21541e-08, 0, 1, 0, -4.47035e-08, 0, 1.706
 material_override = ExtResource("8_xg7oc")
 mesh = SubResource("BoxMesh_75bhl")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Door3"]
+transform = Transform3D(0.999959, 0, 0.00898849, 0, 1, 0, -0.00898849, 0, 0.999959, 1.48838, 1.47807, -2.49644)
+stream = ExtResource("16_kjmdv")
+volume_db = 30.0
+
 [node name="Door4" type="Node3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-1.15842, 0, 0.019694, 0, 1, 0, -0.0228901, 0, -0.996671, 35.8594, -3.07578, -38.6014)
 
@@ -610,9 +614,21 @@ mesh = SubResource("ArrayMesh_1xae7")
 skeleton = NodePath("")
 
 [node name="St_03_568" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door4"]
-transform = Transform3D(-0.0853996, 0, 0.996347, 0, 1, 0, -0.996347, 0, -0.0853996, 0.631328, -0.00481868, 0.000171781)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.631328, -0.00481868, 0.000171781)
 mesh = SubResource("ArrayMesh_gqfxo")
 skeleton = NodePath("")
+
+[node name="Area3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568"]
+script = ExtResource("12_6nq7e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door4/St_03_568/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 2.23517e-08, 0, 1, 0.519981, 1.45726, -0.0277061)
+shape = SubResource("BoxShape3D_826i0")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Door4"]
+transform = Transform3D(-0.0757342, 0, -0.859747, 0, 1, 0, 0.999275, 0, -0.0880251, -34.3396, 1.69956, -0.474556)
+stream = ExtResource("16_kjmdv")
+volume_db = 30.0
 
 [node name="Door6" type="Node3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-1.2451, 0, 0.0196649, 0, 1.08911, 0, -0.0246029, 0, -0.995197, -3.0996, -3.07578, -38.6014)
@@ -623,9 +639,21 @@ mesh = SubResource("ArrayMesh_1xae7")
 skeleton = NodePath("")
 
 [node name="St_03_568" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Door6"]
-transform = Transform3D(-0.0853996, 0, 0.996347, 0, 1, 0, -0.996347, 0, -0.0853996, 0.631328, -0.00481868, 0.000171781)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.631328, -0.00481868, 0.000171781)
 mesh = SubResource("ArrayMesh_gqfxo")
 skeleton = NodePath("")
+
+[node name="Area3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Door6/St_03_568"]
+script = ExtResource("12_6nq7e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Door6/St_03_568/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 2.23517e-08, 0, 1, 0.519981, 1.45726, -0.0277061)
+shape = SubResource("BoxShape3D_826i0")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Door6"]
+transform = Transform3D(-0.0758001, 0, -0.799406, 0, 0.918181, 0, 1.00014, 0, -0.0948342, -34.3396, 1.69956, -0.474556)
+stream = ExtResource("16_kjmdv")
+volume_db = 30.0
 
 [node name="Door5" type="Node3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-1.15842, 0, 0.019694, 0, 1, 0, -0.0228901, 0, -0.996671, -4.22155, -3.07578, -38.6483)
