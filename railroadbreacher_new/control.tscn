@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://15k1ob6ownpc"]
+[gd_scene load_steps=5 format=3 uid="uid://15k1ob6ownpc"]
 
 [ext_resource type="Script" path="res://Levels/control.gd" id="1_ab0x0"]
 [ext_resource type="FontFile" uid="uid://73agcd4ie0v" path="res://Art/Courier New.ttf" id="2_pvdfq"]
+[ext_resource type="Texture2D" uid="uid://t8jl1t346dnr" path="res://2D Sprites/M1.png" id="3_xow8p"]
 
 [sub_resource type="Theme" id="Theme_5ey6a"]
 
@@ -31,6 +32,7 @@ grow_vertical = 2
 scale = Vector2(1, 1.76)
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
+text = " MINS LEFT"
 alignment = 1
 max_length = 17
 context_menu_enabled = false
@@ -61,72 +63,96 @@ columns = 3
 
 [node name="Button" type="Button" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "1"
 
 [node name="Button2" type="Button" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "2"
 
 [node name="Button3" type="Button" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "3"
 
 [node name="Button4" type="Button" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "4"
 
 [node name="Button5" type="Button" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "5"
 
 [node name="Button6" type="Button" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "6"
 
 [node name="Button7" type="Button" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "7"
 
 [node name="Button8" type="Button" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "8"
 
 [node name="Button9" type="Button" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "9"
 
 [node name="Button10" type="Button" parent="GridContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_pvdfq")
-theme_override_font_sizes/font_size = 70
-text = "ARRIVED"
-
-[node name="Button11" type="Button" parent="GridContainer"]
-layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "CLEAR"
 
+[node name="Button11" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_pvdfq")
+theme_override_font_sizes/font_size = 70
+text = "0"
+
 [node name="Button12" type="Button" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_pvdfq")
 theme_override_font_sizes/font_size = 70
 text = "SUBMIT"
@@ -145,9 +171,14 @@ offset_bottom = -327.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_5ey6a")
-max_value = 64800.0
+max_value = 38000.0
 rounded = true
 show_percentage = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(892.108, 166)
+scale = Vector2(0.364534, 0.33)
+texture = ExtResource("3_xow8p")
 
 [connection signal="pressed" from="GridContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="GridContainer/Button2" to="." method="_on_button_2_pressed"]

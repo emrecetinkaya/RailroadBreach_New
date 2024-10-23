@@ -46,7 +46,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_10o2p")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0vmp1"]
-size = Vector3(1.6791, 0.0913086, 1.12817)
+size = Vector3(2.71797, 1.01489, 1.63802)
 
 [node name="card" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64197, 0, 0)

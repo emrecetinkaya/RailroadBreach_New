@@ -1,11 +1,12 @@
 extends CharacterBody3D
-var SPEED = 5.0
+var SPEED = 4.0
 const JUMP_VELOCITY = 4.5
 var mouse_sensitivity = 0.002
 var hands_full = false
 var on_camera = false
 var crouched = false
 var y = 1
+var spritepath = "res://2D Sprites/Hands/updated akbil.png"
 
 
 func _ready() -> void:
@@ -76,8 +77,8 @@ func _physics_process(delta: float) -> void:
 			
 		
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("jump") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
 #	
 	if Input.is_action_pressed("secondary") and hands_full:
 		var item = $Marker3D.get_child(0)
@@ -86,11 +87,11 @@ func _physics_process(delta: float) -> void:
 #Open and close menu.
 	if on_camera:
 		SPEED = 0
-	else: SPEED = 5.0
+	else: SPEED = 4.0
 		
 	if crouched:
 		SPEED = 2.5
-	else: SPEED = 5.0
+	else: SPEED = 4.0
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -114,10 +115,12 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("interact") and !hands_full:
 				collider.open_thing()
 				
+				
 		if collider.has_method("grab"):
 			if Input.is_action_just_pressed("interact") and !hands_full:
 				hands_full = true
 				collider.grab()
+
 
 		if collider.has_method("change_cam") and collider.has_method("enter_cam"):
 			if Input.is_action_just_pressed("interact") and on_camera == false:
@@ -156,3 +159,14 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+
+
+func _on_card_grabed() -> void:
+	spritepath = $Control/Sprite2D.texture
+	$Control/Sprite2D.visible = true
+	var tween1 = get_tree().create_tween().set_loops()
+	tween1.tween_property($Control/Sprite2D, "position", Vector2(512, 750), 1)
+	tween1.tween_property($Control/Sprite2D, "position", Vector2(512, 700), 1)
+	
+func _on_card_letgo() -> void:
+	$Control/Sprite2D.visible = false

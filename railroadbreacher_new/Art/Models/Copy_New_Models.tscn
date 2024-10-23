@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dpj3vyn2s20xq"]
+[gd_scene load_steps=38 format=3 uid="uid://dpj3vyn2s20xq"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_76yur"]
 [ext_resource type="PackedScene" uid="uid://ckh5r0ra3yk6d" path="res://Art/Models/New Mods/full_scene.tscn" id="2_r4afn"]
@@ -14,6 +14,11 @@
 [ext_resource type="AudioStream" uid="uid://cig48nge8pawm" path="res://sounds/(ofis ambient)SFX SCI FI Computer room ambience (mp3cut.net)-2.mp3" id="10_7nxht"]
 [ext_resource type="AudioStream" uid="uid://cdxvmdaujnhmx" path="res://sounds/(light flicker loop)143915_scotchio_flickeringlight.aiff.mp3" id="11_d5cpu"]
 [ext_resource type="AudioStream" uid="uid://c23gxta58n3ta" path="res://sounds/(mouse click loud)697565_siyaam_big-mouse-click.mp3" id="11_k0yfl"]
+[ext_resource type="PackedScene" uid="uid://cvd43k4lebb5a" path="res://Art/Models/creeep_anim.glb" id="15_ajvji"]
+[ext_resource type="PackedScene" uid="uid://jnqsihyjt5di" path="res://Levels/basic_interactable.tscn" id="16_htckt"]
+[ext_resource type="PackedScene" uid="uid://dtqsirbio8dda" path="res://objet_petit_a/card.tscn" id="17_a4n8i"]
+[ext_resource type="Script" path="res://Levels/basic_interactable.gd" id="18_gbx5h"]
+[ext_resource type="PackedScene" uid="uid://iddumrl7y3i4" path="res://objet_petit_a/faxpapers/paper.tscn" id="19_jd2pr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
 shader = ExtResource("1_76yur")
@@ -53,8 +58,8 @@ volumetric_fog_albedo = Color(0.444893, 0.637527, 0.749093, 1)
 [sub_resource type="Animation" id="Animation_ocjjm"]
 length = 0.001
 
-[sub_resource type="Animation" id="Animation_ri8jk"]
-resource_name = "train_arrive_peron4"
+[sub_resource type="Animation" id="Animation_wbb16"]
+resource_name = "trailer_train_anim"
 length = 10.0
 loop_mode = 2
 tracks/0/type = "value"
@@ -132,12 +137,8 @@ tracks/9/path = NodePath("./TrainAudio")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"clips": [{
-"end_offset": 0.92,
-"start_offset": 3.6,
-"stream": ExtResource("4_l0djf")
-}],
-"times": PackedFloat32Array(0)
+"clips": [],
+"times": PackedFloat32Array()
 }
 tracks/9/use_blend = true
 tracks/10/type = "value"
@@ -150,207 +151,7 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0, 5, 10),
 "transitions": PackedFloat32Array(6.06286, 1, 1),
 "update": 0,
-"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
-}
-
-[sub_resource type="Animation" id="Animation_igj63"]
-resource_name = "train_arrive_peron3"
-length = 15.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5, 10),
-"transitions": PackedFloat32Array(0.25, 1, 1),
-"update": 0,
-"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
-}
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("./Burun tarafı kapılar")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("./Kıç tarafı kapılar")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
-tracks/3/type = "position_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("./subway_car_004")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
-tracks/4/type = "position_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("./subway_car_006")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-tracks/5/type = "position_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/6/type = "position_3d"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-tracks/7/type = "position_3d"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("./Train2/subway_car_004")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/8/type = "position_3d"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("./Train2/subway_car_006")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-tracks/9/type = "audio"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("./TrainAudio")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"clips": [{
-"end_offset": 0.92,
-"start_offset": 3.6,
-"stream": ExtResource("4_l0djf")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/9/use_blend = true
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath(".:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 5, 10),
-"transitions": PackedFloat32Array(6.06286, 1, 1),
-"update": 0,
-"values": [Vector3(-1.6, -3.471, 0), Vector3(-1.6, -3.471, 100), Vector3(-1.6, -3.471, 500)]
-}
-
-[sub_resource type="Animation" id="Animation_0juqp"]
-resource_name = "train_arrive_peron2"
-length = 20.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5, 10),
-"transitions": PackedFloat32Array(0.25, 1, 1),
-"update": 0,
-"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
-}
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("./Burun tarafı kapılar")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("./Kıç tarafı kapılar")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
-tracks/3/type = "position_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("./subway_car_004")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
-tracks/4/type = "position_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("./subway_car_006")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-tracks/5/type = "position_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/6/type = "position_3d"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-tracks/7/type = "position_3d"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("./Train2/subway_car_004")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/8/type = "position_3d"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("./Train2/subway_car_006")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-tracks/9/type = "audio"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("./TrainAudio")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"clips": [{
-"end_offset": 0.92,
-"start_offset": 3.6,
-"stream": ExtResource("4_l0djf")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/9/use_blend = true
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath(".:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 5, 10),
-"transitions": PackedFloat32Array(6.06286, 1, 1),
-"update": 0,
-"values": [Vector3(-6.13, -3.471, 0), Vector3(-6.13, -3.471, 100), Vector3(-6.13, -3.471, 500)]
+"values": [Vector3(20.032, -3.471, -75), Vector3(20.032, -3.471, 75), Vector3(20.032, -3.471, 500)]
 }
 
 [sub_resource type="Animation" id="Animation_t0wj4"]
@@ -453,102 +254,6 @@ tracks/10/keys = {
 "values": [Vector3(-28.106, -3.471, 0), Vector3(-28.106, -3.471, 100), Vector3(-28.106, -3.471, 500)]
 }
 
-[sub_resource type="Animation" id="Animation_wbb16"]
-resource_name = "trailer_train_anim"
-length = 10.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5, 10),
-"transitions": PackedFloat32Array(0.25, 1, 1),
-"update": 0,
-"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
-}
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("./Burun tarafı kapılar")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("./Kıç tarafı kapılar")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
-tracks/3/type = "position_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("./subway_car_004")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
-tracks/4/type = "position_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("./subway_car_006")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-tracks/5/type = "position_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/6/type = "position_3d"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-tracks/7/type = "position_3d"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("./Train2/subway_car_004")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
-tracks/8/type = "position_3d"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("./Train2/subway_car_006")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
-tracks/9/type = "audio"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("./TrainAudio")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"clips": [],
-"times": PackedFloat32Array()
-}
-tracks/9/use_blend = true
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath(".:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 5, 10),
-"transitions": PackedFloat32Array(6.06286, 1, 1),
-"update": 0,
-"values": [Vector3(20.032, -3.471, -75), Vector3(20.032, -3.471, 75), Vector3(20.032, -3.471, 500)]
-}
-
 [sub_resource type="Animation" id="Animation_8y05n"]
 resource_name = "train_arrive_peron1_baketrial"
 length = 10.0
@@ -647,6 +352,306 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-28.106, -3.471, 0), Vector3(-28.106, -3.471, 6.40697e-12), Vector3(-28.106, -3.471, 4.28309e-10), Vector3(-28.106, -3.471, 5.00466e-09), Vector3(-28.106, -3.471, 2.86326e-08), Vector3(-28.106, -3.471, 1.10768e-07), Vector3(-28.106, -3.471, 3.34564e-07), Vector3(-28.106, -3.471, 8.5186e-07), Vector3(-28.106, -3.471, 1.9141e-06), Vector3(-28.106, -3.471, 3.90928e-06), Vector3(-28.106, -3.471, 7.40488e-06), Vector3(-28.106, -3.471, 1.3197e-05), Vector3(-28.106, -3.471, 2.23657e-05), Vector3(-28.106, -3.471, 3.63363e-05), Vector3(-28.106, -3.471, 5.69472e-05), Vector3(-28.106, -3.471, 8.65237e-05), Vector3(-28.106, -3.471, 0.000127959), Vector3(-28.106, -3.471, 0.000184798), Vector3(-28.106, -3.471, 0.000261337), Vector3(-28.106, -3.471, 0.000362713), Vector3(-28.106, -3.471, 0.000495019), Vector3(-28.106, -3.471, 0.000665411), Vector3(-28.106, -3.471, 0.000882227), Vector3(-28.106, -3.471, 0.00115511), Vector3(-28.106, -3.471, 0.00149516), Vector3(-28.106, -3.471, 0.00191502), Vector3(-28.106, -3.471, 0.0024291), Vector3(-28.106, -3.471, 0.00305364), Vector3(-28.106, -3.471, 0.00380694), Vector3(-28.106, -3.471, 0.00470949), Vector3(-28.106, -3.471, 0.00578415), Vector3(-28.106, -3.471, 0.0070563), Vector3(-28.106, -3.471, 0.00855409), Vector3(-28.106, -3.471, 0.0103086), Vector3(-28.106, -3.471, 0.0123539), Vector3(-28.106, -3.471, 0.0147275), Vector3(-28.106, -3.471, 0.0174705), Vector3(-28.106, -3.471, 0.0206276), Vector3(-28.106, -3.471, 0.0242475), Vector3(-28.106, -3.471, 0.0283833), Vector3(-28.106, -3.471, 0.0330922), Vector3(-28.106, -3.471, 0.0384365), Vector3(-28.106, -3.471, 0.044483), Vector3(-28.106, -3.471, 0.051304), Vector3(-28.106, -3.471, 0.0589772), Vector3(-28.106, -3.471, 0.067586), Vector3(-28.106, -3.471, 0.0772198), Vector3(-28.106, -3.471, 0.0879744), Vector3(-28.106, -3.471, 0.0999519), Vector3(-28.106, -3.471, 0.113262), Vector3(-28.106, -3.471, 0.12802), Vector3(-28.106, -3.471, 0.144351), Vector3(-28.106, -3.471, 0.162386), Vector3(-28.106, -3.471, 0.182265), Vector3(-28.106, -3.471, 0.204137), Vector3(-28.106, -3.471, 0.228159), Vector3(-28.106, -3.471, 0.254496), Vector3(-28.106, -3.471, 0.283325), Vector3(-28.106, -3.471, 0.314832), Vector3(-28.106, -3.471, 0.349212), Vector3(-28.106, -3.471, 0.386673), Vector3(-28.106, -3.471, 0.427431), Vector3(-28.106, -3.471, 0.471717), Vector3(-28.106, -3.471, 0.51977), Vector3(-28.106, -3.471, 0.571845), Vector3(-28.106, -3.471, 0.628205), Vector3(-28.106, -3.471, 0.689131), Vector3(-28.106, -3.471, 0.754914), Vector3(-28.106, -3.471, 0.82586), Vector3(-28.106, -3.471, 0.90229), Vector3(-28.106, -3.471, 0.984539), Vector3(-28.106, -3.471, 1.07296), Vector3(-28.106, -3.471, 1.16791), Vector3(-28.106, -3.471, 1.26978), Vector3(-28.106, -3.471, 1.37896), Vector3(-28.106, -3.471, 1.49588), Vector3(-28.106, -3.471, 1.62096), Vector3(-28.106, -3.471, 1.75465), Vector3(-28.106, -3.471, 1.89743), Vector3(-28.106, -3.471, 2.04979), Vector3(-28.106, -3.471, 2.21223), Vector3(-28.106, -3.471, 2.38528), Vector3(-28.106, -3.471, 2.56949), Vector3(-28.106, -3.471, 2.76544), Vector3(-28.106, -3.471, 2.97371), Vector3(-28.106, -3.471, 3.19491), Vector3(-28.106, -3.471, 3.42969), Vector3(-28.106, -3.471, 3.67871), Vector3(-28.106, -3.471, 3.94265), Vector3(-28.106, -3.471, 4.22222), Vector3(-28.106, -3.471, 4.51816), Vector3(-28.106, -3.471, 4.83121), Vector3(-28.106, -3.471, 5.16218), Vector3(-28.106, -3.471, 5.51187), Vector3(-28.106, -3.471, 5.88112), Vector3(-28.106, -3.471, 6.27081), Vector3(-28.106, -3.471, 6.68183), Vector3(-28.106, -3.471, 7.1151), Vector3(-28.106, -3.471, 7.57159), Vector3(-28.106, -3.471, 8.05229), Vector3(-28.106, -3.471, 8.5582), Vector3(-28.106, -3.471, 9.09038), Vector3(-28.106, -3.471, 9.64993), Vector3(-28.106, -3.471, 10.2379), Vector3(-28.106, -3.471, 10.8556), Vector3(-28.106, -3.471, 11.504), Vector3(-28.106, -3.471, 12.1845), Vector3(-28.106, -3.471, 12.8983), Vector3(-28.106, -3.471, 13.6467), Vector3(-28.106, -3.471, 14.4309), Vector3(-28.106, -3.471, 15.2525), Vector3(-28.106, -3.471, 16.1127), Vector3(-28.106, -3.471, 17.0132), Vector3(-28.106, -3.471, 17.9552), Vector3(-28.106, -3.471, 18.9404), Vector3(-28.106, -3.471, 19.9703), Vector3(-28.106, -3.471, 21.0466), Vector3(-28.106, -3.471, 22.1709), Vector3(-28.106, -3.471, 23.345), Vector3(-28.106, -3.471, 24.5705), Vector3(-28.106, -3.471, 25.8492), Vector3(-28.106, -3.471, 27.1831), Vector3(-28.106, -3.471, 28.574), Vector3(-28.106, -3.471, 30.0238), Vector3(-28.106, -3.471, 31.5345), Vector3(-28.106, -3.471, 33.1081), Vector3(-28.106, -3.471, 34.7469), Vector3(-28.106, -3.471, 36.4528), Vector3(-28.106, -3.471, 38.228), Vector3(-28.106, -3.471, 40.075), Vector3(-28.106, -3.471, 41.9958), Vector3(-28.106, -3.471, 43.9929), Vector3(-28.106, -3.471, 46.0687), Vector3(-28.106, -3.471, 48.2257), Vector3(-28.106, -3.471, 50.4663), Vector3(-28.106, -3.471, 52.7933), Vector3(-28.106, -3.471, 55.2091), Vector3(-28.106, -3.471, 57.7166), Vector3(-28.106, -3.471, 60.3185), Vector3(-28.106, -3.471, 63.0176), Vector3(-28.106, -3.471, 65.8168), Vector3(-28.106, -3.471, 68.7191), Vector3(-28.106, -3.471, 71.7275), Vector3(-28.106, -3.471, 74.8452), Vector3(-28.106, -3.471, 78.0752), Vector3(-28.106, -3.471, 81.4207), Vector3(-28.106, -3.471, 84.8851), Vector3(-28.106, -3.471, 88.4718), Vector3(-28.106, -3.471, 92.1842), Vector3(-28.106, -3.471, 96.0257), Vector3(-28.106, -3.471, 100), Vector3(-28.106, -3.471, 102.667), Vector3(-28.106, -3.471, 105.333), Vector3(-28.106, -3.471, 108), Vector3(-28.106, -3.471, 110.667), Vector3(-28.106, -3.471, 113.333), Vector3(-28.106, -3.471, 116), Vector3(-28.106, -3.471, 118.667), Vector3(-28.106, -3.471, 121.333), Vector3(-28.106, -3.471, 124), Vector3(-28.106, -3.471, 126.667), Vector3(-28.106, -3.471, 129.333), Vector3(-28.106, -3.471, 132), Vector3(-28.106, -3.471, 134.667), Vector3(-28.106, -3.471, 137.333), Vector3(-28.106, -3.471, 140), Vector3(-28.106, -3.471, 142.667), Vector3(-28.106, -3.471, 145.333), Vector3(-28.106, -3.471, 148), Vector3(-28.106, -3.471, 150.667), Vector3(-28.106, -3.471, 153.333), Vector3(-28.106, -3.471, 156), Vector3(-28.106, -3.471, 158.667), Vector3(-28.106, -3.471, 161.333), Vector3(-28.106, -3.471, 164), Vector3(-28.106, -3.471, 166.667), Vector3(-28.106, -3.471, 169.333), Vector3(-28.106, -3.471, 172), Vector3(-28.106, -3.471, 174.667), Vector3(-28.106, -3.471, 177.333), Vector3(-28.106, -3.471, 180), Vector3(-28.106, -3.471, 182.667), Vector3(-28.106, -3.471, 185.333), Vector3(-28.106, -3.471, 188), Vector3(-28.106, -3.471, 190.667), Vector3(-28.106, -3.471, 193.333), Vector3(-28.106, -3.471, 196), Vector3(-28.106, -3.471, 198.667), Vector3(-28.106, -3.471, 201.333), Vector3(-28.106, -3.471, 204), Vector3(-28.106, -3.471, 206.667), Vector3(-28.106, -3.471, 209.333), Vector3(-28.106, -3.471, 212), Vector3(-28.106, -3.471, 214.667), Vector3(-28.106, -3.471, 217.333), Vector3(-28.106, -3.471, 220), Vector3(-28.106, -3.471, 222.667), Vector3(-28.106, -3.471, 225.333), Vector3(-28.106, -3.471, 228), Vector3(-28.106, -3.471, 230.667), Vector3(-28.106, -3.471, 233.333), Vector3(-28.106, -3.471, 236), Vector3(-28.106, -3.471, 238.667), Vector3(-28.106, -3.471, 241.333), Vector3(-28.106, -3.471, 244), Vector3(-28.106, -3.471, 246.667), Vector3(-28.106, -3.471, 249.333), Vector3(-28.106, -3.471, 252), Vector3(-28.106, -3.471, 254.667), Vector3(-28.106, -3.471, 257.333), Vector3(-28.106, -3.471, 260), Vector3(-28.106, -3.471, 262.667), Vector3(-28.106, -3.471, 265.333), Vector3(-28.106, -3.471, 268), Vector3(-28.106, -3.471, 270.667), Vector3(-28.106, -3.471, 273.333), Vector3(-28.106, -3.471, 276), Vector3(-28.106, -3.471, 278.667), Vector3(-28.106, -3.471, 281.333), Vector3(-28.106, -3.471, 284), Vector3(-28.106, -3.471, 286.667), Vector3(-28.106, -3.471, 289.333), Vector3(-28.106, -3.471, 292), Vector3(-28.106, -3.471, 294.667), Vector3(-28.106, -3.471, 297.333), Vector3(-28.106, -3.471, 300), Vector3(-28.106, -3.471, 302.667), Vector3(-28.106, -3.471, 305.333), Vector3(-28.106, -3.471, 308), Vector3(-28.106, -3.471, 310.667), Vector3(-28.106, -3.471, 313.333), Vector3(-28.106, -3.471, 316), Vector3(-28.106, -3.471, 318.667), Vector3(-28.106, -3.471, 321.333), Vector3(-28.106, -3.471, 324), Vector3(-28.106, -3.471, 326.667), Vector3(-28.106, -3.471, 329.333), Vector3(-28.106, -3.471, 332), Vector3(-28.106, -3.471, 334.667), Vector3(-28.106, -3.471, 337.333), Vector3(-28.106, -3.471, 340), Vector3(-28.106, -3.471, 342.667), Vector3(-28.106, -3.471, 345.333), Vector3(-28.106, -3.471, 348), Vector3(-28.106, -3.471, 350.667), Vector3(-28.106, -3.471, 353.333), Vector3(-28.106, -3.471, 356), Vector3(-28.106, -3.471, 358.667), Vector3(-28.106, -3.471, 361.333), Vector3(-28.106, -3.471, 364), Vector3(-28.106, -3.471, 366.667), Vector3(-28.106, -3.471, 369.333), Vector3(-28.106, -3.471, 372), Vector3(-28.106, -3.471, 374.667), Vector3(-28.106, -3.471, 377.333), Vector3(-28.106, -3.471, 380), Vector3(-28.106, -3.471, 382.667), Vector3(-28.106, -3.471, 385.333), Vector3(-28.106, -3.471, 388), Vector3(-28.106, -3.471, 390.667), Vector3(-28.106, -3.471, 393.333), Vector3(-28.106, -3.471, 396), Vector3(-28.106, -3.471, 398.667), Vector3(-28.106, -3.471, 401.333), Vector3(-28.106, -3.471, 404), Vector3(-28.106, -3.471, 406.667), Vector3(-28.106, -3.471, 409.333), Vector3(-28.106, -3.471, 412), Vector3(-28.106, -3.471, 414.667), Vector3(-28.106, -3.471, 417.333), Vector3(-28.106, -3.471, 420), Vector3(-28.106, -3.471, 422.667), Vector3(-28.106, -3.471, 425.333), Vector3(-28.106, -3.471, 428), Vector3(-28.106, -3.471, 430.667), Vector3(-28.106, -3.471, 433.333), Vector3(-28.106, -3.471, 436), Vector3(-28.106, -3.471, 438.667), Vector3(-28.106, -3.471, 441.333), Vector3(-28.106, -3.471, 444), Vector3(-28.106, -3.471, 446.667), Vector3(-28.106, -3.471, 449.333), Vector3(-28.106, -3.471, 452), Vector3(-28.106, -3.471, 454.667), Vector3(-28.106, -3.471, 457.333), Vector3(-28.106, -3.471, 460), Vector3(-28.106, -3.471, 462.667), Vector3(-28.106, -3.471, 465.333), Vector3(-28.106, -3.471, 468), Vector3(-28.106, -3.471, 470.667), Vector3(-28.106, -3.471, 473.333), Vector3(-28.106, -3.471, 476), Vector3(-28.106, -3.471, 478.667), Vector3(-28.106, -3.471, 481.333), Vector3(-28.106, -3.471, 484), Vector3(-28.106, -3.471, 486.667), Vector3(-28.106, -3.471, 489.333), Vector3(-28.106, -3.471, 492), Vector3(-28.106, -3.471, 494.667), Vector3(-28.106, -3.471, 497.333), Vector3(-28.106, -3.471, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_0juqp"]
+resource_name = "train_arrive_peron2"
+length = 20.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(0.25, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("./Burun tarafı kapılar")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("./Kıç tarafı kapılar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("./subway_car_004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("./subway_car_006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("./Train2/subway_car_004")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("./Train2/subway_car_006")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("./TrainAudio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.92,
+"start_offset": 3.6,
+"stream": ExtResource("4_l0djf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(6.06286, 1, 1),
+"update": 0,
+"values": [Vector3(-6.13, -3.471, 0), Vector3(-6.13, -3.471, 100), Vector3(-6.13, -3.471, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_igj63"]
+resource_name = "train_arrive_peron3"
+length = 15.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(0.25, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("./Burun tarafı kapılar")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("./Kıç tarafı kapılar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("./subway_car_004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("./subway_car_006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("./Train2/subway_car_004")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("./Train2/subway_car_006")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("./TrainAudio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.92,
+"start_offset": 3.6,
+"stream": ExtResource("4_l0djf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(6.06286, 1, 1),
+"update": 0,
+"values": [Vector3(-1.6, -3.471, 0), Vector3(-1.6, -3.471, 100), Vector3(-1.6, -3.471, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_ri8jk"]
+resource_name = "train_arrive_peron4"
+length = 10.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(0.25, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("./Burun tarafı kapılar")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(-0.0333333, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("./Kıç tarafı kapılar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(-0.0666667, 1, 0, 0, -0.5, 0.966667, 1, 0, 0, 0.5)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("./subway_car_004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(1.19209e-07, 1, 0, 0, 0.5, 1.1, 1, 0, 0, -0.5)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("./subway_car_006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("./Train2/Burun tarafı kapılar")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("./Train2/Kıç tarafı kapılar")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("./Train2/subway_car_004")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 1, 1, 0, 0, -0.5)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("./Train2/subway_car_006")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 1, 1, 0, 0, 0.5)
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("./TrainAudio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.92,
+"start_offset": 3.6,
+"stream": ExtResource("4_l0djf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(6.06286, 1, 1),
+"update": 0,
+"values": [Vector3(20.032, -3.471, 0), Vector3(20.032, -3.471, 100), Vector3(20.032, -3.471, 500)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jascy"]
@@ -943,6 +948,24 @@ environment = SubResource("Environment_lahrx")
 [node name="FullScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_r4afn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4611, 0.0175877, -9.56495)
 
+[node name="Poster 5" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D/posterler_updated" index="5"]
+surface_material_override/0 = null
+
+[node name="Poster 11" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D/posterler_updated" index="6"]
+surface_material_override/0 = null
+
+[node name="CollisionShape3D4" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="35"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.84217e-14, 0, 2.84217e-14, 1, -0.171277, 0.0226285, -0.0304738)
+
+[node name="CollisionShape3D10" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0182802, -0.235296, 0.0366039)
+
+[node name="CollisionShape3D59" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="51"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244288, -0.104464, -0.00676129)
+
+[node name="CollisionShape3D62" parent="SubViewportContainer/SubViewport/FullScene/Final_final_Setup_Empty/StaticBody3D" index="54"]
+transform = Transform3D(0.998406, 6.72713e-09, -0.0564314, -6.72713e-09, 1, 1.89978e-10, 0.0564314, 1.89978e-10, 0.998406, -0.246618, -0.100095, -0.0426058)
+
 [node name="Cube_004" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="0"]
 surface_material_override/0 = null
 surface_material_override/1 = null
@@ -970,12 +993,6 @@ surface_material_override/1 = null
 surface_material_override/0 = null
 surface_material_override/1 = null
 
-[node name="2 WAGONS" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_009" index="0"]
-transform = Transform3D(-1.21704e-07, 0, 1.95426, 0, 1.82609, 0, -2.78427, 0, -8.54233e-08, 0.88456, 0.463, 0.0069046)
-
-[node name="InputText" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_009" index="1"]
-transform = Transform3D(-1.21704e-07, 0, 1.95426, 0, 1.82609, 0, -2.78427, 0, -8.54234e-08, 0.884911, -2.262, 0.0422211)
-
 [node name="Cube_010" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="6"]
 surface_material_override/0 = null
 surface_material_override/1 = null
@@ -983,48 +1000,6 @@ surface_material_override/1 = null
 [node name="Cube_011" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="7"]
 surface_material_override/0 = null
 surface_material_override/1 = null
-
-[node name="2 WAGONS" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_011" index="0"]
-transform = Transform3D(-1.21704e-07, 0, 1.95426, 0, 1.82609, 0, -2.78427, 0, -8.54233e-08, 0.894249, 0.463, 0)
-
-[node name="InputText" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_011" index="1"]
-transform = Transform3D(-1.21704e-07, 0, 1.95426, 0, 1.82609, 0, -2.78427, 0, -8.54234e-08, 0.8946, -2.262, 0.0352936)
-
-[node name="Poster 1" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="8"]
-surface_material_override/0 = null
-
-[node name="Poster 7" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="9"]
-surface_material_override/0 = null
-
-[node name="Poster 8" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="10"]
-surface_material_override/0 = null
-
-[node name="Poster 3" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="12"]
-surface_material_override/0 = null
-
-[node name="Poster 4" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="13"]
-surface_material_override/0 = null
-
-[node name="Poster 11" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="14"]
-surface_material_override/0 = null
-
-[node name="Poster 12" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="15"]
-surface_material_override/0 = null
-
-[node name="Poster 5" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="16"]
-surface_material_override/0 = null
-
-[node name="Poster 6" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="17"]
-surface_material_override/0 = null
-
-[node name="Poster 6_001" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="18"]
-surface_material_override/0 = null
-
-[node name="Poster 10" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="20"]
-surface_material_override/0 = null
-
-[node name="Poster 6_002" parent="SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters" index="21"]
-surface_material_override/0 = null
 
 [node name="Camera" parent="SubViewportContainer/SubViewport/FullScene" index="8"]
 transform = Transform3D(0.0196938, 0.00171476, -0.166857, -0.0111243, 0.158139, -1.16415e-10, 0.14077, 0.012257, 0.0233433, -16.7377, 1.4737, -15.8782)
@@ -1040,9 +1015,6 @@ light_color = Color(1, 0, 0, 1)
 light_energy = 0.1
 light_indirect_energy = 0.0
 
-[node name="Camera3" parent="SubViewportContainer/SubViewport/FullScene" index="9"]
-transform = Transform3D(-0.0288567, 0.0375759, -0.159682, -0.00877522, -0.154484, -0.0383958, -0.139783, 0.00194095, 0.0353751, 8.38759, 1.39576, -17.8481)
-
 [node name="Cube" parent="SubViewportContainer/SubViewport/FullScene/Camera3" index="0"]
 surface_material_override/0 = null
 surface_material_override/1 = null
@@ -1053,9 +1025,6 @@ transform = Transform3D(6.99301, -8.64267e-07, 7.15256e-07, 6.03497e-07, 6.28931
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.1
 light_indirect_energy = 0.0
-
-[node name="Camera2" parent="SubViewportContainer/SubViewport/FullScene" index="10"]
-transform = Transform3D(0.00783545, 0.000682241, 0.168226, -0.02449, 0.156263, 0.0008779, -0.140238, -0.0272504, 0.00924587, 3.56887, 5.42753, 33.0686)
 
 [node name="Cube" parent="SubViewportContainer/SubViewport/FullScene/Camera2" index="0"]
 surface_material_override/0 = null
@@ -1108,6 +1077,9 @@ surface_material_override/1 = null
 [node name="leather" parent="SubViewportContainer/SubViewport/FullScene/Int Objects2/Keys" index="0"]
 surface_material_override/0 = null
 surface_material_override/1 = null
+
+[node name="St_03_163" parent="SubViewportContainer/SubViewport/FullScene/Int Objects2/Trashcan2" index="5"]
+transform = Transform3D(1, 0, 0, 0, 0.866091, 0, 0, 0, 1, -15.2746, -4.76837e-07, -0.523643)
 
 [node name="Train" parent="SubViewportContainer/SubViewport/FullScene" instance=ExtResource("3_qa76i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.106, -3.471, 0)
@@ -1729,15 +1701,16 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
-transform = Transform3D(-4.37114e-08, -0.390731, 0.920505, 0, 0.920505, 0.390731, -1, 1.70794e-08, -4.02365e-08, 28.852, 0.806, -27.83)
+transform = Transform3D(-4.37114e-08, -0.390731, 0.920505, 0, 0.920505, 0.390731, -1, 1.70794e-08, -4.02365e-08, 28.792, 1.236, -27.78)
 environment = ExtResource("5_0qrds")
+fov = 79.8
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
 transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, 40.78, 1.5, -50)
 environment = ExtResource("5_0qrds")
 
 [node name="Camera3D3" type="Camera3D" parent="SubViewportContainer3/SubViewport/CanvasLayer/ColorRect"]
-transform = Transform3D(-0.951057, 0.0536602, -0.304322, 0, 0.984808, 0.173648, 0.309017, 0.165149, -0.936608, 3.048, 0.806, -25.554)
+transform = Transform3D(-0.951057, 0.0536601, -0.304322, 0, 0.984808, 0.173648, 0.309017, 0.165149, -0.936608, 4.13217, 1.60927, -24.9065)
 environment = ExtResource("5_0qrds")
 fov = 40.0
 
@@ -1817,6 +1790,208 @@ autoplay = true
 max_distance = 100.0
 parameters/looping = true
 
+[node name="creeep_anim" parent="." instance=ExtResource("15_ajvji")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 23.2623, -2.6263, -26.196)
+
+[node name="Skeleton3D" parent="creeep_anim/rig" index="0"]
+bones/1/position = Vector3(-0.0674709, 0.222837, 3.14151)
+bones/1/rotation = Quaternion(0.786441, 0.0455434, 0.0352914, 0.614972)
+bones/2/rotation = Quaternion(-0.207055, 3.81627e-09, -3.46577e-10, 0.978329)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(0.134607, -0.0166613, 0.00437476, 0.990749)
+bones/4/rotation = Quaternion(0.070094, -0.0488973, 0.00555187, 0.996326)
+bones/5/rotation = Quaternion(0.193993, 0.0303168, -0.0128136, 0.980451)
+bones/6/rotation = Quaternion(-0.0948098, -0.0313756, 0.00298968, 0.994996)
+bones/7/rotation = Quaternion(-0.0534237, -0.000791413, 0.00014875, 0.998572)
+bones/8/position = Vector3(0.566475, -0.0480945, 4.04527)
+bones/8/rotation = Quaternion(0.197924, 0.961653, 0.0681555, 0.17721)
+bones/8/scale = Vector3(1, 26.0224, 1)
+bones/9/position = Vector3(-0.842292, 0.838262, 4.33936)
+bones/9/rotation = Quaternion(-0.221319, 0.96435, 0.0317889, -0.14155)
+bones/9/scale = Vector3(1, 16.7941, 1)
+bones/10/position = Vector3(0.557656, 0.0510485, 1.7131)
+bones/10/rotation = Quaternion(0.931535, 0.175701, -0.31725, 0.0269138)
+bones/10/scale = Vector3(1, 19.1533, 1)
+bones/11/position = Vector3(-0.296284, -0.543907, 1.70405)
+bones/11/rotation = Quaternion(0.952242, -0.13342, 0.274624, 0.00387531)
+bones/11/scale = Vector3(1, 16.8984, 1)
+bones/13/position = Vector3(-0.0604123, 0.173319, -0.175934)
+bones/13/rotation = Quaternion(-0.00439758, 0, 0.0576166, 0.998329)
+bones/15/position = Vector3(4.42378e-09, 0.0116768, 0.687647)
+bones/15/rotation = Quaternion(0.136709, -0.0107463, -0.0647506, 0.988434)
+bones/26/rotation = Quaternion(0.97459, 0.0630163, -0.141345, 0.161939)
+bones/26/scale = Vector3(0.963695, 0.963695, 0.963695)
+bones/27/rotation = Quaternion(0.474088, 1.25519e-07, -5.2882e-08, 0.880477)
+bones/27/scale = Vector3(0.999062, 0.999062, 0.999062)
+bones/28/rotation = Quaternion(-0.635686, 0.203394, 0.0339817, 0.743895)
+bones/28/scale = Vector3(1.03865, 1.03865, 1.03865)
+bones/29/position = Vector3(6.23947e-06, 0.364119, -0.000161151)
+bones/29/rotation = Quaternion(3.72626e-07, 0.982083, -0.18845, 1.80896e-06)
+bones/29/scale = Vector3(1, 1.00001, 1.00002)
+bones/33/scale = Vector3(1.03865, 1.03865, 1.03865)
+bones/35/rotation = Quaternion(-9.08469e-08, 0.115847, 3.91355e-08, 0.993267)
+bones/35/scale = Vector3(1.03865, 1.03865, 1.03865)
+bones/37/scale = Vector3(1.03767, 1.03767, 1.03767)
+bones/38/rotation = Quaternion(2.0759e-08, -0.00971988, -1.9443e-08, 0.999953)
+bones/38/scale = Vector3(1.03767, 1.03767, 1.03767)
+bones/40/rotation = Quaternion(0.9455, 0.0462989, 0.144887, 0.287915)
+bones/40/scale = Vector3(1.01442, 1.01442, 1.01442)
+bones/41/rotation = Quaternion(0.0083941, -1.16107e-07, -9.95589e-09, 0.999965)
+bones/41/scale = Vector3(1.00017, 1.00017, 1.00017)
+bones/42/rotation = Quaternion(-0.75439, -0.0813334, -0.0590105, 0.64869)
+bones/42/scale = Vector3(0.985618, 0.985618, 0.985619)
+bones/43/position = Vector3(3.34477e-05, 0.364133, 0.000742574)
+bones/43/rotation = Quaternion(-5.09176e-08, 0.999509, 0.0313316, -1.86272e-06)
+bones/43/scale = Vector3(1, 0.999999, 1.00003)
+bones/47/scale = Vector3(0.985618, 0.985618, 0.985618)
+bones/49/rotation = Quaternion(-3.4292e-08, -0.0492722, 2.98614e-09, 0.998785)
+bones/49/scale = Vector3(0.985618, 0.985618, 0.985619)
+bones/51/scale = Vector3(0.985782, 0.985781, 0.985782)
+bones/52/rotation = Quaternion(5.11044e-08, -0.00069205, -5.38054e-07, 1)
+bones/52/scale = Vector3(0.985781, 0.985758, 0.985758)
+bones/62/rotation = Quaternion(-0.539856, -0.141476, 0.0751618, 0.826372)
+bones/63/rotation = Quaternion(-0.242844, 0.00537221, 0.00134496, 0.97005)
+bones/63/scale = Vector3(0.963694, 0.963694, 0.963694)
+bones/64/rotation = Quaternion(0.474088, 1.10692e-07, -4.68894e-08, 0.880477)
+bones/64/scale = Vector3(0.999062, 0.999062, 0.999062)
+bones/65/rotation = Quaternion(0.971844, 0.0600459, -0.159135, 0.163063)
+bones/67/rotation = Quaternion(0.971844, 0.060046, -0.159135, 0.163063)
+bones/67/scale = Vector3(1.01866, 0.963695, 1.01866)
+bones/68/rotation = Quaternion(-8.97865e-08, 0.00855817, -2.34657e-08, 0.999963)
+bones/69/rotation = Quaternion(0.473874, 0.00844142, -0.00453473, 0.880541)
+bones/69/scale = Vector3(1.00047, 0.961807, 1.04057)
+bones/70/rotation = Quaternion(3.39839e-08, 0.0514083, 4.71999e-09, 0.998678)
+bones/71/rotation = Quaternion(-0.636684, 0.165309, 0.0011253, 0.753196)
+bones/71/scale = Vector3(0.983932, 0.983014, 1.03439)
+bones/72/rotation = Quaternion(-8.07249e-06, 0.982125, -0.188232, 3.29258e-06)
+bones/72/scale = Vector3(0.99984, 1.00026, 0.999929)
+bones/79/rotation = Quaternion(-5.78827e-08, 0.999509, 0.0313308, -1.86253e-06)
+bones/81/rotation = Quaternion(-0.803622, 0.0888233, -0.130154, 0.5739)
+bones/82/rotation = Quaternion(-0.00417333, -0.00553798, -2.30934e-05, 0.999976)
+bones/82/scale = Vector3(1.01442, 1.01442, 1.01442)
+bones/83/rotation = Quaternion(0.00839411, -1.09532e-07, -6.94143e-09, 0.999965)
+bones/83/scale = Vector3(1.00017, 1.00017, 1.00017)
+bones/84/rotation = Quaternion(0.945699, 0.0459005, 0.143579, 0.287978)
+bones/86/rotation = Quaternion(0.945699, 0.0459006, 0.143579, 0.287979)
+bones/86/scale = Vector3(0.992865, 1.01442, 0.992866)
+bones/87/rotation = Quaternion(-4.16223e-08, 0.000691167, 2.6937e-08, 1)
+bones/87/scale = Vector3(0.999988, 0.999999, 0.999964)
+bones/88/rotation = Quaternion(0.00839603, 0.000691843, -6.02686e-06, 0.999965)
+bones/88/scale = Vector3(0.999929, 1.00017, 0.999947)
+bones/89/rotation = Quaternion(1.33778e-09, 0.0153837, -3.72403e-08, 0.999882)
+bones/90/rotation = Quaternion(-0.75273, -0.0914433, -0.0704978, 0.648125)
+bones/90/scale = Vector3(1.00736, 1.00655, 0.986253)
+bones/91/rotation = Quaternion(-4.59659e-05, 0.99954, 0.0303124, -3.1709e-06)
+bones/91/scale = Vector3(0.99986, 1.00028, 0.999892)
+bones/95/position = Vector3(1.00117e-08, 0.0116768, 0.687647)
+bones/95/rotation = Quaternion(0.068553, -0.00538878, -0.0324693, 0.997104)
+bones/97/position = Vector3(9.31323e-10, -4.6963e-07, 3.18562e-08)
+bones/97/rotation = Quaternion(-0.100629, 0.0164326, -0.00108857, 0.994788)
+bones/100/position = Vector3(4.65661e-10, 0.568015, 6.08842e-08)
+bones/100/rotation = Quaternion(-0.644515, -0.0264617, -0.0195722, 0.763883)
+bones/102/rotation = Quaternion(0.193993, 0.0303168, -0.0128136, 0.980451)
+bones/103/rotation = Quaternion(-0.0948099, -0.0313756, 0.00298968, 0.994996)
+bones/104/rotation = Quaternion(-0.0534237, -0.000791413, 0.000148749, 0.998572)
+bones/105/rotation = Quaternion(-0.74408, 0.0264935, 0.0195292, 0.667279)
+bones/106/rotation = Quaternion(0.83541, 5.13246e-10, -9.29288e-11, 0.549627)
+bones/107/rotation = Quaternion(-0.87067, 0.030087, 0.0133441, 0.490765)
+bones/108/rotation = Quaternion(0.81518, -0.0444397, -0.0444397, 0.575789)
+bones/111/rotation = Quaternion(0.0849878, -0.0315536, -5.96173e-09, 0.995882)
+bones/116/rotation = Quaternion(-0.206792, 0.477267, -0.797393, 0.30597)
+bones/116/scale = Vector3(0.972737, 0.972738, 0.972737)
+bones/117/rotation = Quaternion(0.517495, -1.07847e-06, 8.06751e-07, 0.855686)
+bones/117/scale = Vector3(0.995149, 0.995149, 0.995149)
+bones/118/rotation = Quaternion(-0.140389, 0.234493, -0.179747, 0.944984)
+bones/118/scale = Vector3(1.03304, 1.03304, 1.03304)
+bones/121/scale = Vector3(1.03304, 1.03304, 1.03304)
+bones/123/rotation = Quaternion(-2.24536e-07, 0.119696, -8.19404e-08, 0.992811)
+bones/123/scale = Vector3(1.03304, 1.03304, 1.03304)
+bones/125/scale = Vector3(1.02803, 1.02803, 1.02803)
+bones/126/rotation = Quaternion(2.80855e-07, -0.052679, -1.48605e-08, 0.998612)
+bones/126/scale = Vector3(1.02803, 1.02803, 1.02803)
+bones/131/rotation = Quaternion(-0.230097, -0.640976, 0.694623, -0.231741)
+bones/135/rotation = Quaternion(-0.0915563, -0.343499, 0.925842, 0.128229)
+bones/136/rotation = Quaternion(-0.24649, -0.00103198, -0.000263185, 0.969145)
+bones/136/scale = Vector3(0.972737, 0.972737, 0.972737)
+bones/137/rotation = Quaternion(0.517495, -1.08819e-06, 8.03541e-07, 0.855686)
+bones/137/scale = Vector3(0.995149, 0.995149, 0.995149)
+bones/138/rotation = Quaternion(-0.283659, 0.445112, -0.773393, 0.351107)
+bones/140/rotation = Quaternion(-0.28366, 0.445112, -0.773392, 0.351108)
+bones/140/scale = Vector3(1.01392, 0.972736, 1.01392)
+bones/141/rotation = Quaternion(-1.54143e-08, 0.0450764, -1.87076e-09, 0.998984)
+bones/142/rotation = Quaternion(0.51667, 0.0446164, -0.0270546, 0.854593)
+bones/142/scale = Vector3(1.00244, 0.963592, 1.03587)
+bones/143/rotation = Quaternion(-2.24509e-07, 0.123679, 4.3995e-09, 0.992322)
+bones/144/rotation = Quaternion(-0.116419, 0.115051, -0.196495, 0.966747)
+bones/144/scale = Vector3(0.992132, 1.02353, 0.985529)
+bones/146/rotation = Quaternion(-0.437215, -0.713826, 0.467598, 0.283986)
+bones/146/scale = Vector3(0.983151, 0.983152, 0.983151)
+bones/147/rotation = Quaternion(0.356153, 1.37679e-06, -7.11181e-07, 0.934428)
+bones/147/scale = Vector3(0.997143, 0.997142, 0.997143)
+bones/148/rotation = Quaternion(-0.0041401, 0.198808, 0.213479, 0.956496)
+bones/148/scale = Vector3(1.02005, 1.02005, 1.02005)
+bones/151/scale = Vector3(1.02005, 1.02005, 1.02005)
+bones/153/rotation = Quaternion(-1.20779e-07, 0.101094, 1.03331e-07, 0.994877)
+bones/153/scale = Vector3(1.02005, 1.02005, 1.02005)
+bones/155/scale = Vector3(1.01714, 1.01714, 1.01714)
+bones/156/rotation = Quaternion(-7.67227e-09, 0.0286314, -2.73825e-08, 0.99959)
+bones/156/scale = Vector3(1.01714, 1.01714, 1.01714)
+bones/165/rotation = Quaternion(0.0366885, -0.759553, 0.645957, 0.0668878)
+bones/166/rotation = Quaternion(-0.167034, 0.00104985, 0.00017852, 0.98595)
+bones/166/scale = Vector3(0.983152, 0.983151, 0.983152)
+bones/167/rotation = Quaternion(0.356153, 1.37749e-06, -7.0522e-07, 0.934428)
+bones/167/scale = Vector3(0.997143, 0.997143, 0.997143)
+bones/168/rotation = Quaternion(-0.462432, -0.697009, 0.442676, 0.323069)
+bones/170/rotation = Quaternion(-0.462432, -0.697009, 0.442675, 0.32307)
+bones/170/scale = Vector3(1.00853, 0.98315, 1.00853)
+bones/171/rotation = Quaternion(1.80168e-08, -0.0267533, 3.19942e-09, 0.999642)
+bones/172/rotation = Quaternion(0.356008, -0.0266153, 0.010065, 0.93405)
+bones/172/scale = Vector3(1.00143, 0.986104, 1.01297)
+bones/173/rotation = Quaternion(-6.47372e-08, 0.0971007, 3.65876e-09, 0.995275)
+bones/174/rotation = Quaternion(-0.0253184, 0.104548, 0.212052, 0.97132)
+bones/174/scale = Vector3(0.995136, 1.01491, 0.990383)
+bones/185/position = Vector3(-1.66323, -0.664747, 0.00315312)
+bones/185/rotation = Quaternion(-0.246484, -0.283658, 0.851223, 0.366336)
+bones/187/position = Vector3(1.4682, 4.55424, -2.25953)
+bones/187/rotation = Quaternion(-0.606953, -0.00762359, -0.00318795, 0.794694)
+bones/190/position = Vector3(0.964317, 1.08028, -0.28798)
+bones/190/rotation = Quaternion(-0.244432, -0.68855, 0.680987, 0.0490778)
+bones/192/position = Vector3(-1.52437, 4.54171, -2.30738)
+bones/192/rotation = Quaternion(-0.606953, -0.00762359, -0.00318794, 0.794694)
+bones/195/position = Vector3(-0.105493, 1.22253, 0.580629)
+bones/195/rotation = Quaternion(0.489796, -1.08587e-16, 0, 0.871837)
+bones/202/rotation = Quaternion(0.999762, -2.60226e-09, 1.19181e-07, -0.0218293)
+bones/205/rotation = Quaternion(1.68385e-06, 0.166967, 0.985963, -3.87022e-07)
+bones/206/position = Vector3(1.68137, 1.51297, 3.00542)
+bones/206/rotation = Quaternion(-0.709035, 0.0407412, 0.0407412, 0.702816)
+bones/209/position = Vector3(0.105493, -1.15945, -0.0315422)
+bones/209/rotation = Quaternion(-0.256493, 7.37759e-17, 0, 0.966546)
+bones/216/rotation = Quaternion(0.999762, 2.60225e-09, -1.19181e-07, -0.0218293)
+bones/219/rotation = Quaternion(-1.74196e-06, -0.0531427, 0.998587, 9.27021e-08)
+bones/220/position = Vector3(-1.03383, 1.51435, 3.31986)
+bones/220/rotation = Quaternion(-0.709035, 0.0407412, 0.0407412, 0.702816)
+
+[node name="AnimationPlayer" parent="creeep_anim" index="82"]
+autoplay = "rigAction"
+
+[node name="Basic Interactable" parent="." instance=ExtResource("16_htckt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1211, 2.48677, 22.7787)
+
+[node name="card" parent="." instance=ExtResource("17_a4n8i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1317, 3.50216, 12.5214)
+script = ExtResource("18_gbx5h")
+
+[node name="CollisionShape3D" parent="card" index="1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.0523901, 0.0108202, -0.00940132)
+
+[node name="paper" parent="." instance=ExtResource("19_jd2pr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4192, 2.53017, 12.2402)
+
+[connection signal="grabed" from="Basic Interactable" to="SubViewportContainer/SubViewport/Character" method="_on_basic_interactable_grabed"]
+[connection signal="letgo" from="Basic Interactable" to="SubViewportContainer/SubViewport/Character" method="_on_basic_interactable_letgo"]
+[connection signal="grabed" from="card" to="SubViewportContainer/SubViewport/Character" method="_on_card_grabed"]
+[connection signal="letgo" from="card" to="SubViewportContainer/SubViewport/Character" method="_on_card_letgo"]
+
 [editable path="SubViewportContainer/SubViewport/FullScene"]
 [editable path="SubViewportContainer/SubViewport/FullScene/Train"]
 [editable path="SubViewportContainer/SubViewport/FullScene/Train/Train2"]
@@ -1826,3 +2001,6 @@ parameters/looping = true
 [editable path="SubViewportContainer/SubViewport/FullScene/Train3/Train2"]
 [editable path="SubViewportContainer/SubViewport/FullScene/Train4"]
 [editable path="SubViewportContainer/SubViewport/FullScene/Train4/Train2"]
+[editable path="SubViewportContainer/SubViewport/Character"]
+[editable path="creeep_anim"]
+[editable path="card"]
