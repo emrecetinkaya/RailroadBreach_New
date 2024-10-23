@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkdkl6i1h8xwm"
 path.s3tc="res://.godot/imported/Tabelas ve Posters_2.png-ae6e35cf4bab744a0a730c57387dee01.s3tc.ctex"
-path.etc2="res://.godot/imported/Tabelas ve Posters_2.png-ae6e35cf4bab744a0a730c57387dee01.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Art/Models/New Mods/FBXs/Tabelas ve Posters_2.png"
-dest_files=["res://.godot/imported/Tabelas ve Posters_2.png-ae6e35cf4bab744a0a730c57387dee01.s3tc.ctex", "res://.godot/imported/Tabelas ve Posters_2.png-ae6e35cf4bab744a0a730c57387dee01.etc2.ctex"]
+dest_files=["res://.godot/imported/Tabelas ve Posters_2.png-ae6e35cf4bab744a0a730c57387dee01.s3tc.ctex"]
 
 [params]
 

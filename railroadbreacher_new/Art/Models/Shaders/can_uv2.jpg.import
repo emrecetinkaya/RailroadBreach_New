@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgvxuis8qlkyl"
 path.s3tc="res://.godot/imported/can_uv2.jpg-95668a184ecbd5b5e9f0ff4309c5fc3f.s3tc.ctex"
-path.etc2="res://.godot/imported/can_uv2.jpg-95668a184ecbd5b5e9f0ff4309c5fc3f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/Models/Shaders/can_uv2.jpg"
-dest_files=["res://.godot/imported/can_uv2.jpg-95668a184ecbd5b5e9f0ff4309c5fc3f.s3tc.ctex", "res://.godot/imported/can_uv2.jpg-95668a184ecbd5b5e9f0ff4309c5fc3f.etc2.ctex"]
+dest_files=["res://.godot/imported/can_uv2.jpg-95668a184ecbd5b5e9f0ff4309c5fc3f.s3tc.ctex"]
 
 [params]
 

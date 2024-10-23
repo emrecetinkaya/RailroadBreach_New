@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvuv7lrcimjsm"
 path.s3tc="res://.godot/imported/TilesPlain0276_2_seamless_S.jpg-ab4d4903b4ed7e729c86cc4805b0b677.s3tc.ctex"
-path.etc2="res://.godot/imported/TilesPlain0276_2_seamless_S.jpg-ab4d4903b4ed7e729c86cc4805b0b677.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/Models/Textures/TilesPlain0276_2_seamless_S.jpg"
-dest_files=["res://.godot/imported/TilesPlain0276_2_seamless_S.jpg-ab4d4903b4ed7e729c86cc4805b0b677.s3tc.ctex", "res://.godot/imported/TilesPlain0276_2_seamless_S.jpg-ab4d4903b4ed7e729c86cc4805b0b677.etc2.ctex"]
+dest_files=["res://.godot/imported/TilesPlain0276_2_seamless_S.jpg-ab4d4903b4ed7e729c86cc4805b0b677.s3tc.ctex"]
 
 [params]
 

@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwp023j38t3o3"
 path.s3tc="res://.godot/imported/old-vintage-computer-illustration_184220-455.png-c0f43a56c2e2de33a4406c7f202798c1.s3tc.ctex"
-path.etc2="res://.godot/imported/old-vintage-computer-illustration_184220-455.png-c0f43a56c2e2de33a4406c7f202798c1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/Models/Shaders/old-vintage-computer-illustration_184220-455.png"
-dest_files=["res://.godot/imported/old-vintage-computer-illustration_184220-455.png-c0f43a56c2e2de33a4406c7f202798c1.s3tc.ctex", "res://.godot/imported/old-vintage-computer-illustration_184220-455.png-c0f43a56c2e2de33a4406c7f202798c1.etc2.ctex"]
+dest_files=["res://.godot/imported/old-vintage-computer-illustration_184220-455.png-c0f43a56c2e2de33a4406c7f202798c1.s3tc.ctex"]
 
 [params]
 

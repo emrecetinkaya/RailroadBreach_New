@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://die5owjhqsu7h"
 path.s3tc="res://.godot/imported/metro pst yazili textured lowq.png-466a4b54c6ef69322c20594d21a0a670.s3tc.ctex"
-path.etc2="res://.godot/imported/metro pst yazili textured lowq.png-466a4b54c6ef69322c20594d21a0a670.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://2D Sprites/metro pst yazili textured lowq.png"
-dest_files=["res://.godot/imported/metro pst yazili textured lowq.png-466a4b54c6ef69322c20594d21a0a670.s3tc.ctex", "res://.godot/imported/metro pst yazili textured lowq.png-466a4b54c6ef69322c20594d21a0a670.etc2.ctex"]
+dest_files=["res://.godot/imported/metro pst yazili textured lowq.png-466a4b54c6ef69322c20594d21a0a670.s3tc.ctex"]
 
 [params]
 

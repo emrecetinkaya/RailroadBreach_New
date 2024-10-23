@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cusu4frx2qyf8"
 path.s3tc="res://.godot/imported/Tiles.png-df4eb4ba3899aab4575e0e168d18ef4b.s3tc.ctex"
-path.etc2="res://.godot/imported/Tiles.png-df4eb4ba3899aab4575e0e168d18ef4b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/Models/New Mods/Materials/Textures/Tiles.png"
-dest_files=["res://.godot/imported/Tiles.png-df4eb4ba3899aab4575e0e168d18ef4b.s3tc.ctex", "res://.godot/imported/Tiles.png-df4eb4ba3899aab4575e0e168d18ef4b.etc2.ctex"]
+dest_files=["res://.godot/imported/Tiles.png-df4eb4ba3899aab4575e0e168d18ef4b.s3tc.ctex"]
 
 [params]
 
