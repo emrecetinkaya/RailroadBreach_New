@@ -1,11 +1,20 @@
 extends Control
 var correct = false
-var submit = null
+var submit = "text"
+var currentframe = 18000
+var kharmapoints = 100000
+
+@onready var subtitle_label: Label = $"../../../SubViewportContainer/SubViewport/Character/Control/SubtitleLabel"
+
+
+
 func _ready() -> void:
 	start_progress_bar()
+	get_tree().create_timer(60).timeout
+	kharmapoints = 100000
 	
 func start_progress_bar():
-	$ProgressBar.value = 18000
+	$ProgressBar.value = 1000
 	
 func _on_button_pressed() -> void:
 	$LineEdit.insert_text_at_caret("1")
@@ -52,7 +61,7 @@ func _on_button_11_pressed() -> void:
 	
 
 func _on_button_12_pressed() -> void:
-	var submit = $LineEdit.text
+	submit = $LineEdit.text
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_004/InputText".text = (submit)
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_005/InputText".text = (submit)
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_006/InputText".text = (submit)
@@ -66,11 +75,76 @@ func _on_button_12_pressed() -> void:
 	await get_tree().create_timer(1).timeout
 	$LineEdit.clear()
 	$LineEdit.set_text(" MINUTES LEFT")
-	
+
+
+
+func check_entry(station):
+	if station == 0:
+		if "0" or "ARRIVED" in submit:
+			kharmapoints += 1
+	if station == 21:
+		if "21" in submit:
+			kharmapoints += 1
+	if station == 38:
+		if "38" in submit:
+			kharmapoints += 1
+	if station == 60:
+		if "60" in submit:
+			kharmapoints += 1
+	if station == 404:
+		kharmapoints -= 1
+
 
 
 func _physics_process(delta: float) -> void:
-	pass
+	$ProgressBar.value -= 1
+	currentframe = $ProgressBar.value 
+	print(currentframe)
+	if 0 < currentframe and currentframe < 3149:
+		check_entry(0)
+	elif 3151 < currentframe and currentframe < 8099:
+		check_entry(21)
+	elif 8101 < currentframe and currentframe < 13499:
+		check_entry(38)
+	elif 13501 < currentframe and currentframe < 17000:
+		check_entry(60)
+	else:
+		check_entry(404)
+	
+	
+	
+	
+	if currentframe == 600:
+		$"../../../Train/AnimationPlayer".play_backwards("Train Animations/new_train_arrive")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	#if !correct:
 		#$ProgressBar.value -= 1
 	#if submit != null:

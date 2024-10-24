@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd2xk1jajtsyn"]
+[gd_scene load_steps=6 format=3 uid="uid://bd2xk1jajtsyn"]
 
 [ext_resource type="Script" path="res://player/character.gd" id="1_jdgi3"]
+[ext_resource type="FontFile" uid="uid://p5uorqcgb6dv" path="res://menu/Parisine Regular.otf" id="2_ocspb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bosp2"]
 height = 1.73
@@ -66,10 +67,17 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SubtitleLabel" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 576.0
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = -0.0703704
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_colors/font_color = Color(1, 0.928682, 0.542828, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_ocspb")
 theme_override_font_sizes/font_size = 65
+text = "I can't leave, it's not morning yet"
 horizontal_alignment = 1
 vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
