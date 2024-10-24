@@ -14,7 +14,7 @@ func _ready() -> void:
 	kharmapoints = 100000
 	
 func start_progress_bar():
-	$ProgressBar.value = 1000
+	$ProgressBar.value = 18000
 	
 func _on_button_pressed() -> void:
 	$LineEdit.insert_text_at_caret("1")
