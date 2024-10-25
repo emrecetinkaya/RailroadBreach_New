@@ -8,6 +8,11 @@ var crouched = false
 var y = 1
 var spritepath = "res://2D Sprites/Hands/updated akbil.png"
 
+signal entered_screen(screen_enter_count)
+signal exited_screen(screen_exit_count)
+var screen_enter_count = 0
+var screen_exit_count = 0
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -57,19 +62,16 @@ func _input(event):
 			tween.set_parallel()
 			tween.tween_property($Marker3D2, "position", Vector3(0, 0.73,-2), 0.2)
 			
-	#if Input.is_action_just_pressed("1"):
-		#y = 0
-	#if Input.is_action_just_pressed("2"):
-		#y = 1
-	#if Input.is_action_just_pressed("3"):
-		#y = 2
-	#if Input.is_action_just_pressed("4"):
-		#y = 3
+
+
+
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
 		
 	if Input.is_action_just_pressed("Toggle Flashlight"):
 			print("f pressed")
@@ -117,16 +119,20 @@ func _physics_process(delta: float) -> void:
 				
 				
 		if collider.has_method("grab"):
+			$Control/Label.text = "PRESS LEFT CLICK TO GRAB"
 			if Input.is_action_just_pressed("interact") and !hands_full:
 				hands_full = true
 				collider.grab()
 
 
 		if collider.has_method("change_cam") and collider.has_method("enter_cam"):
+			$Control/Label.text = "PRESS LEFT CLICK TO INTERACT"
 			if Input.is_action_just_pressed("interact") and on_camera == false:
 				print(collider)
 				$Camera3D.clear_current()
 				collider.enter_cam()
+				emit_signal("entered_screen", screen_enter_count)
+				screen_enter_count += 1
 				collider.change_cam()
 
 			if Input.is_action_just_pressed("interact") and on_camera == true:
@@ -136,20 +142,12 @@ func _physics_process(delta: float) -> void:
 
 		if collider.has_method("exit_cam"):
 			
-			if (
-				
-				(Input.is_action_just_pressed("secondary") or 
-				Input.is_action_just_pressed("forward") or 
-				Input.is_action_just_pressed("backward") or 
-				Input.is_action_just_pressed("left") or 
-				Input.is_action_just_pressed("right") or 
-				Input.is_action_just_pressed("crouch")) and on_camera == true
-				
-				):
-					
+			if Input.is_action_just_pressed("secondary") and on_camera == true:
 					$Camera3D.make_current()
 					collider.exit_cam()
 					on_camera = false
+					screen_exit_count += 1
+					emit_signal("exited_screen", screen_exit_count)
 
 
 			if collider.has_method("change_cam_better") and !on_camera:
@@ -159,7 +157,8 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-
+	if !$RayCast3D.is_colliding():
+		$Control/Label.text = "."
 
 func _on_card_grabed() -> void:
 	spritepath = $Control/Sprite2D.texture

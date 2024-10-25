@@ -1,12 +1,14 @@
 extends Control
 var correct = false
 var submit = "text"
+var submitcounter = 0
 var currentframe = 18000
 var kharmapoints = 100000
 
 @onready var subtitle_label: Label = $"../../../SubViewportContainer/SubViewport/Character/Control/SubtitleLabel"
 
-
+signal submitcount(submitcounter)
+signal submittedvalue(submit)
 
 func _ready() -> void:
 	start_progress_bar()
@@ -62,6 +64,8 @@ func _on_button_11_pressed() -> void:
 
 func _on_button_12_pressed() -> void:
 	submit = $LineEdit.text
+	submitcounter += 1
+	emit_signal("submittedvalue", submit)
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_004/InputText".text = (submit)
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_005/InputText".text = (submit)
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_006/InputText".text = (submit)
@@ -70,6 +74,8 @@ func _on_button_12_pressed() -> void:
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_009/InputText".text = (submit)
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_010/InputText".text = (submit)
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_011/InputText".text = (submit)
+
+
 	$LineEdit.clear()
 	$LineEdit.insert_text_at_caret("    SUBMITTED    ")
 	await get_tree().create_timer(1).timeout
@@ -99,7 +105,6 @@ func check_entry(station):
 func _physics_process(delta: float) -> void:
 	$ProgressBar.value -= 1
 	currentframe = $ProgressBar.value 
-	print(currentframe)
 	if 0 < currentframe and currentframe < 3149:
 		check_entry(0)
 	elif 3151 < currentframe and currentframe < 8099:
@@ -110,12 +115,16 @@ func _physics_process(delta: float) -> void:
 		check_entry(60)
 	else:
 		check_entry(404)
+		
+	
 	
 	
 	
 	
 	if currentframe == 600:
 		$"../../../Train/AnimationPlayer".play_backwards("Train Animations/new_train_arrive")
+		await get_tree().create_timer(10).timeout
+		$"../../../Train/AnimationPlayer".play("Train Animations/new_train_arrive")
 	
 	
 	

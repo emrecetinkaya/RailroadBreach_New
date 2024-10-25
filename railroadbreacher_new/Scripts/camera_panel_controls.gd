@@ -8,11 +8,13 @@ extends Area3D
 @onready var audio_listener_3d: AudioListener3D = $"../AudioListener3D"
 
 
-
 var audio = load("res://sounds/(mouse click loud)697565_siyaam_big-mouse-click.mp3")
 var activecamera = camera_1
 var previouscamera = camera_4
 var cameracycle = 0
+
+var cameras_entered = 0
+var cameras_exited = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,7 +27,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
-
 	
 	if $"../SubViewportContainer/SubViewport/Character".on_camera == true: 
 		if Input.is_action_pressed("forward") or Input.is_action_pressed("backward") or Input.is_action_pressed("left") or Input.is_action_pressed("right") or Input.is_action_pressed("jump"):
@@ -42,6 +43,7 @@ func enter_cam():
 	$"../SubViewportContainer/SubViewport/Character/Camera3D".current = false
 	audio_listener_3d.current = true
 	$"../PCSesi".play()
+	cameras_entered += 1
 	
 
 
@@ -72,7 +74,7 @@ func change_cam():
 	
 func exit_cam():
 	
-	print("evet")
+	cameras_exited += 1
 		#camera stays the same as you exit the screen
 	if activecamera == camera_1:
 		previouscamera = camera_4
@@ -89,7 +91,7 @@ func exit_cam():
 	viewport.position = Vector2(-1920,-1080)
 	cameracycle = 0
 	$"../SubViewportContainer/SubViewport/Character/Camera3D".current = true
-	
+
 
 
 func change_cam_better():

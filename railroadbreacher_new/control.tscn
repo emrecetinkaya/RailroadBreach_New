@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://15k1ob6ownpc"]
+[gd_scene load_steps=5 format=3 uid="uid://15k1ob6ownpc"]
 
 [ext_resource type="Script" path="res://Levels/control.gd" id="1_ab0x0"]
 [ext_resource type="FontFile" uid="uid://73agcd4ie0v" path="res://Art/Courier New.ttf" id="2_pvdfq"]
 [ext_resource type="Texture2D" uid="uid://t8jl1t346dnr" path="res://2D Sprites/M1.png" id="3_xow8p"]
+[ext_resource type="FontFile" uid="uid://cjiveqhnaemfs" path="res://Art/Models/Shaders/Courier New.ttf" id="4_iyjoa"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -176,6 +177,16 @@ show_percentage = false
 position = Vector2(892.108, 166)
 scale = Vector2(0.364534, 0.33)
 texture = ExtResource("3_xow8p")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1893.0
+offset_bottom = 1047.0
+theme_override_fonts/font = ExtResource("4_iyjoa")
+theme_override_font_sizes/font_size = 30
+text = "Left Click to Exit"
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [connection signal="pressed" from="GridContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="GridContainer/Button2" to="." method="_on_button_2_pressed"]

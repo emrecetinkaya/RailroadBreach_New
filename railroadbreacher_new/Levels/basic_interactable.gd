@@ -6,6 +6,10 @@ extends RigidBody3D
 @onready var character = $"../SubViewportContainer/SubViewport/Character"
 @onready var grabbed = false
 @onready var target = $"../SubViewportContainer/SubViewport/Character/Marker3D2"
+@onready var sprite_2d: Sprite2D = $"../SubViewportContainer/SubViewport/Character/Sprite2D"
+
+
+var itself = $".".name
 
 signal grabed
 signal letgo
@@ -15,17 +19,33 @@ func _physics_process(delta: float) -> void:
 
 func grab():
 	if !grabbed:
-		$"../card".visible = true
 		freeze = true
 		self.reparent(new_parent, true)
-		position = Vector3(0.008641, -0.4, -0.330138)
+		new_parent.visible = false
+		position = Vector3(0.008641, -0.3, -0.330138)
 		emit_signal("grabed")
 		if grabbed:
 			global_transform.origin = new_parent.transform.origin
 		collision_layer = 0
 		collision_mask = 0
+		$CollisionShape3D.visible = false
 		grabbed = true
 		
+		if itself == "coke_yellow":
+			sprite_2d.texture = load("res://2D Sprites/Hands/trash fanta.png")
+			sprite_2d.visible = true
+		if itself == "coke":
+			sprite_2d.texture = load("res://2D Sprites/Hands/trash cola.png")
+			sprite_2d.visible = true
+		if itself == "polaroid":
+			sprite_2d.texture = load("res://2D Sprites/Hands/polaroid.png")
+			sprite_2d.visible = true
+		if itself == "chips":
+			sprite_2d.texture = load("res://2D Sprites/Hands/cips lays.png")
+			sprite_2d.visible = true
+		if itself == "card":
+			sprite_2d.texture = load("res://2D Sprites/Hands/akbil.png")
+			sprite_2d.visible = true
 		
 
 func _input(_event: InputEvent) -> void:
@@ -34,7 +54,9 @@ func _input(_event: InputEvent) -> void:
 		var target_direction = (target.global_position + Vector3(0, 0.5, 0) - new_parent.global_position).normalized()
 		apply_impulse((Vector3(target_direction)*10), position)
 		character.hands_full = false
-		$"../card".visible = true
+		sprite_2d.visible = false
+		new_parent.visible = true
+		$CollisionShape3D.visible = true
 		emit_signal("letgo")
 
 func secondary():
@@ -48,5 +70,7 @@ func secondary():
 		collision_mask = 1
 		grabbed = false
 		character.hands_full = false
-		$"../card".visible = true
+		sprite_2d.visible = false
+		new_parent.visible = true
+		$CollisionShape3D.visible = true
 		emit_signal("letgo")
