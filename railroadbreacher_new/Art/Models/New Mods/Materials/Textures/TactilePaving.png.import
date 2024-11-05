@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://86m2d2getgbb"
 path.s3tc="res://.godot/imported/TactilePaving.png-2c6bc628a13f6896a4838b50156e6618.s3tc.ctex"
+path.etc2="res://.godot/imported/TactilePaving.png-2c6bc628a13f6896a4838b50156e6618.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/Models/New Mods/Materials/Textures/TactilePaving.png"
-dest_files=["res://.godot/imported/TactilePaving.png-2c6bc628a13f6896a4838b50156e6618.s3tc.ctex"]
+dest_files=["res://.godot/imported/TactilePaving.png-2c6bc628a13f6896a4838b50156e6618.s3tc.ctex", "res://.godot/imported/TactilePaving.png-2c6bc628a13f6896a4838b50156e6618.etc2.ctex"]
 
 [params]
 

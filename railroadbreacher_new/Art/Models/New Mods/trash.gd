@@ -14,5 +14,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: RigidBody3D) -> void:
 	erasable = body
+	get_tree().create_timer(0.2).timeout
 	erasable.queue_free()
 	

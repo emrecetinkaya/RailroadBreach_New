@@ -121,7 +121,7 @@ shape = SubResource("ConcavePolygonShape3D_c3rr6")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SafeBox_cover" index="1"]
 transform = Transform3D(-0.999959, 0, -0.0089884, 0, 1, 0, 0.0089884, 0, -0.999959, -0.857058, 1.48289, 2.49661)
 stream = ExtResource("4_xqpkp")
-volume_db = 30.0
+volume_db = -20.0
 
 [node name="SafeBox" parent="." index="9"]
 transform = Transform3D(20.7886, 0, 0, 0, -1.39475e-06, 3.49777, 0, -11.7, -4.16967e-07, 1.42104, 3.35463, -23.2454)

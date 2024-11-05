@@ -542,9 +542,9 @@ script = ExtResource("8_wm8yr")
 shape = SubResource("ConvexPolygonShape3D_sx2lk")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Door"]
-transform = Transform3D(-0.999959, 0, -0.0089884, 0, 1, 0, 0.0089884, 0, -0.999959, -0.857058, 1.48289, 2.49661)
+transform = Transform3D(-0.999959, 0, -0.0089884, 0, 1, 0, 0.0089884, 0, -0.999959, -0.125587, 1.48289, -0.0162449)
 stream = ExtResource("16_kjmdv")
-volume_db = 30.0
+volume_db = -17.0
 
 [node name="Door2" type="Node3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1.12772, 0, -0.0202109, 0, 1.02903, 0, 0.0228544, 0, 0.997279, -3.15818, -2.84172, -1.12122)
@@ -788,168 +788,6 @@ volume_db = -30.0
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4777, 2.7725, 13.3536)
 
-[node name="Train" parent="." instance=ExtResource("20_f8iss")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58, -3.471, -5)
-
-[node name="önvagon" parent="Train" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-surface_material_override/3 = null
-surface_material_override/4 = null
-surface_material_override/5 = null
-surface_material_override/6 = null
-surface_material_override/7 = null
-surface_material_override/8 = null
-surface_material_override/9 = null
-
-[node name="SagOnKapılar" parent="Train/önvagon" index="0"]
-transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 0, -0.00429429, 0)
-
-[node name="subway_car_004" parent="Train/önvagon/SagOnKapılar" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_005" parent="Train/önvagon/SagOnKapılar" index="1"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_008" parent="Train/önvagon/SagOnKapılar" index="2"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="SagArkaKapılar" parent="Train/önvagon" index="1"]
-transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 3.5651e-05, 0.00417268, -0.000255261)
-
-[node name="subway_car_006" parent="Train/önvagon/SagArkaKapılar" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_007" parent="Train/önvagon/SagArkaKapılar" index="1"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_009" parent="Train/önvagon/SagArkaKapılar" index="2"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="SolOnKapılar" parent="Train/önvagon" index="2"]
-transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 0, -5.33462e-06, 3.72529e-09)
-
-[node name="subway_car_010" parent="Train/önvagon/SolOnKapılar" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_012" parent="Train/önvagon/SolOnKapılar" index="1"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_014" parent="Train/önvagon/SolOnKapılar" index="2"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="SolArkaKapılar" parent="Train/önvagon" index="3"]
-transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 3.5651e-05, 0.00417268, -0.000255261)
-
-[node name="subway_car_011" parent="Train/önvagon/SolArkaKapılar" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_013" parent="Train/önvagon/SolArkaKapılar" index="1"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_015" parent="Train/önvagon/SolArkaKapılar" index="2"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="arkavagon" parent="Train" index="1"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-surface_material_override/3 = null
-surface_material_override/4 = null
-surface_material_override/5 = null
-surface_material_override/6 = null
-surface_material_override/7 = null
-surface_material_override/8 = null
-surface_material_override/9 = null
-
-[node name="subway_car_004" parent="Train/arkavagon/SagOnKapılar" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_005" parent="Train/arkavagon/SagOnKapılar" index="1"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_008" parent="Train/arkavagon/SagOnKapılar" index="2"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_006" parent="Train/arkavagon/SagArkaKapılar" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_007" parent="Train/arkavagon/SagArkaKapılar" index="1"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_009" parent="Train/arkavagon/SagArkaKapılar" index="2"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_010" parent="Train/arkavagon/SolOnKapılar" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_012" parent="Train/arkavagon/SolOnKapılar" index="1"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_014" parent="Train/arkavagon/SolOnKapılar" index="2"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="SolArkaKapılar" parent="Train/arkavagon" index="3"]
-transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 3.5651e-05, 0.00417268, -0.000255261)
-
-[node name="subway_car_011" parent="Train/arkavagon/SolArkaKapılar" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_013" parent="Train/arkavagon/SolArkaKapılar" index="1"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
-[node name="subway_car_015" parent="Train/arkavagon/SolArkaKapılar" index="2"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-surface_material_override/2 = null
-
 [node name="MetroPosteri" type="Sprite3D" parent="."]
 transform = Transform3D(0.0299874, 0.000868005, 0, -0.000868005, 0.0299874, 0, 0, 0, 0.03, 16.1453, 2.77608, 11.66)
 modulate = Color(0.499439, 0.49944, 0.499439, 1)
@@ -990,12 +828,24 @@ script = ExtResource("24_k4px8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4645, -2.07322, -14.7495)
 script = ExtResource("24_k4px8")
 
+[node name="coke_yellow4" parent="." instance=ExtResource("23_s0gp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6672, -2.50234, -31.6975)
+script = ExtResource("24_k4px8")
+
+[node name="coke_yellow5" parent="." instance=ExtResource("23_s0gp4")]
+transform = Transform3D(1, 0, 0, 0, 0.000331597, -1, 0, 1, 0.000331597, 23.0487, -2.66775, -20.6679)
+script = ExtResource("24_k4px8")
+
 [node name="coke" parent="." instance=ExtResource("24_b2i6w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5378, 1.56167, 12.0085)
 script = ExtResource("24_k4px8")
 
 [node name="coke5" parent="." instance=ExtResource("24_b2i6w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.8876, 2.42114, 10.3457)
+script = ExtResource("24_k4px8")
+
+[node name="coke8" parent="." instance=ExtResource("24_b2i6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6566, 2.28114, 12.0298)
 script = ExtResource("24_k4px8")
 
 [node name="coke6" parent="." instance=ExtResource("24_b2i6w")]
@@ -1042,9 +892,16 @@ script = ExtResource("24_k4px8")
 transform = Transform3D(0.989252, 0.0065911, 0.146075, -0.0024285, 0.999586, -0.0286563, -0.146203, 0.0279936, 0.988858, 4.08893, -2.10664, -22.2291)
 script = ExtResource("24_k4px8")
 
+[node name="chips5" parent="." instance=ExtResource("27_t1mav")]
+transform = Transform3D(0.560002, 0.025101, 0.828111, -0.0024285, 0.999586, -0.0286563, -0.828488, 0.0140365, 0.55983, 9.18321, -2.63021, -9.35492)
+script = ExtResource("24_k4px8")
+
 [node name="card" parent="." instance=ExtResource("28_jld7e")]
 transform = Transform3D(0.787344, 0, 0.616514, 0, 1, 0, -0.616514, 0, 0.787344, 3.67539, -2.7322, -8.91981)
 script = ExtResource("24_k4px8")
+
+[node name="Train" parent="." instance=ExtResource("20_f8iss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58, -3.471, 273.321)
 
 [connection signal="exited_screen" from="SubViewportContainer/SubViewport/Character" to="Ofis" method="_on_character_exited_screen"]
 [connection signal="submitcount" from="SubViewportContainer2/SubViewport/Control" to="Ofis" method="_on_control_submitcount"]
@@ -1055,4 +912,3 @@ script = ExtResource("24_k4px8")
 [connection signal="body_exited" from="Ofis" to="Ofis" method="_on_body_exited"]
 
 [editable path="SubViewportContainer/SubViewport/Character"]
-[editable path="Train"]

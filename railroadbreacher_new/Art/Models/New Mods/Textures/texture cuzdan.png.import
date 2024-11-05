@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpsvlf2ms6tm8"
 path.s3tc="res://.godot/imported/texture cuzdan.png-c8ab3a5344c3af5f33970405261ada75.s3tc.ctex"
+path.etc2="res://.godot/imported/texture cuzdan.png-c8ab3a5344c3af5f33970405261ada75.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/Models/New Mods/Textures/texture cuzdan.png"
-dest_files=["res://.godot/imported/texture cuzdan.png-c8ab3a5344c3af5f33970405261ada75.s3tc.ctex"]
+dest_files=["res://.godot/imported/texture cuzdan.png-c8ab3a5344c3af5f33970405261ada75.s3tc.ctex", "res://.godot/imported/texture cuzdan.png-c8ab3a5344c3af5f33970405261ada75.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlbutj5buehlw"
 path.s3tc="res://.godot/imported/Door.png-a6f91aba885769d69a4cebc7d1ae2d99.s3tc.ctex"
+path.etc2="res://.godot/imported/Door.png-a6f91aba885769d69a4cebc7d1ae2d99.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/Models/Textures/Door.png"
-dest_files=["res://.godot/imported/Door.png-a6f91aba885769d69a4cebc7d1ae2d99.s3tc.ctex"]
+dest_files=["res://.godot/imported/Door.png-a6f91aba885769d69a4cebc7d1ae2d99.s3tc.ctex", "res://.godot/imported/Door.png-a6f91aba885769d69a4cebc7d1ae2d99.etc2.ctex"]
 
 [params]
 

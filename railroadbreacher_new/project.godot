@@ -13,7 +13,7 @@ config_version=5
 config/name="RailroadBreacher_New"
 run/main_scene="res://menu/start_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Railroad Breach Cover itchio.png"
 
 [autoload]
 
@@ -30,6 +30,10 @@ window/main_scene="res://Art/Models/Models.tscn"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray()
 
 [input]
 
@@ -133,3 +137,11 @@ crouch={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":48,"key_label":0,"unicode":48,"location":0,"echo":false,"script":null)
 ]
 }
+
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

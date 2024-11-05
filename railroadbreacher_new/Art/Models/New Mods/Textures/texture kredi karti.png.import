@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx8a373m2j1fb"
 path.s3tc="res://.godot/imported/texture kredi karti.png-b9736e0845e1d46242a86fad7b50ea81.s3tc.ctex"
+path.etc2="res://.godot/imported/texture kredi karti.png-b9736e0845e1d46242a86fad7b50ea81.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Art/Models/New Mods/Textures/texture kredi karti.png"
-dest_files=["res://.godot/imported/texture kredi karti.png-b9736e0845e1d46242a86fad7b50ea81.s3tc.ctex"]
+dest_files=["res://.godot/imported/texture kredi karti.png-b9736e0845e1d46242a86fad7b50ea81.s3tc.ctex", "res://.godot/imported/texture kredi karti.png-b9736e0845e1d46242a86fad7b50ea81.etc2.ctex"]
 
 [params]
 
