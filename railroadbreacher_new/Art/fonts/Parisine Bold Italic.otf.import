@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://73agcd4ie0v"
-path="res://.godot/imported/Courier New.ttf-2a319f41f1baabd48e1dd1229ab1ae7a.fontdata"
+uid="uid://dag8xu6tqhddp"
+path="res://.godot/imported/Parisine Bold Italic.otf-df2e874c144fac4ccdb67a8a4ca5aab4.fontdata"
 
 [deps]
 
-source_file="res://Art/Courier New.ttf"
-dest_files=["res://.godot/imported/Courier New.ttf-2a319f41f1baabd48e1dd1229ab1ae7a.fontdata"]
+source_file="res://Art/fonts/Parisine Bold Italic.otf"
+dest_files=["res://.godot/imported/Parisine Bold Italic.otf-df2e874c144fac4ccdb67a8a4ca5aab4.fontdata"]
 
 [params]
 

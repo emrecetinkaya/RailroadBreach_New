@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ch5tkbvttim6a"
-path="res://.godot/imported/Courier New Bold Italic font.ttf-c82faf089a510d1936c7721e7bbec82f.fontdata"
+path="res://.godot/imported/Courier New Bold Italic font.ttf-c98dedea62988e9851dbae129291e56e.fontdata"
 
 [deps]
 
-source_file="res://Art/Courier New Bold Italic font.ttf"
-dest_files=["res://.godot/imported/Courier New Bold Italic font.ttf-c82faf089a510d1936c7721e7bbec82f.fontdata"]
+source_file="res://Art/fonts/Courier New Bold Italic font.ttf"
+dest_files=["res://.godot/imported/Courier New Bold Italic font.ttf-c98dedea62988e9851dbae129291e56e.fontdata"]
 
 [params]
 

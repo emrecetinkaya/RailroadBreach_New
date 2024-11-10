@@ -1,7 +1,6 @@
-[gd_scene load_steps=58 format=4 uid="uid://dlem4x25w3ll5"]
+[gd_scene load_steps=56 format=4 uid="uid://dlem4x25w3ll5"]
 
 [ext_resource type="Shader" path="res://Art/Models/Shaders/psprocess.gdshader" id="1_3hhqq"]
-[ext_resource type="Script" path="res://Art/Models/level.gd" id="1_4b5y8"]
 [ext_resource type="PackedScene" uid="uid://bd2xk1jajtsyn" path="res://player/character.tscn" id="4_3y4a6"]
 [ext_resource type="PackedScene" uid="uid://p88gbdrgkq52" path="res://Art/Models/Shaders/lamps.tscn" id="5_4jrja"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_nrwip"]
@@ -30,7 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://qn6iefflgiw2" path="res://objet_petit_a/chips.tscn" id="27_t1mav"]
 [ext_resource type="PackedScene" uid="uid://dtqsirbio8dda" path="res://objet_petit_a/card.tscn" id="28_jld7e"]
 [ext_resource type="Script" path="res://objet_petit_a/faxpapers/faxgenerator.gd" id="30_k6pk8"]
-[ext_resource type="AudioStream" uid="uid://2ouk5vtgce7j" path="res://sounds/fancy fax sesi.mp3" id="31_vc6mq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2nmq"]
 shader = ExtResource("1_3hhqq")
@@ -235,7 +233,6 @@ size = Vector3(6.00311, 2.75211, 4.6174)
 size = Vector3(1, 1.46484, 1)
 
 [node name="Models" type="Node3D"]
-script = ExtResource("1_4b5y8")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_c2nmq")
@@ -531,7 +528,7 @@ transform = Transform3D(1.11983, 0, 0, 0, 1, 0, 0, 0, 1, 26.0716, 1.99495, -32.6
 transform = Transform3D(1.11983, 0, 0, 0, 0.995239, -0.0974613, 0, 0.0974613, 0.995239, 52.6924, 5.81674, 10.6352)
 
 [node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_3y4a6")]
-transform = Transform3D(0.0910322, 0, 0.995848, 0, 1, 0, -0.995848, 0, 0.0910322, 15.4182, 2.22204, 15.434)
+transform = Transform3D(0.943165, 0, 0.332326, 0, 1, 0, -0.332326, 0, 0.943165, 19.2417, 2.22204, 19.0513)
 
 [node name="Door" type="Node3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-0.99996, 0, 0.00898841, 0, 1, 0, -0.00898841, 0, -0.99996, 18.2534, 1.31987, 16.3962)
@@ -948,16 +945,10 @@ script = ExtResource("30_k6pk8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="faxmachine"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.58479, 2.52213)
-visible = false
 shape = SubResource("BoxShape3D_oykqx")
-disabled = true
 
 [node name="Marker3D" type="Marker3D" parent="faxmachine"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.134186, -0.82003, 2.46044)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="faxmachine"]
-stream = ExtResource("31_vc6mq")
-volume_db = -20.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66732, 0.275228, 4.04153)
 
 [connection signal="exited_screen" from="SubViewportContainer/SubViewport/Character" to="Ofis" method="_on_character_exited_screen"]
 [connection signal="submitcount" from="SubViewportContainer2/SubViewport/Control" to="Ofis" method="_on_control_submitcount"]
@@ -966,7 +957,5 @@ volume_db = -20.0
 [connection signal="body_exited" from="Area3D/DışMerdivenÖnü" to="Area3D/DışMerdivenÖnü" method="_on_body_exited"]
 [connection signal="body_entered" from="Ofis" to="Ofis" method="_on_body_entered"]
 [connection signal="body_exited" from="Ofis" to="Ofis" method="_on_body_exited"]
-[connection signal="officeentered" from="Ofis" to="." method="_on_ofis_officeentered"]
-[connection signal="print" from="faxmachine" to="." method="_on_faxmachine_print"]
 
 [editable path="SubViewportContainer/SubViewport/Character"]

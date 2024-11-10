@@ -7,9 +7,9 @@
 [ext_resource type="Script" path="res://Levels/area_3d_2.gd" id="4_dikxr"]
 [ext_resource type="Shader" path="res://Art/Models/Shaders/crt.gdshader" id="5_325gm"]
 [ext_resource type="Environment" uid="uid://buwt707boq5vf" path="res://Art/siyahbeyazkamerafiltresi.tres" id="5_vy6jx"]
-[ext_resource type="AudioStream" uid="uid://yrqnmg6bc5mm" path="res://sounds/(train arrival)horror_effect2.wav" id="8_cqa8c"]
-[ext_resource type="FontFile" uid="uid://dtxmbsrj7lne4" path="res://Art/metro-time-sign.ttf" id="9_tmdy0"]
-[ext_resource type="PackedScene" uid="uid://iddumrl7y3i4" path="res://paper.tscn" id="10_npge8"]
+[ext_resource type="AudioStream" path="res://sounds/(train arrival)horror_effect2.wav" id="8_cqa8c"]
+[ext_resource type="FontFile" uid="uid://dtxmbsrj7lne4" path="res://Art/fonts/metro-time-sign.ttf" id="9_tmdy0"]
+[ext_resource type="PackedScene" uid="uid://iddumrl7y3i4" path="res://objet_petit_a/faxpapers/paper.tscn" id="10_npge8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fek0r"]
 size = Vector3(21, 12, 8)

@@ -4,6 +4,10 @@ extends Area3D
 
 var office_entered = 0
 var office_exited = 0
+signal officeentered(office_entered)
+signal officeexited(office_exited)
+
+
 
 var incomingsubmittedvalue = "txt"
 var storymilestone = 0
@@ -21,6 +25,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: CharacterBody3D):
 	print("entered office")
 	office_entered += 1
+	emit_signal("officeentered")
 	if office_entered == 1:
 		subtitle_label.visible = true
 		subtitle_label.text = "- I should log the train's arrival time"
@@ -33,9 +38,10 @@ func _on_body_entered(body: CharacterBody3D):
 
 func _on_body_exited(body: CharacterBody3D) -> void:
 	print("exited office")
-	office_exited -= 1
+	office_exited += 1
+	emit_signal("officeexited")
 
-	if storymilestone == 1:
+	if storymilestone >= 1:
 		subtitle_label.text = ""
 	
 

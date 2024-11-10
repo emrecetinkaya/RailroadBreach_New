@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfynmqdste2mt"]
+
+[ext_resource type="Script" path="res://objet_petit_a/faxpapers/faxgenerator.gd" id="1_1vwuq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_myuie"]
+
+[node name="Faxgenerator" type="Area3D"]
+script = ExtResource("1_1vwuq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_myuie")

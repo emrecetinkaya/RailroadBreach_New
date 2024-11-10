@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b37nm8thbuatj"
-path="res://.godot/imported/fax font.ttf-be86cba82f6441a4857b21e38d5b7fbf.fontdata"
+uid="uid://73agcd4ie0v"
+path="res://.godot/imported/Courier New.ttf-84a07ddb4156c87600ad90e569c48191.fontdata"
 
 [deps]
 
-source_file="res://Art/fax font.ttf"
-dest_files=["res://.godot/imported/fax font.ttf-be86cba82f6441a4857b21e38d5b7fbf.fontdata"]
+source_file="res://Art/fonts/Courier New.ttf"
+dest_files=["res://.godot/imported/Courier New.ttf-84a07ddb4156c87600ad90e569c48191.fontdata"]
 
 [params]
 

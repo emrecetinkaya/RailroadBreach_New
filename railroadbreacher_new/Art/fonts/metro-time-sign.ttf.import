@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dag8xu6tqhddp"
-path="res://.godot/imported/Parisine Bold Italic.otf-6a9804222d831720307c7521134bc2ae.fontdata"
+uid="uid://dtxmbsrj7lne4"
+path="res://.godot/imported/metro-time-sign.ttf-dd9d0c25984e5ab87edbe8f722a04965.fontdata"
 
 [deps]
 
-source_file="res://Art/Parisine Bold Italic.otf"
-dest_files=["res://.godot/imported/Parisine Bold Italic.otf-6a9804222d831720307c7521134bc2ae.fontdata"]
+source_file="res://Art/fonts/metro-time-sign.ttf"
+dest_files=["res://.godot/imported/metro-time-sign.ttf-dd9d0c25984e5ab87edbe8f722a04965.fontdata"]
 
 [params]
 

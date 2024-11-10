@@ -5,6 +5,7 @@ var mouse_sensitivity = 0.002
 var hands_full = false
 var on_camera = false
 var crouched = false
+var ismoving = false
 var y = 1
 var spritepath = "res://2D Sprites/Hands/updated akbil.png"
 
@@ -76,12 +77,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Toggle Flashlight"):
 			print("f pressed")
 			$SpotLight3D.visible = !$SpotLight3D.visible
-			
-		
+
+
 	# Handle jump.
 	#if Input.is_action_just_pressed("jump") and is_on_floor():
 		#velocity.y = JUMP_VELOCITY
 #	
+
 	if Input.is_action_pressed("secondary") and hands_full:
 		var item = $Marker3D.get_child(0)
 		item.secondary()
@@ -102,13 +104,17 @@ func _physics_process(delta: float) -> void:
 	if direction :
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		ismoving == true
+		footstep()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		ismoving == false
 
 	var collider = $RayCast3D.get_collider()
 	if $RayCast3D.is_colliding():
 		
+
 		if collider.has_method("hold"):
 			if Input.is_action_pressed("interact"):
 				collider.hold()
@@ -117,7 +123,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("interact") and !hands_full:
 				collider.open_thing()
 				
-				
+
 		if collider.has_method("grab"):
 			$Control/Label.text = "PRESS LEFT CLICK TO GRAB"
 			if Input.is_action_just_pressed("interact") and !hands_full:
@@ -155,6 +161,8 @@ func _physics_process(delta: float) -> void:
 					collider.change_cam_better()
 					
 
+
+
 	move_and_slide()
 	
 	if !$RayCast3D.is_colliding():
@@ -169,3 +177,12 @@ func _on_card_grabed() -> void:
 	
 func _on_card_letgo() -> void:
 	$Control/Sprite2D.visible = false
+
+
+
+func footstep():
+	if $AudioStreamPlayer3D.playing == false:
+		$AudioStreamPlayer3D.pitch_scale = randf_range(0.7, 0.9)
+		$AudioStreamPlayer3D.set_volume_db(-50)
+		$AudioStreamPlayer3D.play()
+		$AudioStreamPlayer3D.finished

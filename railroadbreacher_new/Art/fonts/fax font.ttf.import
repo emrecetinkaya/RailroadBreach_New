@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dtxmbsrj7lne4"
-path="res://.godot/imported/metro-time-sign.ttf-b20c1af82120707c65c8d49b3a78bd4f.fontdata"
+uid="uid://b37nm8thbuatj"
+path="res://.godot/imported/fax font.ttf-153689b3e0fa44e696ede92c1cdc78f9.fontdata"
 
 [deps]
 
-source_file="res://Art/metro-time-sign.ttf"
-dest_files=["res://.godot/imported/metro-time-sign.ttf-b20c1af82120707c65c8d49b3a78bd4f.fontdata"]
+source_file="res://Art/fonts/fax font.ttf"
+dest_files=["res://.godot/imported/fax font.ttf-153689b3e0fa44e696ede92c1cdc78f9.fontdata"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dbrre0eo7wqbm"]
 
 [ext_resource type="Script" path="res://paper.gd" id="1_446sb"]
-[ext_resource type="FontFile" uid="uid://b37nm8thbuatj" path="res://Art/fax font.ttf" id="2_geuce"]
+[ext_resource type="FontFile" uid="uid://b37nm8thbuatj" path="res://Art/fonts/fax font.ttf" id="2_geuce"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rihym"]
 bounce = 0.1

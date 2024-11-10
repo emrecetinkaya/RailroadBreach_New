@@ -14,6 +14,9 @@ var itself = $".".name
 signal grabed
 signal letgo
 
+func _ready() -> void:
+	pass
+
 func _physics_process(delta: float) -> void:
 	pass
 
@@ -26,9 +29,9 @@ func grab():
 		emit_signal("grabed")
 		if grabbed:
 			global_transform.origin = new_parent.transform.origin
-		collision_layer = 0
-		collision_mask = 0
-		$CollisionShape3D.visible = false
+		#collision_layer = 0
+		#collision_mask = 0
+		$CollisionShape3D.disabled = true
 		grabbed = true
 		
 		if itself == "coke_yellow":
@@ -52,11 +55,11 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and grabbed:
 		secondary()
 		var target_direction = (target.global_position + Vector3(0, 0.5, 0) - new_parent.global_position).normalized()
-		apply_impulse((Vector3(target_direction)*10), position)
+		apply_impulse((Vector3(target_direction)*0.2), position)
 		character.hands_full = false
 		sprite_2d.visible = false
 		new_parent.visible = true
-		$CollisionShape3D.visible = true
+		$CollisionShape3D.disabled = false
 		emit_signal("letgo")
 
 func secondary():
@@ -64,13 +67,13 @@ func secondary():
 		freeze = false
 		self.reparent(original_parent, true)
 		var target_direction = (target.global_position + Vector3(0, 0.8, 0) - new_parent.global_position).normalized()
-		apply_impulse((Vector3(target_direction)*2), position)
+		apply_impulse((Vector3(target_direction)*0.1), position)
 		#$"../SubViewportContainer/SubViewport/Character/RayCast3D".get_collision_point
-		collision_layer = 1
-		collision_mask = 1
+		#collision_layer = 1
+		#collision_mask = 1
 		grabbed = false
 		character.hands_full = false
 		sprite_2d.visible = false
 		new_parent.visible = true
-		$CollisionShape3D.visible = true
+		$CollisionShape3D.disabled = false
 		emit_signal("letgo")

@@ -49,9 +49,12 @@ albedo_color = Color(0.493545, 0.493546, 0.493546, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jquhd"]
 height = 0.40616
-radius = 0.145752
+radius = 0.162231
 
 [node name="coke_yellow" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 5
+mass = 0.02
 
 [node name="Cylinder_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.442532, 0, 0, 0, 0.36957, 0, 0, 0, 0.44712, 0, 0, 0)

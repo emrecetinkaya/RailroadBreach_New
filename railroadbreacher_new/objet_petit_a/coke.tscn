@@ -3,10 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bgvxuis8qlkyl" path="res://Art/Models/Shaders/can_uv2.jpg" id="1_va1qi"]
 [ext_resource type="Texture2D" uid="uid://d2si5fwlqn17m" path="res://Art/Models/New Mods/Materials/Textures/ConcreteBare.png" id="2_phuqi"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_fvabj"]
-height = 0.401783
-radius = 0.127625
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jc3tp"]
 albedo_texture = ExtResource("1_va1qi")
 
@@ -52,10 +48,14 @@ shadow_mesh = SubResource("ArrayMesh_jiw6q")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yg6p"]
 albedo_texture = ExtResource("2_phuqi")
 
-[node name="coke" type="RigidBody3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fvabj"]
+height = 0.401783
+radius = 0.127625
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_fvabj")
+[node name="coke" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 5
+mass = 0.02
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.442532, 0, 0, 0, 0.36957, 0, 0, 0, 0.44712, 0, 0, 0)
@@ -63,3 +63,6 @@ material_override = SubResource("StandardMaterial3D_jc3tp")
 mesh = SubResource("ArrayMesh_hbnkp")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6yg6p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_fvabj")
