@@ -8,7 +8,10 @@ extends RigidBody3D
 
 var target_direction: Vector3
 
+var pickedup = 0
+var dropped = 0
 
+signal papertaken(pickedup: int)
 
 #func _ready() -> void:
 	#self.reparent($".", true)
@@ -31,6 +34,8 @@ func grab():
 		#collision_mask = 0
 		$CollisionShape3D.disabled = true
 		grabbed = true
+		pickedup += 1
+		emit_signal("papertaken", pickedup)
 		
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and grabbed:
@@ -39,6 +44,7 @@ func _input(_event: InputEvent) -> void:
 		apply_impulse((Vector3(target_direction)*1), global_position)
 		character.hands_full = false
 		$CollisionShape3D.disabled = false
+		dropped += 1
 
 func secondary():
 	if grabbed:
@@ -49,6 +55,7 @@ func secondary():
 		#collision_mask = 1
 		$CollisionShape3D.disabled = false
 		grabbed = false
+		dropped += 1
 
 
 func _on_drop_area_body_entered(_body: RigidBody3D) -> void:

@@ -4,11 +4,19 @@ var submit = "text"
 var submitcounter = 0
 var currentframe = 18000
 var kharmapoints = 100000
+var clock = 00.00
+
+var input1 = 99
+var input2 = 99
+var input3 = 99
+var submittedinput: int = 9999
+var hardsubmit: int = 9999
+var submitcorrect = false
 
 @onready var subtitle_label: Label = $"../../../SubViewportContainer/SubViewport/Character/Control/SubtitleLabel"
 
 signal submitcount(submitcounter)
-signal submittedvalue(submit)
+signal submittedvalue(submit, hardsubmit, submitcorrect)
 
 func _ready() -> void:
 	start_progress_bar()
@@ -16,47 +24,48 @@ func _ready() -> void:
 	kharmapoints = 100000
 	
 func start_progress_bar():
-	$ProgressBar.value = 1000
+	$ProgressBar.value = 10800
 	
 func _on_button_pressed() -> void:
 	$LineEdit.insert_text_at_caret("1")
-
+	inputcheck(1)
 
 func _on_button_2_pressed() -> void:
 	$LineEdit.insert_text_at_caret("2")
-
+	inputcheck(2)
 
 func _on_button_3_pressed() -> void:
 	$LineEdit.insert_text_at_caret("3")
-
+	inputcheck(3)
 
 func _on_button_4_pressed() -> void:
 	$LineEdit.insert_text_at_caret("4")
-
+	inputcheck(4)
 
 func _on_button_5_pressed() -> void:
 	$LineEdit.insert_text_at_caret("5")
-	
+	inputcheck(5)
 
 func _on_button_6_pressed() -> void:
 	$LineEdit.insert_text_at_caret("6")
-	
+	inputcheck(6)
 
 func _on_button_7_pressed() -> void:
 	$LineEdit.insert_text_at_caret("7")
-	
+	inputcheck(7)
 
 func _on_button_8_pressed() -> void:
 	$LineEdit.insert_text_at_caret("8")
-	
+	inputcheck(8)
 
 func _on_button_9_pressed() -> void:
 	$LineEdit.insert_text_at_caret("9")
-	
+	inputcheck(9)
 
 func _on_button_10_pressed() -> void:
 	$LineEdit.clear()
-	
+	input1 = 99
+	input2 = 99
 
 func _on_button_11_pressed() -> void:
 	$LineEdit.insert_text_at_caret("0")
@@ -64,8 +73,19 @@ func _on_button_11_pressed() -> void:
 
 func _on_button_12_pressed() -> void:
 	submit = $LineEdit.text
+	if input3 != 99:
+		submittedinput = (input1*100) + (input2*10) + input3
+		input1 = 99
+		input2= 99
+		input3 = 99
+		print(submittedinput)
+	elif input3 == 99:
+		submittedinput = (input1*10) + input2
+		input1 = 99
+		input2 = 99
+		print(submittedinput)
+	hardsubmit = submittedinput
 	submitcounter += 1
-	emit_signal("submittedvalue", submit)
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_004/InputText".text = (submit)
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_005/InputText".text = (submit)
 	$"../../../SubViewportContainer/SubViewport/FullScene/Props/Tabelas ve Posters2/Tabelas ve Posters/Cube_006/InputText".text = (submit)
@@ -81,24 +101,42 @@ func _on_button_12_pressed() -> void:
 	await get_tree().create_timer(1).timeout
 	$LineEdit.clear()
 	$LineEdit.set_text(" MINUTES LEFT")
+	emit_signal("submittedvalue", submit, hardsubmit, submitcorrect)
 
 
 
 func check_entry(station):
 	if station == 0:
-		if "0" or "ARRIVED" in submit:
+		if ("0" in submit) or ("ARRIVED" in submit) or (hardsubmit <= 1):
 			kharmapoints += 1
+			submitcorrect = true
+		else:
+			kharmapoints -= 1
+			submitcorrect = false
 	if station == 21:
-		if "21" in submit:
+		if "21" in submit or 10 <= hardsubmit and hardsubmit <= 21:
 			kharmapoints += 1
+			submitcorrect = true
+		else:
+			kharmapoints -= 1
+			submitcorrect = false
 	if station == 38:
-		if "38" in submit:
+		if "38" in submit or 21 <= hardsubmit and hardsubmit <= 38:
 			kharmapoints += 1
+			submitcorrect = true
+		else:
+			kharmapoints -= 1
+			submitcorrect = false
 	if station == 60:
-		if "60" in submit:
+		if "60" in submit or 38 <= hardsubmit and hardsubmit <= 60:
 			kharmapoints += 1
+			submitcorrect = true
+		else:
+			kharmapoints -= 1
+			submitcorrect = false
 	if station == 404:
 		kharmapoints -= 1
+		submitcorrect = false
 
 
 
@@ -111,34 +149,43 @@ func _physics_process(delta: float) -> void:
 		check_entry(21)
 	elif 8101 < currentframe and currentframe < 13499:
 		check_entry(38)
-	elif 13501 < currentframe and currentframe < 17000:
+	elif 13501 < currentframe and currentframe < 18000:
 		check_entry(60)
 	else:
 		check_entry(404)
 		
 	
+	if kharmapoints % 100 == 0:
+		print(kharmapoints)
 	
 	
 	
 	
 	if currentframe == 600:
-		$"../../../Train/AnimationPlayer".play_backwards("Train Animations/new_train_arrive")
-		await get_tree().create_timer(10).timeout
-		$"../../../Train/AnimationPlayer".play("Train Animations/new_train_arrive")
+		$"../../../Train/AnimationPlayer".play_backwards("Train Animations/new_train_arrive_4")
+		await get_tree().create_timer(20).timeout
+		$"../../../Train/AnimationPlayer".play("Train Animations/new_train_arrive_4")
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+func inputcheck(newinput):
+	if input1 == 99:
+		input1 = newinput
+	elif input1 != 99:
+		if input2 == 99:
+			input2 = newinput
+		elif input2 != 99:
+			input3 = newinput
+
+
+
+
+
+
+
+
+
 	
 	
 	

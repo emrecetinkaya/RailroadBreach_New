@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://bxqeldckbndwm" path="res://objet_petit_a/polaroid.tscn" id="26_xaqq3"]
 [ext_resource type="PackedScene" uid="uid://qn6iefflgiw2" path="res://objet_petit_a/chips.tscn" id="27_t1mav"]
 [ext_resource type="PackedScene" uid="uid://dtqsirbio8dda" path="res://objet_petit_a/card.tscn" id="28_jld7e"]
+[ext_resource type="Script" path="res://objet_petit_a/faxpapers/faxgenerator.gd" id="30_k6pk8"]
 [ext_resource type="AudioStream" uid="uid://2ouk5vtgce7j" path="res://sounds/fancy fax sesi.mp3" id="31_vc6mq"]
 [ext_resource type="AudioStream" uid="uid://da5ls20whj4uc" path="res://sounds/(ambient)132563_alexmol_power-station-interior-atm.aiff.mp3" id="32_hkywp"]
 
@@ -229,27 +230,7 @@ size = Vector3(9.53494, 2.07422, 170.627)
 size = Vector3(15.0386, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_14mrb"]
-size = Vector3(6.25883, 2.75211, 4.6174)
-
-[sub_resource type="GDScript" id="GDScript_bamqx"]
-script/source = "extends Area3D
-
-signal printtaken
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-"
+size = Vector3(6.00311, 2.75211, 4.6174)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oykqx"]
 size = Vector3(1, 1.46484, 1)
@@ -553,9 +534,6 @@ transform = Transform3D(1.11983, 0, 0, 0, 0.995239, -0.0974613, 0, 0.0974613, 0.
 [node name="Character" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_3y4a6")]
 transform = Transform3D(0.948539, 0, 0.316659, 0, 1, 0, -0.316659, 0, 0.948539, 18.6709, 2.22204, 18.8832)
 
-[node name="SubtitleLabel" parent="SubViewportContainer/SubViewport/Character/Control" index="1"]
-offset_left = 400.0
-
 [node name="Door" type="Node3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-0.99996, 0, 0.00898841, 0, 1, 0, -0.00898841, 0, -0.99996, 18.2534, 1.31987, 16.3962)
 
@@ -815,7 +793,6 @@ shape = SubResource("BoxShape3D_8ti38")
 
 [node name="creeep_anim" parent="." instance=ExtResource("14_ycjhh")]
 transform = Transform3D(-0.33197, 0.00016355, 0.110887, 0.000126219, 0.35, -0.000138361, -0.110887, -9.1248e-05, -0.33197, 29.0432, -2.68806, -27.7147)
-visible = false
 
 [node name="PCSesi" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6299, 2.7725, 11.9065)
@@ -863,32 +840,13 @@ shape = SubResource("BoxShape3D_vvwva")
 transform = Transform3D(1, 0, 0, 0, 4.50903, 0, 0, 0, 1, 16.5785, -1.64801, -0.886083)
 shape = SubResource("BoxShape3D_vvwva")
 
-[node name="Area3D2" type="Area3D" parent="."]
-collision_mask = 7
-
-[node name="SolTurnikeler" type="Area3D" parent="Area3D2"]
-collision_mask = 7
-script = ExtResource("21_bsikw")
-
-[node name="SolTurnikelerCollision" type="CollisionShape3D" parent="Area3D2/SolTurnikeler"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.57161, 3.63297, 10.8859)
-shape = SubResource("BoxShape3D_efd4p")
-
-[node name="Day2Block" type="StaticBody3D" parent="Area3D2"]
-transform = Transform3D(0.999731, 0, 0.0231933, 0, 1, 0, -0.0231933, 0, 0.999731, 7.06077, 3.23642, 10.3619)
-collision_mask = 7
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2/Day2Block"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0231161, 0.171247, -0.996399)
-shape = SubResource("BoxShape3D_38uap")
-
 [node name="Ofis" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0832, 2.7725, 13.7309)
 collision_mask = 7
 script = ExtResource("22_qjn5s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ofis"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.116131, -0.000411987, 0.191483)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0985756, -0.000411987, 0.191483)
 shape = SubResource("BoxShape3D_14mrb")
 
 [node name="coke_yellow" parent="." instance=ExtResource("23_s0gp4")]
@@ -947,6 +905,10 @@ script = ExtResource("24_k4px8")
 transform = Transform3D(2.35806e-08, 0.539462, 0.84201, 1, -4.37114e-08, 0, 3.68054e-08, 0.84201, -0.539462, 7.61022, 1.44635, 21.8687)
 script = ExtResource("24_k4px8")
 
+[node name="polaroid" parent="." instance=ExtResource("26_xaqq3")]
+transform = Transform3D(0.674097, 0, -0.738643, 0, 1, 0, 0.738643, 0, 0.674097, 27.3697, 1.48007, 19.4777)
+script = ExtResource("24_k4px8")
+
 [node name="polaroid2" parent="." instance=ExtResource("26_xaqq3")]
 transform = Transform3D(0.674097, 0, -0.738643, 0, 1, 0, 0.738643, 0, 0.674097, 11.6526, -2.71744, -11.9736)
 script = ExtResource("24_k4px8")
@@ -976,14 +938,14 @@ transform = Transform3D(0.787344, 0, 0.616514, 0, 1, 0, -0.616514, 0, 0.787344, 
 script = ExtResource("24_k4px8")
 
 [node name="Train" parent="." instance=ExtResource("20_f8iss")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.859, -3.471, 273.321)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58, -3.471, 273.321)
 
 [node name="polaroid3" parent="." instance=ExtResource("26_xaqq3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.341, 1.25634, 20.5519)
 
 [node name="faxmachine" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6299, 2.7725, 12.9168)
-script = SubResource("GDScript_bamqx")
+script = ExtResource("30_k6pk8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="faxmachine"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.58479, 2.52213)
@@ -1005,19 +967,14 @@ volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
-[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
-[connection signal="body_entered" from="SubViewportContainer/SubViewport/FullScene/Int Objects2/Trashcan2/trashcans" to="SubViewportContainer/SubViewport/FullScene/Int Objects2/Trashcan2/trashcans" method="_on_body_entered"]
-[connection signal="trashcollected" from="SubViewportContainer/SubViewport/FullScene/Int Objects2/Trashcan2/trashcans" to="." method="_on_trashcans_trashcollected"]
 [connection signal="exited_screen" from="SubViewportContainer/SubViewport/Character" to="Ofis" method="_on_character_exited_screen"]
 [connection signal="submitcount" from="SubViewportContainer2/SubViewport/Control" to="Ofis" method="_on_control_submitcount"]
 [connection signal="submittedvalue" from="SubViewportContainer2/SubViewport/Control" to="Ofis" method="_on_control_submittedvalue"]
 [connection signal="body_entered" from="Area3D/DışMerdivenÖnü" to="Area3D/DışMerdivenÖnü" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D/DışMerdivenÖnü" to="Area3D/DışMerdivenÖnü" method="_on_body_exited"]
-[connection signal="body_entered" from="Area3D2/SolTurnikeler" to="Area3D2/SolTurnikeler" method="_on_body_entered"]
-[connection signal="body_exited" from="Area3D2/SolTurnikeler" to="Area3D2/SolTurnikeler" method="_on_body_exited"]
 [connection signal="body_entered" from="Ofis" to="Ofis" method="_on_body_entered"]
 [connection signal="body_exited" from="Ofis" to="Ofis" method="_on_body_exited"]
 [connection signal="officeentered" from="Ofis" to="." method="_on_ofis_officeentered"]
+[connection signal="print" from="faxmachine" to="." method="_on_faxmachine_print"]
 
-[editable path="SubViewportContainer/SubViewport/FullScene"]
 [editable path="SubViewportContainer/SubViewport/Character"]

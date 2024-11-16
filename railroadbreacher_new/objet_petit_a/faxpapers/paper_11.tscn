@@ -27,8 +27,8 @@ bind/4/name = &""
 bind/4/bone = -1
 bind/4/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3q77b"]
-size = Vector3(0.522654, 0.297, 0.01)
+[sub_resource type="BoxShape3D" id="BoxShape3D_otnwk"]
+size = Vector3(0.522654, 0.297, 0.156858)
 
 [node name="paper_11" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_rihym")
@@ -38,10 +38,6 @@ script = ExtResource("1_c4aj3")
 transform = Transform3D(2.48207, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_dw2rg")
 skin = SubResource("Skin_ovffp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000269778, 0, 0)
-shape = SubResource("BoxShape3D_3q77b")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00739276)
@@ -56,3 +52,7 @@ Please fix it ASAP. Before it gets worse."
 font = ExtResource("2_ow7vp")
 font_size = 15
 outline_size = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000269778, 0, -0.00115845)
+shape = SubResource("BoxShape3D_otnwk")

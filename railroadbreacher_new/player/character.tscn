@@ -80,18 +80,23 @@ metadata/_edit_use_anchors_ = true
 [node name="SubtitleLabel" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = -0.130208
 anchor_top = -0.0703704
+anchor_right = -0.130208
 anchor_bottom = -0.0703704
-offset_right = 1920.0
+offset_left = 120.0
+offset_top = 3.05176e-05
+offset_right = 2020.0
 offset_bottom = 1080.0
 theme_override_colors/font_color = Color(1, 0.928682, 0.542828, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_ocspb")
 theme_override_font_sizes/font_size = 65
-text = "I can't leave, it's not morning yet"
+text = "- It's almost midnight. I should go to my office or Boss will make me work overtime again."
 horizontal_alignment = 1
 vertical_alignment = 2
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Marker3D" type="Marker3D" parent="."]

@@ -1,6 +1,8 @@
 extends Area3D
 
 var erasable
+var trashamount = 0
+signal trashcollected(amount: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +17,12 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: RigidBody3D) -> void:
 	erasable = body
 	erasable.get_child(1).disabled = true
-	get_tree().create_timer(0.3).timeout
+	erasable.collision_layer = 4
+	await get_tree().create_timer(0.3).timeout
 	erasable.queue_free()
+	trashamount += 1
+	emit_signal("trashcollected", trashamount)
 	
+
+func trashcan():
+	pass

@@ -56,12 +56,12 @@ from: BOSS
 
 To whom it may concern,
 
-Today, your job at the ... train station includes:
+Today, your job at the Crowwood train station includes:
 
-Accurately log train arrival times.
-Maintenance if something starts malfunctioning.
-Take care of lost and found.
-Clean up the place.
+- Accurately logging in the train arrival times.
+- Maintenance if something starts malfunctioning.
+- Taking care of lost and found.
+- Cleaning up the place.
 
 Failure to comply will result in overtime and a salary cut."
 font = ExtResource("2_bcach")

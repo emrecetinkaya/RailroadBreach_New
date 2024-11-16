@@ -88,6 +88,10 @@ func _physics_process(delta: float) -> void:
 		var item = $Marker3D.get_child(0)
 		item.secondary()
 		hands_full = false
+		var audio = load("res://sounds/(put down)740881_heizelss_pick-up-and-put-down.mp3")
+		$AudioStreamPlayer3D.set_stream(audio)
+		$AudioStreamPlayer3D.set_volume_db(-30)
+		$AudioStreamPlayer3D.play()
 #Open and close menu.
 	if on_camera:
 		SPEED = 0
@@ -113,7 +117,9 @@ func _physics_process(delta: float) -> void:
 
 	var collider = $RayCast3D.get_collider()
 	if $RayCast3D.is_colliding():
-		
+		if collider.has_method("trashcan"):
+			if hands_full:
+				$Control/Label.text = "RIGHT CLICK TO DROP TRASH"
 
 		if collider.has_method("hold"):
 			if Input.is_action_pressed("interact"):
@@ -129,6 +135,10 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("interact") and !hands_full:
 				hands_full = true
 				collider.grab()
+				var audio = load("res://sounds/(pick up)740881_heizelss_pick-up-and-put-down.mp3")
+				$AudioStreamPlayer3D.set_stream(audio)
+				$AudioStreamPlayer3D.set_volume_db(-10)
+				$AudioStreamPlayer3D.play()
 
 
 		if collider.has_method("change_cam") and collider.has_method("enter_cam"):
@@ -182,6 +192,8 @@ func _on_card_letgo() -> void:
 
 func footstep():
 	if $AudioStreamPlayer3D.playing == false:
+		var audio = preload("res://sounds/step4.mp3")
+		$AudioStreamPlayer3D.set_stream(audio)
 		$AudioStreamPlayer3D.pitch_scale = randf_range(0.7, 0.9)
 		$AudioStreamPlayer3D.set_volume_db(-50)
 		$AudioStreamPlayer3D.play()

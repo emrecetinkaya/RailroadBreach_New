@@ -8,6 +8,8 @@ extends RigidBody3D
 @onready var target = $"../SubViewportContainer/SubViewport/Character/Marker3D2"
 @onready var sprite_2d: Sprite2D = $"../SubViewportContainer/SubViewport/Character/Sprite2D"
 
+var trashamount = 0
+
 
 var itself = $".".name
 

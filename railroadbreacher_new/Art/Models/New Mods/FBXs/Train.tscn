@@ -522,7 +522,7 @@ _data = {
 }
 
 [node name="Train" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58, -3.471, -4.99999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.859, -3.471, -4.70814)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 
@@ -550,7 +550,7 @@ surface_material_override/8 = ExtResource("6_uitwt")
 surface_material_override/9 = ExtResource("7_m1874")
 
 [node name="SagOnKapılar" type="Node3D" parent="önvagon"]
-transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 0, -0.0014633, 1.20123e-09)
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 0, 0.00448528, 3.72529e-09)
 
 [node name="subway_car_004" type="MeshInstance3D" parent="önvagon/SagOnKapılar"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, -0.15097)
@@ -577,7 +577,7 @@ surface_material_override/1 = ExtResource("6_uitwt")
 surface_material_override/2 = ExtResource("7_m1874")
 
 [node name="SagArkaKapılar" type="Node3D" parent="önvagon"]
-transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 3.56522e-05, 0.00125007, -0.000255261)
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 3.56548e-05, -0.00489102, -0.000255261)
 
 [node name="subway_car_006" type="MeshInstance3D" parent="önvagon/SagArkaKapılar"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, -0.119793)
@@ -604,7 +604,7 @@ surface_material_override/1 = ExtResource("6_uitwt")
 surface_material_override/2 = ExtResource("7_m1874")
 
 [node name="SolOnKapılar" type="Node3D" parent="önvagon"]
-transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 0, 0.002712, 4.92652e-09)
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 0, 0.00842175, 7.45058e-09)
 
 [node name="subway_car_010" type="MeshInstance3D" parent="önvagon/SolOnKapılar"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 3.93783, 0, -13.7315)
@@ -631,7 +631,7 @@ surface_material_override/1 = ExtResource("6_uitwt")
 surface_material_override/2 = ExtResource("7_m1874")
 
 [node name="SolArkaKapılar" type="Node3D" parent="önvagon"]
-transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 3.56522e-05, 0.00125007, -0.000255261)
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 3.56548e-05, -0.00489102, -0.000255261)
 
 [node name="subway_car_011" type="MeshInstance3D" parent="önvagon/SolArkaKapılar"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 3.93783, 0, -14.1687)
@@ -754,7 +754,7 @@ surface_material_override/1 = ExtResource("6_uitwt")
 surface_material_override/2 = ExtResource("7_m1874")
 
 [node name="SolArkaKapılar" type="Node3D" parent="arkavagon"]
-transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 3.56522e-05, 0.00125007, -0.000255261)
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 3.56548e-05, -0.00489102, -0.000255261)
 
 [node name="subway_car_011" type="MeshInstance3D" parent="arkavagon/SolArkaKapılar"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 3.93783, 0, -14.1687)

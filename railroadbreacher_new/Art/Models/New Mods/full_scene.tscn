@@ -857,10 +857,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wr3dd")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_26jpx"]
-height = 0.135972
-radius = 0.405678
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58twf"]
 resource_name = "trash_can.001"
 vertex_color_use_as_albedo = true
@@ -912,6 +908,10 @@ points = PackedVector3Array(0.503686, 1.30955, 0.03947, -0.517984, 1.22931, -0.1
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_toec4"]
 points = PackedVector3Array(0.503686, 1.30955, 0.03947, -0.517984, 1.22931, -0.162684, -0.517984, 1.22931, 0.163065, 0.246984, 0.0518651, 0.333657, -0.0271505, 0.0584094, -0.407479, -0.391561, 0.0652943, 0.134574, -0.0290503, 1.22931, 0.529765, 0.0929758, 1.22931, -0.529384, 0.37767, 0.0630428, -0.153912, -0.245276, 0.0474397, 0.336007, -0.245418, 0.0470899, -0.335812, 0.479997, 1.22931, 0.264874, -0.224483, 1.30927, -0.452325, 0.317122, 1.22931, -0.447791, -0.342276, 1.30875, 0.373672, 0.317122, 1.22931, 0.448172, 0.479997, 1.22931, -0.264493, 0.222039, 0.0674878, -0.344162, 0.377409, 0.0634823, 0.154183, 0.0308852, 0.0608391, 0.406266, -0.232773, 1.22931, -0.488536, 0.541165, 1.22931, 0.0205109, -0.391898, 0.064781, -0.134208, -0.375327, 1.22931, 0.387108, -0.416071, 1.22931, -0.345982, 0.287956, 1.3114, 0.414738, -0.192028, 1.22931, 0.509341, 0.267334, 1.30937, -0.432661, -0.4805, 1.30955, -0.157227, 0.0929758, 1.22931, 0.529765, -0.192028, 1.22931, -0.50896, -0.0671104, 1.30989, 0.492548)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_26jpx"]
+height = 0.135972
+radius = 0.405678
 
 [node name="FullScene" instance=ExtResource("1_1nhx7")]
 
@@ -2035,82 +2035,10 @@ skeleton = NodePath("")
 [node name="Int Objects2" type="Node3D" parent="." index="11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26845, -2.8346, -10.7756)
 
-[node name="Trashcan2" type="Node3D" parent="Int Objects2" index="0"]
+[node name="Trashcan2" type="Area3D" parent="Int Objects2" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.66806, 1.43051e-06, 12.5911)
 
-[node name="Trash1" type="Area3D" parent="Int Objects2/Trashcan2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09253, 5.32949, 19.9568)
-collision_mask = 5
-script = ExtResource("23_jc0ya")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Int Objects2/Trashcan2/Trash1" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0615504, 0)
-shape = SubResource("CylinderShape3D_26jpx")
-
-[node name="Trash2" type="Area3D" parent="Int Objects2/Trashcan2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0461, 5.23986, 19.9721)
-collision_mask = 5
-script = ExtResource("23_jc0ya")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Int Objects2/Trashcan2/Trash2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0615504, 0)
-shape = SubResource("CylinderShape3D_26jpx")
-
-[node name="Trash3" type="Area3D" parent="Int Objects2/Trashcan2" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0773463, 1.06859, 0.282475)
-collision_mask = 5
-script = ExtResource("23_jc0ya")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Int Objects2/Trashcan2/Trash3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0615504, 0)
-shape = SubResource("CylinderShape3D_26jpx")
-
-[node name="Trash4" type="Area3D" parent="Int Objects2/Trashcan2" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.236444, 1.11061, -24.5201)
-collision_mask = 5
-script = ExtResource("23_jc0ya")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Int Objects2/Trashcan2/Trash4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0615504, 0)
-shape = SubResource("CylinderShape3D_26jpx")
-
-[node name="Trash5" type="Area3D" parent="Int Objects2/Trashcan2" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.236444, 1.1152, -12.0322)
-collision_mask = 5
-script = ExtResource("23_jc0ya")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Int Objects2/Trashcan2/Trash5" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0615504, 0)
-shape = SubResource("CylinderShape3D_26jpx")
-
-[node name="Trash6" type="Area3D" parent="Int Objects2/Trashcan2" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4175, 1.09554, -12.9173)
-collision_mask = 5
-script = ExtResource("23_jc0ya")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Int Objects2/Trashcan2/Trash6" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0615504, 0)
-shape = SubResource("CylinderShape3D_26jpx")
-
-[node name="Trash7" type="Area3D" parent="Int Objects2/Trashcan2" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2696, 1.11148, -25.0003)
-collision_mask = 5
-script = ExtResource("23_jc0ya")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Int Objects2/Trashcan2/Trash7" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0615504, 0)
-shape = SubResource("CylinderShape3D_26jpx")
-
-[node name="Trash8" type="Area3D" parent="Int Objects2/Trashcan2" index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2911, 1.10417, -0.495986)
-collision_mask = 5
-script = ExtResource("23_jc0ya")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Int Objects2/Trashcan2/Trash8" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0615504, 0)
-shape = SubResource("CylinderShape3D_26jpx")
-
-[node name="St_03_166" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="8"]
+[node name="St_03_166" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.866091, 0, 0, 0, 1, -4.08656, 4.16479, 19.9721)
 mesh = SubResource("ArrayMesh_hht5n")
 skeleton = NodePath("")
@@ -2121,7 +2049,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.098815, 0)
 shape = SubResource("ConvexPolygonShape3D_3yk5x")
 
-[node name="St_03_167" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="9"]
+[node name="St_03_167" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.866091, 0, 0, 0, 1, -12.0461, 4.16479, 19.9721)
 mesh = SubResource("ArrayMesh_hht5n")
 skeleton = NodePath("")
@@ -2132,7 +2060,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.098815, 0)
 shape = SubResource("ConvexPolygonShape3D_3yk5x")
 
-[node name="St_03_160" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="10"]
+[node name="St_03_160" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="2"]
 transform = Transform3D(1, 0, 0, 0, 0.866091, 0, 0, 0, 1, -0.0773463, 0, 0.282475)
 mesh = SubResource("ArrayMesh_hht5n")
 skeleton = NodePath("")
@@ -2143,7 +2071,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.098815, 0)
 shape = SubResource("ConvexPolygonShape3D_3yk5x")
 
-[node name="St_03_161" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="11"]
+[node name="St_03_161" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="3"]
 transform = Transform3D(1, 0, 0, 0, 0.866091, 0, 0, 0, 1, -0.236444, 0, -24.5201)
 mesh = SubResource("ArrayMesh_hht5n")
 skeleton = NodePath("")
@@ -2154,7 +2082,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.148036, 0)
 shape = SubResource("ConvexPolygonShape3D_1230a")
 
-[node name="St_03_164" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="12"]
+[node name="St_03_164" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="4"]
 transform = Transform3D(1, 0, 0, 0, 0.866091, 0, 0, 0, 1, -0.236444, 0, -12.0322)
 mesh = SubResource("ArrayMesh_hht5n")
 skeleton = NodePath("")
@@ -2165,7 +2093,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.189187, 0)
 shape = SubResource("ConvexPolygonShape3D_1230a")
 
-[node name="St_03_165" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="13"]
+[node name="St_03_165" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="5"]
 transform = Transform3D(1, 0, 0, 0, 0.866091, 0, 0, 0, 1, -15.4175, 0.00375938, -12.9173)
 mesh = SubResource("ArrayMesh_hht5n")
 skeleton = NodePath("")
@@ -2176,7 +2104,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.191117, 0)
 shape = SubResource("ConvexPolygonShape3D_1230a")
 
-[node name="St_03_162" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="14"]
+[node name="St_03_162" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="6"]
 transform = Transform3D(1, 0, 0, 0, 0.866091, 0, 0, 0, 1, -15.2696, 0, -25.0003)
 mesh = SubResource("ArrayMesh_hht5n")
 skeleton = NodePath("")
@@ -2187,7 +2115,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.116524, 0)
 shape = SubResource("ConvexPolygonShape3D_hqfw1")
 
-[node name="St_03_163" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="15"]
+[node name="St_03_163" type="MeshInstance3D" parent="Int Objects2/Trashcan2" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.866091, 0, 0, 0, 1, -15.2911, 0, -0.495986)
 mesh = SubResource("ArrayMesh_hht5n")
 skeleton = NodePath("")
@@ -2198,11 +2126,38 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.136098, 0)
 shape = SubResource("ConvexPolygonShape3D_toec4")
 
-[connection signal="body_entered" from="Int Objects2/Trashcan2/Trash1" to="Int Objects2/Trashcan2/Trash1" method="_on_body_entered"]
-[connection signal="body_entered" from="Int Objects2/Trashcan2/Trash2" to="Int Objects2/Trashcan2/Trash2" method="_on_body_entered"]
-[connection signal="body_entered" from="Int Objects2/Trashcan2/Trash3" to="Int Objects2/Trashcan2/Trash3" method="_on_body_entered"]
-[connection signal="body_entered" from="Int Objects2/Trashcan2/Trash4" to="Int Objects2/Trashcan2/Trash4" method="_on_body_entered"]
-[connection signal="body_entered" from="Int Objects2/Trashcan2/Trash5" to="Int Objects2/Trashcan2/Trash5" method="_on_body_entered"]
-[connection signal="body_entered" from="Int Objects2/Trashcan2/Trash6" to="Int Objects2/Trashcan2/Trash6" method="_on_body_entered"]
-[connection signal="body_entered" from="Int Objects2/Trashcan2/Trash7" to="Int Objects2/Trashcan2/Trash7" method="_on_body_entered"]
-[connection signal="body_entered" from="Int Objects2/Trashcan2/Trash8" to="Int Objects2/Trashcan2/Trash8" method="_on_body_entered"]
+[node name="trashcans" type="Area3D" parent="Int Objects2/Trashcan2" index="8"]
+collision_mask = 5
+script = ExtResource("23_jc0ya")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Int Objects2/Trashcan2/trashcans" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09253, 5.39104, 19.9568)
+shape = SubResource("CylinderShape3D_26jpx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Int Objects2/Trashcan2/trashcans" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0461, 5.30141, 19.9721)
+shape = SubResource("CylinderShape3D_26jpx")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Int Objects2/Trashcan2/trashcans" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0773463, 1.13014, 0.282475)
+shape = SubResource("CylinderShape3D_26jpx")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Int Objects2/Trashcan2/trashcans" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.236444, 1.17216, -24.5201)
+shape = SubResource("CylinderShape3D_26jpx")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Int Objects2/Trashcan2/trashcans" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.236444, 1.17675, -12.0322)
+shape = SubResource("CylinderShape3D_26jpx")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Int Objects2/Trashcan2/trashcans" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4175, 1.15709, -12.9173)
+shape = SubResource("CylinderShape3D_26jpx")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Int Objects2/Trashcan2/trashcans" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2696, 1.17303, -25.0003)
+shape = SubResource("CylinderShape3D_26jpx")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Int Objects2/Trashcan2/trashcans" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2911, 1.16572, -0.495986)
+shape = SubResource("CylinderShape3D_26jpx")

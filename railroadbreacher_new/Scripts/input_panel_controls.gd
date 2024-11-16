@@ -24,6 +24,5 @@ func change_cam():
 	
 func exit_cam():
 	viewport.position = Vector2(-1920,-1080)
-	print("evet")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$"../Sol Ekran Kameralar".cameracycle = 0
