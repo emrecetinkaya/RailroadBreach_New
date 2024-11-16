@@ -80,7 +80,7 @@ func _on_trashcans_trashcollected(amount: int) -> void:
 
 
 func checkcurrentstatus():
-	if trashcollected == 1 and officeenter >= 1:
+	if trashcollected == 7 and officeenter >= 1:
 		update_storymilestone()
 	if storymilestone == 2:
 		printpaper()
