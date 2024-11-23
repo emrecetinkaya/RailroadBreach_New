@@ -53,16 +53,16 @@ func _on_body_exited(body: CharacterBody3D) -> void:
 	office_exited += 1
 	emit_signal("officeexited", office_exited)
 
+	if storymilestone >= 1:
+		subtitle_label.text = ""
+	
 
 func _on_character_exited_screen(screen_exit_count) -> void:
 	if screen_exit_count == 1 and submitcheck == true:
 		print("correct on the first try")
 	elif screen_exit_count == 1:
-		await get_tree().create_timer(0.7).timeout
-		subtitle_label.visible = true
 		subtitle_label.text = "- I can see the arrival times at the poster behind the screen"
 		await get_tree().create_timer(4).timeout
-		subtitle_label.visible = false
 		subtitle_label.text = ""
 		
 #
